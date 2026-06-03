@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>How It Works – Know Your Country Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(145deg, #0a2e1f 0%, #0b3b2a 100%);
+      color: #ffffff;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .page-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(10, 46, 31, 0.95);
+      backdrop-filter: blur(8px);
+      border-radius: 48px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 215, 0, 0.4);
+      box-shadow: 0 25px 45px -12px black;
+      padding: 32px 28px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      background: linear-gradient(135deg, #facc15, #c5a059);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 24px;
+    }
+    h2 {
+      color: #facc15;
+      font-size: 1.5rem;
+      margin: 24px 0 16px 0;
+      border-left: 4px solid #facc15;
+      padding-left: 16px;
+    }
+    h3 {
+      color: #facc15;
+      margin: 20px 0 10px 0;
+      font-size: 1.2rem;
+    }
+    p, li {
+      line-height: 1.6;
+      color: #e2e8f0;
+    }
+    ul, ol {
+      padding-left: 24px;
+      margin: 12px 0;
+    }
+    li {
+      margin: 8px 0;
+    }
+    .highlight {
+      background: #facc15;
+      color: #0f172a;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-weight: bold;
+      display: inline-block;
+      margin: 4px 0;
+    }
+    .emoji-bullet {
+      list-style: none;
+      padding-left: 0;
+    }
+    .emoji-bullet li {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .emoji-bullet li i {
+      font-size: 1.4rem;
+      color: #facc15;
+      min-width: 32px;
+      text-align: center;
+      margin-top: 2px;
+    }
+    .button-back {
+      background: linear-gradient(95deg, #facc15, #c5a059);
+      border: none;
+      padding: 12px 24px;
+      border-radius: 60px;
+      font-weight: bold;
+      font-size: 1rem;
+      color: #0f172a;
+      cursor: pointer;
+      margin-top: 32px;
+      width: 100%;
+      transition: 0.2s;
+    }
+    .button-back:hover {
+      transform: translateY(-2px);
+      background: #c5a059;
+    }
+    hr {
+      margin: 20px 0;
+      border-color: #334155;
+    }
+    @media (max-width: 550px) {
+      .page-container { padding: 24px 20px; }
+      h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-container">
+  <h1><i class="fas fa-question-circle"></i> How It Works</h1>
+  <p style="text-align: center; margin-bottom: 24px;">Master the quiz, earn coins, win tournaments – here’s everything you need to know.</p>
+
+  <h2>🎯 The Basics</h2>
+  <ul class="emoji-bullet">
+    <li><i class="fas fa-flag-checkered"></i> <strong>Goal</strong> – Answer 10 questions correctly. You start with <span class="highlight">3 lives</span> (hearts). Each wrong answer costs one life.</li>
+    <li><i class="fas fa-hourglass-half"></i> <strong>Timer</strong> – First question: 14 seconds. Time decreases by 1 second per question, down to 7 seconds. Run out of time = wrong answer (lose a life).</li>
+    <li><i class="fas fa-coins"></i> <strong>Coins</strong> – Earn coins by playing free quizzes (1 coin per 2 points) or watching rewarded video ads. Coins are used for lifelines and tournament entry.</li>
+  </ul>
+
+  <h2>🃏 50:50 Lifeline</h2>
+  <p>Stuck on a question? Use the <strong>“50:50 Lifeline”</strong> to remove two wrong answers. It costs <span class="highlight">10 coins</span> per use. You can watch a rewarded ad to earn extra coins if you run low.</p>
+
+  <h2>🏆 Daily Tournament</h2>
+  <ul class="emoji-bullet">
+    <li><i class="fas fa-trophy"></i> <strong>Entry fee</strong> – 50 coins per tournament entry.</li>
+    <li><i class="fas fa-chart-line"></i> <strong>How it works</strong> – Play a quiz in tournament mode. Your final score is submitted to the leaderboard.</li>
+    <li><i class="fas fa-gift"></i> <strong>Prizes</strong> – Top 3 players split the prize pool: <strong>80% / 15% / 5%</strong>. Prizes are sponsored by telecoms and beverage brands (airtime, data, vouchers).</li>
+    <li><i class="fas fa-calendar-day"></i> <strong>Daily reset</strong> – Leaderboard resets every day at midnight (UTC+1). Play often to climb the ranks!</li>
+  </ul>
+
+  <h2>💰 Earning & Spending Coins</h2>
+  <ul class="emoji-bullet">
+    <li><i class="fas fa-play-circle"></i> <strong>Play free quiz</strong> – Earn 1 coin for every 2 points scored (e.g., 100 points = 50 coins).</li>
+    <li><i class="fas fa-video"></i> <strong>Watch rewarded ad</strong> – Click “Earn Coins” button, watch a short ad, get <span class="highlight">25 coins</span>.</li>
+    <li><i class="fas fa-lightbulb"></i> <strong>Spend coins on lifeline</strong> – 10 coins per 50:50.</li>
+    <li><i class="fas fa-trophy"></i> <strong>Tournament entry</strong> – 50 coins per try.</li>
+  </ul>
+
+  <h2>🎨 Categories & Countries</h2>
+  <p>Choose from <strong>Nigeria, Ghana, Kenya, South Africa</strong> and <strong>7 categories</strong>: History, Geography, Culture, Pop Culture, Movies, Football, and All Africa. Each category contains a large pool of questions (20+ per category) – you’ll never see the same set twice!</p>
+
+  <h2>📊 Stats & Persistence</h2>
+  <p>Your total points, best score, and coin balance are saved automatically on your device. Come back anytime – your progress won’t be lost.</p>
+
+  <h2>⚖️ Fair Play & Terms</h2>
+  <p>Questions and answer options are shuffled each game to prevent memorisation. Any form of cheating (multiple accounts, automated play) leads to immediate disqualification. By playing, you agree to our <a href="#" style="color:#facc15;" id="termsLink">Terms & Conditions</a>.</p>
+
+  <hr>
+  <p style="font-size: 0.8rem; text-align: center;">Questions or prize claims? Contact <strong>prizes@knowyourcountry.com</strong></p>
+
+  <button class="button-back" onclick="window.location.href='index.html'">← Back to Game</button>
+</div>
+
+<script>
+  // If you want to open the terms modal (if terms modal exists on the main page, you can redirect)
+  // For simplicity, just alert or link to main page's terms section.
+  document.getElementById('termsLink').addEventListener('click', (e) => {
+    e.preventDefault();
+    alert('You can read the full Terms & Conditions when you start the game. Please return to the main game page and click “Terms & Conditions”.');
+  });
+</script>
+</body>
+</html>

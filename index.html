@@ -1,583 +1,1411 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>Know Your Country – Africa Quiz (Hard Mode)</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(145deg, #0a2e1f 0%, #0b3b2a 100%);
-      color: #ffffff;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .game-container {
-      max-width: 550px;
-      width: 100%;
-      background: rgba(10, 46, 31, 0.95);
-      backdrop-filter: blur(8px);
-      border-radius: 48px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 215, 0, 0.4);
-      box-shadow: 0 25px 45px -12px black;
-      position: relative;
-    }
-    .terms-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.9);
-      backdrop-filter: blur(5px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-    }
-    .terms-modal {
-      background: #1e293b;
-      border-radius: 32px;
-      padding: 28px;
-      max-width: 450px;
-      width: 90%;
-      border: 1px solid #facc15;
-      color: white;
-      max-height: 85vh;
-      overflow-y: auto;
-    }
-    .terms-modal h2 { color: #facc15; margin-bottom: 20px; text-align: center; }
-    .terms-text { font-size: 0.85rem; line-height: 1.5; margin-bottom: 24px; text-align: left; }
-    .terms-text p { margin-bottom: 12px; }
-    .agree-checkbox { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; justify-content: center; }
-    .dont-show-container { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; justify-content: center; }
-    .terms-btn {
-      background: linear-gradient(95deg, #facc15, #c5a059);
-      border: none; padding: 12px 24px; border-radius: 60px;
-      font-weight: bold; font-size: 1rem; color: #0f172a;
-      cursor: pointer; width: 100%; transition: 0.2s;
-    }
-    .terms-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-    .reset-settings {
-      position: absolute; bottom: 10px; left: 10px;
-      background: rgba(0,0,0,0.5); color: #ccc; font-size: 10px;
-      padding: 4px 8px; border-radius: 20px; cursor: pointer; z-index: 3000;
-    }
-    .music-controls {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      display: flex;
-      gap: 8px;
-      z-index: 150;
-    }
-    .music-toggle {
-      background: rgba(0,0,0,0.6);
-      border: none;
-      border-radius: 50%;
-      width: 44px;
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      color: #facc15;
-      cursor: pointer;
-      backdrop-filter: blur(4px);
-    }
-    .play-music-btn {
-      background: #facc15;
-      border: none;
-      border-radius: 40px;
-      padding: 6px 12px;
-      font-size: 0.7rem;
-      font-weight: bold;
-      color: #0f172a;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .banner-placeholder { background: #1e293b; border-radius: 20px; padding: 8px; text-align: center; font-size: 11px; color: #cbd5e1; margin: 12px 16px 0; display: flex; justify-content: center; gap: 8px; }
-    .sponsored-badge { background: #facc15; color: #0f172a; border-radius: 40px; padding: 4px 12px; font-size: 0.7rem; font-weight: bold; display: inline-block; margin-bottom: 12px; text-align: center; }
-    .screen { padding: 28px 24px 36px; transition: 0.2s; }
-    .hidden { display: none; }
-    .top-bar { display: flex; justify-content: space-between; align-items: center; background: #0f172a; border-radius: 60px; padding: 8px 20px; margin-bottom: 24px; color: #f1f5f9; }
-    .coin-display { background: #facc15; color: #0f172a; padding: 6px 16px; border-radius: 40px; font-weight: bold; }
-    .flag-icon { font-size: 3rem; text-align: center; margin-bottom: 8px; }
-    h1 { text-align: center; font-size: 1.8rem; background: linear-gradient(135deg, #facc15, #c5a059); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .sub { text-align: center; color: #e2e8f0; margin-bottom: 20px; font-size: 0.8rem; }
-    .stats-row { display: flex; gap: 12px; margin-bottom: 24px; }
-    .stat-card { background: #1e293b; flex: 1; border-radius: 24px; padding: 12px; text-align: center; border: 1px solid #475569; }
-    .stat-card i { font-size: 1.4rem; color: #facc15; }
-    .stat-value { font-size: 1.4rem; font-weight: 800; color: #ffffff; }
-    .dropdown-group { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
-    .custom-dropdown { background: #1e293b; border: 1px solid #475569; border-radius: 60px; padding: 14px 20px; width: 100%; font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; color: #f1f5f9; cursor: pointer; appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23facc15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>'); background-repeat: no-repeat; background-position: right 20px center; }
-    .play-btn, .tournament-btn, .next-btn, .restart-btn { background: linear-gradient(95deg, #facc15, #c5a059); border: none; width: 100%; padding: 14px; border-radius: 60px; font-weight: 800; font-size: 1rem; color: #0f172a; cursor: pointer; margin-bottom: 12px; }
-    .tournament-btn { background: #334155; color: white; margin-bottom: 0; }
-    .terms-link { text-align: center; font-size: 0.7rem; margin-top: 20px; color: #94a3b8; cursor: pointer; text-decoration: underline; }
-    .quiz-header { display: flex; justify-content: space-between; background: #0f172a; padding: 10px 16px; border-radius: 40px; margin-bottom: 20px; color: #facc15; font-weight: bold; }
-    .timer-area { background: #0f172a; border-radius: 40px; padding: 8px 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
-    .timer-bar-bg { background: #334155; height: 8px; border-radius: 4px; flex-grow: 1; margin: 0 12px; overflow: hidden; }
-    .timer-bar-fill { background: #facc15; width: 100%; height: 100%; transition: width 0.1s linear; }
-    .timer-text { font-weight: bold; font-family: monospace; font-size: 1.1rem; }
-    .question-text { font-size: 1.2rem; font-weight: 700; margin: 16px 0 24px; background: #0f172a; padding: 20px; border-radius: 28px; color: #ffffff; line-height: 1.4; border: 1px solid #334155; }
-    .options-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
-    .option-btn { background: #1e293b; border: 1px solid #475569; border-radius: 60px; padding: 14px 18px; font-size: 0.95rem; text-align: left; cursor: pointer; color: #f1f5f9; font-weight: 500; transition: 0.1s; }
-    .option-btn.correct { background: #10b981; border-color: #10b981; color: white; }
-    .option-btn.wrong { background: #ef4444; border-color: #ef4444; color: white; }
-    .option-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-    .hint-btn { background: #334155; border: none; padding: 12px; border-radius: 40px; width: 100%; margin: 8px 0; cursor: pointer; color: white; font-weight: 600; }
-    .feedback { text-align: center; font-size: 0.9rem; margin-top: 12px; padding: 8px; background: #0f172a; border-radius: 40px; color: #facc15; }
-    .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); display: flex; align-items: center; justify-content: center; z-index: 2000; visibility: hidden; }
-    .modal.active { visibility: visible; }
-    .modal-content { background: #1e293b; border-radius: 32px; padding: 24px; max-width: 340px; text-align: center; border: 1px solid #facc15; color: white; max-height: 80vh; overflow-y: auto; }
-    .close-modal { margin-top: 16px; background: #facc15; border: none; padding: 8px 20px; border-radius: 40px; cursor: pointer; font-weight: bold; }
-    .earn-btn { background: #facc15; border: none; border-radius: 40px; padding: 4px 12px; font-size: 0.7rem; font-weight: bold; cursor: pointer; }
-    .loader {
-      text-align: center;
-      padding: 20px;
-      font-size: 1.2rem;
-      color: #facc15;
-    }
-    @media (max-width: 550px) {
-      .question-text { font-size: 1rem; padding: 16px; }
-      .option-btn { padding: 10px 14px; font-size: 0.85rem; }
-      .music-toggle { width: 36px; height: 36px; font-size: 1rem; }
-      .play-music-btn { padding: 4px 8px; font-size: 0.6rem; }
-    }
-  </style>
-</head>
-<body>
-<div class="game-container">
-  <div class="music-controls">
-    <button class="play-music-btn" id="explicitPlayBtn">🔊 Play Music</button>
-    <button class="music-toggle" id="musicToggleBtn" title="Mute/Unmute background music">
-      <i class="fas fa-music"></i>
-    </button>
-  </div>
-  <div class="banner-placeholder" id="bannerAd"><i class="fas fa-ad"></i> AdMob Banner</div>
-  <div id="homeScreen" class="screen">
-    <div class="top-bar">
-      <span><i class="fas fa-chart-simple"></i> Leaderboard</span>
-      <span class="coin-display"><i class="fas fa-coins"></i> <span id="coinBalance">0</span></span>
-      <button class="earn-btn" id="earnCoinsBtn"><i class="fas fa-video"></i> Earn Coins</button>
-    </div>
-    <div class="flag-icon">🌍</div>
-    <div class="sponsored-badge">🏆 Sponsored by Telecom & Beverage Brands – Win Real Prizes! 🏆</div>
-    <h1>KNOW YOUR COUNTRY</h1>
-    <div class="sub">Africa Quiz • Hard Mode • Timed</div>
-    <div class="stats-row">
-      <div class="stat-card"><i class="fas fa-trophy"></i><div class="stat-value" id="totalPointsHome">0</div><div>Total Points</div></div>
-      <div class="stat-card"><i class="fas fa-brain"></i><div class="stat-value" id="bestScoreHome">0</div><div>Best Game</div></div>
-    </div>
-    <div class="dropdown-group">
-      <select id="countrySelect" class="custom-dropdown">
-        <option value="Nigeria">🇳🇬 Nigeria</option>
-        <option value="Ghana">🇬🇭 Ghana</option>
-        <option value="Kenya">🇰🇪 Kenya</option>
-        <option value="SouthAfrica">🇿🇦 South Africa</option>
-      </select>
-      <select id="categorySelect" class="custom-dropdown">
-        <option value="history">📜 History</option>
-        <option value="geography">🌍 Geography</option>
-        <option value="culture">🎭 Culture</option>
-        <option value="pop">🎵 Pop Culture</option>
-        <option value="movies">🎬 Movies</option>
-        <option value="football">⚽ Football</option>
-        <option value="africa">🌍 All Africa</option>
-      </select>
-    </div>
-    <button class="play-btn" id="startQuizBtn"><i class="fas fa-play"></i> FREE QUIZ (Earn Coins)</button>
-    <button class="tournament-btn" id="tournamentBtn"><i class="fas fa-trophy"></i> DAILY TOURNAMENT (Entry: 50 Coins)</button>
-    <div class="terms-link" id="termsLink">📜 Terms & Conditions 📜</div>
-    <div id="loadingMsg" class="loader">Loading questions... Please wait.</div>
-  </div>
-  <div id="quizScreen" class="screen hidden">
-    <div class="quiz-header"><div>⭐ Score: <span id="scoreDisplay">0</span></div><div>❤️ <span id="livesDisplay">2</span></div><div>Q<span id="currentQ">1</span>/<span id="totalQ">10</span></div></div>
-    <div class="timer-area"><i class="fas fa-hourglass-half"></i><div class="timer-bar-bg"><div class="timer-bar-fill" id="timerFill"></div></div><span class="timer-text" id="timerText">12s</span></div>
-    <div class="question-text" id="questionText"></div>
-    <div class="options-grid" id="optionsContainer"></div>
-    <button class="hint-btn" id="hintBtn"><i class="fas fa-lightbulb"></i> 50:50 Lifeline (10 coins)</button>
-    <div class="next-area"><button class="next-btn" id="nextBtn" disabled>➡ NEXT QUESTION</button></div>
-    <div class="feedback" id="feedbackMsg"></div>
-  </div>
-  <div id="resultScreen" class="screen hidden">
-    <div class="result-card"><i class="fas fa-flag-checkered" style="font-size: 2.5rem; color:#facc15;"></i><h2>Game Over!</h2>
-    <div class="final-score" id="finalScoreSpan">0</div><p id="resultMessage"></p>
-    <button class="restart-btn" id="playAgainBtn"><i class="fas fa-home"></i> Back to Home</button></div>
-  </div>
-</div>
-
-<audio id="bgMusic" loop preload="auto"></audio>
-
-<div id="tournamentModal" class="modal"><div class="modal-content"><i class="fas fa-trophy" style="font-size: 2rem;"></i><h3>Daily Tournament</h3><p>Entry fee: <strong>50 coins</strong></p><p>Top 3 players split prize pool (80% / 15% / 5%)</p><button id="confirmTournamentBtn" class="close-modal">Enter Tournament (50 coins)</button><button id="closeModalBtn" class="close-modal" style="background:#334155;">Cancel</button></div></div>
-<div id="termsModal" class="modal"><div class="modal-content"><h3><i class="fas fa-file-contract"></i> Terms & Conditions</h3><p style="text-align: left; font-size: 0.8rem; margin-top: 16px;"><strong>1. Eligibility:</strong> Open to all users aged 18+ in Nigeria, Ghana, Kenya, South Africa.<br><br><strong>2. Prize Structure:</strong> Daily tournament winners get sponsored prizes.<br><br><strong>3. Coin System:</strong> Coins earned by playing free quizzes or watching ads.<br><br><strong>4. Time Limit:</strong> Dynamic – starts at 12s, decreases by 1s per question down to 5s.<br><br><strong>5. Fair Play:</strong> Options are shuffled each game.<br><br><strong>6. Contact:</strong> prizes@knowyourcountry.com</p><button class="close-modal" id="closeTermsBtn">Close</button></div></div>
-
-<div id="mandatoryTermsOverlay" class="terms-overlay">
-  <div class="terms-modal">
-    <h2>📜 Terms & Conditions</h2>
-    <div class="terms-text">
-      <p><strong>1. Eligibility:</strong> You must be at least 18 years old and a resident of Nigeria, Ghana, Kenya, or South Africa to participate in tournaments and win prizes.</p>
-      <p><strong>2. Prize Structure:</strong> Daily tournament winners receive sponsored prizes. Prize pool distribution: 1st place 80%, 2nd place 15%, 3rd place 5%.</p>
-      <p><strong>3. Coin System:</strong> Coins are earned by playing free quizzes (1 coin per 2 points) or watching rewarded video ads. Coins have no real-world cash value and can only be used within the app for lifelines or tournament entry fees.</p>
-      <p><strong>4. Time Limit:</strong> Each question has a dynamic timer: 12 seconds for the first question, decreasing by 1 second per question down to a minimum of 5 seconds.</p>
-      <p><strong>5. Fair Play:</strong> Any form of cheating, using multiple accounts, or automated play will result in immediate disqualification and permanent ban.</p>
-      <p><strong>6. Taxes:</strong> Winners are responsible for any applicable taxes on prizes.</p>
-      <p><strong>7. Modification:</strong> We reserve the right to modify these terms at any time. Continued use constitutes acceptance.</p>
-      <p><strong>8. Contact:</strong> For prize claims or support, email: <strong>prizes@knowyourcountry.com</strong></p>
-    </div>
-    <div class="agree-checkbox"><input type="checkbox" id="agreeCheckbox"><label for="agreeCheckbox">I have read and agree to the Terms & Conditions</label></div>
-    <div class="dont-show-container"><input type="checkbox" id="dontShowAgainCheckbox"><label for="dontShowAgainCheckbox">Don't show this again</label></div>
-    <button class="terms-btn" id="acceptTermsBtn" disabled>I Agree</button>
-    <div class="reset-settings" id="resetSettingsBtn">Reset Saved Settings</div>
-  </div>
-</div>
-
-<script>
-  // --------------------------------------------------------------
-  // LOCAL BACKGROUND MUSIC (no CORS) + Explicit Play Button
-  // --------------------------------------------------------------
-  const bgMusic = document.getElementById('bgMusic');
-  const musicToggleBtn = document.getElementById('musicToggleBtn');
-  const explicitPlayBtn = document.getElementById('explicitPlayBtn');
-  let musicPlaying = false;
-
-  bgMusic.src = 'bg-music.mp3';
-  bgMusic.load();
-
-  bgMusic.onerror = () => {
-    console.warn("bg-music.mp3 not found – music will be silent.");
-    explicitPlayBtn.style.opacity = '0.5';
-    explicitPlayBtn.title = 'Music file missing (place bg-music.mp3 in app folder)';
-    musicToggleBtn.style.opacity = '0.5';
-  };
-
-  function playMusic() {
-    bgMusic.play().then(() => {
-      musicPlaying = true;
-      musicToggleBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-      explicitPlayBtn.style.display = 'none';
-    }).catch(e => {
-      console.log("Play failed:", e);
-      musicPlaying = false;
-      musicToggleBtn.innerHTML = '<i class="fas fa-music"></i>';
-      explicitPlayBtn.style.display = 'flex';
-    });
-  }
-
-  function pauseMusic() {
-    bgMusic.pause();
-    musicPlaying = false;
-    musicToggleBtn.innerHTML = '<i class="fas fa-music"></i>';
-    explicitPlayBtn.style.display = 'flex';
-  }
-
-  musicToggleBtn.addEventListener('click', () => {
-    if (musicPlaying) {
-      pauseMusic();
-    } else {
-      playMusic();
-    }
-  });
-
-  explicitPlayBtn.addEventListener('click', () => playMusic());
-
-  // --------------------------------------------------------------
-  // Mock AdMob
-  // --------------------------------------------------------------
-  async function initAdMob() { console.log("Mock AdMob"); return false; }
-  async function showRewardedAd() { console.log("Mock rewarded ad"); return true; }
-
-  // --------------------------------------------------------------
-  // Load questions from external JSON file (20+ per category)
-  // --------------------------------------------------------------
-  let questionPools = null;
-  const loadingMsgDiv = document.getElementById('loadingMsg');
-  const startBtn = document.getElementById('startQuizBtn');
-
-  // Fallback minimal pools (used only if JSON fails)
-  const fallbackPools = {
-    Nigeria: {
-      history: [{ text: "Who was the first President of Nigeria?", options: ["Nnamdi Azikiwe", "Olusegun Obasanjo", "Shehu Shagari", "Goodluck Jonathan"], correct: 0 }],
-      geography: [{ text: "What is the capital of Nigeria?", options: ["Abuja", "Lagos", "Kano", "Port Harcourt"], correct: 0 }],
-      culture: [{ text: "Yoruba king title?", options: ["Oba", "Emir", "Igwe", "Obong"], correct: 0 }],
-      pop: [{ text: "Who sang 'Fall'?", options: ["Davido", "Wizkid", "Burna Boy", "Kizz Daniel"], correct: 0 }],
-      movies: [{ text: "Actress in 'Lionheart'?", options: ["Genevieve Nnaji", "Omotola", "Funke Akindele", "Rita Dominic"], correct: 0 }],
-      football: [{ text: "Which club has won the NPFL the most times?", options: ["Enyimba", "Kano Pillars", "Rangers International", "Shooting Stars"], correct: 0 }]
-    },
-    Ghana: { history: [{ text: "What was Ghana's former colonial name?", options: ["Gold Coast", "Slave Coast", "Ivory Coast", "Pepper Coast"], correct: 0 }] },
-    Kenya: { history: [{ text: "Who was Kenya's first president?", options: ["Jomo Kenyatta", "Daniel arap Moi", "Mwai Kibaki", "Uhuru Kenyatta"], correct: 0 }] },
-    SouthAfrica: { history: [{ text: "Who was the first black president of South Africa?", options: ["Nelson Mandela", "Thabo Mbeki", "Jacob Zuma", "Cyril Ramaphosa"], correct: 0 }] }
-  };
-  const africaGeneralSet = [
-    { text: "Which country is known as the 'Giant of Africa'?", options: ["Nigeria", "Ghana", "South Africa", "Kenya"], correct: 0 },
-    { text: "What is the highest mountain in Africa?", options: ["Mount Kilimanjaro", "Mount Kenya", "Mount Elgon", "Rwenzori"], correct: 0 }
-  ];
-
-  async function loadQuestions() {
-    try {
-      const response = await fetch('all.json');
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const json = await response.json();
-      questionPools = json;
-      loadingMsgDiv.style.display = 'none';
-      startBtn.disabled = false;
-      console.log('Questions loaded from external JSON');
-    } catch (err) {
-      console.warn('Failed to load external JSON, using fallback pools.', err);
-      loadingMsgDiv.innerHTML = '⚠️ Using built‑in questions. Full experience requires questions/all.json.';
-      questionPools = fallbackPools;
-      startBtn.disabled = false;
-    }
-  }
-
-  function getQuestionPool() {
-    if (selectedCategory === "africa") return africaGeneralSet;
-    if (!questionPools) return fallbackPools.Nigeria.history;
-    const countryData = questionPools[selectedCountry];
-    if (countryData && countryData[selectedCategory]) {
-      return countryData[selectedCategory];
-    }
-    return fallbackPools.Nigeria.history;
-  }
-
-  // --------------------------------------------------------------
-  // Game state (unchanged from previous, but now uses the dynamic pools)
-  // --------------------------------------------------------------
-  let selectedCountry = "Nigeria", selectedCategory = "history";
-  let coinBalance = 0, isTournamentMode = false, tournamentEntryPaid = false;
-  let currentQuestions = [], currentIndex = 0, currentScore = 0, lives = 2, answerLocked = false;
-  let totalPoints = 0, bestScore = 0;
-  let timerInterval = null;
-  let timeLeft = 12;
-  let correctIdxForCurrentQuestion = 0;
-
-  // DOM elements
-  const homeScreen = document.getElementById('homeScreen'), quizScreen = document.getElementById('quizScreen'), resultScreen = document.getElementById('resultScreen');
-  const tournamentBtn = document.getElementById('tournamentBtn'), playAgainBtn = document.getElementById('playAgainBtn'), nextBtn = document.getElementById('nextBtn');
-  const hintBtn = document.getElementById('hintBtn'), questionEl = document.getElementById('questionText'), optionsContainer = document.getElementById('optionsContainer');
-  const scoreDisplay = document.getElementById('scoreDisplay'), livesDisplaySpan = document.getElementById('livesDisplay');
-  const currentQSpan = document.getElementById('currentQ'), totalQSpan = document.getElementById('totalQ'), feedbackMsg = document.getElementById('feedbackMsg');
-  const finalScoreSpan = document.getElementById('finalScoreSpan'), resultMessage = document.getElementById('resultMessage');
-  const totalPointsHomeSpan = document.getElementById('totalPointsHome'), bestScoreHomeSpan = document.getElementById('bestScoreHome'), coinSpan = document.getElementById('coinBalance');
-  const tournamentModal = document.getElementById('tournamentModal'), confirmTournament = document.getElementById('confirmTournamentBtn'), closeModal = document.getElementById('closeModalBtn');
-  const earnCoinsBtn = document.getElementById('earnCoinsBtn'), countrySelect = document.getElementById('countrySelect'), categorySelect = document.getElementById('categorySelect');
-  const termsLinkElem = document.getElementById('termsLink'), termsModalElem = document.getElementById('termsModal'), closeTermsBtn = document.getElementById('closeTermsBtn');
-  const timerFillElem = document.getElementById('timerFill'), timerTextElem = document.getElementById('timerText');
-  const mandatoryOverlay = document.getElementById('mandatoryTermsOverlay'), agreeCheckbox = document.getElementById('agreeCheckbox');
-  const dontShowAgainCheckbox = document.getElementById('dontShowAgainCheckbox'), acceptTermsBtn = document.getElementById('acceptTermsBtn'), resetBtn = document.getElementById('resetSettingsBtn');
-
-  agreeCheckbox.addEventListener('change', () => { acceptTermsBtn.disabled = !agreeCheckbox.checked; });
-
-  function shuffleArray(arr) { for (let i = arr.length-1; i>0; i--) { const j = Math.floor(Math.random()*(i+1)); [arr[i], arr[j]] = [arr[j], arr[i]]; } return arr; }
-  function getRandomQuestions(pool, count) { const shuffled = shuffleArray([...pool]); return shuffled.slice(0, Math.min(count, shuffled.length)); }
-  function updateCoinUI() { coinSpan.innerText = coinBalance; }
-  function updateLivesUI() { livesDisplaySpan.innerText = lives; }
-  function updateQuizUI() { scoreDisplay.innerText = currentScore; currentQSpan.innerText = currentIndex+1; totalQSpan.innerText = currentQuestions.length; livesDisplaySpan.innerText = lives; }
-  function updateHomeStats() { totalPointsHomeSpan.innerText = totalPoints; bestScoreHomeSpan.innerText = bestScore; }
-
-  function loadStats() {
-    totalPoints = parseInt(localStorage.getItem('nigeriaQuiz_totalPoints')) || 0;
-    bestScore = parseInt(localStorage.getItem('nigeriaQuiz_bestScore')) || 0;
-    coinBalance = parseInt(localStorage.getItem('nigeriaQuiz_coins')) || 100;
-    updateCoinUI(); updateHomeStats();
-  }
-  function saveStats() {
-    localStorage.setItem('nigeriaQuiz_totalPoints', totalPoints);
-    if (currentScore > bestScore) { bestScore = currentScore; localStorage.setItem('nigeriaQuiz_bestScore', bestScore); }
-    localStorage.setItem('nigeriaQuiz_coins', coinBalance);
-    updateHomeStats();
-  }
-  function addCoins(amount) { coinBalance += amount; updateCoinUI(); saveStats(); }
-  function deductCoins(amount) { if (coinBalance >= amount) { coinBalance -= amount; updateCoinUI(); saveStats(); return true; } return false; }
-
-  function stopTimer() { if (timerInterval) clearInterval(timerInterval); timerInterval = null; }
-  function getTimeForQuestion(qIndex) { let t = 12 - qIndex; if (t < 5) t = 5; return t; }
-  function updateTimerUI() {
-    timerTextElem.innerText = `${timeLeft}s`;
-    const total = getTimeForQuestion(currentIndex);
-    const percent = (timeLeft / total) * 100;
-    timerFillElem.style.width = `${percent}%`;
-    timerFillElem.style.backgroundColor = timeLeft <= 3 ? "#ef4444" : "#facc15";
-  }
-  function startTimer() {
-    stopTimer();
-    updateTimerUI();
-    timerInterval = setInterval(() => {
-      if (answerLocked) return;
-      if (timeLeft <= 0) {
-        clearInterval(timerInterval);
-        timerInterval = null;
-        handleTimeOut();
-      } else {
-        timeLeft--;
-        updateTimerUI();
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover"
+    />
+    <title>Know Your Country – Africa Quiz (Hard Mode)</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        user-select: none;
       }
-    }, 1000);
-  }
-  async function handleTimeOut() {
-    if (answerLocked) return;
-    answerLocked = true;
-    lives--;
-    updateLivesUI();
-    feedbackMsg.innerHTML = `⏰ Time's up! No points. Lives left: ${lives}`;
-    if (lives <= 0) { endGame(); return; }
-    const allOptions = document.querySelectorAll('.option-btn');
-    allOptions.forEach((btn, idx) => { btn.disabled = true; if (idx === correctIdxForCurrentQuestion) btn.classList.add('correct'); });
-    nextBtn.disabled = false;
-  }
-  function renderCurrentQuestion() {
-    if (currentIndex >= currentQuestions.length) { endGame(); return; }
-    answerLocked = false;
-    timeLeft = getTimeForQuestion(currentIndex);
-    updateTimerUI();
-    const q = currentQuestions[currentIndex];
-    questionEl.innerText = q.text;
-    optionsContainer.innerHTML = '';
-    const indices = [0,1,2,3];
-    for (let i = indices.length-1; i>0; i--) { const j = Math.floor(Math.random()*(i+1)); [indices[i], indices[j]] = [indices[j], indices[i]]; }
-    const shuffledOptions = indices.map(i => q.options[i]);
-    correctIdxForCurrentQuestion = indices.indexOf(q.correct);
-    shuffledOptions.forEach((opt, idx) => {
-      const btn = document.createElement('button');
-      btn.className = 'option-btn';
-      btn.innerText = `${String.fromCharCode(65+idx)}. ${opt}`;
-      btn.addEventListener('click', () => handleAnswer(idx, correctIdxForCurrentQuestion, btn));
-      optionsContainer.appendChild(btn);
-    });
-    nextBtn.disabled = true;
-    feedbackMsg.innerHTML = '';
-    updateQuizUI();
-    startTimer();
-  }
-  async function handleAnswer(selectedIdx, correctIdx, btnElement) {
-    if (answerLocked) return;
-    stopTimer();
-    answerLocked = true;
-    const isCorrect = (selectedIdx === correctIdx);
-    const allOptions = document.querySelectorAll('.option-btn');
-    allOptions.forEach(btn => btn.disabled = true);
-    if (isCorrect) {
-      btnElement.classList.add('correct');
-      currentScore += 10;
-      totalPoints += 10;
-      updateQuizUI();
-      saveStats();
-      feedbackMsg.innerHTML = '✅ Correct! +10 points';
-    } else {
-      btnElement.classList.add('wrong');
-      allOptions.forEach((btn, idx) => { if (idx === correctIdx) btn.classList.add('correct'); });
-      feedbackMsg.innerHTML = `❌ Wrong. Correct: ${currentQuestions[currentIndex].options[currentQuestions[currentIndex].correct]}`;
-      lives--;
-      updateLivesUI();
-      if (lives <= 0) { endGame(); return; }
-    }
-    nextBtn.disabled = false;
-  }
-  function nextQuestion() {
-    if (!nextBtn.disabled) {
-      stopTimer();
-      currentIndex++;
-      if (currentIndex < currentQuestions.length && lives > 0) renderCurrentQuestion();
-      else endGame();
-    }
-  }
-  function initGame() {
-    const pool = getQuestionPool();
-    let working = [...pool];
-    while (working.length < 10) working = working.concat(working);
-    currentQuestions = getRandomQuestions(working, 10);
-    currentIndex = 0; currentScore = 0; lives = 2; answerLocked = false;
-    updateQuizUI();
-    renderCurrentQuestion();
-  }
-  async function endGame() {
-    stopTimer();
-    addCoins(Math.floor(currentScore/2));
-    if (isTournamentMode && tournamentEntryPaid) {
-      let scores = JSON.parse(localStorage.getItem('tournamentScores')) || [];
-      scores.push({ score: currentScore, date: new Date().toISOString() });
-      localStorage.setItem('tournamentScores', JSON.stringify(scores));
-      isTournamentMode = false; tournamentEntryPaid = false;
-    }
-    homeScreen.classList.add('hidden'); quizScreen.classList.add('hidden'); resultScreen.classList.remove('hidden');
-    finalScoreSpan.innerText = currentScore;
-    resultMessage.innerText = `You scored ${currentScore} points. Earned ${Math.floor(currentScore/2)} coins! ${currentScore>=70?'Excellent!':'Keep playing!'}`;
-    saveStats();
-  }
-  function goHome() { stopTimer(); homeScreen.classList.remove('hidden'); quizScreen.classList.add('hidden'); resultScreen.classList.add('hidden'); }
-  async function startGame(mode='free') {
-    if (mode === 'tournament') {
-      if (!deductCoins(50)) { alert("Not enough coins!"); return; }
-      isTournamentMode = true; tournamentEntryPaid = true;
-    } else { isTournamentMode = false; }
-    initGame();
-    homeScreen.classList.add('hidden'); quizScreen.classList.remove('hidden'); resultScreen.classList.add('hidden');
-  }
-  async function useLifeline() {
-    if (answerLocked) { feedbackMsg.innerHTML = 'Already answered.'; return; }
-    if (!deductCoins(10)) { alert("Not enough coins!"); return; }
-    const q = currentQuestions[currentIndex];
-    const wrong = [];
-    for (let i=0; i<q.options.length; i++) if (i !== q.correct) wrong.push(i);
-    const toRemove = wrong.slice(0,2);
-    document.querySelectorAll('.option-btn').forEach((btn, idx) => {
-      if (toRemove.includes(idx)) { btn.disabled = true; btn.style.opacity = '0.5'; btn.style.textDecoration = 'line-through'; }
-    });
-    feedbackMsg.innerHTML = '50:50 used! 10 coins deducted.';
-  }
-  async function earnCoins() { if (await showRewardedAd()) { addCoins(25); alert("Earned 25 coins!"); } else alert("Ad failed."); }
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(145deg, #0a2e1f 0%, #0b3b2a 100%);
+        color: #ffffff;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      .game-container {
+        max-width: 550px;
+        width: 100%;
+        background: rgba(10, 46, 31, 0.95);
+        backdrop-filter: blur(8px);
+        border-radius: 48px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 215, 0, 0.4);
+        box-shadow: 0 25px 45px -12px black;
+        position: relative;
+      }
+      .how-it-works-btn {
+        background: #334155;
+        border: none;
+        border-radius: 40px;
+        padding: 8px 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        margin-top: 12px;
+        transition: 0.2s;
+      }
+      .how-it-works-btn:hover {
+        background: #facc15;
+        color: #0f172a;
+        transform: translateY(-2px);
+      }
+      .terms-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(5px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+      }
+      .terms-modal {
+        background: #1e293b;
+        border-radius: 32px;
+        padding: 28px;
+        max-width: 450px;
+        width: 90%;
+        border: 1px solid #facc15;
+        color: white;
+        max-height: 85vh;
+        overflow-y: auto;
+      }
+      .terms-modal h2 {
+        color: #facc15;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .terms-text {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 24px;
+        text-align: left;
+      }
+      .terms-text p {
+        margin-bottom: 12px;
+      }
+      .agree-checkbox {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        justify-content: center;
+      }
+      .dont-show-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 24px;
+        justify-content: center;
+      }
+      .terms-btn {
+        background: linear-gradient(95deg, #facc15, #c5a059);
+        border: none;
+        padding: 12px 24px;
+        border-radius: 60px;
+        font-weight: bold;
+        font-size: 1rem;
+        color: #0f172a;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.2s;
+      }
+      .terms-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      .reset-settings {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background: rgba(0, 0, 0, 0.5);
+        color: #ccc;
+        font-size: 10px;
+        padding: 4px 8px;
+        border-radius: 20px;
+        cursor: pointer;
+        z-index: 3000;
+      }
+      .music-controls {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        display: flex;
+        gap: 8px;
+        z-index: 150;
+      }
+      .music-toggle {
+        background: rgba(0, 0, 0, 0.6);
+        border: none;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        color: #facc15;
+        cursor: pointer;
+        backdrop-filter: blur(4px);
+      }
+      .play-music-btn {
+        background: #facc15;
+        border: none;
+        border-radius: 40px;
+        padding: 6px 12px;
+        font-size: 0.7rem;
+        font-weight: bold;
+        color: #0f172a;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 #facc15;
+        }
+        70% {
+          transform: scale(1.05);
+          box-shadow: 0 0 0 10px rgba(250, 204, 21, 0);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(250, 204, 21, 0);
+        }
+      }
+      .banner-placeholder {
+        background: #1e293b;
+        border-radius: 20px;
+        padding: 8px;
+        text-align: center;
+        font-size: 11px;
+        color: #cbd5e1;
+        margin: 12px 16px 0;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+      }
+      .sponsored-badge {
+        background: #facc15;
+        color: #0f172a;
+        border-radius: 40px;
+        padding: 4px 12px;
+        font-size: 0.7rem;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 12px;
+        text-align: center;
+      }
+      .screen {
+        padding: 28px 24px 36px;
+        transition: 0.2s;
+      }
+      .hidden {
+        display: none;
+      }
+      .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #0f172a;
+        border-radius: 60px;
+        padding: 8px 20px;
+        margin-bottom: 24px;
+        color: #f1f5f9;
+      }
+      .coin-display {
+        background: #facc15;
+        color: #0f172a;
+        padding: 6px 16px;
+        border-radius: 40px;
+        font-weight: bold;
+      }
+      .flag-icon {
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 8px;
+      }
+      h1 {
+        text-align: center;
+        font-size: 1.8rem;
+        background: linear-gradient(135deg, #facc15, #c5a059);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .sub {
+        text-align: center;
+        color: #e2e8f0;
+        margin-bottom: 20px;
+        font-size: 0.8rem;
+      }
+      .stats-row {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+      .stat-card {
+        background: #1e293b;
+        flex: 1;
+        border-radius: 24px;
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #475569;
+      }
+      .stat-card i {
+        font-size: 1.4rem;
+        color: #facc15;
+      }
+      .stat-value {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: #ffffff;
+      }
+      .dropdown-group {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+      .custom-dropdown {
+        background: #1e293b;
+        border: 1px solid #475569;
+        border-radius: 60px;
+        padding: 14px 20px;
+        width: 100%;
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #f1f5f9;
+        cursor: pointer;
+        appearance: none;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23facc15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+        background-repeat: no-repeat;
+        background-position: right 20px center;
+      }
+      .play-btn,
+      .tournament-btn,
+      .next-btn,
+      .restart-btn {
+        background: linear-gradient(95deg, #facc15, #c5a059);
+        border: none;
+        width: 100%;
+        padding: 14px;
+        border-radius: 60px;
+        font-weight: 800;
+        font-size: 1rem;
+        color: #0f172a;
+        cursor: pointer;
+        margin-bottom: 12px;
+      }
+      .tournament-btn {
+        background: #334155;
+        color: white;
+        margin-bottom: 0;
+      }
+      .terms-link {
+        text-align: center;
+        font-size: 0.7rem;
+        margin-top: 20px;
+        color: #94a3b8;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      .quiz-header {
+        display: flex;
+        justify-content: space-between;
+        background: #0f172a;
+        padding: 10px 16px;
+        border-radius: 40px;
+        margin-bottom: 20px;
+        color: #facc15;
+        font-weight: bold;
+      }
+      .timer-area {
+        background: #0f172a;
+        border-radius: 40px;
+        padding: 8px 16px;
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .timer-bar-bg {
+        background: #334155;
+        height: 8px;
+        border-radius: 4px;
+        flex-grow: 1;
+        margin: 0 12px;
+        overflow: hidden;
+      }
+      .timer-bar-fill {
+        background: #facc15;
+        width: 100%;
+        height: 100%;
+        transition: width 0.1s linear;
+      }
+      .timer-text {
+        font-weight: bold;
+        font-family: monospace;
+        font-size: 1.1rem;
+      }
+      .question-text {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin: 16px 0 24px;
+        background: #0f172a;
+        padding: 20px;
+        border-radius: 28px;
+        color: #ffffff;
+        line-height: 1.4;
+        border: 1px solid #334155;
+      }
+      .options-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      .option-btn {
+        background: #1e293b;
+        border: 1px solid #475569;
+        border-radius: 60px;
+        padding: 14px 18px;
+        font-size: 0.95rem;
+        text-align: left;
+        cursor: pointer;
+        color: #f1f5f9;
+        font-weight: 500;
+        transition: 0.1s;
+      }
+      .option-btn.correct {
+        background: #10b981;
+        border-color: #10b981;
+        color: white;
+      }
+      .option-btn.wrong {
+        background: #ef4444;
+        border-color: #ef4444;
+        color: white;
+      }
+      .option-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      .hint-btn {
+        background: #334155;
+        border: none;
+        padding: 12px;
+        border-radius: 40px;
+        width: 100%;
+        margin: 8px 0;
+        cursor: pointer;
+        color: white;
+        font-weight: 600;
+      }
+      .feedback {
+        text-align: center;
+        font-size: 0.9rem;
+        margin-top: 12px;
+        padding: 8px;
+        background: #0f172a;
+        border-radius: 40px;
+        color: #facc15;
+      }
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+        visibility: hidden;
+      }
+      .modal.active {
+        visibility: visible;
+      }
+      .modal-content {
+        background: #1e293b;
+        border-radius: 32px;
+        padding: 24px;
+        max-width: 340px;
+        text-align: center;
+        border: 1px solid #facc15;
+        color: white;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+      .close-modal {
+        margin-top: 16px;
+        background: #facc15;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 40px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .earn-btn {
+        background: #facc15;
+        border: none;
+        border-radius: 40px;
+        padding: 4px 12px;
+        font-size: 0.7rem;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .loader {
+        text-align: center;
+        padding: 20px;
+        font-size: 1.2rem;
+        color: #facc15;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      .info-icon {
+        cursor: help;
+        color: #facc15;
+        font-size: 0.9rem;
+        background: #1e293b;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        border: 1px solid #facc15;
+      }
+      .tooltip {
+        position: relative;
+        display: inline-block;
+      }
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 200px;
+        background-color: #0f172a;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -100px;
+        font-size: 0.7rem;
+        border: 1px solid #facc15;
+      }
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+      }
+      @media (max-width: 550px) {
+        .question-text {
+          font-size: 1rem;
+          padding: 16px;
+        }
+        .option-btn {
+          padding: 10px 14px;
+          font-size: 0.85rem;
+        }
+        .music-toggle {
+          width: 36px;
+          height: 36px;
+          font-size: 1rem;
+        }
+        .play-music-btn {
+          padding: 4px 8px;
+          font-size: 0.6rem;
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game-container">
+      <div class="music-controls">
+        <button class="play-music-btn" id="explicitPlayBtn">
+          🔊 Play Music
+        </button>
+        <button
+          class="music-toggle"
+          id="musicToggleBtn"
+          title="Mute/Unmute background music"
+        >
+          <i class="fas fa-music"></i>
+        </button>
+      </div>
+      <div class="banner-placeholder" id="bannerAd">
+        <i class="fas fa-ad"></i> AdMob Banner
+      </div>
+      <div id="homeScreen" class="screen">
+        <div class="top-bar">
+          <span><i class="fas fa-chart-simple"></i> Leaderboard</span>
+          <span class="coin-display"
+            ><i class="fas fa-coins"></i> <span id="coinBalance">0</span></span
+          >
+          <button class="earn-btn" id="earnCoinsBtn">
+            <i class="fas fa-video"></i> Earn Coins
+          </button>
+        </div>
+        <div class="flag-icon">🌍</div>
+        <div class="sponsored-badge">
+          🏆 Sponsored by Telecom & Beverage Brands – Win Real Prizes! 🏆
+        </div>
+        <h1>KNOW YOUR COUNTRY</h1>
+        <div class="sub">Africa Quiz • Hard Mode • Timed</div>
+        <div class="stats-row">
+          <div class="stat-card">
+            <i class="fas fa-trophy"></i>
+            <div class="stat-value" id="totalPointsHome">0</div>
+            <div>Total Points</div>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-brain"></i>
+            <div class="stat-value" id="bestScoreHome">0</div>
+            <div>Best Game</div>
+          </div>
+        </div>
+        <div class="dropdown-group">
+          <select id="countrySelect" class="custom-dropdown">
+            <option value="Nigeria">🇳🇬 Nigeria</option>
+            <option value="Ghana">🇬🇭 Ghana</option>
+            <option value="Kenya">🇰🇪 Kenya</option>
+            <option value="SouthAfrica">🇿🇦 South Africa</option>
+          </select>
+          <select id="categorySelect" class="custom-dropdown">
+            <option value="history">📜 History</option>
+            <option value="geography">🌍 Geography</option>
+            <option value="culture">🎭 Culture</option>
+            <option value="pop">🎵 Pop Culture</option>
+            <option value="movies">🎬 Movies</option>
+            <option value="football">⚽ Football</option>
+            <option value="africa">🌍 All Africa</option>
+          </select>
+        </div>
+        <button class="play-btn" id="startQuizBtn">
+          <i class="fas fa-play"></i> FREE QUIZ (Earn Coins)
+        </button>
+        <button class="tournament-btn" id="tournamentBtn">
+          <i class="fas fa-trophy"></i> DAILY TOURNAMENT (Entry: 50 Coins)
+        </button>
+        <a href="how-it-works.html">
+          <button class="how-it-works-btn">
+            <i class="fas fa-question-circle"></i> How It Works
+          </button>
+        </a>
+        <div class="terms-link" id="termsLink">📜 Terms & Conditions 📜</div>
+        <div id="loadingMsg" class="loader">
+          Loading questions... <span id="indicatorContainer"></span>
+        </div>
+      </div>
+      <div id="quizScreen" class="screen hidden">
+        <div class="quiz-header">
+          <div>⭐ Score: <span id="scoreDisplay">0</span></div>
+          <div>❤️ <span id="livesDisplay">3</span></div>
+          <div>Q<span id="currentQ">1</span>/<span id="totalQ">10</span></div>
+        </div>
+        <div class="timer-area">
+          <i class="fas fa-hourglass-half"></i>
+          <div class="timer-bar-bg">
+            <div class="timer-bar-fill" id="timerFill"></div>
+          </div>
+          <span class="timer-text" id="timerText">14s</span>
+        </div>
+        <div class="question-text" id="questionText"></div>
+        <div class="options-grid" id="optionsContainer"></div>
+        <button class="hint-btn" id="hintBtn">
+          <i class="fas fa-lightbulb"></i> 50:50 Lifeline (10 coins)
+        </button>
+        <div class="next-area">
+          <button class="next-btn" id="nextBtn" disabled>
+            ➡ NEXT QUESTION
+          </button>
+        </div>
+        <div class="feedback" id="feedbackMsg"></div>
+      </div>
+      <div id="resultScreen" class="screen hidden">
+        <div class="result-card">
+          <i
+            class="fas fa-flag-checkered"
+            style="font-size: 2.5rem; color: #facc15"
+          ></i>
+          <h2>Game Over!</h2>
+          <div class="final-score" id="finalScoreSpan">0</div>
+          <p id="resultMessage"></p>
+          <button class="restart-btn" id="playAgainBtn">
+            <i class="fas fa-home"></i> Back to Home
+          </button>
+        </div>
+      </div>
+    </div>
 
-  startBtn.addEventListener('click', () => startGame('free'));
-  tournamentBtn.addEventListener('click', () => tournamentModal.classList.add('active'));
-  confirmTournament.addEventListener('click', () => { tournamentModal.classList.remove('active'); startGame('tournament'); });
-  closeModal.addEventListener('click', () => tournamentModal.classList.remove('active'));
-  playAgainBtn.addEventListener('click', goHome);
-  nextBtn.addEventListener('click', nextQuestion);
-  hintBtn.addEventListener('click', useLifeline);
-  earnCoinsBtn.addEventListener('click', earnCoins);
-  termsLinkElem.addEventListener('click', () => termsModalElem.classList.add('active'));
-  closeTermsBtn.addEventListener('click', () => termsModalElem.classList.remove('active'));
-  countrySelect.addEventListener('change', (e) => { selectedCountry = e.target.value; });
-  categorySelect.addEventListener('change', (e) => { selectedCategory = e.target.value; });
+    <audio id="bgMusic" loop preload="auto"></audio>
 
-  function checkTermsAccepted() {
-    const termsAccepted = localStorage.getItem('termsAccepted');
-    const dontShowAgain = localStorage.getItem('dontShowTerms');
-    if (dontShowAgain === 'true' && termsAccepted === 'true') {
-      mandatoryOverlay.style.display = 'none';
-      loadStats();
-      initAdMob();
-      return true;
-    } else {
-      mandatoryOverlay.style.display = 'flex';
-      return false;
-    }
-  }
+    <div id="tournamentModal" class="modal">
+      <div class="modal-content">
+        <i class="fas fa-trophy" style="font-size: 2rem"></i>
+        <h3>Daily Tournament</h3>
+        <p>Entry fee: <strong>50 coins</strong></p>
+        <p>Top 3 players split prize pool (80% / 15% / 5%)</p>
+        <button id="confirmTournamentBtn" class="close-modal">
+          Enter Tournament (50 coins)</button
+        ><button
+          id="closeModalBtn"
+          class="close-modal"
+          style="background: #334155"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+    <div id="termsModal" class="modal">
+      <div class="modal-content">
+        <h3><i class="fas fa-file-contract"></i> Terms & Conditions</h3>
+        <p style="text-align: left; font-size: 0.8rem; margin-top: 16px">
+          <strong>1. Eligibility:</strong> Open to all users aged 18+ in
+          Nigeria, Ghana, Kenya, South Africa.<br /><br /><strong
+            >2. Prize Structure:</strong
+          >
+          Daily tournament winners get sponsored prizes.<br /><br /><strong
+            >3. Coin System:</strong
+          >
+          Coins earned by playing free quizzes or watching ads.<br /><br /><strong
+            >4. Time Limit:</strong
+          >
+          Dynamic – starts at 14s, decreases by 1s per question down to 7s.<br /><br /><strong
+            >5. Fair Play:</strong
+          >
+          Options are shuffled each game.<br /><br /><strong
+            >6. Contact:</strong
+          >
+          prizes@knowyourcountry.com
+        </p>
+        <button class="close-modal" id="closeTermsBtn">Close</button>
+      </div>
+    </div>
 
-  acceptTermsBtn.addEventListener('click', () => {
-    if (!agreeCheckbox.checked) return;
-    localStorage.setItem('termsAccepted', 'true');
-    if (dontShowAgainCheckbox.checked) {
-      localStorage.setItem('dontShowTerms', 'true');
-    } else {
-      localStorage.removeItem('dontShowTerms');
-    }
-    mandatoryOverlay.style.display = 'none';
-    loadStats();
-    initAdMob();
-    // Do not auto-play music; user must click Play Music button
-  });
+    <div id="mandatoryTermsOverlay" class="terms-overlay">
+      <div class="terms-modal">
+        <h2>📜 Terms & Conditions</h2>
+        <div class="terms-text">
+          <p>
+            <strong>1. Eligibility:</strong> You must be at least 18 years old
+            and a resident of Nigeria, Ghana, Kenya, or South Africa to
+            participate in tournaments and win prizes.
+          </p>
+          <p>
+            <strong>2. Prize Structure:</strong> Daily tournament winners
+            receive sponsored prizes. Prize pool distribution: 1st place 80%,
+            2nd place 15%, 3rd place 5%.
+          </p>
+          <p>
+            <strong>3. Coin System:</strong> Coins are earned by playing free
+            quizzes (1 coin per 2 points) or watching rewarded video ads. Coins
+            have no real-world cash value and can only be used within the app
+            for lifelines or tournament entry fees.
+          </p>
+          <p>
+            <strong>4. Time Limit:</strong> Each question has a dynamic timer:
+            14 seconds for the first question, decreasing by 1 second per
+            question down to a minimum of 7 seconds.
+          </p>
+          <p>
+            <strong>5. Fair Play:</strong> Any form of cheating, using multiple
+            accounts, or automated play will result in immediate
+            disqualification and permanent ban.
+          </p>
+          <p>
+            <strong>6. Taxes:</strong> Winners are responsible for any
+            applicable taxes on prizes.
+          </p>
+          <p>
+            <strong>7. Modification:</strong> We reserve the right to modify
+            these terms at any time. Continued use constitutes acceptance.
+          </p>
+          <p>
+            <strong>8. Contact:</strong> For prize claims or support, email:
+            <strong>prizes@knowyourcountry.com</strong>
+          </p>
+        </div>
+        <div class="agree-checkbox">
+          <input type="checkbox" id="agreeCheckbox" /><label for="agreeCheckbox"
+            >I have read and agree to the Terms & Conditions</label
+          >
+        </div>
+        <div class="dont-show-container">
+          <input type="checkbox" id="dontShowAgainCheckbox" /><label
+            for="dontShowAgainCheckbox"
+            >Don't show this again</label
+          >
+        </div>
+        <button class="terms-btn" id="acceptTermsBtn" disabled>I Agree</button>
+        <div class="reset-settings" id="resetSettingsBtn">
+          Reset Saved Settings
+        </div>
+      </div>
+    </div>
 
-  resetBtn.addEventListener('click', () => { localStorage.clear(); alert('All saved data cleared. Please refresh the page.'); location.reload(); });
-  checkTermsAccepted();
-  loadQuestions(); // fetch JSON and enable start button
-</script>
-</body>
+    <script>
+      // --------------------------------------------------------------
+      // LOCAL BACKGROUND MUSIC + TOOLTIP
+      // --------------------------------------------------------------
+      const bgMusic = document.getElementById("bgMusic");
+      const musicToggleBtn = document.getElementById("musicToggleBtn");
+      const explicitPlayBtn = document.getElementById("explicitPlayBtn");
+      let musicPlaying = false;
+
+      bgMusic.src = "bg-music.mp3";
+      bgMusic.load();
+
+      bgMusic.onerror = () => {
+        console.warn("bg-music.mp3 not found – music will be silent.");
+        explicitPlayBtn.style.opacity = "0.5";
+        explicitPlayBtn.title =
+          "Music file missing (place bg-music.mp3 in app folder)";
+        musicToggleBtn.style.opacity = "0.5";
+      };
+
+      function playMusic() {
+        bgMusic
+          .play()
+          .then(() => {
+            musicPlaying = true;
+            musicToggleBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+            explicitPlayBtn.style.display = "none";
+          })
+          .catch((e) => {
+            console.log("Play failed:", e);
+            musicPlaying = false;
+            musicToggleBtn.innerHTML = '<i class="fas fa-music"></i>';
+            explicitPlayBtn.style.display = "flex";
+          });
+      }
+
+      function pauseMusic() {
+        bgMusic.pause();
+        musicPlaying = false;
+        musicToggleBtn.innerHTML = '<i class="fas fa-music"></i>';
+        explicitPlayBtn.style.display = "flex";
+      }
+
+      musicToggleBtn.addEventListener("click", () => {
+        if (musicPlaying) {
+          pauseMusic();
+        } else {
+          playMusic();
+        }
+      });
+
+      explicitPlayBtn.addEventListener("click", () => playMusic());
+
+      // Show a temporary tooltip if music hasn't been played after 2 seconds
+      setTimeout(() => {
+        if (!musicPlaying && explicitPlayBtn.style.display !== "none") {
+          const tooltip = document.createElement("div");
+          tooltip.innerText = "🎵 Click here to play background music!";
+          tooltip.style.position = "absolute";
+          tooltip.style.background = "#0f172a";
+          tooltip.style.color = "#facc15";
+          tooltip.style.padding = "4px 10px";
+          tooltip.style.borderRadius = "20px";
+          tooltip.style.fontSize = "0.7rem";
+          tooltip.style.bottom = "70px";
+          tooltip.style.right = "10px";
+          tooltip.style.zIndex = "200";
+          tooltip.style.whiteSpace = "nowrap";
+          explicitPlayBtn.parentNode.appendChild(tooltip);
+          setTimeout(() => tooltip.remove(), 4000);
+        }
+      }, 2000);
+
+      // --------------------------------------------------------------
+      // Mock AdMob
+      // --------------------------------------------------------------
+      async function initAdMob() {
+        console.log("Mock AdMob");
+        return false;
+      }
+      async function showRewardedAd() {
+        console.log("Mock rewarded ad");
+        return true;
+      }
+
+      // --------------------------------------------------------------
+      // Load questions from JSON (fallback to built‑in if missing)
+      // --------------------------------------------------------------
+      let questionPools = null;
+      const loadingMsgDiv = document.getElementById("loadingMsg");
+      const indicatorContainer = document.getElementById("indicatorContainer");
+      const startBtn = document.getElementById("startQuizBtn");
+
+      // Built‑in minimal fallback (ensures game always works)
+      const fallbackPools = {
+        Nigeria: {
+          history: [
+            {
+              text: "Who was the first President of Nigeria?",
+              options: [
+                "Nnamdi Azikiwe",
+                "Olusegun Obasanjo",
+                "Shehu Shagari",
+                "Goodluck Jonathan",
+              ],
+              correct: 0,
+            },
+          ],
+          geography: [
+            {
+              text: "What is the capital of Nigeria?",
+              options: ["Abuja", "Lagos", "Kano", "Port Harcourt"],
+              correct: 0,
+            },
+          ],
+          culture: [
+            {
+              text: "Yoruba king title?",
+              options: ["Oba", "Emir", "Igwe", "Obong"],
+              correct: 0,
+            },
+          ],
+          pop: [
+            {
+              text: "Who sang 'Fall'?",
+              options: ["Davido", "Wizkid", "Burna Boy", "Kizz Daniel"],
+              correct: 0,
+            },
+          ],
+          movies: [
+            {
+              text: "Actress in 'Lionheart'?",
+              options: [
+                "Genevieve Nnaji",
+                "Omotola",
+                "Funke Akindele",
+                "Rita Dominic",
+              ],
+              correct: 0,
+            },
+          ],
+          football: [
+            {
+              text: "Which club has won the NPFL the most times?",
+              options: [
+                "Enyimba",
+                "Kano Pillars",
+                "Rangers International",
+                "Shooting Stars",
+              ],
+              correct: 0,
+            },
+          ],
+        },
+        Ghana: {
+          history: [
+            {
+              text: "What was Ghana's former colonial name?",
+              options: [
+                "Gold Coast",
+                "Slave Coast",
+                "Ivory Coast",
+                "Pepper Coast",
+              ],
+              correct: 0,
+            },
+          ],
+        },
+        Kenya: {
+          history: [
+            {
+              text: "Who was Kenya's first president?",
+              options: [
+                "Jomo Kenyatta",
+                "Daniel arap Moi",
+                "Mwai Kibaki",
+                "Uhuru Kenyatta",
+              ],
+              correct: 0,
+            },
+          ],
+        },
+        SouthAfrica: {
+          history: [
+            {
+              text: "Who was the first black president of South Africa?",
+              options: [
+                "Nelson Mandela",
+                "Thabo Mbeki",
+                "Jacob Zuma",
+                "Cyril Ramaphosa",
+              ],
+              correct: 0,
+            },
+          ],
+        },
+      };
+      const africaGeneralSet = [
+        {
+          text: "Which country is known as the 'Giant of Africa'?",
+          options: ["Nigeria", "Ghana", "South Africa", "Kenya"],
+          correct: 0,
+        },
+        {
+          text: "What is the highest mountain in Africa?",
+          options: [
+            "Mount Kilimanjaro",
+            "Mount Kenya",
+            "Mount Elgon",
+            "Rwenzori",
+          ],
+          correct: 0,
+        },
+      ];
+
+      async function loadQuestions() {
+        try {
+          let response = await fetch("all.json");
+          if (!response.ok) response = await fetch("questions/all.json");
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          const json = await response.json();
+          questionPools = json;
+          loadingMsgDiv.innerHTML = "Questions ready!";
+          startBtn.disabled = false;
+          console.log("Questions loaded from external JSON");
+        } catch (err) {
+          console.warn(
+            "Failed to load external JSON, using fallback pools.",
+            err,
+          );
+          // Discreet indicator: a small info icon with tooltip
+          const infoSpan = document.createElement("span");
+          infoSpan.className = "tooltip";
+          infoSpan.innerHTML =
+            '<span class="info-icon">ⓘ</span><span class="tooltiptext">Using built-in questions. Full experience requires all.json file.</span>';
+          indicatorContainer.appendChild(infoSpan);
+          loadingMsgDiv.innerHTML = "Questions loaded (basic set)";
+          questionPools = fallbackPools;
+          startBtn.disabled = false;
+        }
+      }
+
+      function getQuestionPool() {
+        if (selectedCategory === "africa") return africaGeneralSet;
+        if (!questionPools) return fallbackPools.Nigeria.history;
+        const countryData = questionPools[selectedCountry];
+        if (countryData && countryData[selectedCategory]) {
+          return countryData[selectedCategory];
+        }
+        return fallbackPools.Nigeria.history;
+      }
+
+      // --------------------------------------------------------------
+      // Game state
+      // --------------------------------------------------------------
+      let selectedCountry = "Nigeria",
+        selectedCategory = "history";
+      let coinBalance = 0,
+        isTournamentMode = false,
+        tournamentEntryPaid = false;
+      let currentQuestions = [],
+        currentIndex = 0,
+        currentScore = 0,
+        lives = 3,
+        answerLocked = false;
+      let totalPoints = 0,
+        bestScore = 0;
+      let timerInterval = null;
+      let timeLeft = 14;
+      let correctIdxForCurrentQuestion = 0;
+
+      // DOM elements
+      const homeScreen = document.getElementById("homeScreen"),
+        quizScreen = document.getElementById("quizScreen"),
+        resultScreen = document.getElementById("resultScreen");
+      const tournamentBtn = document.getElementById("tournamentBtn"),
+        playAgainBtn = document.getElementById("playAgainBtn"),
+        nextBtn = document.getElementById("nextBtn");
+      const hintBtn = document.getElementById("hintBtn"),
+        questionEl = document.getElementById("questionText"),
+        optionsContainer = document.getElementById("optionsContainer");
+      const scoreDisplay = document.getElementById("scoreDisplay"),
+        livesDisplaySpan = document.getElementById("livesDisplay");
+      const currentQSpan = document.getElementById("currentQ"),
+        totalQSpan = document.getElementById("totalQ"),
+        feedbackMsg = document.getElementById("feedbackMsg");
+      const finalScoreSpan = document.getElementById("finalScoreSpan"),
+        resultMessage = document.getElementById("resultMessage");
+      const totalPointsHomeSpan = document.getElementById("totalPointsHome"),
+        bestScoreHomeSpan = document.getElementById("bestScoreHome"),
+        coinSpan = document.getElementById("coinBalance");
+      const tournamentModal = document.getElementById("tournamentModal"),
+        confirmTournament = document.getElementById("confirmTournamentBtn"),
+        closeModal = document.getElementById("closeModalBtn");
+      const earnCoinsBtn = document.getElementById("earnCoinsBtn"),
+        countrySelect = document.getElementById("countrySelect"),
+        categorySelect = document.getElementById("categorySelect");
+      const termsLinkElem = document.getElementById("termsLink"),
+        termsModalElem = document.getElementById("termsModal"),
+        closeTermsBtn = document.getElementById("closeTermsBtn");
+      const timerFillElem = document.getElementById("timerFill"),
+        timerTextElem = document.getElementById("timerText");
+      const mandatoryOverlay = document.getElementById("mandatoryTermsOverlay"),
+        agreeCheckbox = document.getElementById("agreeCheckbox");
+      const dontShowAgainCheckbox = document.getElementById(
+          "dontShowAgainCheckbox",
+        ),
+        acceptTermsBtn = document.getElementById("acceptTermsBtn"),
+        resetBtn = document.getElementById("resetSettingsBtn");
+
+      agreeCheckbox.addEventListener("change", () => {
+        acceptTermsBtn.disabled = !agreeCheckbox.checked;
+      });
+
+      function shuffleArray(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+      }
+      function getRandomQuestions(pool, count) {
+        const shuffled = shuffleArray([...pool]);
+        return shuffled.slice(0, Math.min(count, shuffled.length));
+      }
+      function updateCoinUI() {
+        coinSpan.innerText = coinBalance;
+      }
+      function updateLivesUI() {
+        livesDisplaySpan.innerText = lives;
+      }
+      function updateQuizUI() {
+        scoreDisplay.innerText = currentScore;
+        currentQSpan.innerText = currentIndex + 1;
+        totalQSpan.innerText = currentQuestions.length;
+        livesDisplaySpan.innerText = lives;
+      }
+      function updateHomeStats() {
+        totalPointsHomeSpan.innerText = totalPoints;
+        bestScoreHomeSpan.innerText = bestScore;
+      }
+
+      function loadStats() {
+        totalPoints =
+          parseInt(localStorage.getItem("nigeriaQuiz_totalPoints")) || 0;
+        bestScore =
+          parseInt(localStorage.getItem("nigeriaQuiz_bestScore")) || 0;
+        coinBalance =
+          parseInt(localStorage.getItem("nigeriaQuiz_coins")) || 100;
+        updateCoinUI();
+        updateHomeStats();
+      }
+      function saveStats() {
+        localStorage.setItem("nigeriaQuiz_totalPoints", totalPoints);
+        if (currentScore > bestScore) {
+          bestScore = currentScore;
+          localStorage.setItem("nigeriaQuiz_bestScore", bestScore);
+        }
+        localStorage.setItem("nigeriaQuiz_coins", coinBalance);
+        updateHomeStats();
+      }
+      function addCoins(amount) {
+        coinBalance += amount;
+        updateCoinUI();
+        saveStats();
+      }
+      function deductCoins(amount) {
+        if (coinBalance >= amount) {
+          coinBalance -= amount;
+          updateCoinUI();
+          saveStats();
+          return true;
+        }
+        return false;
+      }
+
+      function stopTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = null;
+      }
+      function getTimeForQuestion(qIndex) {
+        let t = 14 - qIndex; // starts at 14 seconds
+        return Math.max(t, 7); // minimum 7 seconds
+      }
+      function updateTimerUI() {
+        timerTextElem.innerText = `${timeLeft}s`;
+        const total = getTimeForQuestion(currentIndex);
+        const percent = (timeLeft / total) * 100;
+        timerFillElem.style.width = `${percent}%`;
+        timerFillElem.style.backgroundColor =
+          timeLeft <= 3 ? "#ef4444" : "#facc15";
+      }
+      function startTimer() {
+        stopTimer();
+        updateTimerUI();
+        timerInterval = setInterval(() => {
+          if (answerLocked) return;
+          if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            handleTimeOut();
+          } else {
+            timeLeft--;
+            updateTimerUI();
+          }
+        }, 1000);
+      }
+      async function handleTimeOut() {
+        if (answerLocked) return;
+        answerLocked = true;
+        lives--;
+        updateLivesUI();
+        feedbackMsg.innerHTML = `⏰ Time's up! No points. Lives left: ${lives}`;
+        if (lives <= 0) {
+          endGame();
+          return;
+        }
+        const allOptions = document.querySelectorAll(".option-btn");
+        allOptions.forEach((btn, idx) => {
+          btn.disabled = true;
+          if (idx === correctIdxForCurrentQuestion)
+            btn.classList.add("correct");
+        });
+        nextBtn.disabled = false;
+      }
+      function renderCurrentQuestion() {
+        if (currentIndex >= currentQuestions.length) {
+          endGame();
+          return;
+        }
+        answerLocked = false;
+        timeLeft = getTimeForQuestion(currentIndex);
+        updateTimerUI();
+        const q = currentQuestions[currentIndex];
+        questionEl.innerText = q.text;
+        optionsContainer.innerHTML = "";
+        const indices = [0, 1, 2, 3];
+        for (let i = indices.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [indices[i], indices[j]] = [indices[j], indices[i]];
+        }
+        const shuffledOptions = indices.map((i) => q.options[i]);
+        correctIdxForCurrentQuestion = indices.indexOf(q.correct);
+        shuffledOptions.forEach((opt, idx) => {
+          const btn = document.createElement("button");
+          btn.className = "option-btn";
+          btn.innerText = `${String.fromCharCode(65 + idx)}. ${opt}`;
+          btn.addEventListener("click", () =>
+            handleAnswer(idx, correctIdxForCurrentQuestion, btn),
+          );
+          optionsContainer.appendChild(btn);
+        });
+        nextBtn.disabled = true;
+        feedbackMsg.innerHTML = "";
+        updateQuizUI();
+        startTimer();
+      }
+      async function handleAnswer(selectedIdx, correctIdx, btnElement) {
+        if (answerLocked) return;
+        stopTimer();
+        answerLocked = true;
+        const isCorrect = selectedIdx === correctIdx;
+        const allOptions = document.querySelectorAll(".option-btn");
+        allOptions.forEach((btn) => (btn.disabled = true));
+        if (isCorrect) {
+          btnElement.classList.add("correct");
+          currentScore += 10;
+          totalPoints += 10;
+          updateQuizUI();
+          saveStats();
+          feedbackMsg.innerHTML = "✅ Correct! +10 points";
+        } else {
+          btnElement.classList.add("wrong");
+          allOptions.forEach((btn, idx) => {
+            if (idx === correctIdx) btn.classList.add("correct");
+          });
+          feedbackMsg.innerHTML = `❌ Wrong. Correct: ${currentQuestions[currentIndex].options[currentQuestions[currentIndex].correct]}`;
+          lives--;
+          updateLivesUI();
+          if (lives <= 0) {
+            endGame();
+            return;
+          }
+        }
+        nextBtn.disabled = false;
+      }
+      function nextQuestion() {
+        if (!nextBtn.disabled) {
+          stopTimer();
+          currentIndex++;
+          if (currentIndex < currentQuestions.length && lives > 0)
+            renderCurrentQuestion();
+          else endGame();
+        }
+      }
+      function initGame() {
+        const pool = getQuestionPool();
+        let working = [...pool];
+        while (working.length < 10) working = working.concat(working);
+        currentQuestions = getRandomQuestions(working, 10);
+        currentIndex = 0;
+        currentScore = 0;
+        lives = 3;
+        answerLocked = false;
+        updateQuizUI();
+        renderCurrentQuestion();
+      }
+      async function endGame() {
+        stopTimer();
+        addCoins(Math.floor(currentScore / 2));
+        if (isTournamentMode && tournamentEntryPaid) {
+          let scores =
+            JSON.parse(localStorage.getItem("tournamentScores")) || [];
+          scores.push({ score: currentScore, date: new Date().toISOString() });
+          localStorage.setItem("tournamentScores", JSON.stringify(scores));
+          isTournamentMode = false;
+          tournamentEntryPaid = false;
+        }
+        homeScreen.classList.add("hidden");
+        quizScreen.classList.add("hidden");
+        resultScreen.classList.remove("hidden");
+        finalScoreSpan.innerText = currentScore;
+        resultMessage.innerText = `You scored ${currentScore} points. Earned ${Math.floor(currentScore / 2)} coins! ${currentScore >= 70 ? "Excellent!" : "Keep playing!"}`;
+        saveStats();
+      }
+      function goHome() {
+        stopTimer();
+        homeScreen.classList.remove("hidden");
+        quizScreen.classList.add("hidden");
+        resultScreen.classList.add("hidden");
+      }
+      async function startGame(mode = "free") {
+        if (mode === "tournament") {
+          if (!deductCoins(50)) {
+            alert("Not enough coins!");
+            return;
+          }
+          isTournamentMode = true;
+          tournamentEntryPaid = true;
+        } else {
+          isTournamentMode = false;
+        }
+        initGame();
+        homeScreen.classList.add("hidden");
+        quizScreen.classList.remove("hidden");
+        resultScreen.classList.add("hidden");
+      }
+      async function useLifeline() {
+        if (answerLocked) {
+          feedbackMsg.innerHTML = "Already answered.";
+          return;
+        }
+        if (!deductCoins(10)) {
+          alert("Not enough coins!");
+          return;
+        }
+        const q = currentQuestions[currentIndex];
+        const wrong = [];
+        for (let i = 0; i < q.options.length; i++)
+          if (i !== q.correct) wrong.push(i);
+        const toRemove = wrong.slice(0, 2);
+        document.querySelectorAll(".option-btn").forEach((btn, idx) => {
+          if (toRemove.includes(idx)) {
+            btn.disabled = true;
+            btn.style.opacity = "0.5";
+            btn.style.textDecoration = "line-through";
+          }
+        });
+        feedbackMsg.innerHTML = "50:50 used! 10 coins deducted.";
+      }
+      async function earnCoins() {
+        if (await showRewardedAd()) {
+          addCoins(25);
+          alert("Earned 25 coins!");
+        } else alert("Ad failed.");
+      }
+
+      startBtn.addEventListener("click", () => startGame("free"));
+      tournamentBtn.addEventListener("click", () =>
+        tournamentModal.classList.add("active"),
+      );
+      confirmTournament.addEventListener("click", () => {
+        tournamentModal.classList.remove("active");
+        startGame("tournament");
+      });
+      closeModal.addEventListener("click", () =>
+        tournamentModal.classList.remove("active"),
+      );
+      playAgainBtn.addEventListener("click", goHome);
+      nextBtn.addEventListener("click", nextQuestion);
+      hintBtn.addEventListener("click", useLifeline);
+      earnCoinsBtn.addEventListener("click", earnCoins);
+      termsLinkElem.addEventListener("click", () =>
+        termsModalElem.classList.add("active"),
+      );
+      closeTermsBtn.addEventListener("click", () =>
+        termsModalElem.classList.remove("active"),
+      );
+      countrySelect.addEventListener("change", (e) => {
+        selectedCountry = e.target.value;
+      });
+      categorySelect.addEventListener("change", (e) => {
+        selectedCategory = e.target.value;
+      });
+
+      function checkTermsAccepted() {
+        const termsAccepted = localStorage.getItem("termsAccepted");
+        const dontShowAgain = localStorage.getItem("dontShowTerms");
+        if (dontShowAgain === "true" && termsAccepted === "true") {
+          mandatoryOverlay.style.display = "none";
+          loadStats();
+          initAdMob();
+          return true;
+        } else {
+          mandatoryOverlay.style.display = "flex";
+          return false;
+        }
+      }
+
+      acceptTermsBtn.addEventListener("click", () => {
+        if (!agreeCheckbox.checked) return;
+        localStorage.setItem("termsAccepted", "true");
+        if (dontShowAgainCheckbox.checked) {
+          localStorage.setItem("dontShowTerms", "true");
+        } else {
+          localStorage.removeItem("dontShowTerms");
+        }
+        mandatoryOverlay.style.display = "none";
+        loadStats();
+        initAdMob();
+        // do not auto-play music – user clicks Play Music button
+      });
+
+      resetBtn.addEventListener("click", () => {
+        localStorage.clear();
+        alert("All saved data cleared. Please refresh the page.");
+        location.reload();
+      });
+      checkTermsAccepted();
+      loadQuestions(); // fetch JSON and enable start button
+    </script>
+  </body>
 </html>
