@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AfricanQuiz</string>
+    <string name="title_activity_main">AfricanQuiz</string>
+    <string name="package_name">com.oborimusa.africanquiz</string>
+    <string name="custom_url_scheme">com.oborimusa.africanquiz</string>
+</resources>
