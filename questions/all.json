@@ -11,8 +11,13 @@
         "options": ["1960", "1963", "1957", "1970"],
         "correct": 0
       },
+       {
+        "text": "Which of the following was a major pre‑colonial empire in present‑day Nigeria? ",
+        "options": ["Oyo Empire", "Mali Empire", "Songhai Empire", "Ghana Empire"],
+        "correct": 0
+      },
       {
-        "text": "Which constitution introduced the presidential system in Nigeria?",
+        "text": "Who was the military head of state during the Nigerian Civil War (1967–1970)?",
         "options": ["1979 Constitution", "1963 Constitution", "1999 Constitution", "1960 Constitution"],
         "correct": 0
       },
@@ -21,11 +26,83 @@
         "options": ["Yakubu Gowon", "Murtala Mohammed", "Olusegun Obasanjo", "Ibrahim Babangida"],
         "correct": 0
       },
+    
       {
         "text": "The Amalgamation of Northern and Southern Nigeria took place in which year?",
         "options": ["1914", "1900", "1922", "1898"],
         "correct": 0
+      },
+         {
+        "text": "Who was the first Executive President of Nigeria (1979–1983)?",
+        "options": ["Shehu Shagari", "Nnamdi Azikiwe", "Olusegun Obasanjo", " Ernest Shonekan"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian leader introduced the “Green Revolution” agricultural policy?",
+        "options": ["Shehu Shagari", "Ibrahim Babangida", "Olusegun Obasanjo", "Goodluck Jonathan"],
+        "correct": 0
+      },
+      {
+        "text": "The famous “June 12” presidential election was annulled in which year?",
+        "options": ["1991", "1993", "1995", "1999"],
+        "correct": 1
+      },
+       {
+        "text": "Who was the first female governor in Nigeria? ",
+        "options": ["Ngozi Okonjo‑Iweala", "Amina J. Mohammed", "Stella Omu", "Virginia Etiaba"],
+        "correct": 3
+      },
+       {
+        "text": "Which constitution introduced the presidential system of government in Nigeria?",
+        "options": ["1963 Constitution", "1979 Constitution", "1960 Constitution", "1999 Constitution"],
+        "correct": 1
+      },
+       {
+        "text": "Who was the Prime Minister of Nigeria at independence in 1960?",
+        "options": ["Nnamdi Azikiwe", "Obafemi Awolowo", "Abubakar Tafawa Balewa", "Ahmadu Bello"],
+        "correct": 2
+      },
+      {
+        "text": "The “Aburi Accord” (1967) was signed between the Nigerian government and which secessionist leader?",
+        "options": ["Odumegwu Ojukwu", "Philip Effiong", "Ken Saro‑Wiwa", "Michael Okpara"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian military leader introduced the Structural Adjustment Programme (SAP) in 1986?",
+        "options": ["Murtala Mohammed", "Sani Abacha", "Ibrahim Babangida", "Olusegun Obasanjo"],
+        "correct": 2
+      },
+      {
+        "text": "The “Nigerian Youth Movement” (NYM) was formed in which decade?",
+        "options": ["1950s", "1920s", "1940s", "1930s"],
+        "correct": 3
+      },
+       {
+        "text": "Who was the first Nigerian to become the Secretary‑General of the Commonwealth of Nations?",
+        "options": ["Kofi Annan (not Nigerian – trick) – correct: Emeka Anyaoku", "Olusegun Obasanjo", "Nnamdi Azikiwe", "Emeka Anyaoku"],
+        "correct": 3
+      },
+      {
+        "text": "The “Operation Wetie” was a campaign against corruption under which regime?",
+        "options": ["Yakubu Gowon", "Sani Abacha", "Murtala Mohammed", "Goodluck Jonathan"],
+        "correct": 2
+      },
+       {
+        "text": "Who was a key leader of the 1929 Aba Women's War?",
+        "options": ["Nwanyeruwa", "Funmilayo Ransome‑Kuti", "Margaret Ekpo", "Hajiya Gambo Sawaba"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian head of state was assassinated in 1976?",
+        "options": ["Ibrahim Babangida", "Sani Abacha", "Aguiyi Ironsi", "Murtala Mohammed"],
+        "correct": 3
+      },
+       {
+        "text": "The “Nigerian Second Republic” lasted from which years?",
+        "options": ["1979–1983", "1963–1966", "1993–1998", "1999–2007"],
+        "correct": 0
       }
+      
     ],
     "geography": [
       {
