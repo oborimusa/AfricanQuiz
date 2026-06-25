@@ -1,839 +1,3390 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>Know Your Country – Africa Quiz (Hard Mode)</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(145deg, #0a2e1f 0%, #0b3b2a 100%);
-      color: #ffffff;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .game-container {
-      max-width: 550px;
-      width: 100%;
-      background: rgba(10, 46, 31, 0.95);
-      backdrop-filter: blur(8px);
-      border-radius: 48px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 215, 0, 0.4);
-      box-shadow: 0 25px 45px -12px black;
-      position: relative;
-    }
-    .how-it-works-btn { background: #334155; border: none; border-radius: 40px; padding: 8px 20px; font-size: 0.8rem; font-weight: bold; color: white; cursor: pointer; margin-top: 12px; transition: 0.2s; }
-    .how-it-works-btn:hover { background: #facc15; color: #0f172a; transform: translateY(-2px); }
-    .terms-overlay {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.9); backdrop-filter: blur(5px);
-      display: flex; align-items: center; justify-content: center;
-      z-index: 2000;
-    }
-    .terms-modal {
-      background: #1e293b; border-radius: 32px; padding: 28px;
-      max-width: 450px; width: 90%; border: 1px solid #facc15;
-      color: white; max-height: 85vh; overflow-y: auto;
-    }
-    .terms-modal h2 { color: #facc15; margin-bottom: 20px; text-align: center; }
-    .terms-text { font-size: 0.85rem; line-height: 1.5; margin-bottom: 24px; text-align: left; }
-    .agree-checkbox { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; justify-content: center; }
-    .dont-show-container { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; justify-content: center; }
-    .terms-btn {
-      background: linear-gradient(95deg, #facc15, #c5a059);
-      border: none; padding: 12px 24px; border-radius: 60px;
-      font-weight: bold; font-size: 1rem; color: #0f172a;
-      cursor: pointer; width: 100%; transition: 0.2s;
-    }
-    .terms-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-    .reset-settings {
-      position: absolute; bottom: 10px; left: 10px;
-      background: rgba(0,0,0,0.5); color: #ccc; font-size: 10px;
-      padding: 4px 8px; border-radius: 20px; cursor: pointer; z-index: 3000;
-    }
-    .music-controls { position: absolute; top: 16px; right: 16px; display: flex; gap: 8px; z-index: 150; }
-    .music-toggle { background: rgba(0,0,0,0.6); border: none; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: #facc15; cursor: pointer; backdrop-filter: blur(4px); }
-    .play-music-btn {
-      background: #facc15; border: none; border-radius: 40px; padding: 6px 12px; font-size: 0.7rem; font-weight: bold; color: #0f172a; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 #facc15; } 70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(250, 204, 21, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); } }
-    .banner-placeholder { background: #1e293b; border-radius: 20px; padding: 8px; text-align: center; font-size: 11px; color: #cbd5e1; margin: 12px 16px 0; display: flex; justify-content: center; gap: 8px; }
-    .sponsored-badge { background: #facc15; color: #0f172a; border-radius: 40px; padding: 4px 12px; font-size: 0.7rem; font-weight: bold; display: inline-block; margin-bottom: 12px; text-align: center; }
-    .screen { padding: 28px 24px 36px; transition: 0.2s; }
-    .hidden { display: none; }
-    .top-bar { display: flex; justify-content: space-between; align-items: center; background: #0f172a; border-radius: 60px; padding: 8px 20px; margin-bottom: 24px; color: #f1f5f9; }
-    .coin-display { background: #facc15; color: #0f172a; padding: 6px 16px; border-radius: 40px; font-weight: bold; }
-    .flag-icon { font-size: 3rem; text-align: center; margin-bottom: 8px; }
-    h1 { text-align: center; font-size: 1.8rem; background: linear-gradient(135deg, #facc15, #c5a059); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .sub { text-align: center; color: #e2e8f0; margin-bottom: 20px; font-size: 0.8rem; }
-    .stats-row { display: flex; gap: 12px; margin-bottom: 24px; }
-    .stat-card { background: #1e293b; flex: 1; border-radius: 24px; padding: 12px; text-align: center; border: 1px solid #475569; }
-    .stat-card i { font-size: 1.4rem; color: #facc15; }
-    .stat-value { font-size: 1.4rem; font-weight: 800; color: #ffffff; }
-    .dropdown-group { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
-    .custom-dropdown {
-      background: #1e293b; border: 1px solid #475569; border-radius: 60px; padding: 14px 20px; width: 100%; font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; color: #f1f5f9; cursor: pointer; appearance: none;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23facc15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
-      background-repeat: no-repeat; background-position: right 20px center;
-    }
-    .play-btn, .tournament-btn, .next-btn, .restart-btn {
-      background: linear-gradient(95deg, #facc15, #c5a059);
-      border: none; width: 100%; padding: 14px; border-radius: 60px;
-      font-weight: 800; font-size: 1rem; color: #0f172a; cursor: pointer;
-      margin-bottom: 12px;
-    }
-    .tournament-btn { background: #334155; color: white; margin-bottom: 0; }
-    .terms-link { text-align: center; font-size: 0.7rem; margin-top: 20px; color: #94a3b8; cursor: pointer; text-decoration: underline; }
-    .quiz-header { display: flex; justify-content: space-between; background: #0f172a; padding: 10px 16px; border-radius: 40px; margin-bottom: 20px; color: #facc15; font-weight: bold; }
-    .timer-area { background: #0f172a; border-radius: 40px; padding: 8px 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
-    .timer-bar-bg { background: #334155; height: 8px; border-radius: 4px; flex-grow: 1; margin: 0 12px; overflow: hidden; }
-    .timer-bar-fill { background: #facc15; width: 100%; height: 100%; transition: width 0.1s linear; }
-    .timer-text { font-weight: bold; font-family: monospace; font-size: 1.1rem; }
-    .question-text { font-size: 1.2rem; font-weight: 700; margin: 16px 0 24px; background: #0f172a; padding: 20px; border-radius: 28px; color: #ffffff; line-height: 1.4; border: 1px solid #334155; }
-    .options-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
-    .option-btn { background: #1e293b; border: 1px solid #475569; border-radius: 60px; padding: 14px 18px; font-size: 0.95rem; text-align: left; cursor: pointer; color: #f1f5f9; font-weight: 500; transition: 0.1s; }
-    .option-btn.correct { background: #10b981; border-color: #10b981; color: white; }
-    .option-btn.wrong { background: #ef4444; border-color: #ef4444; color: white; }
-    .option-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-    .hint-btn { background: #334155; border: none; padding: 12px; border-radius: 40px; width: 100%; margin: 8px 0; cursor: pointer; color: white; font-weight: 600; }
-    .feedback { text-align: center; font-size: 0.9rem; margin-top: 12px; padding: 8px; background: #0f172a; border-radius: 40px; color: #facc15; }
-    .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); display: flex; align-items: center; justify-content: center; z-index: 2000; visibility: hidden; }
-    .modal.active { visibility: visible; }
-    .modal-content { background: #1e293b; border-radius: 32px; padding: 24px; max-width: 340px; text-align: center; border: 1px solid #facc15; color: white; max-height: 80vh; overflow-y: auto; }
-    .close-modal { margin-top: 16px; background: #facc15; border: none; padding: 8px 20px; border-radius: 40px; cursor: pointer; font-weight: bold; }
-    .earn-btn { background: #facc15; border: none; border-radius: 40px; padding: 4px 12px; font-size: 0.7rem; font-weight: bold; cursor: pointer; }
-    .loader { text-align: center; padding: 20px; font-size: 1.2rem; color: #facc15; display: flex; align-items: center; justify-content: center; gap: 8px; }
-    @media (max-width: 550px) {
-      .question-text { font-size: 1rem; padding: 16px; }
-      .option-btn { padding: 10px 14px; font-size: 0.85rem; }
-      .music-toggle { width: 36px; height: 36px; font-size: 1rem; }
-      .play-music-btn { padding: 4px 8px; font-size: 0.6rem; animation: none; }
-    }
-  </style>
-</head>
-<body>
-<div class="game-container">
-  <div class="music-controls">
-    <button class="play-music-btn" id="explicitPlayBtn">🔊 Play Music</button>
-    <button class="music-toggle" id="musicToggleBtn" title="Mute/Unmute background music"><i class="fas fa-music"></i></button>
-  </div>
-  <div class="banner-placeholder" id="bannerAd"><i class="fas fa-ad"></i> AdMob Banner</div>
-  <div id="homeScreen" class="screen">
-    <div class="top-bar">
-      <span><i class="fas fa-chart-simple"></i> Leaderboard</span>
-      <span class="coin-display"><i class="fas fa-coins"></i> <span id="coinBalance">0</span></span>
-      <button class="earn-btn" id="earnCoinsBtn"><i class="fas fa-video"></i> Earn Coins</button>
-    </div>
-    <div class="flag-icon">🌍</div>
-    <div class="sponsored-badge">🏆 Sponsored by Telecom & Beverage Brands – Win Real Prizes! 🏆</div>
-    <h1>KNOW YOUR COUNTRY</h1>
-    <div class="sub">Africa Quiz • Hard Mode • Timed</div>
-    <div class="stats-row">
-      <div class="stat-card"><i class="fas fa-trophy"></i><div class="stat-value" id="totalPointsHome">0</div><div>Total Points</div></div>
-      <div class="stat-card"><i class="fas fa-brain"></i><div class="stat-value" id="bestScoreHome">0</div><div>Best Game</div></div>
-    </div>
-    <div class="dropdown-group">
-      <select id="countrySelect" class="custom-dropdown">
-        <option value="Nigeria">🇳🇬 Nigeria</option>
-        <!-- <option value="Ghana">🇬🇭 Ghana</option>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover"
+    />
+    <title>Know Your Country – Africa Quiz (Hard Mode)</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        user-select: none;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(145deg, #0a2e1f 0%, #0b3b2a 100%);
+        color: #ffffff;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      .game-container {
+        max-width: 550px;
+        width: 100%;
+        background: rgba(10, 46, 31, 0.95);
+        backdrop-filter: blur(8px);
+        border-radius: 48px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 215, 0, 0.4);
+        box-shadow: 0 25px 45px -12px black;
+        position: relative;
+      }
+      .how-it-works-btn {
+        background: #334155;
+        border: none;
+        border-radius: 40px;
+        padding: 8px 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        margin-top: 12px;
+        transition: 0.2s;
+      }
+      .how-it-works-btn:hover {
+        background: #facc15;
+        color: #0f172a;
+        transform: translateY(-2px);
+      }
+      .terms-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(5px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+      }
+      .terms-modal {
+        background: #1e293b;
+        border-radius: 32px;
+        padding: 28px;
+        max-width: 450px;
+        width: 90%;
+        border: 1px solid #facc15;
+        color: white;
+        max-height: 85vh;
+        overflow-y: auto;
+      }
+      .terms-modal h2 {
+        color: #facc15;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .terms-text {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 24px;
+        text-align: left;
+      }
+      .agree-checkbox {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        justify-content: center;
+      }
+      .dont-show-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 24px;
+        justify-content: center;
+      }
+      .terms-btn {
+        background: linear-gradient(95deg, #facc15, #c5a059);
+        border: none;
+        padding: 12px 24px;
+        border-radius: 60px;
+        font-weight: bold;
+        font-size: 1rem;
+        color: #0f172a;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.2s;
+      }
+      .terms-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      .reset-settings {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background: rgba(0, 0, 0, 0.5);
+        color: #ccc;
+        font-size: 10px;
+        padding: 4px 8px;
+        border-radius: 20px;
+        cursor: pointer;
+        z-index: 3000;
+      }
+      .music-controls {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        display: flex;
+        gap: 8px;
+        z-index: 150;
+      }
+      .music-toggle {
+        background: rgba(0, 0, 0, 0.6);
+        border: none;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        color: #facc15;
+        cursor: pointer;
+        backdrop-filter: blur(4px);
+      }
+      .play-music-btn {
+        background: #facc15;
+        border: none;
+        border-radius: 40px;
+        padding: 6px 12px;
+        font-size: 0.7rem;
+        font-weight: bold;
+        color: #0f172a;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 #facc15;
+        }
+        70% {
+          transform: scale(1.05);
+          box-shadow: 0 0 0 10px rgba(250, 204, 21, 0);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(250, 204, 21, 0);
+        }
+      }
+      .banner-placeholder {
+        background: #1e293b;
+        border-radius: 20px;
+        padding: 8px;
+        text-align: center;
+        font-size: 11px;
+        color: #cbd5e1;
+        margin: 12px 16px 0;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+      }
+      .sponsored-badge {
+        background: #facc15;
+        color: #0f172a;
+        border-radius: 40px;
+        padding: 4px 12px;
+        font-size: 0.7rem;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 12px;
+        text-align: center;
+      }
+      .screen {
+        padding: 28px 24px 36px;
+        transition: 0.2s;
+      }
+      .hidden {
+        display: none;
+      }
+      .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #0f172a;
+        border-radius: 60px;
+        padding: 8px 20px;
+        margin-bottom: 24px;
+        color: #f1f5f9;
+      }
+      .coin-display {
+        background: #facc15;
+        color: #0f172a;
+        padding: 6px 16px;
+        border-radius: 40px;
+        font-weight: bold;
+      }
+      .flag-icon {
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 8px;
+      }
+      h1 {
+        text-align: center;
+        font-size: 1.8rem;
+        background: linear-gradient(135deg, #facc15, #c5a059);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .sub {
+        text-align: center;
+        color: #e2e8f0;
+        margin-bottom: 20px;
+        font-size: 0.8rem;
+      }
+      .stats-row {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+      .stat-card {
+        background: #1e293b;
+        flex: 1;
+        border-radius: 24px;
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #475569;
+      }
+      .stat-card i {
+        font-size: 1.4rem;
+        color: #facc15;
+      }
+      .stat-value {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: #ffffff;
+      }
+      .dropdown-group {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+      .custom-dropdown {
+        background: #1e293b;
+        border: 1px solid #475569;
+        border-radius: 60px;
+        padding: 14px 20px;
+        width: 100%;
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #f1f5f9;
+        cursor: pointer;
+        appearance: none;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23facc15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+        background-repeat: no-repeat;
+        background-position: right 20px center;
+      }
+      .play-btn,
+      .tournament-btn,
+      .next-btn,
+      .restart-btn {
+        background: linear-gradient(95deg, #facc15, #c5a059);
+        border: none;
+        width: 100%;
+        padding: 14px;
+        border-radius: 60px;
+        font-weight: 800;
+        font-size: 1rem;
+        color: #0f172a;
+        cursor: pointer;
+        margin-bottom: 12px;
+      }
+      .tournament-btn {
+        background: #334155;
+        color: white;
+        margin-bottom: 0;
+      }
+      .terms-link {
+        text-align: center;
+        font-size: 0.7rem;
+        margin-top: 20px;
+        color: #94a3b8;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      .quiz-header {
+        display: flex;
+        justify-content: space-between;
+        background: #0f172a;
+        padding: 10px 16px;
+        border-radius: 40px;
+        margin-bottom: 20px;
+        color: #facc15;
+        font-weight: bold;
+      }
+      .timer-area {
+        background: #0f172a;
+        border-radius: 40px;
+        padding: 8px 16px;
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .timer-bar-bg {
+        background: #334155;
+        height: 8px;
+        border-radius: 4px;
+        flex-grow: 1;
+        margin: 0 12px;
+        overflow: hidden;
+      }
+      .timer-bar-fill {
+        background: #facc15;
+        width: 100%;
+        height: 100%;
+        transition: width 0.1s linear;
+      }
+      .timer-text {
+        font-weight: bold;
+        font-family: monospace;
+        font-size: 1.1rem;
+      }
+      .question-text {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin: 16px 0 24px;
+        background: #0f172a;
+        padding: 20px;
+        border-radius: 28px;
+        color: #ffffff;
+        line-height: 1.4;
+        border: 1px solid #334155;
+      }
+      .options-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      .option-btn {
+        background: #1e293b;
+        border: 1px solid #475569;
+        border-radius: 60px;
+        padding: 14px 18px;
+        font-size: 0.95rem;
+        text-align: left;
+        cursor: pointer;
+        color: #f1f5f9;
+        font-weight: 500;
+        transition: 0.1s;
+      }
+      .option-btn.correct {
+        background: #10b981;
+        border-color: #10b981;
+        color: white;
+      }
+      .option-btn.wrong {
+        background: #ef4444;
+        border-color: #ef4444;
+        color: white;
+      }
+      .option-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      .hint-btn {
+        background: #334155;
+        border: none;
+        padding: 12px;
+        border-radius: 40px;
+        width: 100%;
+        margin: 8px 0;
+        cursor: pointer;
+        color: white;
+        font-weight: 600;
+      }
+      .feedback {
+        text-align: center;
+        font-size: 0.9rem;
+        margin-top: 12px;
+        padding: 8px;
+        background: #0f172a;
+        border-radius: 40px;
+        color: #facc15;
+      }
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+        visibility: hidden;
+      }
+      .modal.active {
+        visibility: visible;
+      }
+      .modal-content {
+        background: #1e293b;
+        border-radius: 32px;
+        padding: 24px;
+        max-width: 340px;
+        text-align: center;
+        border: 1px solid #facc15;
+        color: white;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+      .close-modal {
+        margin-top: 16px;
+        background: #facc15;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 40px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .earn-btn {
+        background: #facc15;
+        border: none;
+        border-radius: 40px;
+        padding: 4px 12px;
+        font-size: 0.7rem;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .loader {
+        text-align: center;
+        padding: 20px;
+        font-size: 1.2rem;
+        color: #facc15;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      @media (max-width: 550px) {
+        .question-text {
+          font-size: 1rem;
+          padding: 16px;
+        }
+        .option-btn {
+          padding: 10px 14px;
+          font-size: 0.85rem;
+        }
+        .music-toggle {
+          width: 36px;
+          height: 36px;
+          font-size: 1rem;
+        }
+        .play-music-btn {
+          padding: 4px 8px;
+          font-size: 0.6rem;
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game-container">
+      <div class="music-controls">
+        <button class="play-music-btn" id="explicitPlayBtn">
+          🔊 Play Music
+        </button>
+        <button
+          class="music-toggle"
+          id="musicToggleBtn"
+          title="Mute/Unmute background music"
+        >
+          <i class="fas fa-music"></i>
+        </button>
+      </div>
+      <div class="banner-placeholder" id="bannerAd">
+        <i class="fas fa-ad"></i> AdMob Banner
+      </div>
+      <div id="homeScreen" class="screen">
+        <div class="top-bar">
+          <span><i class="fas fa-chart-simple"></i> Leaderboard</span>
+          <span class="coin-display"
+            ><i class="fas fa-coins"></i> <span id="coinBalance">0</span></span
+          >
+          <button class="earn-btn" id="earnCoinsBtn">
+            <i class="fas fa-video"></i> Earn Coins
+          </button>
+        </div>
+        <div class="flag-icon">🌍</div>
+        <div class="sponsored-badge">
+          🏆 Sponsored by Telecom & Beverage Brands – Win Real Prizes! 🏆
+        </div>
+        <h1>KNOW YOUR COUNTRY</h1>
+        <div class="sub">Africa Quiz • Hard Mode • Timed</div>
+        <div class="stats-row">
+          <div class="stat-card">
+            <i class="fas fa-trophy"></i>
+            <div class="stat-value" id="totalPointsHome">0</div>
+            <div>Total Points</div>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-brain"></i>
+            <div class="stat-value" id="bestScoreHome">0</div>
+            <div>Best Game</div>
+          </div>
+        </div>
+        <div class="dropdown-group">
+          <select id="countrySelect" class="custom-dropdown">
+            <option value="Nigeria">🇳🇬 Nigeria</option>
+            <!-- <option value="Ghana">🇬🇭 Ghana</option>
         <option value="Kenya">🇰🇪 Kenya</option>
         <option value="SouthAfrica">🇿🇦 South Africa</option> -->
-      </select>
-      <select id="categorySelect" class="custom-dropdown">
-        <option value="history">📜 History</option>
-        <option value="geography">🌍 Geography</option>
-        <option value="culture">🎭 Culture</option>
-        <option value="pop">🎵 Pop Culture</option>
-        <option value="movies">🎬 Movies</option>
-        <option value="football">⚽ Football</option>
-        <option value="africa">🌍 All Africa</option>
-      </select>
+          </select>
+          <select id="categorySelect" class="custom-dropdown">
+            <option value="history">📜 History</option>
+            <option value="geography">🌍 Geography</option>
+            <option value="culture">🎭 Culture</option>
+            <option value="pop">🎵 Pop Culture</option>
+            <option value="movies">🎬 Movies</option>
+            <option value="football">⚽ Football</option>
+            <option value="africa">🌍 All Africa</option>
+          </select>
+        </div>
+        <button class="play-btn" id="startQuizBtn">
+          <i class="fas fa-play"></i> FREE QUIZ (Earn Coins)
+        </button>
+        <button class="tournament-btn" id="tournamentBtn">
+          <i class="fas fa-trophy"></i> DAILY TOURNAMENT (Entry: 50 Coins)
+        </button>
+        <a href="how-it-works.html"
+          ><button class="how-it-works-btn">
+            <i class="fas fa-question-circle"></i> How It Works
+          </button></a
+        >
+        <div class="terms-link" id="termsLink">📜 Terms & Conditions 📜</div>
+        <div id="loadingMsg" class="loader">Questions loaded!</div>
+      </div>
+      <div id="quizScreen" class="screen hidden">
+        <div class="quiz-header">
+          <div>⭐ Score: <span id="scoreDisplay">0</span></div>
+          <div>❤️ <span id="livesDisplay">3</span></div>
+          <div>Q<span id="currentQ">1</span>/<span id="totalQ">10</span></div>
+        </div>
+        <div class="timer-area">
+          <i class="fas fa-hourglass-half"></i>
+          <div class="timer-bar-bg">
+            <div class="timer-bar-fill" id="timerFill"></div>
+          </div>
+          <span class="timer-text" id="timerText">14s</span>
+        </div>
+        <div class="question-text" id="questionText"></div>
+        <div class="options-grid" id="optionsContainer"></div>
+        <button class="hint-btn" id="hintBtn">
+          <i class="fas fa-lightbulb"></i> 50:50 Lifeline (10 coins)
+        </button>
+        <div class="next-area">
+          <button class="next-btn" id="nextBtn" disabled>
+            ➡ NEXT QUESTION
+          </button>
+        </div>
+        <div class="feedback" id="feedbackMsg"></div>
+      </div>
+      <div id="resultScreen" class="screen hidden">
+        <div class="result-card">
+          <i
+            class="fas fa-flag-checkered"
+            style="font-size: 2.5rem; color: #facc15"
+          ></i>
+          <h2>Game Over!</h2>
+          <div class="final-score" id="finalScoreSpan">0</div>
+          <p id="resultMessage"></p>
+          <button class="restart-btn" id="playAgainBtn">
+            <i class="fas fa-home"></i> Back to Home
+          </button>
+        </div>
+      </div>
     </div>
-    <button class="play-btn" id="startQuizBtn"><i class="fas fa-play"></i> FREE QUIZ (Earn Coins)</button>
-    <button class="tournament-btn" id="tournamentBtn"><i class="fas fa-trophy"></i> DAILY TOURNAMENT (Entry: 50 Coins)</button>
-    <a href="how-it-works.html"><button class="how-it-works-btn"><i class="fas fa-question-circle"></i> How It Works</button></a>
-    <div class="terms-link" id="termsLink">📜 Terms & Conditions 📜</div>
-    <div id="loadingMsg" class="loader">Questions loaded!</div>
-  </div>
-  <div id="quizScreen" class="screen hidden">
-    <div class="quiz-header"><div>⭐ Score: <span id="scoreDisplay">0</span></div><div>❤️ <span id="livesDisplay">3</span></div><div>Q<span id="currentQ">1</span>/<span id="totalQ">10</span></div></div>
-    <div class="timer-area"><i class="fas fa-hourglass-half"></i><div class="timer-bar-bg"><div class="timer-bar-fill" id="timerFill"></div></div><span class="timer-text" id="timerText">14s</span></div>
-    <div class="question-text" id="questionText"></div>
-    <div class="options-grid" id="optionsContainer"></div>
-    <button class="hint-btn" id="hintBtn"><i class="fas fa-lightbulb"></i> 50:50 Lifeline (10 coins)</button>
-    <div class="next-area"><button class="next-btn" id="nextBtn" disabled>➡ NEXT QUESTION</button></div>
-    <div class="feedback" id="feedbackMsg"></div>
-  </div>
-  <div id="resultScreen" class="screen hidden">
-    <div class="result-card"><i class="fas fa-flag-checkered" style="font-size:2.5rem; color:#facc15;"></i><h2>Game Over!</h2>
-    <div class="final-score" id="finalScoreSpan">0</div><p id="resultMessage"></p>
-    <button class="restart-btn" id="playAgainBtn"><i class="fas fa-home"></i> Back to Home</button></div>
-  </div>
-</div>
-<audio id="bgMusic" loop preload="auto"></audio>
-<div id="tournamentModal" class="modal"><div class="modal-content"><i class="fas fa-trophy" style="font-size:2rem;"></i><h3>Daily Tournament</h3><p>Entry fee: <strong>50 coins</strong></p><p>Top 3 players split prize pool (80% / 15% / 5%)</p><button id="confirmTournamentBtn" class="close-modal">Enter Tournament (50 coins)</button><button id="closeModalBtn" class="close-modal" style="background:#334155;">Cancel</button></div></div>
-<div id="termsModal" class="modal"><div class="modal-content"><h3><i class="fas fa-file-contract"></i> Terms & Conditions</h3><p style="text-align:left; font-size:0.8rem; margin-top:16px;"><strong>1. Eligibility:</strong> Open to all users aged 18+ in Nigeria, Ghana, Kenya, South Africa.<br><br><strong>2. Prize Structure:</strong> Daily tournament winners get sponsored prizes.<br><br><strong>3. Coin System:</strong> Coins earned by playing free quizzes or watching ads.<br><br><strong>4. Time Limit:</strong> Dynamic – starts at 14s, decreases by 1s per question down to 7s.<br><br><strong>5. Fair Play:</strong> Options are shuffled each game.<br><br><strong>6. Contact:</strong> prizes@knowyourcountry.com</p><button class="close-modal" id="closeTermsBtn">Close</button></div></div>
-
-<div id="mandatoryTermsOverlay" class="terms-overlay">
-  <div class="terms-modal">
-    <h2>📜 Terms & Conditions</h2>
-    <div class="terms-text">
-      <p><strong>1. Eligibility:</strong> You must be at least 18 years old and a resident of Nigeria, Ghana, Kenya, or South Africa to participate in tournaments and win prizes.</p>
-      <p><strong>2. Prize Structure:</strong> Daily tournament winners receive sponsored prizes. Prize pool distribution: 1st place 80%, 2nd place 15%, 3rd place 5%.</p>
-      <p><strong>3. Coin System:</strong> Coins are earned by playing free quizzes (1 coin per 2 points) or watching rewarded video ads. Coins have no real-world cash value and can only be used within the app for lifelines or tournament entry fees.</p>
-      <p><strong>4. Time Limit:</strong> Each question has a dynamic timer: 14 seconds for the first question, decreasing by 1 second per question down to a minimum of 7 seconds.</p>
-      <p><strong>5. Fair Play:</strong> Any form of cheating, using multiple accounts, or automated play will result in immediate disqualification and permanent ban.</p>
-      <p><strong>6. Taxes:</strong> Winners are responsible for any applicable taxes on prizes.</p>
-      <p><strong>7. Modification:</strong> We reserve the right to modify these terms at any time. Continued use constitutes acceptance.</p>
-      <p><strong>8. Contact:</strong> For prize claims or support, email: <strong>prizes@knowyourcountry.com</strong></p>
+    <audio id="bgMusic" loop preload="auto"></audio>
+    <div id="tournamentModal" class="modal">
+      <div class="modal-content">
+        <i class="fas fa-trophy" style="font-size: 2rem"></i>
+        <h3>Daily Tournament</h3>
+        <p>Entry fee: <strong>50 coins</strong></p>
+        <p>Top 3 players split prize pool (80% / 15% / 5%)</p>
+        <button id="confirmTournamentBtn" class="close-modal">
+          Enter Tournament (50 coins)</button
+        ><button
+          id="closeModalBtn"
+          class="close-modal"
+          style="background: #334155"
+        >
+          Cancel
+        </button>
+      </div>
     </div>
-    <div class="agree-checkbox"><input type="checkbox" id="agreeCheckbox"><label for="agreeCheckbox">I have read and agree to the Terms & Conditions</label></div>
-    <div class="dont-show-container"><input type="checkbox" id="dontShowAgainCheckbox"><label for="dontShowAgainCheckbox">Don't show this again</label></div>
-    <button class="terms-btn" id="acceptTermsBtn" disabled>I Agree</button>
-    <div class="reset-settings" id="resetSettingsBtn">Reset Saved Settings</div>
-  </div>
-</div>
+    <div id="termsModal" class="modal">
+      <div class="modal-content">
+        <h3><i class="fas fa-file-contract"></i> Terms & Conditions</h3>
+        <p style="text-align: left; font-size: 0.8rem; margin-top: 16px">
+          <strong>1. Eligibility:</strong> Open to all users aged 18+ in
+          Nigeria, Ghana, Kenya, South Africa.<br /><br /><strong
+            >2. Prize Structure:</strong
+          >
+          Daily tournament winners get sponsored prizes.<br /><br /><strong
+            >3. Coin System:</strong
+          >
+          Coins earned by playing free quizzes or watching ads.<br /><br /><strong
+            >4. Time Limit:</strong
+          >
+          Dynamic – starts at 14s, decreases by 1s per question down to 7s.<br /><br /><strong
+            >5. Fair Play:</strong
+          >
+          Options are shuffled each game.<br /><br /><strong
+            >6. Contact:</strong
+          >
+          prizes@knowyourcountry.com
+        </p>
+        <button class="close-modal" id="closeTermsBtn">Close</button>
+      </div>
+    </div>
 
-<script>
-  // --------------------------------------------------------------
-  // BACKGROUND MUSIC (same as before)
-  // --------------------------------------------------------------
-  const bgMusic = document.getElementById('bgMusic');
-  const musicToggleBtn = document.getElementById('musicToggleBtn');
-  const explicitPlayBtn = document.getElementById('explicitPlayBtn');
-  let musicPlaying = false;
-  bgMusic.src = 'bg-music.mp3';
-  bgMusic.load();
-  bgMusic.onerror = () => {
-    console.warn("bg-music.mp3 not found – music will be silent.");
-    explicitPlayBtn.style.opacity = '0.5';
-    explicitPlayBtn.title = 'Music file missing (place bg-music.mp3 in app folder)';
-    musicToggleBtn.style.opacity = '0.5';
-  };
-  function playMusic() {
-    bgMusic.play().then(() => {
-      musicPlaying = true;
-      musicToggleBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-      explicitPlayBtn.style.display = 'none';
-    }).catch(e => {
-      console.log("Play failed:", e);
-      musicPlaying = false;
-      musicToggleBtn.innerHTML = '<i class="fas fa-music"></i>';
-      explicitPlayBtn.style.display = 'flex';
-    });
-  }
-  function pauseMusic() {
-    bgMusic.pause();
-    musicPlaying = false;
-    musicToggleBtn.innerHTML = '<i class="fas fa-music"></i>';
-    explicitPlayBtn.style.display = 'flex';
-  }
-  musicToggleBtn.addEventListener('click', () => {
-    if (musicPlaying) pauseMusic();
-    else playMusic();
-  });
-  explicitPlayBtn.addEventListener('click', () => playMusic());
-  setTimeout(() => {
-    if (!musicPlaying && explicitPlayBtn.style.display !== 'none') {
-      const tooltip = document.createElement('div');
-      tooltip.innerText = '🎵 Click here to play background music!';
-      tooltip.style.cssText = 'position:absolute; background:#0f172a; color:#facc15; padding:4px 10px; border-radius:20px; font-size:0.7rem; bottom:70px; right:10px; z-index:200; white-space:nowrap;';
-      explicitPlayBtn.parentNode.appendChild(tooltip);
-      setTimeout(() => tooltip.remove(), 4000);
-    }
-  }, 2000);
+    <div id="mandatoryTermsOverlay" class="terms-overlay">
+      <div class="terms-modal">
+        <h2>📜 Terms & Conditions</h2>
+        <div class="terms-text">
+          <p>
+            <strong>1. Eligibility:</strong> You must be at least 18 years old
+            and a resident of Nigeria, Ghana, Kenya, or South Africa to
+            participate in tournaments and win prizes.
+          </p>
+          <p>
+            <strong>2. Prize Structure:</strong> Daily tournament winners
+            receive sponsored prizes. Prize pool distribution: 1st place 80%,
+            2nd place 15%, 3rd place 5%.
+          </p>
+          <p>
+            <strong>3. Coin System:</strong> Coins are earned by playing free
+            quizzes (1 coin per 2 points) or watching rewarded video ads. Coins
+            have no real-world cash value and can only be used within the app
+            for lifelines or tournament entry fees.
+          </p>
+          <p>
+            <strong>4. Time Limit:</strong> Each question has a dynamic timer:
+            14 seconds for the first question, decreasing by 1 second per
+            question down to a minimum of 7 seconds.
+          </p>
+          <p>
+            <strong>5. Fair Play:</strong> Any form of cheating, using multiple
+            accounts, or automated play will result in immediate
+            disqualification and permanent ban.
+          </p>
+          <p>
+            <strong>6. Taxes:</strong> Winners are responsible for any
+            applicable taxes on prizes.
+          </p>
+          <p>
+            <strong>7. Modification:</strong> We reserve the right to modify
+            these terms at any time. Continued use constitutes acceptance.
+          </p>
+          <p>
+            <strong>8. Contact:</strong> For prize claims or support, email:
+            <strong>prizes@knowyourcountry.com</strong>
+          </p>
+        </div>
+        <div class="agree-checkbox">
+          <input type="checkbox" id="agreeCheckbox" /><label for="agreeCheckbox"
+            >I have read and agree to the Terms & Conditions</label
+          >
+        </div>
+        <div class="dont-show-container">
+          <input type="checkbox" id="dontShowAgainCheckbox" /><label
+            for="dontShowAgainCheckbox"
+            >Don't show this again</label
+          >
+        </div>
+        <button class="terms-btn" id="acceptTermsBtn" disabled>I Agree</button>
+        <div class="reset-settings" id="resetSettingsBtn">
+          Reset Saved Settings
+        </div>
+      </div>
+    </div>
 
-  // --------------------------------------------------------------
-  // Mock AdMob
-  // --------------------------------------------------------------
-  async function initAdMob() { console.log("Mock AdMob"); return false; }
-  async function showRewardedAd() { console.log("Mock rewarded ad"); return true; }
-
-  // --------------------------------------------------------------
-  // FULL EMBEDDED QUESTION BANKS (Nigeria, Ghana, Kenya, SouthAfrica, Africa)
-  // --------------------------------------------------------------
-  const questionPools = {
-    Nigeria: {
-      history: [
-        { text: "Who was the first President of Nigeria?", options: ["Nnamdi Azikiwe", "Olusegun Obasanjo", "Shehu Shagari", "Goodluck Jonathan"], correct: 0 },
-        { text: "In what year did Nigeria gain independence?", options: ["1960", "1963", "1957", "1970"], correct: 0 },
-        { text: "Which constitution introduced the presidential system?", options: ["1979", "1963", "1999", "1960"], correct: 0 },
-        { text: "Who was the military head of state during the civil war?", options: ["Yakubu Gowon", "Murtala Mohammed", "Olusegun Obasanjo", "Ibrahim Babangida"], correct: 0 },
-        { text: "The Amalgamation of Northern and Southern Nigeria took place in?", options: ["1914", "1900", "1922", "1898"], correct: 0 },
-        { text: "First Executive President of Nigeria?", options: ["Shehu Shagari", "Nnamdi Azikiwe", "Olusegun Obasanjo", "Ernest Shonekan"], correct: 0 },
-        { text: "Who introduced the 'Green Revolution'?", options: ["Shehu Shagari", "Olusegun Obasanjo", "Ibrahim Babangida", "Goodluck Jonathan"], correct: 0 },
-        { text: "June 12 election annulled in?", options: ["1993", "1991", "1995", "1999"], correct: 0 },
-        { text: "First female governor in Nigeria?", options: ["Virginia Etiaba", "Ngozi Okonjo-Iweala", "Amina J. Mohammed", "Stella Omu"], correct: 0 },
-        { text: "Which constitution introduced presidential system?", options: ["1979", "1963", "1999", "1960"], correct: 0 },
-        { text: "Who was the Prime Minister of Nigeria at independence?", options: ["Abubakar Tafawa Balewa", "Nnamdi Azikiwe", "Obafemi Awolowo", "Ahmadu Bello"], correct: 0 },
-        { text: "The 'Aburi Accord' was signed with which secessionist leader?", options: ["Odumegwu Ojukwu", "Philip Effiong", "Ken Saro-Wiwa", "Michael Okpara"], correct: 0 },
-        { text: "Who introduced the Structural Adjustment Programme (SAP) in 1986?", options: ["Ibrahim Babangida", "Murtala Mohammed", "Sani Abacha", "Olusegun Obasanjo"], correct: 0 },
-        { text: "The 'Nigerian Youth Movement' was formed in which decade?", options: ["1930s", "1940s", "1920s", "1950s"], correct: 0 },
-        { text: "First Nigerian to become Secretary‑General of the Commonwealth?", options: ["Emeka Anyaoku", "Nnamdi Azikiwe", "Olusegun Obasanjo", "Kofi Annan"], correct: 0 }
-      ],
-      geography: [
-        { text: "What is the capital of Nigeria?", options: ["Abuja", "Lagos", "Kano", "Port Harcourt"], correct: 0 },
-        { text: "Longest river in Nigeria?", options: ["River Niger", "River Benue", "Cross River", "Ogun River"], correct: 0 },
-        { text: "Yankari Game Reserve is in which state?", options: ["Bauchi", "Plateau", "Taraba", "Adamawa"], correct: 0 },
-        { text: "Gateway State is?", options: ["Ogun", "Lagos", "Oyo", "Kwara"], correct: 0 },
-        { text: "Largest state by land area?", options: ["Niger", "Borno", "Taraba", "Kaduna"], correct: 1 },
-        { text: "Olumo Rock is in?", options: ["Ogun", "Oyo", "Osun", "Ekiti"], correct: 0 },
-        { text: "Coal City is?", options: ["Enugu", "Anambra", "Ebonyi", "Abia"], correct: 0 },
-        { text: "Lake Chad is in which region?", options: ["North-East", "North-West", "South-East", "South-South"], correct: 0 },
-        { text: "Smallest state?", options: ["Lagos", "Anambra", "Bayelsa", "Ekiti"], correct: 0 },
-        { text: "Mambilla Plateau is in?", options: ["Taraba", "Adamawa", "Plateau", "Borno"], correct: 0 },
-        { text: "Which state is known as the 'Sunshine State'?", options: ["Ondo", "Ekiti", "Osun", "Oyo"], correct: 0 },
-        { text: "Which river forms the boundary between Nigeria and Niger?", options: ["River Niger", "River Benue", "Yobe River", "Sokoto River"], correct: 2 },
-        { text: "The 'Aso Rock' is located in which city?", options: ["Abuja", "Lagos", "Kaduna", "Jos"], correct: 0 },
-        { text: "Which state is the 'Food Basket of the Nation'?", options: ["Benue", "Plateau", "Taraba", "Niger"], correct: 0 },
-        { text: "The 'Ikogosi Warm Spring' is found in which state?", options: ["Ekiti", "Ondo", "Osun", "Kogi"], correct: 0 }
-      ],
-      culture: [
-        { text: "Yoruba king title?", options: ["Oba", "Emir", "Igwe", "Obong"], correct: 0 },
-        { text: "Soup made from melon seeds?", options: ["Egusi", "Ogbono", "Afang", "Edikang Ikong"], correct: 0 },
-        { text: "Argungu Fishing Festival in?", options: ["Kebbi", "Sokoto", "Zamfara", "Katsina"], correct: 0 },
-        { text: "Largest ethnic group?", options: ["Hausa", "Yoruba", "Igbo", "Ijaw"], correct: 0 },
-        { text: "Traditional Igbo attire?", options: ["Isiagu", "Agbada", "Buba", "Danshiki"], correct: 0 },
-        { text: "Durbar festival region?", options: ["Northern Nigeria", "Western", "Eastern", "South-South"], correct: 0 },
-        { text: "Pidgin greeting?", options: ["Wetin dey happen?", "Kedu", "Sannu", "Bawo ni"], correct: 0 },
-        { text: "Ground beans dish?", options: ["Moin Moin", "Akara", "Ewa", "Olele"], correct: 0 },
-        { text: "Eyo Festival city?", options: ["Lagos", "Ibadan", "Benin", "Abeokuta"], correct: 0 },
-        { text: "Igbo traditional title?", options: ["Igwe", "Oba", "Emir", "Tor Tiv"], correct: 0 },
-        { text: "Traditional Yoruba talking drum?", options: ["Gangan", "Udu", "Kakaki", "Sakara"], correct: 0 },
-        { text: "The 'Sharo' flogging ceremony is a rite of passage among which group?", options: ["Fulani", "Tiv", "Idoma", "Ebira"], correct: 0 },
-        { text: "What is the traditional ruler of the Tiv people called?", options: ["Tor Tiv", "Aku Uka", "Olu", "Obi"], correct: 0 },
-        { text: "The 'Carnival Calabar' is in which state?", options: ["Cross River", "Akwa Ibom", "Rivers", "Bayelsa"], correct: 0 },
-        { text: "Which traditional textile is associated with the Yoruba?", options: ["Adire", "Akwete", "Kente", "Aso Oke"], correct: 0 }
-      ],
-      pop: [
-        { text: "Who sang 'Fall'?", options: ["Davido", "Wizkid", "Burna Boy", "Kizz Daniel"], correct: 0 },
-        { text: "Burna Boy nickname?", options: ["Odogwu", "Starboy", "African Giant", "E choke"], correct: 2 },
-        { text: "Nigerian Grammy winner 2021?", options: ["Burna Boy", "Wizkid", "Davido", "Tiwa Savage"], correct: 0 },
-        { text: "Slang for relocating abroad?", options: ["Japa", "Chop life", "Form E", "Zanku"], correct: 0 },
-        { text: "Davido song 'E choke'?", options: ["If", "Fall", "Assurance", "Fem"], correct: 3 },
-        { text: "Creator of 'Omo Ghetto'?", options: ["Funke Akindele", "Mo Abudu", "Kemi Adetiba", "Tope Oshin"], correct: 0 },
-        { text: "'Shaku Shaku' dance associated with?", options: ["Street dance", "Wedding", "Corporate", "Church"], correct: 0 },
-        { text: "Nollywood comic actor?", options: ["Aki and Pawpaw", "RMD", "Desmond Elliot", "Jim Iyke"], correct: 0 },
-        { text: "'Made in Lagos' album by?", options: ["Wizkid", "Burna Boy", "Davido", "Olamide"], correct: 0 },
-        { text: "Who sang 'Fever'?", options: ["Wizkid", "Burna Boy", "Davido", "Kizz Daniel"], correct: 0 },
-        { text: "Which Nigerian artist is known as 'Asa'?", options: ["Asa", "Tiwa Savage", "Yemi Alade", "Niniola"], correct: 0 },
-        { text: "Who won the 2023 Headies 'Artist of the Year'?", options: ["Burna Boy", "Davido", "Wizkid", "Rema"], correct: 3 },
-        { text: "Which musician popularized the 'Zanku' dance?", options: ["Zlatan", "Naira Marley", "Rema", "Fireboy"], correct: 0 },
-        { text: "Who sang 'Soweto' with Victony?", options: ["Rema", "Tempoe", "Omah Lay", "Ckay"], correct: 1 },
-        { text: "Which Nollywood actress is known as 'Omo Ghetto'?", options: ["Funke Akindele", "Toyin Abraham", "Mercy Johnson", "Ruth Kadiri"], correct: 0 }
-      ],
-      movies: [
-        { text: "Actress in 'Lionheart'?", options: ["Genevieve Nnaji", "Omotola", "Funke Akindele", "Rita Dominic"], correct: 0 },
-        { text: "Highest‑grossing Nollywood film?", options: ["Omo Ghetto: The Saga", "The Wedding Party", "King of Boys", "Lionheart"], correct: 0 },
-        { text: "Nollywood comic actor?", options: ["Aki and Pawpaw", "RMD", "Desmond Elliot", "Jim Iyke"], correct: 0 },
-        { text: "Which Nollywood actress starred in 'King of Boys'?", options: ["Sola Sobowale", "Genevieve Nnaji", "Funke Akindele", "Omotola Jalade"], correct: 0 },
-        { text: "Who directed 'The Wedding Party'?", options: ["Kemi Adetiba", "Mo Abudu", "Funke Akindele", "Tope Oshin"], correct: 0 },
-        { text: "Which actor played 'Akin' in 'The Wedding Party'?", options: ["Banky W", "Ramsey Nouah", "Richard Mofe-Damijo", "Yul Edochie"], correct: 0 },
-        { text: "What is the name of the first Nigerian film submitted for the Oscars?", options: ["Lionheart", "The Wedding Party", "October 1", "Tango With Me"], correct: 0 },
-        { text: "Which Nollywood movie starred 'Funke Akindele' as 'Leila'?", options: ["Omo Ghetto", "Chief Daddy", "Your Excellency", "Moms at War"], correct: 0 },
-        { text: "Who directed 'The Figurine'?", options: ["Kunle Afolayan", "Tunde Kelani", "Mildred Okwo", "Mahmood Ali-Balogun"], correct: 0 },
-        { text: "Which Nollywood actor is known for 'Phone Swap'?", options: ["Wale Ojo", "Ramsey Nouah", "Jim Iyke", "Majid Michel"], correct: 0 }
-      ],
-      football: [
-        { text: "Which club has won the NPFL the most times?", options: ["Enyimba", "Kano Pillars", "Rangers International", "Shooting Stars"], correct: 0 },
-        { text: "Who is Nigeria's all‑time top scorer?", options: ["Rashidi Yekini", "Segun Odegbami", "Jay-Jay Okocha", "Ahmed Musa"], correct: 3 },
-        { text: "Which Nigerian player won the UEFA Champions League with Chelsea in 2021?", options: ["Kelechi Iheanacho", "Victor Osimhen", "Wilfred Ndidi", "Alex Iwobi"], correct: 2 },
-        { text: "Who was the captain of the 2013 AFCON winning team?", options: ["Joseph Yobo", "Vincent Enyeama", "John Obi Mikel", "Ahmed Musa"], correct: 0 },
-        { text: "Which Nigerian goalkeeper holds the record for most caps?", options: ["Vincent Enyeama", "Peter Rufai", "Ike Shorunmu", "Carl Ikeme"], correct: 0 },
-        { text: "Which Nigerian player scored a hat‑trick at the 2018 World Cup?", options: ["Ahmed Musa", "Victor Moses", "Odion Ighalo", "Kelechi Iheanacho"], correct: 0 },
-        { text: "Who is the current all‑time top scorer for the Super Eagles?", options: ["Rashidi Yekini", "Segun Odegbami", "Jay-Jay Okocha", "Ahmed Musa"], correct: 3 },
-        { text: "Which Nigerian coach led the team to win the 2013 AFCON?", options: ["Stephen Keshi", "Sunday Oliseh", "Gernot Rohr", "Samson Siasia"], correct: 0 },
-        { text: "Which Nigerian player was named African Footballer of the Year in 1999?", options: ["Nwankwo Kanu", "Jay-Jay Okocha", "Rashidi Yekini", "Victor Ikpeba"], correct: 0 },
-        { text: "In which year did Nigeria win its first Olympic gold in football?", options: ["1996", "2000", "2008", "2016"], correct: 0 }
-      ]
-    },
-    Ghana: {
-      history: [
-        { text: "What was Ghana's former colonial name?", options: ["Gold Coast", "Slave Coast", "Ivory Coast", "Pepper Coast"], correct: 0 },
-        { text: "Who was Ghana's first president?", options: ["Kwame Nkrumah", "Jerry Rawlings", "John Kufuor", "Nana Akufo-Addo"], correct: 0 },
-        { text: "In which year did Ghana gain independence?", options: ["1957", "1960", "1955", "1963"], correct: 0 },
-        { text: "Who was the leader of the 1966 coup that overthrew Kwame Nkrumah?", options: ["Joseph Ankrah", "Emmanuel Kotoka", "Akwasi Afrifa", "Ignatius Acheampong"], correct: 0 },
-        { text: "Which Ghanaian served as the Secretary‑General of the United Nations?", options: ["Kofi Annan", "Kwame Nkrumah", "John Atta Mills", "Nana Akufo-Addo"], correct: 0 },
-        { text: "Who was the first Ghanaian to win the African Footballer of the Year award?", options: ["Abedi Pele", "Asamoah Gyan", "Michael Essien", "Tony Yeboah"], correct: 0 },
-        { text: "The 'Big Six' were founding fathers of Ghana. Who among them later became Prime Minister?", options: ["Kwame Nkrumah", "J.B. Danquah", "Edward Akufo-Addo", "Kofi Busia"], correct: 0 },
-        { text: "In which year did Ghana become a republic?", options: ["1960", "1957", "1963", "1969"], correct: 0 },
-        { text: "Who was the first Ghanaian to be awarded the Nobel Prize?", options: ["Kofi Annan", "Kwame Nkrumah", "J.B. Danquah", "Nana Akufo-Addo"], correct: 0 },
-        { text: "The 'National Liberation Council' (NLC) overthrew Kwame Nkrumah in 1966. Who became the head of state after the coup?", options: ["Joseph Ankrah", "Emmanuel Kotoka", "Akwasi Afrifa", "Ignatius Acheampong"], correct: 0 }
-      ],
-      geography: [
-        { text: "What is the capital of Ghana?", options: ["Accra", "Kumasi", "Takoradi", "Cape Coast"], correct: 0 },
-        { text: "Which lake is the largest man‑made lake in Ghana?", options: ["Lake Volta", "Lake Bosomtwe", "Lake Kainji", "Lake Togo"], correct: 0 },
-        { text: "Which river forms part of Ghana's eastern border?", options: ["Volta", "Tano", "Ankobra", "Pra"], correct: 0 },
-        { text: "Which region of Ghana is known for its cocoa production?", options: ["Ashanti", "Western", "Eastern", "Volta"], correct: 0 },
-        { text: "What is the highest point in Ghana?", options: ["Mount Afadjato", "Mount Adaklu", "Mount Gemi", "Mount Dzigbe"], correct: 0 },
-        { text: "What is the capital of the Ashanti Region?", options: ["Kumasi", "Obuasi", "Ejisu", "Mampong"], correct: 0 },
-        { text: "Which river is the longest in Ghana?", options: ["Volta", "Tano", "Ankobra", "Pra"], correct: 0 },
-        { text: "Which coastal city is known for its slave castles?", options: ["Cape Coast", "Accra", "Takoradi", "Winneba"], correct: 0 },
-        { text: "Which national park is famous for its elephants in Ghana?", options: ["Kakum National Park", "Mole National Park", "Digya National Park", "Bia National Park"], correct: 1 },
-        { text: "What is the largest city in Ghana by population?", options: ["Accra", "Kumasi", "Tamale", "Sekondi-Takoradi"], correct: 0 }
-      ],
-      culture: [
-        { text: "Which festival is famous among the Ashanti people?", options: ["Homowo", "Aboakyer", "Damba", "Odwira"], correct: 3 },
-        { text: "What is the traditional dance of the Ewe people?", options: ["Agbadza", "Adowa", "Kpanlogo", "Bamaya"], correct: 0 },
-        { text: "What is the national dish of Ghana?", options: ["Fufu", "Jollof Rice", "Banku", "Kenkey"], correct: 2 },
-        { text: "Which traditional Ghanaian cloth is woven in strips and worn on special occasions?", options: ["Kente", "Adinkra", "Fugu", "Batakari"], correct: 0 },
-        { text: "The 'Homowo' festival is celebrated by which ethnic group?", options: ["Ga", "Ashanti", "Ewe", "Fante"], correct: 0 },
-        { text: "What is the name of the Ghanaian woven smock often worn by men in the northern regions?", options: ["Fugu", "Kente", "Adinkra", "Ankara"], correct: 0 },
-        { text: "Which dance is associated with the Ga people, especially during the Homowo festival?", options: ["Kpanlogo", "Adowa", "Bamaya", "Agbadza"], correct: 0 },
-        { text: "The famous 'Kente' cloth is originally associated with which Ghanaian kingdom?", options: ["Ashanti Kingdom", "Fante Confederacy", "Ga State", "Dagbon Kingdom"], correct: 0 },
-        { text: "Which Ghanaian dish is made from boiled and pounded cassava and plantain?", options: ["Fufu", "Banku", "Kenkey", "Konkonte"], correct: 0 },
-        { text: "The 'Damba' festival is celebrated by which ethnic group in Ghana?", options: ["Dagomba", "Ewe", "Fante", "Ga"], correct: 0 }
-      ],
-      pop: [
-        { text: "Who is known as the 'King of Azonto'?", options: ["Fuse ODG", "Sarkodie", "Stonebwoy", "Shatta Wale"], correct: 0 },
-        { text: "Which Ghanaian musician won BET Best International Act in 2019?", options: ["Sarkodie", "Stonebwoy", "Shatta Wale", "R2Bees"], correct: 0 },
-        { text: "Who sang the hit 'Oofeetsɔ'?", options: ["Sarkodie", "Stonebwoy", "KiDi", "King Promise"], correct: 2 },
-        { text: "Which Ghanaian rapper is known as 'The African Simba'?", options: ["Sarkodie", "M.anifest", "Obrafour", "E.L."], correct: 0 },
-        { text: "Who won the Vodafone Ghana Music Award for Artiste of the Year in 2023?", options: ["Black Sherif", "King Promise", "KiDi", "Stonebwoy"], correct: 0 },
-        { text: "What is the name of Ghana's most popular hip-hop duo?", options: ["R2Bees", "Bradez", "Fokn Bois", "Asaase Sound"], correct: 0 },
-        { text: "Which Ghanaian musician is known as the 'Dancehall King'?", options: ["Shatta Wale", "Stonebwoy", "Samini", "Kaakie"], correct: 1 },
-        { text: "Who sang the hit 'Kidi'?", options: ["KiDi", "King Promise", "Kuami Eugene", "Medikal"], correct: 0 },
-        { text: "Which Ghanaian actress is also a successful musician?", options: ["Yvonne Nelson", "Jackie Appiah", "Nadia Buari", "Martha Ankomah"], correct: 0 },
-        { text: "What is the name of the annual music festival held in Accra?", options: ["Afro Nation", "Ghana Music Awards", "Chale Wote", "Abooda Fest"], correct: 0 }
-      ],
-      movies: [
-        { text: "Which Ghanaian actor starred in 'The Price'?", options: ["Majid Michel", "Van Vicker", "John Dumelo", "Yvonne Nelson"], correct: 0 },
-        { text: "Who directed 'The Burial of Kojo'?", options: ["Blitz Bazawule", "Leila Djansi", "Shirley Frimpong-Manso", "Frank Rajah"], correct: 0 },
-        { text: "Which Ghanaian actress is known for the movie 'Princess Tyra'?", options: ["Yvonne Okoro", "Jackie Appiah", "Nadia Buari", "Martha Ankomah"], correct: 1 },
-        { text: "What is the name of the first Ghanaian movie submitted for the Oscars?", options: ["The Burial of Kojo", "Azali", "Keteke", "Children of the Mountain"], correct: 1 },
-        { text: "Which Ghanaian actor starred in 'A Sting in a Tale'?", options: ["John Dumelo", "Majid Michel", "Van Vicker", "Adjetey Anang"], correct: 2 },
-        { text: "Who is the most awarded Ghanaian actress?", options: ["Jackie Appiah", "Yvonne Nelson", "Nadia Buari", "Martha Ankomah"], correct: 0 },
-        { text: "Which Ghanaian movie features the character 'Kwame'?", options: ["The Price", "Single and Married", "Love and Marriage", "Perfect Picture"], correct: 0 },
-        { text: "Who directed the movie 'Azali'?", options: ["Kwabena Gyansah", "Leila Djansi", "Shirley Frimpong-Manso", "Frank Rajah"], correct: 0 },
-        { text: "Which Ghanaian actor starred in 'The Perfect Picture'?", options: ["Majid Michel", "Van Vicker", "John Dumelo", "Adjetey Anang"], correct: 1 },
-        { text: "What is the name of the Ghanaian film about a young girl who joins a football academy?", options: ["Keteke", "Azali", "The Burial of Kojo", "Children of the Mountain"], correct: 2 }
-      ],
-      football: [
-        { text: "Which club has won the Ghana Premier League the most times?", options: ["Asante Kotoko", "Hearts of Oak", "Aduana Stars", "Medeama"], correct: 0 },
-        { text: "Who is Ghana's all‑time top scorer?", options: ["Asamoah Gyan", "Abedi Pele", "Tony Yeboah", "André Ayew"], correct: 0 },
-        { text: "Which Ghanaian player won the African Player of the Year award in 1992?", options: ["Abedi Pele", "Anthony Yeboah", "Asamoah Gyan", "Michael Essien"], correct: 0 },
-        { text: "Which Ghanaian goalkeeper holds the record for most appearances?", options: ["Richard Kingson", "Adam Kwarasey", "Fatau Dauda", "Joseph Addo"], correct: 0 },
-        { text: "In which year did Ghana reach the quarterfinals of the FIFA World Cup?", options: ["2010", "2006", "2014", "2018"], correct: 0 },
-        { text: "Which Ghanaian player was known as the 'Baby Jet'?", options: ["Asamoah Gyan", "Abedi Pele", "Michael Essien", "Sulley Muntari"], correct: 0 },
-        { text: "Which club did Michael Essien play for in the Premier League?", options: ["Chelsea", "Manchester United", "Arsenal", "Liverpool"], correct: 0 },
-        { text: "Who is the current captain of the Black Stars?", options: ["André Ayew", "Thomas Partey", "Jordan Ayew", "Daniel Amartey"], correct: 0 },
-        { text: "In which year did Ghana win the Africa Cup of Nations last?", options: ["1982", "1963", "1965", "1978"], correct: 0 },
-        { text: "Which Ghanaian player scored a hat‑trick in the 2014 World Cup?", options: ["Asamoah Gyan", "André Ayew", "Jordan Ayew", "Thomas Partey"], correct: 0 }
-      ]
-    },
-    Kenya: {
-      history: [
-        { text: "Who was Kenya's first president?", options: ["Jomo Kenyatta", "Daniel arap Moi", "Mwai Kibaki", "Uhuru Kenyatta"], correct: 0 },
-        { text: "In what year did Kenya gain independence?", options: ["1963", "1960", "1965", "1962"], correct: 0 },
-        { text: "Which Kenyan won the Nobel Peace Prize in 2004?", options: ["Wangari Maathai", "Raila Odinga", "Uhuru Kenyatta", "Ngũgĩ wa Thiong'o"], correct: 0 },
-        { text: "Who led the Mau Mau uprising against British rule?", options: ["Dedan Kimathi", "Jomo Kenyatta", "Mekatilili wa Menza", "Koitalel arap Samoei"], correct: 0 },
-        { text: "Which Kenyan leader served as the 3rd President?", options: ["Mwai Kibaki", "Daniel arap Moi", "Uhuru Kenyatta", "William Ruto"], correct: 0 },
-        { text: "What was the name of the first president of Kenya after independence?", options: ["Jomo Kenyatta", "Daniel arap Moi", "Mwai Kibaki", "Uhuru Kenyatta"], correct: 0 },
-        { text: "Which Kenyan athlete won the 800m gold at the 2016 Olympics?", options: ["David Rudisha", "Ezekiel Kemboi", "Asbel Kiprop", "Conseslus Kipruto"], correct: 0 },
-        { text: "Who was the first female Vice President of Kenya?", options: ["Wangari Maathai", "Martha Karua", "Kalonzo Musyoka", "Charity Ngilu"], correct: 1 },
-        { text: "In which year did the new constitution of Kenya come into effect?", options: ["2010", "2005", "2013", "2017"], correct: 0 },
-        { text: "Which Kenyan writer is known for his novel 'Petals of Blood'?", options: ["Ngũgĩ wa Thiong'o", "Meja Mwangi", "Grace Ogot", "Binyavanga Wainaina"], correct: 0 }
-      ],
-      geography: [
-        { text: "What is the capital of Kenya?", options: ["Nairobi", "Mombasa", "Kisumu", "Nakuru"], correct: 0 },
-        { text: "What is the highest mountain in Kenya?", options: ["Mount Kenya", "Mount Kilimanjaro", "Mount Elgon", "Mount Longonot"], correct: 0 },
-        { text: "Which lake is the largest in Kenya?", options: ["Lake Turkana", "Lake Victoria", "Lake Naivasha", "Lake Nakuru"], correct: 0 },
-        { text: "Which national park is famous for the wildebeest migration?", options: ["Maasai Mara", "Amboseli", "Tsavo", "Samburu"], correct: 0 },
-        { text: "What is the coastal city known for its historical fort Jesus?", options: ["Mombasa", "Malindi", "Lamu", "Kilifi"], correct: 0 },
-        { text: "Which river is the longest in Kenya?", options: ["Tana River", "Athi River", "Galana River", "Ewaso Ng'iro"], correct: 0 },
-        { text: "What is the name of the desert in northern Kenya?", options: ["Chalbi Desert", "Kalahari Desert", "Namib Desert", "Sahara Desert"], correct: 0 },
-        { text: "Which mountain is the second highest in Kenya?", options: ["Mount Elgon", "Mount Kilimanjaro", "Mount Longonot", "Mount Suswa"], correct: 0 },
-        { text: "What is the largest city in Kenya after Nairobi?", options: ["Mombasa", "Kisumu", "Nakuru", "Eldoret"], correct: 0 },
-        { text: "Which lake is known for its flamingos?", options: ["Lake Nakuru", "Lake Naivasha", "Lake Elementaita", "Lake Bogoria"], correct: 0 }
-      ],
-      culture: [
-        { text: "Which Kenyan tribe is famous for its jumping dance?", options: ["Maasai", "Kikuyu", "Luo", "Kalenjin"], correct: 0 },
-        { text: "What is the national dish of Kenya?", options: ["Ugali", "Nyama Choma", "Sukuma Wiki", "Githeri"], correct: 0 },
-        { text: "Which traditional festival is celebrated by the Mijikenda people?", options: ["Nyeke", "Marafa", "Lamu", "Mombasa Carnival"], correct: 0 },
-        { text: "What is the traditional Luo string instrument?", options: ["Nyatiti", "Orutu", "Kigamba", "Litungu"], correct: 0 },
-        { text: "What is the name of the Maasai traditional jumping dance?", options: ["Adumu", "Isikuti", "Chakacha", "Mwomboko"], correct: 0 },
-        { text: "What is the traditional attire of the Kikuyu people?", options: ["Muthuru", "Kikoi", "Kanga", "Leso"], correct: 0 },
-        { text: "Which festival is celebrated by the Swahili people in Lamu?", options: ["Lamu Cultural Festival", "Mombasa Carnival", "Kenya Music Festival", "Lake Turkana Festival"], correct: 0 },
-        { text: "What is the name of the traditional Kalenjin dance?", options: ["Isikuti", "Adumu", "Chakacha", "Mdundiko"], correct: 0 },
-        { text: "Which Kenyan community is known for its soapstone carvings?", options: ["Kisii", "Kikuyu", "Luo", "Maasai"], correct: 0 },
-        { text: "What is the traditional food of the Maasai?", options: ["Meat and milk", "Ugali", "Nyama Choma", "Githeri"], correct: 0 }
-      ],
-      pop: [
-        { text: "Who sang 'Kiss Me'?", options: ["Sauti Sol", "Nyashinski", "Bahati", "Otile Brown"], correct: 1 },
-        { text: "Which Kenyan musician is known for 'Diani'?", options: ["Sauti Sol", "Nyashinski", "Otile Brown", "Gilad"], correct: 2 },
-        { text: "Who is the most famous Kenyan rapper?", options: ["Khaligraph Jones", "Octopizzo", "King Kaka", "Blen Blinks"], correct: 0 },
-        { text: "Which Kenyan band released the hit 'Suzanna'?", options: ["Sauti Sol", "Elani", "H_art the Band", "Bien"], correct: 0 },
-        { text: "Who won the Best African Act at the 2021 MTV Europe Music Awards?", options: ["Bien", "Sauti Sol", "Nyashinski", "Khaligraph Jones"], correct: 3 },
-        { text: "Which Kenyan musician is known as 'The King of Gengeton'?", options: ["Bahati", "Otile Brown", "Arrow Bwoy", "Willy Paul"], correct: 0 },
-        { text: "Who sang the hit 'Don't Call Me Back'?", options: ["Sauti Sol", "Nyashinski", "Otile Brown", "Gilad"], correct: 1 },
-        { text: "Which Kenyan rapper was featured in the song 'Nairobae'?", options: ["Khaligraph Jones", "Octopizzo", "King Kaka", "Blen Blinks"], correct: 0 },
-        { text: "What is the name of the annual music festival in Nairobi?", options: ["Koroga Festival", "Afro Nation", "Lake of Stars", "Sauti za Busara"], correct: 0 },
-        { text: "Which Kenyan singer is known for 'Lifestyle'?", options: ["Nyashinski", "Otile Brown", "Bahati", "Gilad"], correct: 0 }
-      ],
-      movies: [
-        { text: "Which Kenyan film was nominated for an Oscar?", options: ["Supa Modo", "Kati Kati", "Nairobi Half Life", "The First Grader"], correct: 0 },
-        { text: "Who directed 'Kati Kati'?", options: ["Mbithi Masya", "Wanuri Kahiu", "Judy Kibinge", "Tosh Gitonga"], correct: 0 },
-        { text: "Which Kenyan actor starred in 'Lusala'?", options: ["Brian Ogola", "Alfred Munyua", "Ian Mugoya", "Timothy Runji"], correct: 1 },
-        { text: "What is the name of the first Kenyan film to stream on Netflix?", options: ["Disconnect", "Poppie", "The Broken Melody", "Supa Modo"], correct: 0 },
-        { text: "Who directed the award-winning film 'Rafiki'?", options: ["Wanuri Kahiu", "Mbithi Masya", "Judy Kibinge", "Likarion Wainaina"], correct: 0 },
-        { text: "Which Kenyan actor starred in 'The First Grader'?", options: ["Oliver Litondo", "John Sibi-Okumu", "Godfrey Ojiambo", "Peter King"], correct: 0 },
-        { text: "What is the name of the Kenyan film about a young girl who dreams of becoming a pilot?", options: ["Kati Kati", "Supa Modo", "Nairobi Half Life", "The Broken Melody"], correct: 1 },
-        { text: "Which Kenyan actress is known for her role in 'Rafiki'?", options: ["Samantha Mugatsia", "Sheila Munyiva", "Mkamzee Mwatela", "Lupita Nyong'o"], correct: 0 },
-        { text: "What is the name of the Kenyan film that won the Best Director award at the Africa Movie Academy Awards?", options: ["Kati Kati", "Supa Modo", "Nairobi Half Life", "Rafiki"], correct: 0 },
-        { text: "Which Kenyan film is about a young man who returns to his village and discovers a secret?", options: ["The Last Village", "Kati Kati", "Supa Modo", "Nairobi Half Life"], correct: 0 }
-      ],
-      football: [
-        { text: "Which club has won the Kenyan Premier League the most?", options: ["Gor Mahia", "AFC Leopards", "Tusker", "Ulinzi Stars"], correct: 0 },
-        { text: "Who is Kenya's all‑time top scorer?", options: ["Dennis Oliech", "Michael Olunga", "Allan Wanga", "Musa Otieno"], correct: 0 },
-        { text: "Which Kenyan player scored a hat‑trick at the 2019 AFCON?", options: ["Michael Olunga", "Victor Wanyama", "Eric Ouma", "John Ndirangu"], correct: 0 },
-        { text: "Which Kenyan goalkeeper was known as 'The Cat'?", options: ["Mahmoud Abbas", "Arnold Origi", "Patrick Matasi", "Ian Otieno"], correct: 0 },
-        { text: "Which Kenyan midfielder captained the national team and played for Tottenham Hotspur?", options: ["Victor Wanyama", "McDonald Mariga", "Dennis Oliech", "Michael Olunga"], correct: 0 },
-        { text: "Which Kenyan player was the first to score in the English Premier League?", options: ["Victor Wanyama", "McDonald Mariga", "Ayub Timbe", "Francis Kahata"], correct: 0 },
-        { text: "What is the nickname of the Kenyan national football team?", options: ["Harambee Stars", "Simba", "Rising Stars", "National Team"], correct: 0 },
-        { text: "Which Kenyan club is known as the 'Ingwe'?", options: ["AFC Leopards", "Gor Mahia", "Tusker", "Ulinzi Stars"], correct: 0 },
-        { text: "In which year did Kenya qualify for the Africa Cup of Nations?", options: ["2004", "2006", "2008", "2010"], correct: 0 },
-        { text: "Which Kenyan player was the top scorer in the 2019 Africa Cup of Nations qualifiers?", options: ["Michael Olunga", "Dennis Oliech", "Allan Wanga", "John Ndirangu"], correct: 0 }
-      ]
-    },
-    SouthAfrica: {
-      history: [
-        { text: "Who was the first black president of South Africa?", options: ["Nelson Mandela", "Thabo Mbeki", "Jacob Zuma", "Cyril Ramaphosa"], correct: 0 },
-        { text: "In what year did apartheid officially end?", options: ["1994", "1990", "1992", "1996"], correct: 0 },
-        { text: "Who was the last State President under apartheid?", options: ["F.W. de Klerk", "P.W. Botha", "John Vorster", "B.J. Vorster"], correct: 0 },
-        { text: "What was the name of the anti‑apartheid movement that used economic pressure?", options: ["Disinvestment Campaign", "Defiance Campaign", "Freedom Charter", "Sharpeville Campaign"], correct: 0 },
-        { text: "Which famous South African activist was awarded the Nobel Peace Prize along with Nelson Mandela?", options: ["F.W. de Klerk", "Desmond Tutu", "Oliver Tambo", "Walter Sisulu"], correct: 0 },
-        { text: "Who was the first woman to be elected as the President of the African National Congress (ANC) Women's League?", options: ["Winnie Mandela", "Albertina Sisulu", "Lillian Ngoyi", "Ruth First"], correct: 1 },
-        { text: "In which year did the 'Soweto Uprising' take place?", options: ["1976", "1980", "1985", "1990"], correct: 0 },
-        { text: "Who was the founder of the Pan Africanist Congress (PAC)?", options: ["Robert Sobukwe", "Steve Biko", "Nelson Mandela", "Oliver Tambo"], correct: 0 },
-        { text: "What was the name of the policy that segregated the population into racial groups?", options: ["Apartheid", "Segregation", "Discrimination", "Bantustan"], correct: 0 },
-        { text: "Which famous South African musician was a vocal anti‑apartheid activist?", options: ["Miriam Makeba", "Brenda Fassie", "Hugh Masekela", "Lucky Dube"], correct: 0 }
-      ],
-      geography: [
-        { text: "What is the capital of South Africa?", options: ["Pretoria", "Cape Town", "Bloemfontein", "Johannesburg"], correct: 0 },
-        { text: "Which mountain range is famous in Cape Town?", options: ["Table Mountain", "Drakensberg", "Magaliesberg", "Langeberg"], correct: 0 },
-        { text: "Which two oceans meet at Cape Agulhas?", options: ["Atlantic and Indian", "Pacific and Indian", "Arctic and Atlantic", "Indian and Southern"], correct: 0 },
-        { text: "What is the longest river in South Africa?", options: ["Orange River", "Vaal River", "Limpopo River", "Tugela River"], correct: 0 },
-        { text: "Which province is known as the 'Rainbow Province'?", options: ["Gauteng", "KwaZulu-Natal", "Western Cape", "Mpumalanga"], correct: 1 },
-        { text: "What is the highest point in South Africa?", options: ["Mafadi", "Table Mountain", "Chapman's Peak", "Lion's Head"], correct: 0 },
-        { text: "Which desert is located in South Africa?", options: ["Kalahari", "Namib", "Sahara", "Atacama"], correct: 0 },
-        { text: "What is the name of the famous botanical garden in Cape Town?", options: ["Kirstenbosch", "Walter Sisulu", "Pretoria", "Johannesburg"], correct: 0 },
-        { text: "Which city is known as the 'City of Gold'?", options: ["Johannesburg", "Pretoria", "Cape Town", "Durban"], correct: 0 },
-        { text: "What is the largest lake in South Africa?", options: ["Lake Chrissie", "Lake Sibhayi", "Lake St Lucia", "Lake Fundudzi"], correct: 0 }
-      ],
-      culture: [
-        { text: "What is the traditional dress of the Zulu people?", options: ["Isicholo", "Shweshwe", "Kente", "Agbada"], correct: 0 },
-        { text: "Which South African dish is made from cornmeal?", options: ["Pap", "Bunny Chow", "Biltong", "Bobotie"], correct: 0 },
-        { text: "Which festival celebrates Cape Malay culture?", options: ["Coon Carnival", "Klein Karoo Nasionale Kunstefees", "Oppikoppi", "Splashy Fen"], correct: 0 },
-        { text: "What is the traditional dance of the Xhosa people?", options: ["Indlamu", "Pantsula", "Gumboot", "Mbaqanga"], correct: 0 },
-        { text: "Which language is the most widely spoken in South Africa?", options: ["Zulu", "Xhosa", "Afrikaans", "English"], correct: 0 },
-        { text: "What is the traditional headwear of married Zulu women?", options: ["Isicholo", "Inkehli", "Iqhiya", "Umqhele"], correct: 0 },
-        { text: "Which South African ethnic group is known for their colorful blankets?", options: ["Basotho", "Zulu", "Xhosa", "Venda"], correct: 0 },
-        { text: "What is the name of the traditional South African meat sausage?", options: ["Boerewors", "Biltong", "Droëwors", "Rusks"], correct: 0 },
-        { text: "Which dance originated in the gold mines of South Africa?", options: ["Gumboot", "Pantsula", "Indlamu", "Mbaqanga"], correct: 0 },
-        { text: "What is the name of the annual music festival held in Grahamstown?", options: ["National Arts Festival", "Oppikoppi", "Splashy Fen", "Klein Karoo"], correct: 0 }
-      ],
-      pop: [
-        { text: "Who sang 'Jerusalema'?", options: ["Master KG ft. Nomcebo", "DJ Maphorisa", "Kabza De Small", "Prince Kaybee"], correct: 0 },
-        { text: "Which South African rapper is known as 'Mr. Cashtime'?", options: ["Cassper Nyovest", "AKA", "Nasty C", "Kwesta"], correct: 0 },
-        { text: "Who is the most awarded South African musician of all time?", options: ["Miriam Makeba", "Brenda Fassie", "Lucky Dube", "Hugh Masekela"], correct: 1 },
-        { text: "Which South African DJ won a Grammy for the remix of 'Jerusalema'?", options: ["Master KG", "DJ Maphorisa", "Black Coffee", "Prince Kaybee"], correct: 2 },
-        { text: "Who sang 'Osama' featuring Kwesta?", options: ["Kamo Mphela", "Zakes Bantwini", "Nomcebo Zikode", "Makhadzi"], correct: 0 },
-        { text: "Which South African musician is known as 'The Queen of Afro Pop'?", options: ["Yvonne Chaka Chaka", "Brenda Fassie", "Miriam Makeba", "Thandiswa Mazwai"], correct: 0 },
-        { text: "Who sang the hit 'Vula Vala'?", options: ["DJ Maphorisa", "Kabza De Small", "Master KG", "Prince Kaybee"], correct: 0 },
-        { text: "Which South African rapper is known for the song 'All Eyes On Me'?", options: ["AKA", "Cassper Nyovest", "Nasty C", "Kwesta"], correct: 0 },
-        { text: "What is the name of the popular South African house music genre?", options: ["Amapiano", "Gqom", "Kwaito", "House"], correct: 0 },
-        { text: "Which South African singer is known as 'Mama Africa'?", options: ["Miriam Makeba", "Brenda Fassie", "Yvonne Chaka Chaka", "Thandiswa Mazwai"], correct: 0 }
-      ],
-      movies: [
-        { text: "Which South African film won the Oscar for Best Foreign Language Film?", options: ["Tsotsi", "District 9", "The Gods Must Be Crazy", "Yesterday"], correct: 0 },
-        { text: "Who directed 'District 9'?", options: ["Neill Blomkamp", "Gavin Hood", "Darrell Roodt", "Oliver Schmitz"], correct: 0 },
-        { text: "Which South African actor starred in 'Blood Diamond'?", options: ["Djimon Hounsou", "Terry Pheto", "Connie Chiume", "John Kani"], correct: 3 },
-        { text: "What is the name of the first South African film to win the Oscar for Best Foreign Language Film?", options: ["Tsotsi", "Yesterday", "The Gods Must Be Crazy", "Skin"], correct: 0 },
-        { text: "Which South African actress played the lead in 'The Woman King'?", options: ["Thuso Mbedu", "Nomzamo Mbatha", "Terry Pheto", "Charlize Theron"], correct: 0 },
-        { text: "Which South African film is about a young boy who finds a stolen car?", options: ["Tsotsi", "District 9", "Yesterday", "The Gods Must Be Crazy"], correct: 0 },
-        { text: "Who directed the movie 'The Gods Must Be Crazy'?", options: ["Jamie Uys", "Neill Blomkamp", "Gavin Hood", "Darrell Roodt"], correct: 0 },
-        { text: "Which South African actor is known for his role in 'Black Panther'?", options: ["John Kani", "Atandwa Kani", "Connie Chiume", "Thuso Mbedu"], correct: 0 },
-        { text: "What is the name of the South African film about a young girl who dreams of becoming a boxer?", options: ["Moffie", "The Wound", "Ayanda", "Kite"], correct: 2 },
-        { text: "Which South African actress won an Academy Award for her role in 'Monster'?", options: ["Charlize Theron", "Thuso Mbedu", "Nomzamo Mbatha", "Terry Pheto"], correct: 0 }
-      ],
-      football: [
-        { text: "Which club has won the PSL the most times?", options: ["Mamelodi Sundowns", "Kaizer Chiefs", "Orlando Pirates", "SuperSport United"], correct: 0 },
-        { text: "Who is South Africa's all‑time top scorer?", options: ["Benni McCarthy", "Shaun Bartlett", "Katlego Mphela", "Siphiwe Tshabalala"], correct: 0 },
-        { text: "Which South African player won the Premier League with Manchester United?", options: ["Quinton Fortune", "Benni McCarthy", "Aaron Mokoena", "Mbulelo Mabizela"], correct: 0 },
-        { text: "In which year did South Africa host the FIFA World Cup?", options: ["2010", "2006", "2014", "2018"], correct: 0 },
-        { text: "Who scored the famous goal for South Africa in the 2010 World Cup?", options: ["Siphiwe Tshabalala", "Kagiso Dikgacoi", "Steven Pienaar", "Teko Modise"], correct: 0 },
-        { text: "Which South African player was known as 'The Kaiser'?", options: ["Kaizer Motaung", "Jomo Sono", "Lucas Radebe", "Doctor Khumalo"], correct: 0 },
-        { text: "Which South African club is known as 'The Buccaneers'?", options: ["Orlando Pirates", "Kaizer Chiefs", "Mamelodi Sundowns", "SuperSport United"], correct: 0 },
-        { text: "Who is the all‑time leading goalscorer for the South African national team?", options: ["Benni McCarthy", "Shaun Bartlett", "Katlego Mphela", "Siphiwe Tshabalala"], correct: 0 },
-        { text: "Which South African player won the African Footballer of the Year award in 2005?", options: ["Samuel Eto'o", "Michael Essien", "Didier Drogba", "Benni McCarthy"], correct: 1 },
-        { text: "In which year did South Africa win the Africa Cup of Nations?", options: ["1996", "1998", "2000", "2002"], correct: 0 }
-      ]
-    },
-    africa: [
-      { text: "Which country is known as the 'Giant of Africa'?", options: ["Nigeria", "Ghana", "South Africa", "Kenya"], correct: 0 },
-      { text: "What is the highest mountain in Africa?", options: ["Mount Kilimanjaro", "Mount Kenya", "Mount Elgon", "Rwenzori"], correct: 0 },
-      { text: "Which river is the longest in Africa?", options: ["Nile", "Congo", "Niger", "Zambezi"], correct: 0 },
-      { text: "Which African country was formerly known as Abyssinia?", options: ["Ethiopia", "Eritrea", "Somalia", "Djibouti"], correct: 0 },
-      { text: "Who was the first African to win the FIFA Ballon d'Or?", options: ["George Weah", "Samuel Eto'o", "Didier Drogba", "Yaya Touré"], correct: 0 },
-      { text: "What is the capital of Egypt?", options: ["Cairo", "Alexandria", "Luxor", "Aswan"], correct: 0 },
-      { text: "Which desert covers much of North Africa?", options: ["Sahara", "Kalahari", "Namib", "Libyan"], correct: 0 },
-      { text: "The African Union (AU) headquarters is in which city?", options: ["Addis Ababa", "Nairobi", "Johannesburg", "Cairo"], correct: 0 },
-      { text: "Which African country is the largest producer of cocoa?", options: ["Ivory Coast", "Ghana", "Nigeria", "Cameroon"], correct: 0 },
-      { text: "What is the largest lake in Africa?", options: ["Lake Victoria", "Lake Tanganyika", "Lake Malawi", "Lake Turkana"], correct: 0 },
-      { text: "Which African island nation is located in the Indian Ocean?", options: ["Madagascar", "Seychelles", "Mauritius", "Comoros"], correct: 0 },
-      { text: "Which African country is famous for its ancient rock‑hewn churches in Lalibela?", options: ["Ethiopia", "Eritrea", "Sudan", "Somalia"], correct: 0 },
-      { text: "Who is the most decorated African footballer of all time?", options: ["Samuel Eto'o", "Yaya Touré", "George Weah", "Didier Drogba"], correct: 0 },
-      { text: "Which African country has the largest population?", options: ["Nigeria", "Ethiopia", "Egypt", "DR Congo"], correct: 0 },
-      { text: "What is the currency of Morocco?", options: ["Moroccan Dirham", "Dinar", "Franc", "Euro"], correct: 0 },
-      { text: "Which waterfall is the largest in Africa (by volume)?", options: ["Victoria Falls", "Murchison Falls", "Tugela Falls", "Augrabies Falls"], correct: 0 },
-      { text: "Which African country is known as the 'Land of a Thousand Hills'?", options: ["Rwanda", "Burundi", "Uganda", "Lesotho"], correct: 0 },
-      { text: "Who was the first female president of an African country (Liberia)?", options: ["Ellen Johnson Sirleaf", "Sahle-Work Zewde", "Joyce Banda", "Catherine Samba-Panza"], correct: 0 },
-      { text: "Which African country is the largest producer of gold?", options: ["South Africa", "Ghana", "Mali", "Tanzania"], correct: 0 },
-      { text: "Which African city is known as the 'Pearl of Africa'?", options: ["Kampala", "Nairobi", "Kigali", "Dar es Salaam"], correct: 0 }
-    ]
-  };
-
-  // --------------------------------------------------------------
-  // GAME LOGIC (unchanged, uses questionPools directly)
-  // --------------------------------------------------------------
-  let selectedCountry = "Nigeria";
-  let selectedCategory = "history";
-  let coinBalance = 0, isTournamentMode = false, tournamentEntryPaid = false;
-  let currentQuestions = [], currentIndex = 0, currentScore = 0, lives = 3, answerLocked = false;
-  let totalPoints = 0, bestScore = 0;
-  let timerInterval = null;
-  let timeLeft = 14;
-  let correctIdxForCurrentQuestion = 0;
-
-  const homeScreen = document.getElementById('homeScreen'), quizScreen = document.getElementById('quizScreen'), resultScreen = document.getElementById('resultScreen');
-  const startBtn = document.getElementById('startQuizBtn'), tournamentBtn = document.getElementById('tournamentBtn'), playAgainBtn = document.getElementById('playAgainBtn');
-  const nextBtn = document.getElementById('nextBtn'), hintBtn = document.getElementById('hintBtn'), questionEl = document.getElementById('questionText');
-  const optionsContainer = document.getElementById('optionsContainer'), scoreDisplay = document.getElementById('scoreDisplay'), livesDisplaySpan = document.getElementById('livesDisplay');
-  const currentQSpan = document.getElementById('currentQ'), totalQSpan = document.getElementById('totalQ'), feedbackMsg = document.getElementById('feedbackMsg');
-  const finalScoreSpan = document.getElementById('finalScoreSpan'), resultMessage = document.getElementById('resultMessage');
-  const totalPointsHomeSpan = document.getElementById('totalPointsHome'), bestScoreHomeSpan = document.getElementById('bestScoreHome'), coinSpan = document.getElementById('coinBalance');
-  const tournamentModal = document.getElementById('tournamentModal'), confirmTournament = document.getElementById('confirmTournamentBtn'), closeModal = document.getElementById('closeModalBtn');
-  const earnCoinsBtn = document.getElementById('earnCoinsBtn'), countrySelect = document.getElementById('countrySelect'), categorySelect = document.getElementById('categorySelect');
-  const termsLinkElem = document.getElementById('termsLink'), termsModalElem = document.getElementById('termsModal'), closeTermsBtn = document.getElementById('closeTermsBtn');
-  const timerFillElem = document.getElementById('timerFill'), timerTextElem = document.getElementById('timerText');
-  const mandatoryOverlay = document.getElementById('mandatoryTermsOverlay'), agreeCheckbox = document.getElementById('agreeCheckbox');
-  const dontShowAgainCheckbox = document.getElementById('dontShowAgainCheckbox'), acceptTermsBtn = document.getElementById('acceptTermsBtn'), resetBtn = document.getElementById('resetSettingsBtn');
-
-  agreeCheckbox.addEventListener('change', () => { acceptTermsBtn.disabled = !agreeCheckbox.checked; });
-
-  function shuffleArray(arr) { for (let i = arr.length-1; i>0; i--) { const j = Math.floor(Math.random()*(i+1)); [arr[i], arr[j]] = [arr[j], arr[i]]; } return arr; }
-  function getRandomQuestions(pool, count) { const shuffled = shuffleArray([...pool]); return shuffled.slice(0, Math.min(count, shuffled.length)); }
-  function getQuestionPool() {
-    if (selectedCategory === "africa") return questionPools.africa;
-    const countryData = questionPools[selectedCountry];
-    if (countryData && countryData[selectedCategory]) return countryData[selectedCategory];
-    return questionPools.Nigeria.history;
-  }
-  function updateCoinUI() { coinSpan.innerText = coinBalance; }
-  function updateLivesUI() { livesDisplaySpan.innerText = lives; }
-  function updateQuizUI() { scoreDisplay.innerText = currentScore; currentQSpan.innerText = currentIndex+1; totalQSpan.innerText = currentQuestions.length; livesDisplaySpan.innerText = lives; }
-  function updateHomeStats() { totalPointsHomeSpan.innerText = totalPoints; bestScoreHomeSpan.innerText = bestScore; }
-
-  function loadStats() {
-    totalPoints = parseInt(localStorage.getItem('nigeriaQuiz_totalPoints')) || 0;
-    bestScore = parseInt(localStorage.getItem('nigeriaQuiz_bestScore')) || 0;
-    coinBalance = parseInt(localStorage.getItem('nigeriaQuiz_coins')) || 100;
-    updateCoinUI(); updateHomeStats();
-  }
-  function saveStats() {
-    localStorage.setItem('nigeriaQuiz_totalPoints', totalPoints);
-    if (currentScore > bestScore) { bestScore = currentScore; localStorage.setItem('nigeriaQuiz_bestScore', bestScore); }
-    localStorage.setItem('nigeriaQuiz_coins', coinBalance);
-    updateHomeStats();
-  }
-  function addCoins(amount) { coinBalance += amount; updateCoinUI(); saveStats(); }
-  function deductCoins(amount) { if (coinBalance >= amount) { coinBalance -= amount; updateCoinUI(); saveStats(); return true; } return false; }
-
-  function stopTimer() { if (timerInterval) clearInterval(timerInterval); timerInterval = null; }
-  function getTimeForQuestion(qIndex) { let t = 14 - qIndex; return Math.max(t, 7); }
-  function updateTimerUI() {
-    timerTextElem.innerText = `${timeLeft}s`;
-    const total = getTimeForQuestion(currentIndex);
-    const percent = (timeLeft / total) * 100;
-    timerFillElem.style.width = `${percent}%`;
-    timerFillElem.style.backgroundColor = timeLeft <= 3 ? "#ef4444" : "#facc15";
-  }
-  function startTimer() {
-    stopTimer();
-    updateTimerUI();
-    timerInterval = setInterval(() => {
-      if (answerLocked) return;
-      if (timeLeft <= 0) {
-        clearInterval(timerInterval);
-        timerInterval = null;
-        handleTimeOut();
-      } else {
-        timeLeft--;
-        updateTimerUI();
+    <script>
+      // --------------------------------------------------------------
+      // BACKGROUND MUSIC (same as before)
+      // --------------------------------------------------------------
+      const bgMusic = document.getElementById("bgMusic");
+      const musicToggleBtn = document.getElementById("musicToggleBtn");
+      const explicitPlayBtn = document.getElementById("explicitPlayBtn");
+      let musicPlaying = false;
+      bgMusic.src = "bg-music.mp3";
+      bgMusic.load();
+      bgMusic.onerror = () => {
+        console.warn("bg-music.mp3 not found – music will be silent.");
+        explicitPlayBtn.style.opacity = "0.5";
+        explicitPlayBtn.title =
+          "Music file missing (place bg-music.mp3 in app folder)";
+        musicToggleBtn.style.opacity = "0.5";
+      };
+      function playMusic() {
+        bgMusic
+          .play()
+          .then(() => {
+            musicPlaying = true;
+            musicToggleBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+            explicitPlayBtn.style.display = "none";
+          })
+          .catch((e) => {
+            console.log("Play failed:", e);
+            musicPlaying = false;
+            musicToggleBtn.innerHTML = '<i class="fas fa-music"></i>';
+            explicitPlayBtn.style.display = "flex";
+          });
       }
-    }, 1000);
-  }
-  async function handleTimeOut() {
-    if (answerLocked) return;
-    answerLocked = true;
-    lives--;
-    updateLivesUI();
-    feedbackMsg.innerHTML = `⏰ Time's up! No points. Lives left: ${lives}`;
-    if (lives <= 0) { endGame(); return; }
-    const allOptions = document.querySelectorAll('.option-btn');
-    allOptions.forEach((btn, idx) => { btn.disabled = true; if (idx === correctIdxForCurrentQuestion) btn.classList.add('correct'); });
-    nextBtn.disabled = false;
-  }
-  function renderCurrentQuestion() {
-    if (currentIndex >= currentQuestions.length) { endGame(); return; }
-    answerLocked = false;
-    timeLeft = getTimeForQuestion(currentIndex);
-    updateTimerUI();
-    const q = currentQuestions[currentIndex];
-    questionEl.innerText = q.text;
-    optionsContainer.innerHTML = '';
-    const indices = [0,1,2,3];
-    for (let i = indices.length-1; i>0; i--) { const j = Math.floor(Math.random()*(i+1)); [indices[i], indices[j]] = [indices[j], indices[i]]; }
-    const shuffledOptions = indices.map(i => q.options[i]);
-    correctIdxForCurrentQuestion = indices.indexOf(q.correct);
-    shuffledOptions.forEach((opt, idx) => {
-      const btn = document.createElement('button');
-      btn.className = 'option-btn';
-      btn.innerText = `${String.fromCharCode(65+idx)}. ${opt}`;
-      btn.addEventListener('click', () => handleAnswer(idx, correctIdxForCurrentQuestion, btn));
-      optionsContainer.appendChild(btn);
-    });
-    nextBtn.disabled = true;
-    feedbackMsg.innerHTML = '';
-    updateQuizUI();
-    startTimer();
-  }
-  async function handleAnswer(selectedIdx, correctIdx, btnElement) {
-    if (answerLocked) return;
-    stopTimer();
-    answerLocked = true;
-    const isCorrect = (selectedIdx === correctIdx);
-    const allOptions = document.querySelectorAll('.option-btn');
-    allOptions.forEach(btn => btn.disabled = true);
-    if (isCorrect) {
-      btnElement.classList.add('correct');
-      currentScore += 10;
-      totalPoints += 10;
-      updateQuizUI();
-      saveStats();
-      feedbackMsg.innerHTML = '✅ Correct! +10 points';
-    } else {
-      btnElement.classList.add('wrong');
-      allOptions.forEach((btn, idx) => { if (idx === correctIdx) btn.classList.add('correct'); });
-      feedbackMsg.innerHTML = `❌ Wrong. Correct: ${currentQuestions[currentIndex].options[currentQuestions[currentIndex].correct]}`;
-      lives--;
-      updateLivesUI();
-      if (lives <= 0) { endGame(); return; }
-    }
-    nextBtn.disabled = false;
-  }
-  function nextQuestion() {
-    if (!nextBtn.disabled) {
-      stopTimer();
-      currentIndex++;
-      if (currentIndex < currentQuestions.length && lives > 0) renderCurrentQuestion();
-      else endGame();
-    }
-  }
-  function initGame() {
-    const pool = getQuestionPool();
-    let working = [...pool];
-    while (working.length < 10) working = working.concat(working);
-    currentQuestions = getRandomQuestions(working, 10);
-    currentIndex = 0; currentScore = 0; lives = 3; answerLocked = false;
-    updateQuizUI();
-    renderCurrentQuestion();
-  }
-  async function endGame() {
-    stopTimer();
-    addCoins(Math.floor(currentScore/2));
-    if (isTournamentMode && tournamentEntryPaid) {
-      let scores = JSON.parse(localStorage.getItem('tournamentScores')) || [];
-      scores.push({ score: currentScore, date: new Date().toISOString() });
-      localStorage.setItem('tournamentScores', JSON.stringify(scores));
-      isTournamentMode = false; tournamentEntryPaid = false;
-    }
-    homeScreen.classList.add('hidden'); quizScreen.classList.add('hidden'); resultScreen.classList.remove('hidden');
-    finalScoreSpan.innerText = currentScore;
-    resultMessage.innerText = `You scored ${currentScore} points. Earned ${Math.floor(currentScore/2)} coins! ${currentScore>=70?'Excellent!':'Keep playing!'}`;
-    saveStats();
-  }
-  function goHome() { stopTimer(); homeScreen.classList.remove('hidden'); quizScreen.classList.add('hidden'); resultScreen.classList.add('hidden'); }
-  async function startGame(mode='free') {
-    if (mode === 'tournament') {
-      if (!deductCoins(50)) { alert("Not enough coins!"); return; }
-      isTournamentMode = true; tournamentEntryPaid = true;
-    } else { isTournamentMode = false; }
-    initGame();
-    homeScreen.classList.add('hidden'); quizScreen.classList.remove('hidden'); resultScreen.classList.add('hidden');
-  }
-  async function useLifeline() {
-    if (answerLocked) { feedbackMsg.innerHTML = 'Already answered.'; return; }
-    if (!deductCoins(10)) { alert("Not enough coins!"); return; }
-    const q = currentQuestions[currentIndex];
-    const wrong = [];
-    for (let i=0; i<q.options.length; i++) if (i !== q.correct) wrong.push(i);
-    const toRemove = wrong.slice(0,2);
-    document.querySelectorAll('.option-btn').forEach((btn, idx) => {
-      if (toRemove.includes(idx)) { btn.disabled = true; btn.style.opacity = '0.5'; btn.style.textDecoration = 'line-through'; }
-    });
-    feedbackMsg.innerHTML = '50:50 used! 10 coins deducted.';
-  }
-  async function earnCoins() { if (await showRewardedAd()) { addCoins(25); alert("Earned 25 coins!"); } else alert("Ad failed."); }
+      function pauseMusic() {
+        bgMusic.pause();
+        musicPlaying = false;
+        musicToggleBtn.innerHTML = '<i class="fas fa-music"></i>';
+        explicitPlayBtn.style.display = "flex";
+      }
+      musicToggleBtn.addEventListener("click", () => {
+        if (musicPlaying) pauseMusic();
+        else playMusic();
+      });
+      explicitPlayBtn.addEventListener("click", () => playMusic());
+      setTimeout(() => {
+        if (!musicPlaying && explicitPlayBtn.style.display !== "none") {
+          const tooltip = document.createElement("div");
+          tooltip.innerText = "🎵 Click here to play background music!";
+          tooltip.style.cssText =
+            "position:absolute; background:#0f172a; color:#facc15; padding:4px 10px; border-radius:20px; font-size:0.7rem; bottom:70px; right:10px; z-index:200; white-space:nowrap;";
+          explicitPlayBtn.parentNode.appendChild(tooltip);
+          setTimeout(() => tooltip.remove(), 4000);
+        }
+      }, 2000);
 
-  startBtn.addEventListener('click', () => startGame('free'));
-  tournamentBtn.addEventListener('click', () => tournamentModal.classList.add('active'));
-  confirmTournament.addEventListener('click', () => { tournamentModal.classList.remove('active'); startGame('tournament'); });
-  closeModal.addEventListener('click', () => tournamentModal.classList.remove('active'));
-  playAgainBtn.addEventListener('click', goHome);
-  nextBtn.addEventListener('click', nextQuestion);
-  hintBtn.addEventListener('click', useLifeline);
-  earnCoinsBtn.addEventListener('click', earnCoins);
-  termsLinkElem.addEventListener('click', () => termsModalElem.classList.add('active'));
-  closeTermsBtn.addEventListener('click', () => termsModalElem.classList.remove('active'));
-  countrySelect.addEventListener('change', (e) => { selectedCountry = e.target.value; });
-  categorySelect.addEventListener('change', (e) => { selectedCategory = e.target.value; });
+      // --------------------------------------------------------------
+      // Mock AdMob
+      // --------------------------------------------------------------
+      async function initAdMob() {
+        console.log("Mock AdMob");
+        return false;
+      }
+      async function showRewardedAd() {
+        console.log("Mock rewarded ad");
+        return true;
+      }
 
-  function checkTermsAccepted() {
-    const termsAccepted = localStorage.getItem('termsAccepted');
-    const dontShowAgain = localStorage.getItem('dontShowTerms');
-    if (dontShowAgain === 'true' && termsAccepted === 'true') {
-      mandatoryOverlay.style.display = 'none';
-      loadStats();
-      initAdMob();
-      return true;
-    } else {
-      mandatoryOverlay.style.display = 'flex';
-      return false;
-    }
-  }
-  acceptTermsBtn.addEventListener('click', () => {
-    if (!agreeCheckbox.checked) return;
-    localStorage.setItem('termsAccepted', 'true');
-    if (dontShowAgainCheckbox.checked) {
-      localStorage.setItem('dontShowTerms', 'true');
-    } else {
-      localStorage.removeItem('dontShowTerms');
-    }
-    mandatoryOverlay.style.display = 'none';
-    loadStats();
-    initAdMob();
-  });
-  resetBtn.addEventListener('click', () => { localStorage.clear(); alert('All saved data cleared. Please refresh the page.'); location.reload(); });
-  checkTermsAccepted();
-</script>
-</body>
+      // --------------------------------------------------------------
+      // FULL EMBEDDED QUESTION BANKS (Nigeria, Ghana, Kenya, SouthAfrica, Africa)
+      // --------------------------------------------------------------
+      const questionPools = {
+        Nigeria: {
+          history: [
+            {
+              text: "Who was the first President of Nigeria?",
+              options: [
+                "Nnamdi Azikiwe",
+                "Olusegun Obasanjo",
+                "Shehu Shagari",
+                "Goodluck Jonathan",
+              ],
+              correct: 0,
+            },
+            {
+              text: "In what year did Nigeria gain independence?",
+              options: ["1960", "1963", "1957", "1970"],
+              correct: 0,
+            },
+            {
+              text: "Which constitution introduced the presidential system?",
+              options: ["1979", "1963", "1999", "1960"],
+              correct: 0,
+            },
+            {
+              text: "Who was the military head of state during the civil war?",
+              options: [
+                "Yakubu Gowon",
+                "Murtala Mohammed",
+                "Olusegun Obasanjo",
+                "Ibrahim Babangida",
+              ],
+              correct: 0,
+            },
+            {
+              text: "The Amalgamation of Northern and Southern Nigeria took place in?",
+              options: ["1914", "1900", "1922", "1898"],
+              correct: 0,
+            },
+            {
+              text: "First Executive President of Nigeria?",
+              options: [
+                "Shehu Shagari",
+                "Nnamdi Azikiwe",
+                "Olusegun Obasanjo",
+                "Ernest Shonekan",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who introduced the 'Green Revolution'?",
+              options: [
+                "Shehu Shagari",
+                "Olusegun Obasanjo",
+                "Ibrahim Babangida",
+                "Goodluck Jonathan",
+              ],
+              correct: 0,
+            },
+            {
+              text: "June 12 election annulled in?",
+              options: ["1993", "1991", "1995", "1999"],
+              correct: 0,
+            },
+            {
+              text: "First female governor in Nigeria?",
+              options: [
+                "Virginia Etiaba",
+                "Ngozi Okonjo-Iweala",
+                "Amina J. Mohammed",
+                "Stella Omu",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which constitution introduced presidential system?",
+              options: ["1979", "1963", "1999", "1960"],
+              correct: 0,
+            },
+            {
+              text: "Who was the Prime Minister of Nigeria at independence?",
+              options: [
+                "Abubakar Tafawa Balewa",
+                "Nnamdi Azikiwe",
+                "Obafemi Awolowo",
+                "Ahmadu Bello",
+              ],
+              correct: 0,
+            },
+            {
+              text: "The 'Aburi Accord' was signed with which secessionist leader?",
+              options: [
+                "Odumegwu Ojukwu",
+                "Philip Effiong",
+                "Ken Saro-Wiwa",
+                "Michael Okpara",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who introduced the Structural Adjustment Programme (SAP) in 1986?",
+              options: [
+                "Ibrahim Babangida",
+                "Murtala Mohammed",
+                "Sani Abacha",
+                "Olusegun Obasanjo",
+              ],
+              correct: 0,
+            },
+            {
+              text: "The 'Nigerian Youth Movement' was formed in which decade?",
+              options: ["1930s", "1940s", "1920s", "1950s"],
+              correct: 0,
+            },
+            {
+              text: "First Nigerian to become Secretary‑General of the Commonwealth?",
+              options: [
+                "Emeka Anyaoku",
+                "Nnamdi Azikiwe",
+                "Olusegun Obasanjo",
+                "Kofi Annan",
+              ],
+              correct: 0,
+            },
+          ],
+          geography: [
+            {
+              text: "What is the capital of Nigeria?",
+              options: ["Abuja", "Lagos", "Kano", "Port Harcourt"],
+              correct: 0,
+            },
+            {
+              text: "Longest river in Nigeria?",
+              options: [
+                "River Niger",
+                "River Benue",
+                "Cross River",
+                "Ogun River",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Yankari Game Reserve is in which state?",
+              options: ["Bauchi", "Plateau", "Taraba", "Adamawa"],
+              correct: 0,
+            },
+            {
+              text: "Gateway State is?",
+              options: ["Ogun", "Lagos", "Oyo", "Kwara"],
+              correct: 0,
+            },
+            {
+              text: "Largest state by land area?",
+              options: ["Niger", "Borno", "Taraba", "Kaduna"],
+              correct: 1,
+            },
+            {
+              text: "Olumo Rock is in?",
+              options: ["Ogun", "Oyo", "Osun", "Ekiti"],
+              correct: 0,
+            },
+            {
+              text: "Coal City is?",
+              options: ["Enugu", "Anambra", "Ebonyi", "Abia"],
+              correct: 0,
+            },
+            {
+              text: "Lake Chad is in which region?",
+              options: [
+                "North-East",
+                "North-West",
+                "South-East",
+                "South-South",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Smallest state?",
+              options: ["Lagos", "Anambra", "Bayelsa", "Ekiti"],
+              correct: 0,
+            },
+            {
+              text: "Mambilla Plateau is in?",
+              options: ["Taraba", "Adamawa", "Plateau", "Borno"],
+              correct: 0,
+            },
+            {
+              text: "Which state is known as the 'Sunshine State'?",
+              options: ["Ondo", "Ekiti", "Osun", "Oyo"],
+              correct: 0,
+            },
+            {
+              text: "Which river forms the boundary between Nigeria and Niger?",
+              options: [
+                "River Niger",
+                "River Benue",
+                "Yobe River",
+                "Sokoto River",
+              ],
+              correct: 2,
+            },
+            {
+              text: "The 'Aso Rock' is located in which city?",
+              options: ["Abuja", "Lagos", "Kaduna", "Jos"],
+              correct: 0,
+            },
+            {
+              text: "Which state is the 'Food Basket of the Nation'?",
+              options: ["Benue", "Plateau", "Taraba", "Niger"],
+              correct: 0,
+            },
+            {
+              text: "The 'Ikogosi Warm Spring' is found in which state?",
+              options: ["Ekiti", "Ondo", "Osun", "Kogi"],
+              correct: 0,
+            },
+          ],
+          culture: [
+            {
+              text: "Yoruba king title?",
+              options: ["Oba", "Emir", "Igwe", "Obong"],
+              correct: 0,
+            },
+            {
+              text: "Soup made from melon seeds?",
+              options: ["Egusi", "Ogbono", "Afang", "Edikang Ikong"],
+              correct: 0,
+            },
+            {
+              text: "Argungu Fishing Festival in?",
+              options: ["Kebbi", "Sokoto", "Zamfara", "Katsina"],
+              correct: 0,
+            },
+            {
+              text: "Largest ethnic group?",
+              options: ["Hausa", "Yoruba", "Igbo", "Ijaw"],
+              correct: 0,
+            },
+            {
+              text: "Traditional Igbo attire?",
+              options: ["Isiagu", "Agbada", "Buba", "Danshiki"],
+              correct: 0,
+            },
+            {
+              text: "Durbar festival region?",
+              options: [
+                "Northern Nigeria",
+                "Western",
+                "Eastern",
+                "South-South",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Pidgin greeting?",
+              options: ["Wetin dey happen?", "Kedu", "Sannu", "Bawo ni"],
+              correct: 0,
+            },
+            {
+              text: "Ground beans dish?",
+              options: ["Moin Moin", "Akara", "Ewa", "Olele"],
+              correct: 0,
+            },
+            {
+              text: "Eyo Festival city?",
+              options: ["Lagos", "Ibadan", "Benin", "Abeokuta"],
+              correct: 0,
+            },
+            {
+              text: "Igbo traditional title?",
+              options: ["Igwe", "Oba", "Emir", "Tor Tiv"],
+              correct: 0,
+            },
+            {
+              text: "Traditional Yoruba talking drum?",
+              options: ["Gangan", "Udu", "Kakaki", "Sakara"],
+              correct: 0,
+            },
+            {
+              text: "The 'Sharo' flogging ceremony is a rite of passage among which group?",
+              options: ["Fulani", "Tiv", "Idoma", "Ebira"],
+              correct: 0,
+            },
+            {
+              text: "What is the traditional ruler of the Tiv people called?",
+              options: ["Tor Tiv", "Aku Uka", "Olu", "Obi"],
+              correct: 0,
+            },
+            {
+              text: "The 'Carnival Calabar' is in which state?",
+              options: ["Cross River", "Akwa Ibom", "Rivers", "Bayelsa"],
+              correct: 0,
+            },
+            {
+              text: "Which traditional textile is associated with the Yoruba?",
+              options: ["Adire", "Akwete", "Kente", "Aso Oke"],
+              correct: 0,
+            },
+          ],
+          pop: [
+            {
+              text: "Who sang 'Fall'?",
+              options: ["Davido", "Wizkid", "Burna Boy", "Kizz Daniel"],
+              correct: 0,
+            },
+            {
+              text: "Burna Boy nickname?",
+              options: ["Odogwu", "Starboy", "African Giant", "E choke"],
+              correct: 2,
+            },
+            {
+              text: "Nigerian Grammy winner 2021?",
+              options: ["Burna Boy", "Wizkid", "Davido", "Tiwa Savage"],
+              correct: 0,
+            },
+            {
+              text: "Slang for relocating abroad?",
+              options: ["Japa", "Chop life", "Form E", "Zanku"],
+              correct: 0,
+            },
+            {
+              text: "Davido song 'E choke'?",
+              options: ["If", "Fall", "Assurance", "Fem"],
+              correct: 3,
+            },
+            {
+              text: "Creator of 'Omo Ghetto'?",
+              options: [
+                "Funke Akindele",
+                "Mo Abudu",
+                "Kemi Adetiba",
+                "Tope Oshin",
+              ],
+              correct: 0,
+            },
+            {
+              text: "'Shaku Shaku' dance associated with?",
+              options: ["Street dance", "Wedding", "Corporate", "Church"],
+              correct: 0,
+            },
+            {
+              text: "Nollywood comic actor?",
+              options: ["Aki and Pawpaw", "RMD", "Desmond Elliot", "Jim Iyke"],
+              correct: 0,
+            },
+            {
+              text: "'Made in Lagos' album by?",
+              options: ["Wizkid", "Burna Boy", "Davido", "Olamide"],
+              correct: 0,
+            },
+            {
+              text: "Who sang 'Fever'?",
+              options: ["Wizkid", "Burna Boy", "Davido", "Kizz Daniel"],
+              correct: 0,
+            },
+            {
+              text: "Which Nigerian artist is known as 'Asa'?",
+              options: ["Asa", "Tiwa Savage", "Yemi Alade", "Niniola"],
+              correct: 0,
+            },
+            {
+              text: "Who won the 2023 Headies 'Artist of the Year'?",
+              options: ["Burna Boy", "Davido", "Wizkid", "Rema"],
+              correct: 3,
+            },
+            {
+              text: "Which musician popularized the 'Zanku' dance?",
+              options: ["Zlatan", "Naira Marley", "Rema", "Fireboy"],
+              correct: 0,
+            },
+            {
+              text: "Who sang 'Soweto' with Victony?",
+              options: ["Rema", "Tempoe", "Omah Lay", "Ckay"],
+              correct: 1,
+            },
+            {
+              text: "Which Nollywood actress is known as 'Omo Ghetto'?",
+              options: [
+                "Funke Akindele",
+                "Toyin Abraham",
+                "Mercy Johnson",
+                "Ruth Kadiri",
+              ],
+              correct: 0,
+            },
+          ],
+          movies: [
+            {
+              text: "Actress in 'Lionheart'?",
+              options: [
+                "Genevieve Nnaji",
+                "Omotola",
+                "Funke Akindele",
+                "Rita Dominic",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Highest‑grossing Nollywood film?",
+              options: [
+                "Omo Ghetto: The Saga",
+                "The Wedding Party",
+                "King of Boys",
+                "Lionheart",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Nollywood comic actor?",
+              options: ["Aki and Pawpaw", "RMD", "Desmond Elliot", "Jim Iyke"],
+              correct: 0,
+            },
+            {
+              text: "Which Nollywood actress starred in 'King of Boys'?",
+              options: [
+                "Sola Sobowale",
+                "Genevieve Nnaji",
+                "Funke Akindele",
+                "Omotola Jalade",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who directed 'The Wedding Party'?",
+              options: [
+                "Kemi Adetiba",
+                "Mo Abudu",
+                "Funke Akindele",
+                "Tope Oshin",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which actor played 'Akin' in 'The Wedding Party'?",
+              options: [
+                "Banky W",
+                "Ramsey Nouah",
+                "Richard Mofe-Damijo",
+                "Yul Edochie",
+              ],
+              correct: 0,
+            },
+            {
+              text: "What is the name of the first Nigerian film submitted for the Oscars?",
+              options: [
+                "Lionheart",
+                "The Wedding Party",
+                "October 1",
+                "Tango With Me",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Nollywood movie starred 'Funke Akindele' as 'Leila'?",
+              options: [
+                "Omo Ghetto",
+                "Chief Daddy",
+                "Your Excellency",
+                "Moms at War",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who directed 'The Figurine'?",
+              options: [
+                "Kunle Afolayan",
+                "Tunde Kelani",
+                "Mildred Okwo",
+                "Mahmood Ali-Balogun",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Nollywood actor is known for 'Phone Swap'?",
+              options: ["Wale Ojo", "Ramsey Nouah", "Jim Iyke", "Majid Michel"],
+              correct: 0,
+            },
+          ],
+          football: [
+            {
+              text: "Which club has won the NPFL the most times?",
+              options: [
+                "Enyimba",
+                "Kano Pillars",
+                "Rangers International",
+                "Shooting Stars",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who is Nigeria's all‑time top scorer?",
+              options: [
+                "Rashidi Yekini",
+                "Segun Odegbami",
+                "Jay-Jay Okocha",
+                "Ahmed Musa",
+              ],
+              correct: 3,
+            },
+            {
+              text: "Which Nigerian player won the UEFA Champions League with Chelsea in 2021?",
+              options: [
+                "Kelechi Iheanacho",
+                "Victor Osimhen",
+                "Wilfred Ndidi",
+                "Alex Iwobi",
+              ],
+              correct: 2,
+            },
+            {
+              text: "Who was the captain of the 2013 AFCON winning team?",
+              options: [
+                "Joseph Yobo",
+                "Vincent Enyeama",
+                "John Obi Mikel",
+                "Ahmed Musa",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Nigerian goalkeeper holds the record for most caps?",
+              options: [
+                "Vincent Enyeama",
+                "Peter Rufai",
+                "Ike Shorunmu",
+                "Carl Ikeme",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Nigerian player scored a hat‑trick at the 2018 World Cup?",
+              options: [
+                "Ahmed Musa",
+                "Victor Moses",
+                "Odion Ighalo",
+                "Kelechi Iheanacho",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who is the current all‑time top scorer for the Super Eagles?",
+              options: [
+                "Rashidi Yekini",
+                "Segun Odegbami",
+                "Jay-Jay Okocha",
+                "Ahmed Musa",
+              ],
+              correct: 3,
+            },
+            {
+              text: "Which Nigerian coach led the team to win the 2013 AFCON?",
+              options: [
+                "Stephen Keshi",
+                "Sunday Oliseh",
+                "Gernot Rohr",
+                "Samson Siasia",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Nigerian player was named African Footballer of the Year in 1999?",
+              options: [
+                "Nwankwo Kanu",
+                "Jay-Jay Okocha",
+                "Rashidi Yekini",
+                "Victor Ikpeba",
+              ],
+              correct: 0,
+            },
+            {
+              text: "In which year did Nigeria win its first Olympic gold in football?",
+              options: ["1996", "2000", "2008", "2016"],
+              correct: 0,
+            },
+          ],
+        },
+        Ghana: {
+          history: [
+            {
+              text: "What was Ghana's former colonial name?",
+              options: [
+                "Gold Coast",
+                "Slave Coast",
+                "Ivory Coast",
+                "Pepper Coast",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who was Ghana's first president?",
+              options: [
+                "Kwame Nkrumah",
+                "Jerry Rawlings",
+                "John Kufuor",
+                "Nana Akufo-Addo",
+              ],
+              correct: 0,
+            },
+            {
+              text: "In which year did Ghana gain independence?",
+              options: ["1957", "1960", "1955", "1963"],
+              correct: 0,
+            },
+            {
+              text: "Who was the leader of the 1966 coup that overthrew Kwame Nkrumah?",
+              options: [
+                "Joseph Ankrah",
+                "Emmanuel Kotoka",
+                "Akwasi Afrifa",
+                "Ignatius Acheampong",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Ghanaian served as the Secretary‑General of the United Nations?",
+              options: [
+                "Kofi Annan",
+                "Kwame Nkrumah",
+                "John Atta Mills",
+                "Nana Akufo-Addo",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who was the first Ghanaian to win the African Footballer of the Year award?",
+              options: [
+                "Abedi Pele",
+                "Asamoah Gyan",
+                "Michael Essien",
+                "Tony Yeboah",
+              ],
+              correct: 0,
+            },
+            {
+              text: "The 'Big Six' were founding fathers of Ghana. Who among them later became Prime Minister?",
+              options: [
+                "Kwame Nkrumah",
+                "J.B. Danquah",
+                "Edward Akufo-Addo",
+                "Kofi Busia",
+              ],
+              correct: 0,
+            },
+            {
+              text: "In which year did Ghana become a republic?",
+              options: ["1960", "1957", "1963", "1969"],
+              correct: 0,
+            },
+            {
+              text: "Who was the first Ghanaian to be awarded the Nobel Prize?",
+              options: [
+                "Kofi Annan",
+                "Kwame Nkrumah",
+                "J.B. Danquah",
+                "Nana Akufo-Addo",
+              ],
+              correct: 0,
+            },
+            {
+              text: "The 'National Liberation Council' (NLC) overthrew Kwame Nkrumah in 1966. Who became the head of state after the coup?",
+              options: [
+                "Joseph Ankrah",
+                "Emmanuel Kotoka",
+                "Akwasi Afrifa",
+                "Ignatius Acheampong",
+              ],
+              correct: 0,
+            },
+          ],
+          geography: [
+            {
+              text: "What is the capital of Ghana?",
+              options: ["Accra", "Kumasi", "Takoradi", "Cape Coast"],
+              correct: 0,
+            },
+            {
+              text: "Which lake is the largest man‑made lake in Ghana?",
+              options: [
+                "Lake Volta",
+                "Lake Bosomtwe",
+                "Lake Kainji",
+                "Lake Togo",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which river forms part of Ghana's eastern border?",
+              options: ["Volta", "Tano", "Ankobra", "Pra"],
+              correct: 0,
+            },
+            {
+              text: "Which region of Ghana is known for its cocoa production?",
+              options: ["Ashanti", "Western", "Eastern", "Volta"],
+              correct: 0,
+            },
+            {
+              text: "What is the highest point in Ghana?",
+              options: [
+                "Mount Afadjato",
+                "Mount Adaklu",
+                "Mount Gemi",
+                "Mount Dzigbe",
+              ],
+              correct: 0,
+            },
+            {
+              text: "What is the capital of the Ashanti Region?",
+              options: ["Kumasi", "Obuasi", "Ejisu", "Mampong"],
+              correct: 0,
+            },
+            {
+              text: "Which river is the longest in Ghana?",
+              options: ["Volta", "Tano", "Ankobra", "Pra"],
+              correct: 0,
+            },
+            {
+              text: "Which coastal city is known for its slave castles?",
+              options: ["Cape Coast", "Accra", "Takoradi", "Winneba"],
+              correct: 0,
+            },
+            {
+              text: "Which national park is famous for its elephants in Ghana?",
+              options: [
+                "Kakum National Park",
+                "Mole National Park",
+                "Digya National Park",
+                "Bia National Park",
+              ],
+              correct: 1,
+            },
+            {
+              text: "What is the largest city in Ghana by population?",
+              options: ["Accra", "Kumasi", "Tamale", "Sekondi-Takoradi"],
+              correct: 0,
+            },
+          ],
+          culture: [
+            {
+              text: "Which festival is famous among the Ashanti people?",
+              options: ["Homowo", "Aboakyer", "Damba", "Odwira"],
+              correct: 3,
+            },
+            {
+              text: "What is the traditional dance of the Ewe people?",
+              options: ["Agbadza", "Adowa", "Kpanlogo", "Bamaya"],
+              correct: 0,
+            },
+            {
+              text: "What is the national dish of Ghana?",
+              options: ["Fufu", "Jollof Rice", "Banku", "Kenkey"],
+              correct: 2,
+            },
+            {
+              text: "Which traditional Ghanaian cloth is woven in strips and worn on special occasions?",
+              options: ["Kente", "Adinkra", "Fugu", "Batakari"],
+              correct: 0,
+            },
+            {
+              text: "The 'Homowo' festival is celebrated by which ethnic group?",
+              options: ["Ga", "Ashanti", "Ewe", "Fante"],
+              correct: 0,
+            },
+            {
+              text: "What is the name of the Ghanaian woven smock often worn by men in the northern regions?",
+              options: ["Fugu", "Kente", "Adinkra", "Ankara"],
+              correct: 0,
+            },
+            {
+              text: "Which dance is associated with the Ga people, especially during the Homowo festival?",
+              options: ["Kpanlogo", "Adowa", "Bamaya", "Agbadza"],
+              correct: 0,
+            },
+            {
+              text: "The famous 'Kente' cloth is originally associated with which Ghanaian kingdom?",
+              options: [
+                "Ashanti Kingdom",
+                "Fante Confederacy",
+                "Ga State",
+                "Dagbon Kingdom",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Ghanaian dish is made from boiled and pounded cassava and plantain?",
+              options: ["Fufu", "Banku", "Kenkey", "Konkonte"],
+              correct: 0,
+            },
+            {
+              text: "The 'Damba' festival is celebrated by which ethnic group in Ghana?",
+              options: ["Dagomba", "Ewe", "Fante", "Ga"],
+              correct: 0,
+            },
+          ],
+          pop: [
+            {
+              text: "Who is known as the 'King of Azonto'?",
+              options: ["Fuse ODG", "Sarkodie", "Stonebwoy", "Shatta Wale"],
+              correct: 0,
+            },
+            {
+              text: "Which Ghanaian musician won BET Best International Act in 2019?",
+              options: ["Sarkodie", "Stonebwoy", "Shatta Wale", "R2Bees"],
+              correct: 0,
+            },
+            {
+              text: "Who sang the hit 'Oofeetsɔ'?",
+              options: ["Sarkodie", "Stonebwoy", "KiDi", "King Promise"],
+              correct: 2,
+            },
+            {
+              text: "Which Ghanaian rapper is known as 'The African Simba'?",
+              options: ["Sarkodie", "M.anifest", "Obrafour", "E.L."],
+              correct: 0,
+            },
+            {
+              text: "Who won the Vodafone Ghana Music Award for Artiste of the Year in 2023?",
+              options: ["Black Sherif", "King Promise", "KiDi", "Stonebwoy"],
+              correct: 0,
+            },
+            {
+              text: "What is the name of Ghana's most popular hip-hop duo?",
+              options: ["R2Bees", "Bradez", "Fokn Bois", "Asaase Sound"],
+              correct: 0,
+            },
+            {
+              text: "Which Ghanaian musician is known as the 'Dancehall King'?",
+              options: ["Shatta Wale", "Stonebwoy", "Samini", "Kaakie"],
+              correct: 1,
+            },
+            {
+              text: "Who sang the hit 'Kidi'?",
+              options: ["KiDi", "King Promise", "Kuami Eugene", "Medikal"],
+              correct: 0,
+            },
+            {
+              text: "Which Ghanaian actress is also a successful musician?",
+              options: [
+                "Yvonne Nelson",
+                "Jackie Appiah",
+                "Nadia Buari",
+                "Martha Ankomah",
+              ],
+              correct: 0,
+            },
+            {
+              text: "What is the name of the annual music festival held in Accra?",
+              options: [
+                "Afro Nation",
+                "Ghana Music Awards",
+                "Chale Wote",
+                "Abooda Fest",
+              ],
+              correct: 0,
+            },
+          ],
+          movies: [
+            {
+              text: "Which Ghanaian actor starred in 'The Price'?",
+              options: [
+                "Majid Michel",
+                "Van Vicker",
+                "John Dumelo",
+                "Yvonne Nelson",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who directed 'The Burial of Kojo'?",
+              options: [
+                "Blitz Bazawule",
+                "Leila Djansi",
+                "Shirley Frimpong-Manso",
+                "Frank Rajah",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Ghanaian actress is known for the movie 'Princess Tyra'?",
+              options: [
+                "Yvonne Okoro",
+                "Jackie Appiah",
+                "Nadia Buari",
+                "Martha Ankomah",
+              ],
+              correct: 1,
+            },
+            {
+              text: "What is the name of the first Ghanaian movie submitted for the Oscars?",
+              options: [
+                "The Burial of Kojo",
+                "Azali",
+                "Keteke",
+                "Children of the Mountain",
+              ],
+              correct: 1,
+            },
+            {
+              text: "Which Ghanaian actor starred in 'A Sting in a Tale'?",
+              options: [
+                "John Dumelo",
+                "Majid Michel",
+                "Van Vicker",
+                "Adjetey Anang",
+              ],
+              correct: 2,
+            },
+            {
+              text: "Who is the most awarded Ghanaian actress?",
+              options: [
+                "Jackie Appiah",
+                "Yvonne Nelson",
+                "Nadia Buari",
+                "Martha Ankomah",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Ghanaian movie features the character 'Kwame'?",
+              options: [
+                "The Price",
+                "Single and Married",
+                "Love and Marriage",
+                "Perfect Picture",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who directed the movie 'Azali'?",
+              options: [
+                "Kwabena Gyansah",
+                "Leila Djansi",
+                "Shirley Frimpong-Manso",
+                "Frank Rajah",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Ghanaian actor starred in 'The Perfect Picture'?",
+              options: [
+                "Majid Michel",
+                "Van Vicker",
+                "John Dumelo",
+                "Adjetey Anang",
+              ],
+              correct: 1,
+            },
+            {
+              text: "What is the name of the Ghanaian film about a young girl who joins a football academy?",
+              options: [
+                "Keteke",
+                "Azali",
+                "The Burial of Kojo",
+                "Children of the Mountain",
+              ],
+              correct: 2,
+            },
+          ],
+          football: [
+            {
+              text: "Which club has won the Ghana Premier League the most times?",
+              options: [
+                "Asante Kotoko",
+                "Hearts of Oak",
+                "Aduana Stars",
+                "Medeama",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who is Ghana's all‑time top scorer?",
+              options: [
+                "Asamoah Gyan",
+                "Abedi Pele",
+                "Tony Yeboah",
+                "André Ayew",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Ghanaian player won the African Player of the Year award in 1992?",
+              options: [
+                "Abedi Pele",
+                "Anthony Yeboah",
+                "Asamoah Gyan",
+                "Michael Essien",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Ghanaian goalkeeper holds the record for most appearances?",
+              options: [
+                "Richard Kingson",
+                "Adam Kwarasey",
+                "Fatau Dauda",
+                "Joseph Addo",
+              ],
+              correct: 0,
+            },
+            {
+              text: "In which year did Ghana reach the quarterfinals of the FIFA World Cup?",
+              options: ["2010", "2006", "2014", "2018"],
+              correct: 0,
+            },
+            {
+              text: "Which Ghanaian player was known as the 'Baby Jet'?",
+              options: [
+                "Asamoah Gyan",
+                "Abedi Pele",
+                "Michael Essien",
+                "Sulley Muntari",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which club did Michael Essien play for in the Premier League?",
+              options: ["Chelsea", "Manchester United", "Arsenal", "Liverpool"],
+              correct: 0,
+            },
+            {
+              text: "Who is the current captain of the Black Stars?",
+              options: [
+                "André Ayew",
+                "Thomas Partey",
+                "Jordan Ayew",
+                "Daniel Amartey",
+              ],
+              correct: 0,
+            },
+            {
+              text: "In which year did Ghana win the Africa Cup of Nations last?",
+              options: ["1982", "1963", "1965", "1978"],
+              correct: 0,
+            },
+            {
+              text: "Which Ghanaian player scored a hat‑trick in the 2014 World Cup?",
+              options: [
+                "Asamoah Gyan",
+                "André Ayew",
+                "Jordan Ayew",
+                "Thomas Partey",
+              ],
+              correct: 0,
+            },
+          ],
+        },
+        Kenya: {
+          history: [
+            {
+              text: "Who was Kenya's first president?",
+              options: [
+                "Jomo Kenyatta",
+                "Daniel arap Moi",
+                "Mwai Kibaki",
+                "Uhuru Kenyatta",
+              ],
+              correct: 0,
+            },
+            {
+              text: "In what year did Kenya gain independence?",
+              options: ["1963", "1960", "1965", "1962"],
+              correct: 0,
+            },
+            {
+              text: "Which Kenyan won the Nobel Peace Prize in 2004?",
+              options: [
+                "Wangari Maathai",
+                "Raila Odinga",
+                "Uhuru Kenyatta",
+                "Ngũgĩ wa Thiong'o",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who led the Mau Mau uprising against British rule?",
+              options: [
+                "Dedan Kimathi",
+                "Jomo Kenyatta",
+                "Mekatilili wa Menza",
+                "Koitalel arap Samoei",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Kenyan leader served as the 3rd President?",
+              options: [
+                "Mwai Kibaki",
+                "Daniel arap Moi",
+                "Uhuru Kenyatta",
+                "William Ruto",
+              ],
+              correct: 0,
+            },
+            {
+              text: "What was the name of the first president of Kenya after independence?",
+              options: [
+                "Jomo Kenyatta",
+                "Daniel arap Moi",
+                "Mwai Kibaki",
+                "Uhuru Kenyatta",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Kenyan athlete won the 800m gold at the 2016 Olympics?",
+              options: [
+                "David Rudisha",
+                "Ezekiel Kemboi",
+                "Asbel Kiprop",
+                "Conseslus Kipruto",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who was the first female Vice President of Kenya?",
+              options: [
+                "Wangari Maathai",
+                "Martha Karua",
+                "Kalonzo Musyoka",
+                "Charity Ngilu",
+              ],
+              correct: 1,
+            },
+            {
+              text: "In which year did the new constitution of Kenya come into effect?",
+              options: ["2010", "2005", "2013", "2017"],
+              correct: 0,
+            },
+            {
+              text: "Which Kenyan writer is known for his novel 'Petals of Blood'?",
+              options: [
+                "Ngũgĩ wa Thiong'o",
+                "Meja Mwangi",
+                "Grace Ogot",
+                "Binyavanga Wainaina",
+              ],
+              correct: 0,
+            },
+          ],
+          geography: [
+            {
+              text: "What is the capital of Kenya?",
+              options: ["Nairobi", "Mombasa", "Kisumu", "Nakuru"],
+              correct: 0,
+            },
+            {
+              text: "What is the highest mountain in Kenya?",
+              options: [
+                "Mount Kenya",
+                "Mount Kilimanjaro",
+                "Mount Elgon",
+                "Mount Longonot",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which lake is the largest in Kenya?",
+              options: [
+                "Lake Turkana",
+                "Lake Victoria",
+                "Lake Naivasha",
+                "Lake Nakuru",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which national park is famous for the wildebeest migration?",
+              options: ["Maasai Mara", "Amboseli", "Tsavo", "Samburu"],
+              correct: 0,
+            },
+            {
+              text: "What is the coastal city known for its historical fort Jesus?",
+              options: ["Mombasa", "Malindi", "Lamu", "Kilifi"],
+              correct: 0,
+            },
+            {
+              text: "Which river is the longest in Kenya?",
+              options: [
+                "Tana River",
+                "Athi River",
+                "Galana River",
+                "Ewaso Ng'iro",
+              ],
+              correct: 0,
+            },
+            {
+              text: "What is the name of the desert in northern Kenya?",
+              options: [
+                "Chalbi Desert",
+                "Kalahari Desert",
+                "Namib Desert",
+                "Sahara Desert",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which mountain is the second highest in Kenya?",
+              options: [
+                "Mount Elgon",
+                "Mount Kilimanjaro",
+                "Mount Longonot",
+                "Mount Suswa",
+              ],
+              correct: 0,
+            },
+            {
+              text: "What is the largest city in Kenya after Nairobi?",
+              options: ["Mombasa", "Kisumu", "Nakuru", "Eldoret"],
+              correct: 0,
+            },
+            {
+              text: "Which lake is known for its flamingos?",
+              options: [
+                "Lake Nakuru",
+                "Lake Naivasha",
+                "Lake Elementaita",
+                "Lake Bogoria",
+              ],
+              correct: 0,
+            },
+          ],
+          culture: [
+            {
+              text: "Which Kenyan tribe is famous for its jumping dance?",
+              options: ["Maasai", "Kikuyu", "Luo", "Kalenjin"],
+              correct: 0,
+            },
+            {
+              text: "What is the national dish of Kenya?",
+              options: ["Ugali", "Nyama Choma", "Sukuma Wiki", "Githeri"],
+              correct: 0,
+            },
+            {
+              text: "Which traditional festival is celebrated by the Mijikenda people?",
+              options: ["Nyeke", "Marafa", "Lamu", "Mombasa Carnival"],
+              correct: 0,
+            },
+            {
+              text: "What is the traditional Luo string instrument?",
+              options: ["Nyatiti", "Orutu", "Kigamba", "Litungu"],
+              correct: 0,
+            },
+            {
+              text: "What is the name of the Maasai traditional jumping dance?",
+              options: ["Adumu", "Isikuti", "Chakacha", "Mwomboko"],
+              correct: 0,
+            },
+            {
+              text: "What is the traditional attire of the Kikuyu people?",
+              options: ["Muthuru", "Kikoi", "Kanga", "Leso"],
+              correct: 0,
+            },
+            {
+              text: "Which festival is celebrated by the Swahili people in Lamu?",
+              options: [
+                "Lamu Cultural Festival",
+                "Mombasa Carnival",
+                "Kenya Music Festival",
+                "Lake Turkana Festival",
+              ],
+              correct: 0,
+            },
+            {
+              text: "What is the name of the traditional Kalenjin dance?",
+              options: ["Isikuti", "Adumu", "Chakacha", "Mdundiko"],
+              correct: 0,
+            },
+            {
+              text: "Which Kenyan community is known for its soapstone carvings?",
+              options: ["Kisii", "Kikuyu", "Luo", "Maasai"],
+              correct: 0,
+            },
+            {
+              text: "What is the traditional food of the Maasai?",
+              options: ["Meat and milk", "Ugali", "Nyama Choma", "Githeri"],
+              correct: 0,
+            },
+          ],
+          pop: [
+            {
+              text: "Who sang 'Kiss Me'?",
+              options: ["Sauti Sol", "Nyashinski", "Bahati", "Otile Brown"],
+              correct: 1,
+            },
+            {
+              text: "Which Kenyan musician is known for 'Diani'?",
+              options: ["Sauti Sol", "Nyashinski", "Otile Brown", "Gilad"],
+              correct: 2,
+            },
+            {
+              text: "Who is the most famous Kenyan rapper?",
+              options: [
+                "Khaligraph Jones",
+                "Octopizzo",
+                "King Kaka",
+                "Blen Blinks",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Kenyan band released the hit 'Suzanna'?",
+              options: ["Sauti Sol", "Elani", "H_art the Band", "Bien"],
+              correct: 0,
+            },
+            {
+              text: "Who won the Best African Act at the 2021 MTV Europe Music Awards?",
+              options: ["Bien", "Sauti Sol", "Nyashinski", "Khaligraph Jones"],
+              correct: 3,
+            },
+            {
+              text: "Which Kenyan musician is known as 'The King of Gengeton'?",
+              options: ["Bahati", "Otile Brown", "Arrow Bwoy", "Willy Paul"],
+              correct: 0,
+            },
+            {
+              text: "Who sang the hit 'Don't Call Me Back'?",
+              options: ["Sauti Sol", "Nyashinski", "Otile Brown", "Gilad"],
+              correct: 1,
+            },
+            {
+              text: "Which Kenyan rapper was featured in the song 'Nairobae'?",
+              options: [
+                "Khaligraph Jones",
+                "Octopizzo",
+                "King Kaka",
+                "Blen Blinks",
+              ],
+              correct: 0,
+            },
+            {
+              text: "What is the name of the annual music festival in Nairobi?",
+              options: [
+                "Koroga Festival",
+                "Afro Nation",
+                "Lake of Stars",
+                "Sauti za Busara",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Kenyan singer is known for 'Lifestyle'?",
+              options: ["Nyashinski", "Otile Brown", "Bahati", "Gilad"],
+              correct: 0,
+            },
+          ],
+          movies: [
+            {
+              text: "Which Kenyan film was nominated for an Oscar?",
+              options: [
+                "Supa Modo",
+                "Kati Kati",
+                "Nairobi Half Life",
+                "The First Grader",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who directed 'Kati Kati'?",
+              options: [
+                "Mbithi Masya",
+                "Wanuri Kahiu",
+                "Judy Kibinge",
+                "Tosh Gitonga",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Kenyan actor starred in 'Lusala'?",
+              options: [
+                "Brian Ogola",
+                "Alfred Munyua",
+                "Ian Mugoya",
+                "Timothy Runji",
+              ],
+              correct: 1,
+            },
+            {
+              text: "What is the name of the first Kenyan film to stream on Netflix?",
+              options: [
+                "Disconnect",
+                "Poppie",
+                "The Broken Melody",
+                "Supa Modo",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who directed the award-winning film 'Rafiki'?",
+              options: [
+                "Wanuri Kahiu",
+                "Mbithi Masya",
+                "Judy Kibinge",
+                "Likarion Wainaina",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Kenyan actor starred in 'The First Grader'?",
+              options: [
+                "Oliver Litondo",
+                "John Sibi-Okumu",
+                "Godfrey Ojiambo",
+                "Peter King",
+              ],
+              correct: 0,
+            },
+            {
+              text: "What is the name of the Kenyan film about a young girl who dreams of becoming a pilot?",
+              options: [
+                "Kati Kati",
+                "Supa Modo",
+                "Nairobi Half Life",
+                "The Broken Melody",
+              ],
+              correct: 1,
+            },
+            {
+              text: "Which Kenyan actress is known for her role in 'Rafiki'?",
+              options: [
+                "Samantha Mugatsia",
+                "Sheila Munyiva",
+                "Mkamzee Mwatela",
+                "Lupita Nyong'o",
+              ],
+              correct: 0,
+            },
+            {
+              text: "What is the name of the Kenyan film that won the Best Director award at the Africa Movie Academy Awards?",
+              options: [
+                "Kati Kati",
+                "Supa Modo",
+                "Nairobi Half Life",
+                "Rafiki",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Kenyan film is about a young man who returns to his village and discovers a secret?",
+              options: [
+                "The Last Village",
+                "Kati Kati",
+                "Supa Modo",
+                "Nairobi Half Life",
+              ],
+              correct: 0,
+            },
+          ],
+          football: [
+            {
+              text: "Which club has won the Kenyan Premier League the most?",
+              options: ["Gor Mahia", "AFC Leopards", "Tusker", "Ulinzi Stars"],
+              correct: 0,
+            },
+            {
+              text: "Who is Kenya's all‑time top scorer?",
+              options: [
+                "Dennis Oliech",
+                "Michael Olunga",
+                "Allan Wanga",
+                "Musa Otieno",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Kenyan player scored a hat‑trick at the 2019 AFCON?",
+              options: [
+                "Michael Olunga",
+                "Victor Wanyama",
+                "Eric Ouma",
+                "John Ndirangu",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Kenyan goalkeeper was known as 'The Cat'?",
+              options: [
+                "Mahmoud Abbas",
+                "Arnold Origi",
+                "Patrick Matasi",
+                "Ian Otieno",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Kenyan midfielder captained the national team and played for Tottenham Hotspur?",
+              options: [
+                "Victor Wanyama",
+                "McDonald Mariga",
+                "Dennis Oliech",
+                "Michael Olunga",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Kenyan player was the first to score in the English Premier League?",
+              options: [
+                "Victor Wanyama",
+                "McDonald Mariga",
+                "Ayub Timbe",
+                "Francis Kahata",
+              ],
+              correct: 0,
+            },
+            {
+              text: "What is the nickname of the Kenyan national football team?",
+              options: [
+                "Harambee Stars",
+                "Simba",
+                "Rising Stars",
+                "National Team",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which Kenyan club is known as the 'Ingwe'?",
+              options: ["AFC Leopards", "Gor Mahia", "Tusker", "Ulinzi Stars"],
+              correct: 0,
+            },
+            {
+              text: "In which year did Kenya qualify for the Africa Cup of Nations?",
+              options: ["2004", "2006", "2008", "2010"],
+              correct: 0,
+            },
+            {
+              text: "Which Kenyan player was the top scorer in the 2019 Africa Cup of Nations qualifiers?",
+              options: [
+                "Michael Olunga",
+                "Dennis Oliech",
+                "Allan Wanga",
+                "John Ndirangu",
+              ],
+              correct: 0,
+            },
+          ],
+        },
+        SouthAfrica: {
+          history: [
+            {
+              text: "Who was the first black president of South Africa?",
+              options: [
+                "Nelson Mandela",
+                "Thabo Mbeki",
+                "Jacob Zuma",
+                "Cyril Ramaphosa",
+              ],
+              correct: 0,
+            },
+            {
+              text: "In what year did apartheid officially end?",
+              options: ["1994", "1990", "1992", "1996"],
+              correct: 0,
+            },
+            {
+              text: "Who was the last State President under apartheid?",
+              options: [
+                "F.W. de Klerk",
+                "P.W. Botha",
+                "John Vorster",
+                "B.J. Vorster",
+              ],
+              correct: 0,
+            },
+            {
+              text: "What was the name of the anti‑apartheid movement that used economic pressure?",
+              options: [
+                "Disinvestment Campaign",
+                "Defiance Campaign",
+                "Freedom Charter",
+                "Sharpeville Campaign",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which famous South African activist was awarded the Nobel Peace Prize along with Nelson Mandela?",
+              options: [
+                "F.W. de Klerk",
+                "Desmond Tutu",
+                "Oliver Tambo",
+                "Walter Sisulu",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who was the first woman to be elected as the President of the African National Congress (ANC) Women's League?",
+              options: [
+                "Winnie Mandela",
+                "Albertina Sisulu",
+                "Lillian Ngoyi",
+                "Ruth First",
+              ],
+              correct: 1,
+            },
+            {
+              text: "In which year did the 'Soweto Uprising' take place?",
+              options: ["1976", "1980", "1985", "1990"],
+              correct: 0,
+            },
+            {
+              text: "Who was the founder of the Pan Africanist Congress (PAC)?",
+              options: [
+                "Robert Sobukwe",
+                "Steve Biko",
+                "Nelson Mandela",
+                "Oliver Tambo",
+              ],
+              correct: 0,
+            },
+            {
+              text: "What was the name of the policy that segregated the population into racial groups?",
+              options: [
+                "Apartheid",
+                "Segregation",
+                "Discrimination",
+                "Bantustan",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which famous South African musician was a vocal anti‑apartheid activist?",
+              options: [
+                "Miriam Makeba",
+                "Brenda Fassie",
+                "Hugh Masekela",
+                "Lucky Dube",
+              ],
+              correct: 0,
+            },
+          ],
+          geography: [
+            {
+              text: "What is the capital of South Africa?",
+              options: [
+                "Pretoria",
+                "Cape Town",
+                "Bloemfontein",
+                "Johannesburg",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which mountain range is famous in Cape Town?",
+              options: [
+                "Table Mountain",
+                "Drakensberg",
+                "Magaliesberg",
+                "Langeberg",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which two oceans meet at Cape Agulhas?",
+              options: [
+                "Atlantic and Indian",
+                "Pacific and Indian",
+                "Arctic and Atlantic",
+                "Indian and Southern",
+              ],
+              correct: 0,
+            },
+            {
+              text: "What is the longest river in South Africa?",
+              options: [
+                "Orange River",
+                "Vaal River",
+                "Limpopo River",
+                "Tugela River",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which province is known as the 'Rainbow Province'?",
+              options: [
+                "Gauteng",
+                "KwaZulu-Natal",
+                "Western Cape",
+                "Mpumalanga",
+              ],
+              correct: 1,
+            },
+            {
+              text: "What is the highest point in South Africa?",
+              options: [
+                "Mafadi",
+                "Table Mountain",
+                "Chapman's Peak",
+                "Lion's Head",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which desert is located in South Africa?",
+              options: ["Kalahari", "Namib", "Sahara", "Atacama"],
+              correct: 0,
+            },
+            {
+              text: "What is the name of the famous botanical garden in Cape Town?",
+              options: [
+                "Kirstenbosch",
+                "Walter Sisulu",
+                "Pretoria",
+                "Johannesburg",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which city is known as the 'City of Gold'?",
+              options: ["Johannesburg", "Pretoria", "Cape Town", "Durban"],
+              correct: 0,
+            },
+            {
+              text: "What is the largest lake in South Africa?",
+              options: [
+                "Lake Chrissie",
+                "Lake Sibhayi",
+                "Lake St Lucia",
+                "Lake Fundudzi",
+              ],
+              correct: 0,
+            },
+          ],
+          culture: [
+            {
+              text: "What is the traditional dress of the Zulu people?",
+              options: ["Isicholo", "Shweshwe", "Kente", "Agbada"],
+              correct: 0,
+            },
+            {
+              text: "Which South African dish is made from cornmeal?",
+              options: ["Pap", "Bunny Chow", "Biltong", "Bobotie"],
+              correct: 0,
+            },
+            {
+              text: "Which festival celebrates Cape Malay culture?",
+              options: [
+                "Coon Carnival",
+                "Klein Karoo Nasionale Kunstefees",
+                "Oppikoppi",
+                "Splashy Fen",
+              ],
+              correct: 0,
+            },
+            {
+              text: "What is the traditional dance of the Xhosa people?",
+              options: ["Indlamu", "Pantsula", "Gumboot", "Mbaqanga"],
+              correct: 0,
+            },
+            {
+              text: "Which language is the most widely spoken in South Africa?",
+              options: ["Zulu", "Xhosa", "Afrikaans", "English"],
+              correct: 0,
+            },
+            {
+              text: "What is the traditional headwear of married Zulu women?",
+              options: ["Isicholo", "Inkehli", "Iqhiya", "Umqhele"],
+              correct: 0,
+            },
+            {
+              text: "Which South African ethnic group is known for their colorful blankets?",
+              options: ["Basotho", "Zulu", "Xhosa", "Venda"],
+              correct: 0,
+            },
+            {
+              text: "What is the name of the traditional South African meat sausage?",
+              options: ["Boerewors", "Biltong", "Droëwors", "Rusks"],
+              correct: 0,
+            },
+            {
+              text: "Which dance originated in the gold mines of South Africa?",
+              options: ["Gumboot", "Pantsula", "Indlamu", "Mbaqanga"],
+              correct: 0,
+            },
+            {
+              text: "What is the name of the annual music festival held in Grahamstown?",
+              options: [
+                "National Arts Festival",
+                "Oppikoppi",
+                "Splashy Fen",
+                "Klein Karoo",
+              ],
+              correct: 0,
+            },
+          ],
+          pop: [
+            {
+              text: "Who sang 'Jerusalema'?",
+              options: [
+                "Master KG ft. Nomcebo",
+                "DJ Maphorisa",
+                "Kabza De Small",
+                "Prince Kaybee",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which South African rapper is known as 'Mr. Cashtime'?",
+              options: ["Cassper Nyovest", "AKA", "Nasty C", "Kwesta"],
+              correct: 0,
+            },
+            {
+              text: "Who is the most awarded South African musician of all time?",
+              options: [
+                "Miriam Makeba",
+                "Brenda Fassie",
+                "Lucky Dube",
+                "Hugh Masekela",
+              ],
+              correct: 1,
+            },
+            {
+              text: "Which South African DJ won a Grammy for the remix of 'Jerusalema'?",
+              options: [
+                "Master KG",
+                "DJ Maphorisa",
+                "Black Coffee",
+                "Prince Kaybee",
+              ],
+              correct: 2,
+            },
+            {
+              text: "Who sang 'Osama' featuring Kwesta?",
+              options: [
+                "Kamo Mphela",
+                "Zakes Bantwini",
+                "Nomcebo Zikode",
+                "Makhadzi",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which South African musician is known as 'The Queen of Afro Pop'?",
+              options: [
+                "Yvonne Chaka Chaka",
+                "Brenda Fassie",
+                "Miriam Makeba",
+                "Thandiswa Mazwai",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who sang the hit 'Vula Vala'?",
+              options: [
+                "DJ Maphorisa",
+                "Kabza De Small",
+                "Master KG",
+                "Prince Kaybee",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which South African rapper is known for the song 'All Eyes On Me'?",
+              options: ["AKA", "Cassper Nyovest", "Nasty C", "Kwesta"],
+              correct: 0,
+            },
+            {
+              text: "What is the name of the popular South African house music genre?",
+              options: ["Amapiano", "Gqom", "Kwaito", "House"],
+              correct: 0,
+            },
+            {
+              text: "Which South African singer is known as 'Mama Africa'?",
+              options: [
+                "Miriam Makeba",
+                "Brenda Fassie",
+                "Yvonne Chaka Chaka",
+                "Thandiswa Mazwai",
+              ],
+              correct: 0,
+            },
+          ],
+          movies: [
+            {
+              text: "Which South African film won the Oscar for Best Foreign Language Film?",
+              options: [
+                "Tsotsi",
+                "District 9",
+                "The Gods Must Be Crazy",
+                "Yesterday",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who directed 'District 9'?",
+              options: [
+                "Neill Blomkamp",
+                "Gavin Hood",
+                "Darrell Roodt",
+                "Oliver Schmitz",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which South African actor starred in 'Blood Diamond'?",
+              options: [
+                "Djimon Hounsou",
+                "Terry Pheto",
+                "Connie Chiume",
+                "John Kani",
+              ],
+              correct: 3,
+            },
+            {
+              text: "What is the name of the first South African film to win the Oscar for Best Foreign Language Film?",
+              options: [
+                "Tsotsi",
+                "Yesterday",
+                "The Gods Must Be Crazy",
+                "Skin",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which South African actress played the lead in 'The Woman King'?",
+              options: [
+                "Thuso Mbedu",
+                "Nomzamo Mbatha",
+                "Terry Pheto",
+                "Charlize Theron",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which South African film is about a young boy who finds a stolen car?",
+              options: [
+                "Tsotsi",
+                "District 9",
+                "Yesterday",
+                "The Gods Must Be Crazy",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who directed the movie 'The Gods Must Be Crazy'?",
+              options: [
+                "Jamie Uys",
+                "Neill Blomkamp",
+                "Gavin Hood",
+                "Darrell Roodt",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which South African actor is known for his role in 'Black Panther'?",
+              options: [
+                "John Kani",
+                "Atandwa Kani",
+                "Connie Chiume",
+                "Thuso Mbedu",
+              ],
+              correct: 0,
+            },
+            {
+              text: "What is the name of the South African film about a young girl who dreams of becoming a boxer?",
+              options: ["Moffie", "The Wound", "Ayanda", "Kite"],
+              correct: 2,
+            },
+            {
+              text: "Which South African actress won an Academy Award for her role in 'Monster'?",
+              options: [
+                "Charlize Theron",
+                "Thuso Mbedu",
+                "Nomzamo Mbatha",
+                "Terry Pheto",
+              ],
+              correct: 0,
+            },
+          ],
+          football: [
+            {
+              text: "Which club has won the PSL the most times?",
+              options: [
+                "Mamelodi Sundowns",
+                "Kaizer Chiefs",
+                "Orlando Pirates",
+                "SuperSport United",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who is South Africa's all‑time top scorer?",
+              options: [
+                "Benni McCarthy",
+                "Shaun Bartlett",
+                "Katlego Mphela",
+                "Siphiwe Tshabalala",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which South African player won the Premier League with Manchester United?",
+              options: [
+                "Quinton Fortune",
+                "Benni McCarthy",
+                "Aaron Mokoena",
+                "Mbulelo Mabizela",
+              ],
+              correct: 0,
+            },
+            {
+              text: "In which year did South Africa host the FIFA World Cup?",
+              options: ["2010", "2006", "2014", "2018"],
+              correct: 0,
+            },
+            {
+              text: "Who scored the famous goal for South Africa in the 2010 World Cup?",
+              options: [
+                "Siphiwe Tshabalala",
+                "Kagiso Dikgacoi",
+                "Steven Pienaar",
+                "Teko Modise",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which South African player was known as 'The Kaiser'?",
+              options: [
+                "Kaizer Motaung",
+                "Jomo Sono",
+                "Lucas Radebe",
+                "Doctor Khumalo",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which South African club is known as 'The Buccaneers'?",
+              options: [
+                "Orlando Pirates",
+                "Kaizer Chiefs",
+                "Mamelodi Sundowns",
+                "SuperSport United",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Who is the all‑time leading goalscorer for the South African national team?",
+              options: [
+                "Benni McCarthy",
+                "Shaun Bartlett",
+                "Katlego Mphela",
+                "Siphiwe Tshabalala",
+              ],
+              correct: 0,
+            },
+            {
+              text: "Which South African player won the African Footballer of the Year award in 2005?",
+              options: [
+                "Samuel Eto'o",
+                "Michael Essien",
+                "Didier Drogba",
+                "Benni McCarthy",
+              ],
+              correct: 1,
+            },
+            {
+              text: "In which year did South Africa win the Africa Cup of Nations?",
+              options: ["1996", "1998", "2000", "2002"],
+              correct: 0,
+            },
+          ],
+        },
+        africa: [
+          {
+            text: "Which country is known as the 'Giant of Africa'?",
+            options: ["Nigeria", "Ghana", "South Africa", "Kenya"],
+            correct: 0,
+          },
+          {
+            text: "What is the highest mountain in Africa?",
+            options: [
+              "Mount Kilimanjaro",
+              "Mount Kenya",
+              "Mount Elgon",
+              "Rwenzori",
+            ],
+            correct: 0,
+          },
+          {
+            text: "Which river is the longest in Africa?",
+            options: ["Nile", "Congo", "Niger", "Zambezi"],
+            correct: 0,
+          },
+          {
+            text: "Which African country was formerly known as Abyssinia?",
+            options: ["Ethiopia", "Eritrea", "Somalia", "Djibouti"],
+            correct: 0,
+          },
+          {
+            text: "Who was the first African to win the FIFA Ballon d'Or?",
+            options: [
+              "George Weah",
+              "Samuel Eto'o",
+              "Didier Drogba",
+              "Yaya Touré",
+            ],
+            correct: 0,
+          },
+          {
+            text: "What is the capital of Egypt?",
+            options: ["Cairo", "Alexandria", "Luxor", "Aswan"],
+            correct: 0,
+          },
+          {
+            text: "Which desert covers much of North Africa?",
+            options: ["Sahara", "Kalahari", "Namib", "Libyan"],
+            correct: 0,
+          },
+          {
+            text: "The African Union (AU) headquarters is in which city?",
+            options: ["Addis Ababa", "Nairobi", "Johannesburg", "Cairo"],
+            correct: 0,
+          },
+          {
+            text: "Which African country is the largest producer of cocoa?",
+            options: ["Ivory Coast", "Ghana", "Nigeria", "Cameroon"],
+            correct: 0,
+          },
+          {
+            text: "What is the largest lake in Africa?",
+            options: [
+              "Lake Victoria",
+              "Lake Tanganyika",
+              "Lake Malawi",
+              "Lake Turkana",
+            ],
+            correct: 0,
+          },
+          {
+            text: "Which African island nation is located in the Indian Ocean?",
+            options: ["Madagascar", "Seychelles", "Mauritius", "Comoros"],
+            correct: 0,
+          },
+          {
+            text: "Which African country is famous for its ancient rock‑hewn churches in Lalibela?",
+            options: ["Ethiopia", "Eritrea", "Sudan", "Somalia"],
+            correct: 0,
+          },
+          {
+            text: "Who is the most decorated African footballer of all time?",
+            options: [
+              "Samuel Eto'o",
+              "Yaya Touré",
+              "George Weah",
+              "Didier Drogba",
+            ],
+            correct: 0,
+          },
+          {
+            text: "Which African country has the largest population?",
+            options: ["Nigeria", "Ethiopia", "Egypt", "DR Congo"],
+            correct: 0,
+          },
+          {
+            text: "What is the currency of Morocco?",
+            options: ["Moroccan Dirham", "Dinar", "Franc", "Euro"],
+            correct: 0,
+          },
+          {
+            text: "Which waterfall is the largest in Africa (by volume)?",
+            options: [
+              "Victoria Falls",
+              "Murchison Falls",
+              "Tugela Falls",
+              "Augrabies Falls",
+            ],
+            correct: 0,
+          },
+          {
+            text: "Which African country is known as the 'Land of a Thousand Hills'?",
+            options: ["Rwanda", "Burundi", "Uganda", "Lesotho"],
+            correct: 0,
+          },
+          {
+            text: "Who was the first female president of an African country (Liberia)?",
+            options: [
+              "Ellen Johnson Sirleaf",
+              "Sahle-Work Zewde",
+              "Joyce Banda",
+              "Catherine Samba-Panza",
+            ],
+            correct: 0,
+          },
+          {
+            text: "Which African country is the largest producer of gold?",
+            options: ["South Africa", "Ghana", "Mali", "Tanzania"],
+            correct: 0,
+          },
+          {
+            text: "Which African city is known as the 'Pearl of Africa'?",
+            options: ["Kampala", "Nairobi", "Kigali", "Dar es Salaam"],
+            correct: 0,
+          },
+        ],
+      };
+
+      // --------------------------------------------------------------
+      // GAME LOGIC (unchanged, uses questionPools directly)
+      // --------------------------------------------------------------
+      let selectedCountry = "Nigeria";
+      let selectedCategory = "history";
+      let coinBalance = 0,
+        isTournamentMode = false,
+        tournamentEntryPaid = false;
+      let currentQuestions = [],
+        currentIndex = 0,
+        currentScore = 0,
+        lives = 3,
+        answerLocked = false;
+      let totalPoints = 0,
+        bestScore = 0;
+      let timerInterval = null;
+      let timeLeft = 14;
+      let correctIdxForCurrentQuestion = 0;
+
+      const homeScreen = document.getElementById("homeScreen"),
+        quizScreen = document.getElementById("quizScreen"),
+        resultScreen = document.getElementById("resultScreen");
+      const startBtn = document.getElementById("startQuizBtn"),
+        tournamentBtn = document.getElementById("tournamentBtn"),
+        playAgainBtn = document.getElementById("playAgainBtn");
+      const nextBtn = document.getElementById("nextBtn"),
+        hintBtn = document.getElementById("hintBtn"),
+        questionEl = document.getElementById("questionText");
+      const optionsContainer = document.getElementById("optionsContainer"),
+        scoreDisplay = document.getElementById("scoreDisplay"),
+        livesDisplaySpan = document.getElementById("livesDisplay");
+      const currentQSpan = document.getElementById("currentQ"),
+        totalQSpan = document.getElementById("totalQ"),
+        feedbackMsg = document.getElementById("feedbackMsg");
+      const finalScoreSpan = document.getElementById("finalScoreSpan"),
+        resultMessage = document.getElementById("resultMessage");
+      const totalPointsHomeSpan = document.getElementById("totalPointsHome"),
+        bestScoreHomeSpan = document.getElementById("bestScoreHome"),
+        coinSpan = document.getElementById("coinBalance");
+      const tournamentModal = document.getElementById("tournamentModal"),
+        confirmTournament = document.getElementById("confirmTournamentBtn"),
+        closeModal = document.getElementById("closeModalBtn");
+      const earnCoinsBtn = document.getElementById("earnCoinsBtn"),
+        countrySelect = document.getElementById("countrySelect"),
+        categorySelect = document.getElementById("categorySelect");
+      const termsLinkElem = document.getElementById("termsLink"),
+        termsModalElem = document.getElementById("termsModal"),
+        closeTermsBtn = document.getElementById("closeTermsBtn");
+      const timerFillElem = document.getElementById("timerFill"),
+        timerTextElem = document.getElementById("timerText");
+      const mandatoryOverlay = document.getElementById("mandatoryTermsOverlay"),
+        agreeCheckbox = document.getElementById("agreeCheckbox");
+      const dontShowAgainCheckbox = document.getElementById(
+          "dontShowAgainCheckbox",
+        ),
+        acceptTermsBtn = document.getElementById("acceptTermsBtn"),
+        resetBtn = document.getElementById("resetSettingsBtn");
+
+      agreeCheckbox.addEventListener("change", () => {
+        acceptTermsBtn.disabled = !agreeCheckbox.checked;
+      });
+
+      function shuffleArray(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+      }
+      function getRandomQuestions(pool, count) {
+        const shuffled = shuffleArray([...pool]);
+        return shuffled.slice(0, Math.min(count, shuffled.length));
+      }
+      function getQuestionPool() {
+        if (selectedCategory === "africa") return questionPools.africa;
+        const countryData = questionPools[selectedCountry];
+        if (countryData && countryData[selectedCategory])
+          return countryData[selectedCategory];
+        return questionPools.Nigeria.history;
+      }
+      function updateCoinUI() {
+        coinSpan.innerText = coinBalance;
+      }
+      function updateLivesUI() {
+        livesDisplaySpan.innerText = lives;
+      }
+      function updateQuizUI() {
+        scoreDisplay.innerText = currentScore;
+        currentQSpan.innerText = currentIndex + 1;
+        totalQSpan.innerText = currentQuestions.length;
+        livesDisplaySpan.innerText = lives;
+      }
+      function updateHomeStats() {
+        totalPointsHomeSpan.innerText = totalPoints;
+        bestScoreHomeSpan.innerText = bestScore;
+      }
+
+      function loadStats() {
+        totalPoints =
+          parseInt(localStorage.getItem("nigeriaQuiz_totalPoints")) || 0;
+        bestScore =
+          parseInt(localStorage.getItem("nigeriaQuiz_bestScore")) || 0;
+        coinBalance =
+          parseInt(localStorage.getItem("nigeriaQuiz_coins")) || 100;
+        updateCoinUI();
+        updateHomeStats();
+      }
+      function saveStats() {
+        localStorage.setItem("nigeriaQuiz_totalPoints", totalPoints);
+        if (currentScore > bestScore) {
+          bestScore = currentScore;
+          localStorage.setItem("nigeriaQuiz_bestScore", bestScore);
+        }
+        localStorage.setItem("nigeriaQuiz_coins", coinBalance);
+        updateHomeStats();
+      }
+      function addCoins(amount) {
+        coinBalance += amount;
+        updateCoinUI();
+        saveStats();
+      }
+      function deductCoins(amount) {
+        if (coinBalance >= amount) {
+          coinBalance -= amount;
+          updateCoinUI();
+          saveStats();
+          return true;
+        }
+        return false;
+      }
+
+      function stopTimer() {
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = null;
+      }
+      function getTimeForQuestion(qIndex) {
+        let t = 14 - qIndex;
+        return Math.max(t, 7);
+      }
+      function updateTimerUI() {
+        timerTextElem.innerText = `${timeLeft}s`;
+        const total = getTimeForQuestion(currentIndex);
+        const percent = (timeLeft / total) * 100;
+        timerFillElem.style.width = `${percent}%`;
+        timerFillElem.style.backgroundColor =
+          timeLeft <= 3 ? "#ef4444" : "#facc15";
+      }
+      function startTimer() {
+        stopTimer();
+        updateTimerUI();
+        timerInterval = setInterval(() => {
+          if (answerLocked) return;
+          if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            handleTimeOut();
+          } else {
+            timeLeft--;
+            updateTimerUI();
+          }
+        }, 1000);
+      }
+      async function handleTimeOut() {
+        if (answerLocked) return;
+        answerLocked = true;
+        lives--;
+        updateLivesUI();
+        feedbackMsg.innerHTML = `⏰ Time's up! No points. Lives left: ${lives}`;
+        if (lives <= 0) {
+          endGame();
+          return;
+        }
+        const allOptions = document.querySelectorAll(".option-btn");
+        allOptions.forEach((btn, idx) => {
+          btn.disabled = true;
+          if (idx === correctIdxForCurrentQuestion)
+            btn.classList.add("correct");
+        });
+        nextBtn.disabled = false;
+      }
+      function renderCurrentQuestion() {
+        if (currentIndex >= currentQuestions.length) {
+          endGame();
+          return;
+        }
+        answerLocked = false;
+        timeLeft = getTimeForQuestion(currentIndex);
+        updateTimerUI();
+        const q = currentQuestions[currentIndex];
+        questionEl.innerText = q.text;
+        optionsContainer.innerHTML = "";
+        const indices = [0, 1, 2, 3];
+        for (let i = indices.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [indices[i], indices[j]] = [indices[j], indices[i]];
+        }
+        const shuffledOptions = indices.map((i) => q.options[i]);
+        correctIdxForCurrentQuestion = indices.indexOf(q.correct);
+        shuffledOptions.forEach((opt, idx) => {
+          const btn = document.createElement("button");
+          btn.className = "option-btn";
+          btn.innerText = `${String.fromCharCode(65 + idx)}. ${opt}`;
+          btn.addEventListener("click", () =>
+            handleAnswer(idx, correctIdxForCurrentQuestion, btn),
+          );
+          optionsContainer.appendChild(btn);
+        });
+        nextBtn.disabled = true;
+        feedbackMsg.innerHTML = "";
+        updateQuizUI();
+        startTimer();
+      }
+      async function handleAnswer(selectedIdx, correctIdx, btnElement) {
+        if (answerLocked) return;
+        stopTimer();
+        answerLocked = true;
+        const isCorrect = selectedIdx === correctIdx;
+        const allOptions = document.querySelectorAll(".option-btn");
+        allOptions.forEach((btn) => (btn.disabled = true));
+        if (isCorrect) {
+          btnElement.classList.add("correct");
+          currentScore += 10;
+          totalPoints += 10;
+          updateQuizUI();
+          saveStats();
+          feedbackMsg.innerHTML = "✅ Correct! +10 points";
+        } else {
+          btnElement.classList.add("wrong");
+          allOptions.forEach((btn, idx) => {
+            if (idx === correctIdx) btn.classList.add("correct");
+          });
+          feedbackMsg.innerHTML = `❌ Wrong. Correct: ${currentQuestions[currentIndex].options[currentQuestions[currentIndex].correct]}`;
+          lives--;
+          updateLivesUI();
+          if (lives <= 0) {
+            endGame();
+            return;
+          }
+        }
+        nextBtn.disabled = false;
+      }
+      function nextQuestion() {
+        if (!nextBtn.disabled) {
+          stopTimer();
+          currentIndex++;
+          if (currentIndex < currentQuestions.length && lives > 0)
+            renderCurrentQuestion();
+          else endGame();
+        }
+      }
+      function initGame() {
+        const pool = getQuestionPool();
+        let working = [...pool];
+        while (working.length < 10) working = working.concat(working);
+        currentQuestions = getRandomQuestions(working, 10);
+        currentIndex = 0;
+        currentScore = 0;
+        lives = 3;
+        answerLocked = false;
+        updateQuizUI();
+        renderCurrentQuestion();
+      }
+      async function endGame() {
+        stopTimer();
+        addCoins(Math.floor(currentScore / 2));
+        if (isTournamentMode && tournamentEntryPaid) {
+          let scores =
+            JSON.parse(localStorage.getItem("tournamentScores")) || [];
+          scores.push({ score: currentScore, date: new Date().toISOString() });
+          localStorage.setItem("tournamentScores", JSON.stringify(scores));
+          isTournamentMode = false;
+          tournamentEntryPaid = false;
+        }
+        homeScreen.classList.add("hidden");
+        quizScreen.classList.add("hidden");
+        resultScreen.classList.remove("hidden");
+        finalScoreSpan.innerText = currentScore;
+        resultMessage.innerText = `You scored ${currentScore} points. Earned ${Math.floor(currentScore / 2)} coins! ${currentScore >= 70 ? "Excellent!" : "Keep playing!"}`;
+        saveStats();
+      }
+      function goHome() {
+        stopTimer();
+        homeScreen.classList.remove("hidden");
+        quizScreen.classList.add("hidden");
+        resultScreen.classList.add("hidden");
+      }
+      async function startGame(mode = "free") {
+        if (mode === "tournament") {
+          if (!deductCoins(50)) {
+            alert("Not enough coins!");
+            return;
+          }
+          isTournamentMode = true;
+          tournamentEntryPaid = true;
+        } else {
+          isTournamentMode = false;
+        }
+        initGame();
+        homeScreen.classList.add("hidden");
+        quizScreen.classList.remove("hidden");
+        resultScreen.classList.add("hidden");
+      }
+      async function useLifeline() {
+        if (answerLocked) {
+          feedbackMsg.innerHTML = "Already answered.";
+          return;
+        }
+        if (!deductCoins(10)) {
+          alert("Not enough coins!");
+          return;
+        }
+
+        const optionButtons = document.querySelectorAll(".option-btn");
+        const totalOptions = optionButtons.length;
+        // correctIdxForCurrentQuestion is the DOM index of the correct answer (shuffled order)
+        const correctDomIdx = correctIdxForCurrentQuestion;
+
+        // Build list of wrong DOM indices
+        const wrongDomIndices = [];
+        for (let i = 0; i < totalOptions; i++) {
+          if (i !== correctDomIdx) wrongDomIndices.push(i);
+        }
+
+        // Pick two wrong ones (you can shuffle them first for randomness)
+        const toRemove = wrongDomIndices.slice(0, 2);
+
+        // Disable and grey out the two wrong options
+        optionButtons.forEach((btn, idx) => {
+          if (toRemove.includes(idx)) {
+            btn.disabled = true;
+            btn.style.opacity = "0.5";
+            btn.style.textDecoration = "line-through";
+          }
+        });
+
+        feedbackMsg.innerHTML = "50:50 used! 10 coins deducted.";
+      }
+      async function earnCoins() {
+        if (await showRewardedAd()) {
+          addCoins(25);
+          alert("Earned 25 coins!");
+        } else alert("Ad failed.");
+      }
+
+      startBtn.addEventListener("click", () => startGame("free"));
+      tournamentBtn.addEventListener("click", () =>
+        tournamentModal.classList.add("active"),
+      );
+      confirmTournament.addEventListener("click", () => {
+        tournamentModal.classList.remove("active");
+        startGame("tournament");
+      });
+      closeModal.addEventListener("click", () =>
+        tournamentModal.classList.remove("active"),
+      );
+      playAgainBtn.addEventListener("click", goHome);
+      nextBtn.addEventListener("click", nextQuestion);
+      hintBtn.addEventListener("click", useLifeline);
+      earnCoinsBtn.addEventListener("click", earnCoins);
+      termsLinkElem.addEventListener("click", () =>
+        termsModalElem.classList.add("active"),
+      );
+      closeTermsBtn.addEventListener("click", () =>
+        termsModalElem.classList.remove("active"),
+      );
+      countrySelect.addEventListener("change", (e) => {
+        selectedCountry = e.target.value;
+      });
+      categorySelect.addEventListener("change", (e) => {
+        selectedCategory = e.target.value;
+      });
+
+      function checkTermsAccepted() {
+        const termsAccepted = localStorage.getItem("termsAccepted");
+        const dontShowAgain = localStorage.getItem("dontShowTerms");
+        if (dontShowAgain === "true" && termsAccepted === "true") {
+          mandatoryOverlay.style.display = "none";
+          loadStats();
+          initAdMob();
+          return true;
+        } else {
+          mandatoryOverlay.style.display = "flex";
+          return false;
+        }
+      }
+      acceptTermsBtn.addEventListener("click", () => {
+        if (!agreeCheckbox.checked) return;
+        localStorage.setItem("termsAccepted", "true");
+        if (dontShowAgainCheckbox.checked) {
+          localStorage.setItem("dontShowTerms", "true");
+        } else {
+          localStorage.removeItem("dontShowTerms");
+        }
+        mandatoryOverlay.style.display = "none";
+        loadStats();
+        initAdMob();
+      });
+      resetBtn.addEventListener("click", () => {
+        localStorage.clear();
+        alert("All saved data cleared. Please refresh the page.");
+        location.reload();
+      });
+      checkTermsAccepted();
+    </script>
+  </body>
 </html>
