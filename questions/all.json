@@ -106,6 +106,11 @@
     ],
     "geography": [
       {
+      "text": "Which state is known as the 'Federal Capital Territory'?",
+      "options": ["Lagos", "Kano", "Rivers", "Abuja"],
+      "correct": 3
+},
+      {
         "text": "What is the capital of Nigeria?",
         "options": ["Abuja", "Lagos", "Kano", "Port Harcourt"],
         "correct": 0
@@ -117,8 +122,8 @@
       },
       {
         "text": "Yankari Game Reserve is located in which state?",
-        "options": ["Bauchi", "Plateau", "Taraba", "Adamawa"],
-        "correct": 0
+        "options": ["Plateau", "Taraba", "Adamawa", "Bauchi"],
+        "correct": 3
       },
       {
         "text": "Which state is known as the 'Gateway State'?",
@@ -129,7 +134,79 @@
         "text": "What is the largest state in Nigeria by land area?",
         "options": ["Niger", "Borno", "Taraba", "Kaduna"],
         "correct": 1
+      },
+      {
+        "text": "What is the name of the longest bridge in Nigeria?",
+        "options": ["Third Mainland Bridge", "Eko Bridge", "Carter Bridge", "Marine Bridge"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian state has the largest number of local government areas?",
+        "options": ["Kaduna", "Borno", "Lagos", "Kano"],
+        "correct": 3  // Kano has 44 LGAs (largest)
+      },
+      {
+        "text": "The 'Tinapa Business Resort' is located in which state?",
+        "options": ["Cross River", "Akwa Ibom", "Rivers", "Delta"],
+        "correct": 0
+      },
+      {
+        "text": "Which river is the second longest in Nigeria?",
+        "options": ["River Niger", "Cross River", "Ogun River", "River Benue"],
+        "correct": 3  // Benue is the second longest
+      },
+      {
+        "text": "The 'Okomu National Park' is found in which state?",
+        "options": ["Edo", "Ondo", "Delta", "Bayelsa"],
+        "correct": 0  // Okomu is in Edo State
+      },
+      {
+        "text": "Which state is the largest producer of crude oil in Nigeria?",
+        "options": ["Bayelsa", "Rivers", "Delta", " Akwa Ibom"],
+        "correct": 3  // Akwa Ibom is currently the largest
+      },
+      {
+        "text": "What is the highest point in the 'Jos Plateau'?",
+        "options": ["Shere Hills", "Kagoro Hills", "Mambilla Plateau", "Obudu Plateau"],
+        "correct": 0  // Shere Hills near Jos
+      },
+      {
+        "text": "The 'Gurara Falls' is located in which state?",
+        "options": ["FCT", "Kwara", "Kogi", "Niger"],
+        "correct": 3  // Gurara Falls is in Niger State
+      },
+      {
+        "text": "Which state is nicknamed 'The Land of Sunshine'?",
+        "options": ["Ondo", "Ekiti", "Oyo", "Osun"],
+        "correct": 0  // Ondo is the Sunshine State
+      },
+      {
+        "text": "What is the largest man‑made lake in Nigeria?",
+        "options": ["Jebba Lake", "Kainji Lake", "Shiroro Lake", "Tiga Lake"],
+        "correct": 1  // Kainji Lake is the largest
+      },
+      {
+        "text": "The 'Sukur World Heritage Site' is in which state?",
+        "options": ["Taraba", "Adamawa", "Borno", "Yobe"],
+        "correct": 1  // Sukur is in Adamawa State
+      },
+      {
+        "text": "Which state shares a border with the Republic of Niger to the north?",
+        "options": ["Sokoto", "Kebbi", "Zamfara", "Katsina"],
+        "correct": 0  // Sokoto shares border with Niger
+      },
+      {
+        "text": "What is the major crop produced in the 'Middle Belt' region?",
+        "options": ["Yam", "Cassava", "Cocoa", "Groundnut"],
+        "correct": 0  // Yam is a major staple in the Middle Belt
+      },
+      {
+        "text": "The 'Idanre Hills' are located in which state?",
+        "options": ["Ondo", "Ogun", "Oyo", "Osun"],
+        "correct": 0  // Idanre is in Ondo State
       }
+
+
     ],
     "culture": [
       {
