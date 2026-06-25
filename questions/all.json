@@ -248,6 +248,107 @@
 
     ],
     "pop": [
+      // Add these 20 new questions to your Nigeria pop culture pool
+{
+        "text": "Which Nigerian artist released the 2023 album 'Timeless'?",
+        "options": ["Wizkid", "Burna Boy", "Davido", "Rema"],
+        "correct": 2
+      },
+      {
+        "text": "Who sang the hit single 'Peru'?",
+        "options": ["Fireboy DML", "Rema", "Asake", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist is the CEO of Mavin Records?",
+        "options": ["Dr. SID", "Don Jazzy", "D'Prince", "Korede Bello"],
+        "correct": 1
+      },
+      {
+        "text": "Who is known as 'Starboy' in the Nigerian music industry?",
+        "options": ["Wizkid", "Burna Boy", "Davido", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist was featured on Wizkid's 'Essence'?",
+        "options": ["Tems", "Ayra Starr", "Buju", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang the 2022 hit 'Sability'?",
+        "options": ["Tems", "Ayra Starr", "Rema", "Asake"],
+        "correct": 1
+      },
+      {
+        "text": "Which artist released the song 'Joha' in 2023?",
+        "options": ["Asake", "Fireboy DML", "Ruger", "Zinoleesky"],
+        "correct": 0
+      },
+      {
+        "text": "Who is the founder of the record label DMW (Davido Music Worldwide)?",
+        "options": ["Davido", "Don Jazzy", "P-Square", "D'Banj"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist is famous for the song 'Bounce'?",
+        "options": ["Sarz", "Rema", "Asake", "Ruger"],
+        "correct": 3
+      },
+      {
+        "text": "Who sang the viral TikTok anthem 'Calm Down'?",
+        "options": ["CKay", "Fireboy DML", "Omah Lay", "Rema"],
+        "correct": 3
+      },
+      {
+        "text": "Which artist released the song 'Bandana' featuring Asake?",
+        "options": ["Fireboy DML", "Rema", "Seyi Vibez", "Victony"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang the 2022 track 'Sungba'?",
+        "options": ["Rema", "Asake", "Burna Boy", "Davido"],
+        "correct": 1
+      },
+      {
+        "text": "Which Nigerian artist is known as 'King of Afrobeats'?",
+        "options": ["Burna Boy", "Wizkid", "Davido", "Fela Kuti"],
+        "correct": 1
+      },
+      {
+        "text": "Who sang the song 'Girlfriend'?",
+        "options": ["Rema", "Ruger", "Fireboy DML", "Asake"],
+        "correct": 1
+      },
+      {
+        "text": "Which singer is famous for the hit 'Damages'?",
+        "options": ["Tems", "Ayra Starr", "Simi", "Niniola"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of Asake's debut studio album?",
+        "options": ["Mr. Money With The Vibe", "PALMPAY", "Amapiano", "Omo Ologo"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist released the single 'Terminator'?",
+        "options": ["Fireboy DML", "Asake", "Ruger", "Zinoleesky"],
+        "correct": 1
+      },
+      {
+        "text": "Who is the Nigerian artist behind the 2023 hit 'Omo Ologo'?",
+        "options": ["Omah Lay", "Seyi Vibez", "Zinoleesky", "CKay"],
+        "correct": 2
+      },
+      {
+        "text": "Which artist won the first-ever Grammy for Best African Music Performance in 2024?",
+        "options": ["Asake & Olamide", "Burna Boy", "Wizkid", "Tems"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang the 2021 hit 'Peru'?",
+        "options": ["CKay", "Rema", "Omah Lay", "Fireboy DML"],
+        "correct": 3
+      },
       {
         "text": "Who sang the hit song 'Fall'?",
         "options": ["Davido", "Wizkid", "Burna Boy", "Kizz Daniel"],
@@ -275,6 +376,108 @@
       }
     ],
     "movies": [
+      // Add these 20 new questions to your Nigeria movies pool
+      {
+        "text": "Which Nollywood actress starred in the 2020 film 'Omo Ghetto: The Saga'?",
+        "options": ["Funke Akindele", "Genevieve Nnaji", "Omotola Jalade", "Toyin Abraham"],
+        "correct": 0
+      },
+      {
+        "text": "Who directed the 2020 Netflix hit 'The Wedding Party 2'?",
+        "options": ["Niyi Akinmolayan", "Kemi Adetiba", "Mo Abudu", "Obi Emelonye"],
+        "correct": 0
+      },
+      {
+        "text": "Which 2018 film was the first Nollywood movie to be streamed on Netflix?",
+        "options": ["Lionheart", "The Wedding Party", "King of Boys", "Chief Daddy"],
+        "correct": 0
+      },
+      {
+        "text": "Who played the lead role of 'Elesin Oba' in the Netflix film 'Elesin Oba, The King's Horseman'?",
+        "options": ["Odunlade Adekola", "Kunle Afolayan", "Yemi Shodimu", "Femi Branch"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood movie won the Best Movie award at the 2020 Africa Magic Viewers' Choice Awards?",
+        "options": ["King of Boys", "The Wedding Party", "Lionheart", "Living in Bondage: Breaking Free"],
+        "correct": 3
+      },
+      {
+        "text": "What is the name of the first Nollywood film to be submitted for the Academy Award (Oscar) for Best International Feature?",
+        "options": ["Lionheart", "The Wedding Party", "October 1", "Tango With Me"],
+        "correct": 0
+      },
+      {
+        "text": "Which actor is known for the role of 'Akin' in the 'The Wedding Party' franchise?",
+        "options": ["Banky W", "Ramsey Nouah", "Falz", "Richard Mofe-Damijo"],
+        "correct": 0
+      },
+      {
+        "text": "Who directed the classic Nollywood film 'The Figurine' (2009)?",
+        "options": ["Kunle Afolayan", "Tunde Kelani", "Mildred Okwo", "Mahmood Ali-Balogun"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood actress was the first to feature on the cover of Vogue magazine?",
+        "options": ["Genevieve Nnaji", "Omotola Jalade", "Funke Akindele", "Tiwa Savage"],
+        "correct": 0
+      },
+      {
+        "text": "Which 2022 film follows a young Nigerian woman who discovers she has superpowers?",
+        "options": ["A Girl Called Bree", "Nneka the Pretty Serpent", "Love and Duty", "The Ghost and the House of Truth"],
+        "correct": 1
+      },
+      {
+        "text": "What is the name of the iconic Lagos 'soldier' character played by Odunlade Adekola?",
+        "options": ["Jaiye Kuti", "Saka", "Muka", "Lai"],
+        "correct": 0
+      },
+      
+      {
+        "text": "Who starred as 'Ireti' in the romantic drama 'Isoken' (2017)?",
+        "options": ["Dakore Egbuson-Akande", "Bimbo Akintola", "Nse Ikpe-Etim", "Rita Dominic"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood film from 1992 is considered one of the earliest blockbusters?",
+        "options": ["Living in Bondage", "Glamour Girls", "Things Fall Apart", "Kulendo"],
+        "correct": 0
+      },
+      {
+        "text": "Which actor played the lead role of 'Militant' in the 2020 movie 'The Milkmaid'?",
+        "options": ["Babajide Akintola", "Tunde Usman", "Umar Sheriff", "Chiwetalu Agu"],
+        "correct": 2
+      },
+      {
+        "text": "Who is the executive producer of the 'King of Boys' franchise?",
+        "options": ["Mo Abudu", "Kemi Adetiba", "Funke Akindele", "Omotola Jalade"],
+        "correct": 0
+      },
+      {
+        "text": "Which 2013 historical drama directed by Kunle Afolayan was selected as Nigeria's submission for the Oscars?",
+        "options": ["October 1", "The Figurine", "Phone Swap", "The C.E.O."],
+        "correct": 0
+      },
+      {
+        "text": "Which actress is famously known as 'The Lioness of Nollywood'?",
+        "options": ["Omotola Jalade", "Genevieve Nnaji", "Funke Akindele", "Rita Dominic"],
+        "correct": 0
+      },
+      {
+        "text": "In which movie did Falz (Folarin Falana) make his acting debut?",
+        "options": ["The Wedding Party", "Chief Daddy", "Your Excellency", "Omo Ghetto"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood movie was shot entirely in the Igbo language and gained international acclaim?",
+        "options": ["Lionheart", "Ije: The Journey", "Nneka the Pretty Serpent", "Osuofia in London"],
+        "correct": 1
+      },
+      {
+        "text": "Who directed the 2019 blockbuster 'Chief Daddy'?",
+        "options": ["Kemi Adetiba", "Niyi Akinmolayan", "Funke Akindele", "Mo Abudu"],
+        "correct": 0
+      },
       {
         "text": "Which Nollywood actress directed and starred in 'Lionheart'?",
         "options": ["Genevieve Nnaji", "Omotola Jalade", "Funke Akindele", "Rita Dominic"],
@@ -304,13 +507,13 @@
     "football": [
       {
         "text": "Who scored Nigeria's first-ever goal in a FIFA World Cup match?",
-        "options": ["Rashidi Yekini", "Segun Odegbami", "Emmanuel Amunike", "Julius Aghahowa"],
-        "correct": 0
+        "options": ["Segun Odegbami", "Rashidi Yekini", "Emmanuel Amunike", "Julius Aghahowa"],
+        "correct": 1
       },
       {
         "text": "Which Nigerian player is nicknamed 'The Black Arrow'?",
-        "options": ["Segun Odegbami", "Rashidi Yekini", "Jay-Jay Okocha", "Kanu Nwankwo"],
-        "correct": 0
+        "options": ["Jay-Jay Okocha", "Rashidi Yekini", "Segun Odegbami", "Kanu Nwankwo"],
+        "correct": 2
       },
       {
         "text": "Which Nigerian club was the first to win the CAF Champions League?",
@@ -324,8 +527,8 @@
       },
       {
         "text": "Which Nigerian forward won the African Footballer of the Year award in 1993?",
-        "options": ["Rashidi Yekini", "Emmanuel Amunike", "Nwankwo Kanu", "Victor Osimhen"],
-        "correct": 0
+        "options": ["Victor Osimhen", "Emmanuel Amunike", "Nwankwo Kanu", "Rashidi Yekini"],
+        "correct": 3
       },
       {
         "text": "Which Nigerian player is known for his famous 'Ga' celebration (wearing a mask)?",
@@ -334,8 +537,8 @@
       },
       {
         "text": "Which Nigerian midfielder scored the only goal in the 2013 Africa Cup of Nations final?",
-        "options": ["Sunday Mba", "Mikel Obi", "John Ogu", "Kelechi Iheanacho"],
-        "correct": 0
+        "options": ["John Ogu", "Mikel Obi", "Sunday Mba", "Kelechi Iheanacho"],
+        "correct": 2
       },
       {
         "text": "Which Nigerian goalkeeper was nicknamed 'The Cat'?",
@@ -344,8 +547,8 @@
       },
       {
         "text": "Which Nigerian player holds the record for the most appearances for the Super Eagles?",
-        "options": ["Ahmed Musa", "Joseph Yobo", "Jay-Jay Okocha", "Vincent Enyeama"],
-        "correct": 0
+        "options": ["Vincent Enyeama", "Joseph Yobo", "Jay-Jay Okocha", "Ahmed Musa"],
+        "correct": 3
       },
       {
         "text": "Which Dutch coach led the Super Eagles to their first World Cup appearance in 1994?",
@@ -354,8 +557,8 @@
       },
       {
         "text": "Which Nigerian player has won the most English Premier League titles?",
-        "options": ["John Obi Mikel", "Victor Moses", "Nwankwo Kanu", "Alex Iwobi"],
-        "correct": 0
+        "options": ["Victor Moses", "John Obi Mikel", "Nwankwo Kanu", "Alex Iwobi"],
+        "correct": 1
       },
       {
         "text": "Which Nigerian striker scored 26 goals in the 2022/23 Serie A season?",
@@ -364,8 +567,8 @@
       },
       {
         "text": "Who was the top scorer at the 1994 Africa Cup of Nations?",
-        "options": ["Rashidi Yekini", "Segun Odegbami", "Jay-Jay Okocha", "Daniel Amokachi"],
-        "correct": 0
+        "options": ["Daniel Amokachi", "Segun Odegbami", "Jay-Jay Okocha", "Rashidi Yekini"],
+        "correct": 3
       },
       {
         "text": "Which Nigerian national team is known as the 'Flying Eagles'?",
@@ -374,13 +577,13 @@
       },
       {
         "text": "Which Nigerian player scored a hat-trick for CSKA Moscow in the UEFA Champions League?",
-        "options": ["Ahmed Musa", "Kelechi Iheanacho", "Victor Moses", "Emmanuel Emenike"],
-        "correct": 0
+        "options": ["Emmanuel Emenike", "Kelechi Iheanacho", "Victor Moses", "Ahmed Musa"],
+        "correct": 3
       },
       {
         "text": "Which Nigerian defender captained the Super Eagles at the 2010 FIFA World Cup?",
-        "options": ["Joseph Yobo", "Uche Okechukwu", "Austin Eguavoen", "Rabiu Afolabi"],
-        "correct": 0
+        "options": ["Austin Eguavoen", "Uche Okechukwu", "Joseph Yobo", "Rabiu Afolabi"],
+        "correct": 2
       },
       {
         "text": "Which Nigerian player was named African Footballer of the Year in 1994?",
@@ -389,8 +592,8 @@
       },
       {
         "text": "Which Nigerian club has won the most Federation Cups (FA Cup) titles?",
-        "options": ["Enyimba", "Kano Pillars", "Rangers International", "Shooting Stars"],
-        "correct": 0
+        "options": ["Kano Pillars", "Enyimba", "Rangers International", "Shooting Stars"],
+        "correct": 1
       },
       {
         "text": "Which Nigerian player scored both goals against Argentina in the 2014 World Cup group stage?",
