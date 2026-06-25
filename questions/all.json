@@ -303,28 +303,103 @@
     ],
     "football": [
       {
-        "text": "Which club has won the NPFL the most times?",
+        "text": "Who scored Nigeria's first-ever goal in a FIFA World Cup match?",
+        "options": ["Rashidi Yekini", "Segun Odegbami", "Emmanuel Amunike", "Julius Aghahowa"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player is nicknamed 'The Black Arrow'?",
+        "options": ["Segun Odegbami", "Rashidi Yekini", "Jay-Jay Okocha", "Kanu Nwankwo"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian club was the first to win the CAF Champions League?",
+        "options": ["Enyimba", "Rangers International", "Kano Pillars", "Shooting Stars"],
+        "correct": 0
+      },
+      {
+        "text": "Who scored the winning goal for Nigeria in the 1980 Africa Cup of Nations final?",
+        "options": ["Segun Odegbami", "Christian Chukwu", "Rashidi Yekini", "Henry Nwosu"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian forward won the African Footballer of the Year award in 1993?",
+        "options": ["Rashidi Yekini", "Emmanuel Amunike", "Nwankwo Kanu", "Victor Osimhen"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player is known for his famous 'Ga' celebration (wearing a mask)?",
+        "options": ["Victor Osimhen", "Ahmed Musa", "Kelechi Iheanacho", "Samuel Chukwueze"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian midfielder scored the only goal in the 2013 Africa Cup of Nations final?",
+        "options": ["Sunday Mba", "Mikel Obi", "John Ogu", "Kelechi Iheanacho"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian goalkeeper was nicknamed 'The Cat'?",
+        "options": ["Peter Rufai", "Vincent Enyeama", "Ike Shorunmu", "Carl Ikeme"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player holds the record for the most appearances for the Super Eagles?",
+        "options": ["Ahmed Musa", "Joseph Yobo", "Jay-Jay Okocha", "Vincent Enyeama"],
+        "correct": 0
+      },
+      {
+        "text": "Which Dutch coach led the Super Eagles to their first World Cup appearance in 1994?",
+        "options": ["Clemens Westerhof", "Stephen Keshi", "Adegboye Onigbinde", "Sunday Oliseh"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player has won the most English Premier League titles?",
+        "options": ["John Obi Mikel", "Victor Moses", "Nwankwo Kanu", "Alex Iwobi"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian striker scored 26 goals in the 2022/23 Serie A season?",
+        "options": ["Victor Osimhen", "Victor Ikpeba", "Kelechi Iheanacho", "Odion Ighalo"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the top scorer at the 1994 Africa Cup of Nations?",
+        "options": ["Rashidi Yekini", "Segun Odegbami", "Jay-Jay Okocha", "Daniel Amokachi"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian national team is known as the 'Flying Eagles'?",
+        "options": ["U-20 National Team", "U-17 National Team", "U-23 National Team", "Senior National Team"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player scored a hat-trick for CSKA Moscow in the UEFA Champions League?",
+        "options": ["Ahmed Musa", "Kelechi Iheanacho", "Victor Moses", "Emmanuel Emenike"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian defender captained the Super Eagles at the 2010 FIFA World Cup?",
+        "options": ["Joseph Yobo", "Uche Okechukwu", "Austin Eguavoen", "Rabiu Afolabi"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player was named African Footballer of the Year in 1994?",
+        "options": ["Emmanuel Amunike", "Rashidi Yekini", "Nwankwo Kanu", "Jay-Jay Okocha"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian club has won the most Federation Cups (FA Cup) titles?",
         "options": ["Enyimba", "Kano Pillars", "Rangers International", "Shooting Stars"],
         "correct": 0
       },
       {
-        "text": "Who is Nigeria's all‑time top scorer for the Super Eagles?",
-        "options": ["Rashidi Yekini", "Segun Odegbami", "Jay-Jay Okocha", "Ahmed Musa"],
-        "correct": 3
-      },
-      {
-        "text": "Which Nigerian player won the UEFA Champions League with Chelsea in 2021?",
-        "options": ["Kelechi Iheanacho", "Victor Osimhen", "Wilfred Ndidi", "Alex Iwobi"],
-        "correct": 2
-      },
-      {
-        "text": "Who was the captain of the Nigerian team that won the 2013 Africa Cup of Nations?",
-        "options": ["Joseph Yobo", "Vincent Enyeama", "John Obi Mikel", "Ahmed Musa"],
+        "text": "Which Nigerian player scored both goals against Argentina in the 2014 World Cup group stage?",
+        "options": ["Ahmed Musa", "Victor Moses", "Mikel Obi", "Emmanuel Emenike"],
         "correct": 0
       },
       {
-        "text": "Which Nigerian goalkeeper holds the record for most caps?",
-        "options": ["Vincent Enyeama", "Peter Rufai", "Ike Shorunmu", "Carl Ikeme"],
+        "text": "Which Nigerian coach led the U-17 team to victory at the 2007 FIFA U-17 World Cup?",
+        "options": ["Yemi Tella", "John Obuh", "Manu Garba", "Samson Siasia"],
         "correct": 0
       }
     ]
