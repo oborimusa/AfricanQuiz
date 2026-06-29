@@ -11,60 +11,54 @@
         "options": ["1960", "1963", "1957", "1970"],
         "correct": 0
       },
-       {
-        "text": "Which of the following was a major pre‑colonial empire in present‑day Nigeria? ",
+      {
+        "text": "Which of the following was a major pre-colonial empire in present-day Nigeria?",
         "options": ["Oyo Empire", "Mali Empire", "Songhai Empire", "Ghana Empire"],
         "correct": 0
       },
       {
-        "text": "Who was the military head of state during the Nigerian Civil War (1967–1970)?",
-        "options": ["1979 Constitution", "1963 Constitution", "1999 Constitution", "1960 Constitution"],
-        "correct": 0
+        "text": "Which constitution introduced the presidential system of government in Nigeria?",
+        "options": ["1963 Constitution", "1979 Constitution", "1960 Constitution", "1999 Constitution"],
+        "correct": 1
       },
       {
         "text": "Who was the military head of state during the Nigerian Civil War (1967–1970)?",
         "options": ["Yakubu Gowon", "Murtala Mohammed", "Olusegun Obasanjo", "Ibrahim Babangida"],
         "correct": 0
       },
-    
       {
         "text": "The Amalgamation of Northern and Southern Nigeria took place in which year?",
         "options": ["1914", "1900", "1922", "1898"],
         "correct": 0
       },
-         {
+      {
         "text": "Who was the first Executive President of Nigeria (1979–1983)?",
-        "options": ["Shehu Shagari", "Nnamdi Azikiwe", "Olusegun Obasanjo", " Ernest Shonekan"],
+        "options": ["Shehu Shagari", "Nnamdi Azikiwe", "Olusegun Obasanjo", "Ernest Shonekan"],
         "correct": 0
       },
       {
-        "text": "Which Nigerian leader introduced the “Green Revolution” agricultural policy?",
+        "text": "Which Nigerian leader introduced the 'Green Revolution' agricultural policy?",
         "options": ["Shehu Shagari", "Ibrahim Babangida", "Olusegun Obasanjo", "Goodluck Jonathan"],
         "correct": 0
       },
       {
-        "text": "The famous “June 12” presidential election was annulled in which year?",
+        "text": "The famous 'June 12' presidential election was annulled in which year?",
         "options": ["1991", "1993", "1995", "1999"],
         "correct": 1
       },
-       {
-        "text": "Who was the first female governor in Nigeria? ",
-        "options": ["Ngozi Okonjo‑Iweala", "Amina J. Mohammed", "Stella Omu", "Virginia Etiaba"],
+      {
+        "text": "Who was the first female governor in Nigeria?",
+        "options": ["Ngozi Okonjo-Iweala", "Amina J. Mohammed", "Stella Omu", "Virginia Etiaba"],
         "correct": 3
       },
-       {
-        "text": "Which constitution introduced the presidential system of government in Nigeria?",
-        "options": ["1963 Constitution", "1979 Constitution", "1960 Constitution", "1999 Constitution"],
-        "correct": 1
-      },
-       {
+      {
         "text": "Who was the Prime Minister of Nigeria at independence in 1960?",
         "options": ["Nnamdi Azikiwe", "Obafemi Awolowo", "Abubakar Tafawa Balewa", "Ahmadu Bello"],
         "correct": 2
       },
       {
-        "text": "The “Aburi Accord” (1967) was signed between the Nigerian government and which secessionist leader?",
-        "options": ["Odumegwu Ojukwu", "Philip Effiong", "Ken Saro‑Wiwa", "Michael Okpara"],
+        "text": "The 'Aburi Accord' (1967) was signed between the Nigerian government and which secessionist leader?",
+        "options": ["Odumegwu Ojukwu", "Philip Effiong", "Ken Saro-Wiwa", "Michael Okpara"],
         "correct": 0
       },
       {
@@ -73,23 +67,23 @@
         "correct": 2
       },
       {
-        "text": "The “Nigerian Youth Movement” (NYM) was formed in which decade?",
+        "text": "The 'Nigerian Youth Movement' (NYM) was formed in which decade?",
         "options": ["1950s", "1920s", "1940s", "1930s"],
         "correct": 3
       },
-       {
-        "text": "Who was the first Nigerian to become the Secretary‑General of the Commonwealth of Nations?",
-        "options": ["Kofi Annan (not Nigerian – trick) – correct: Emeka Anyaoku", "Olusegun Obasanjo", "Nnamdi Azikiwe", "Emeka Anyaoku"],
+      {
+        "text": "Who was the first Nigerian to become the Secretary-General of the Commonwealth of Nations?",
+        "options": ["Kofi Annan", "Olusegun Obasanjo", "Nnamdi Azikiwe", "Emeka Anyaoku"],
         "correct": 3
       },
       {
-        "text": "The “Operation Wetie” was a campaign against corruption under which regime?",
+        "text": "The 'Operation Wetie' was a campaign against corruption under which regime?",
         "options": ["Yakubu Gowon", "Sani Abacha", "Murtala Mohammed", "Goodluck Jonathan"],
         "correct": 2
       },
-       {
+      {
         "text": "Who was a key leader of the 1929 Aba Women's War?",
-        "options": ["Nwanyeruwa", "Funmilayo Ransome‑Kuti", "Margaret Ekpo", "Hajiya Gambo Sawaba"],
+        "options": ["Nwanyeruwa", "Funmilayo Ransome-Kuti", "Margaret Ekpo", "Hajiya Gambo Sawaba"],
         "correct": 0
       },
       {
@@ -97,19 +91,403 @@
         "options": ["Ibrahim Babangida", "Sani Abacha", "Aguiyi Ironsi", "Murtala Mohammed"],
         "correct": 3
       },
-       {
-        "text": "The “Nigerian Second Republic” lasted from which years?",
+      {
+        "text": "The 'Nigerian Second Republic' lasted from which years?",
         "options": ["1979–1983", "1963–1966", "1993–1998", "1999–2007"],
         "correct": 0
+      },
+      {
+        "text": "Who was the first Governor-General of Nigeria?",
+        "options": ["John Macpherson", "James Robertson", "Hugh Clifford", "Frederick Lugard"],
+        "correct": 2
+      },
+      {
+        "text": "The 'Biafran War' ended in which year?",
+        "options": ["1970", "1969", "1971", "1968"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian leader created the 12-state structure?",
+        "options": ["Yakubu Gowon", "Murtala Mohammed", "Olusegun Obasanjo", "Ibrahim Babangida"],
+        "correct": 0
+      },
+      {
+        "text": "Who founded the Nigerian Youth Congress?",
+        "options": ["Nnamdi Azikiwe", "Obafemi Awolowo", "Ahmadu Bello", "Anthony Enahoro"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Sardauna of Sokoto' was who?",
+        "options": ["Ahmadu Bello", "Nnamdi Azikiwe", "Obafemi Awolowo", "Abubakar Tafawa Balewa"],
+        "correct": 0
+      },
+      {
+        "text": "Nigeria became a republic in which year?",
+        "options": ["1963", "1960", "1965", "1979"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the head of the 1966 counter-coup?",
+        "options": ["Aguiyi Ironsi", "Murtala Mohammed", "Yakubu Gowon", "Olusegun Obasanjo"],
+        "correct": 1
+      },
+      {
+        "text": "What was the name of the first Nigerian political party?",
+        "options": ["NCNC", "Action Group", "NPC", "AG"],
+        "correct": 0
+      },
+      {
+        "text": "Who founded the Action Group political party?",
+        "options": ["Obafemi Awolowo", "Nnamdi Azikiwe", "Ahmadu Bello", "Abubakar Tafawa Balewa"],
+        "correct": 0
+      },
+      {
+        "text": "Which ethnic group was most affected by the 1966 massacres?",
+        "options": ["Igbo", "Yoruba", "Hausa", "Ijaw"],
+        "correct": 0
+      },
+      {
+        "text": "Who was Nigeria's first Minister of Finance?",
+        "options": ["Festus Okotie-Eboh", "K.O. Mbadiwe", "Olu Awotesu", "T.A. Fagbemi"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Nigerian Constitution of 1963' established what system?",
+        "options": ["Federal Republic", "Parliamentary System", "Presidential System", "Unitary System"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Chief Justice of Nigeria?",
+        "options": ["Adetokunbo Ademola", "Taslim Elias", "Darnley Alexander", "G.B.A. Coker"],
+        "correct": 1
+      },
+      {
+        "text": "The 'African Continental Free Trade Area' (AfCFTA) was signed in which year?",
+        "options": ["2018", "2015", "2019", "2020"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian president was removed via a coup in 1983?",
+        "options": ["Shehu Shagari", "Olusegun Obasanjo", "Yakubu Gowon", "Goodluck Jonathan"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Nigerian to be awarded the Grand Commander of the Order of the Niger?",
+        "options": ["Nnamdi Azikiwe", "Obafemi Awolowo", "Abubakar Tafawa Balewa", "Ahmadu Bello"],
+        "correct": 0
+      },
+      {
+        "text": "The 'National War Against Indiscipline' (WAI) was introduced by which leader?",
+        "options": ["Ibrahim Babangida", "Murtala Mohammed", "Olusegun Obasanjo", "Yakubu Gowon"],
+        "correct": 2
+      },
+      {
+        "text": "Who led the Nigerian delegation to the first Commonwealth Conference?",
+        "options": ["Abubakar Tafawa Balewa", "Nnamdi Azikiwe", "Obafemi Awolowo", "Ahmadu Bello"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Boko Haram' insurgency began in which state?",
+        "options": ["Borno", "Yobe", "Kano", "Adamawa"],
+        "correct": 0
+      },
+      {
+        "text": "Who is credited with the creation of the Nigeria Police Force?",
+        "options": ["Frederick Lugard", "Hugh Clifford", "James Robertson", "John Macpherson"],
+        "correct": 0
+      },
+      {
+        "text": "What year was the 'National Youth Service Corps' (NYSC) established?",
+        "options": ["1973", "1970", "1975", "1980"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Nigerian to serve as the Commissioner for Information?",
+        "options": ["Anthony Enahoro", "Akin Mabogunje", "Olu Falae", "Bola Ajibola"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Nigerian Defence Academy' was established in which year?",
+        "options": ["1964", "1960", "1970", "1980"],
+        "correct": 0
+      },
+      {
+        "text": "Who served as the Prime Minister during the First Republic?",
+        "options": ["Abubakar Tafawa Balewa", "Nnamdi Azikiwe", "Obafemi Awolowo", "Ahmadu Bello"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Gidado' was a traditional court of which empire?",
+        "options": ["Sokoto Caliphate", "Oyo Empire", "Borno Empire", "Benin Empire"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian leader nationalized the oil industry?",
+        "options": ["Olusegun Obasanjo", "Shehu Shagari", "Ibrahim Babangida", "Yakubu Gowon"],
+        "correct": 0
+      },
+      {
+        "text": "Who established the Nigerian National Petroleum Corporation (NNPC)?",
+        "options": ["Olusegun Obasanjo", "Murtala Mohammed", "Ibrahim Babangida", "Yakubu Gowon"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian leader built the Ajaokuta Steel Mill?",
+        "options": ["Shehu Shagari", "Olusegun Obasanjo", "Ibrahim Babangida", "Yakubu Gowon"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Ibadan-Ife' road project was initiated under which president?",
+        "options": ["Shehu Shagari", "Olusegun Obasanjo", "Ibrahim Babangida", "Goodluck Jonathan"],
+        "correct": 1
+      },
+      {
+        "text": "Who introduced the 'National Housing Policy'?",
+        "options": ["Ibrahim Babangida", "Sani Abacha", "Olusegun Obasanjo", "Goodluck Jonathan"],
+        "correct": 1
+      },
+      {
+        "text": "The 'Nigeria Trust Fund' was established by which organization?",
+        "options": ["World Bank", "IMF", "African Development Bank", "UN"],
+        "correct": 2
+      },
+      {
+        "text": "Who was the first Nigerian to become the Governor of the Central Bank of Nigeria?",
+        "options": ["Roy Pentelow", "Aminu Dantata", "Matafi", "James O. N. Ojukwu"],
+        "correct": 2
+      },
+      {
+        "text": "The 'National Orientation Agency' was established under which regime?",
+        "options": ["Ibrahim Babangida", "Sani Abacha", "Olusegun Obasanjo", "Goodluck Jonathan"],
+        "correct": 1
+      },
+      {
+        "text": "Who played a key role in the formation of the Economic Community of West African States (ECOWAS)?",
+        "options": ["Yakubu Gowon", "Olusegun Obasanjo", "Ibrahim Babangida", "Shehu Shagari"],
+        "correct": 0
+      },
+      {
+        "text": "The 'OAU' (Organization of African Unity) was established in which year?",
+        "options": ["1963", "1960", "1965", "1970"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Nigerian to head the African Union?",
+        "options": ["Nnamdi Azikiwe", "Olusegun Obasanjo", "Goodluck Jonathan", "Yakubu Gowon"],
+        "correct": 1
+      },
+      {
+        "text": "The 'National Economic Empowerment and Development Strategy' (NEEDS) was introduced under which president?",
+        "options": ["Olusegun Obasanjo", "Goodluck Jonathan", "Muhammadu Buhari", "Umaru Yar'Adua"],
+        "correct": 0
+      },
+      {
+        "text": "Which region was the first to self-govern in Nigeria?",
+        "options": ["Western Region", "Northern Region", "Eastern Region", "Lagos"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first female senator in Nigeria?",
+        "options": ["Franca Afegbua", "Margaret Ekpo", "Funmilayo Ransome-Kuti", "Ngozi Okonjo-Iweala"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Nigerian Council of Chiefs' was established under which colonial governor?",
+        "options": ["Frederick Lugard", "Hugh Clifford", "James Robertson", "John Macpherson"],
+        "correct": 0
+      },
+      {
+        "text": "Who established the first university in Nigeria?",
+        "options": ["Nnamdi Azikiwe", "Obafemi Awolowo", "Ahmadu Bello", "Abubakar Tafawa Balewa"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Nigerian Airways' was founded in which year?",
+        "options": ["1958", "1960", "1965", "1970"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Nigerian to be honored with the 'National Hero' title?",
+        "options": ["Nnamdi Azikiwe", "Obafemi Awolowo", "Ahmadu Bello", "Abubakar Tafawa Balewa"],
+        "correct": 0
+      },
+      {
+        "text": "The '1988 Civil Service Reforms' were introduced by which leader?",
+        "options": ["Ibrahim Babangida", "Sani Abacha", "Olusegun Obasanjo", "Yakubu Gowon"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Governor of Lagos State?",
+        "options": ["Mobolaji Johnson", "Kofo Abayomi", "Oba Adeyinka", "Brigadier Adebayo"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Iwe Irohin' was the first newspaper in Nigeria, established in which year?",
+        "options": ["1859", "1860", "1870", "1880"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Lagos Colony' was established in which year?",
+        "options": ["1861", "1860", "1870", "1880"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first traditional ruler to sign the treaty with the British?",
+        "options": ["Oba Akitoye", "Oba Dosunmu", "Oba Adeyinka", "Oba Kosoko"],
+        "correct": 1
+      },
+      {
+        "text": "The 'Bening Kingdom' was annexed by the British in which year?",
+        "options": ["1897", "1900", "1910", "1920"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the founder of the 'Niger Coast Protectorate'?",
+        "options": ["George Goldie", "Frederick Lugard", "Taubman Goldie", "John Macpherson"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Nigerian Constitution of 1946' was also known as the?",
+        "options": ["Richards Constitution", "Macpherson Constitution", "Lyttleton Constitution", "Independence Constitution"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Nigerian Constitution of 1954' was also known as the?",
+        "options": ["Lyttleton Constitution", "Macpherson Constitution", "Richards Constitution", "Independence Constitution"],
+        "correct": 0
+      },
+      {
+        "text": "Who introduced the 'Native Authority' system in Northern Nigeria?",
+        "options": ["Frederick Lugard", "Hugh Clifford", "James Robertson", "John Macpherson"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Kano Rebellion' of 1964 was led by which group?",
+        "options": ["Tiv", "Fulani", "Hausa", "Yoruba"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Nigerian to be ordained as a priest?",
+        "options": ["Thomas Ekandem", "Dominic Ekandem", "John Abiodun", "Peter Fagbohun"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Nigerian Broadcasting Corporation' was established in which year?",
+        "options": ["1957", "1960", "1965", "1970"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Nigerian to be honored with the 'Order of the British Empire' (OBE)?",
+        "options": ["Nnamdi Azikiwe", "Obafemi Awolowo", "Ahmadu Bello", "Abubakar Tafawa Balewa"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Ewe' people are predominantly found in which area?",
+        "options": ["Cross River", "Akwa Ibom", "Delta", "Edo"],
+        "correct": 2
+      },
+      {
+        "text": "The 'Nigerian National Committee' was formed in which year?",
+        "options": ["1960", "1961", "1962", "1963"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Speaker of the House of Representatives in Nigeria?",
+        "options": ["Nnamdi Azikiwe", "Obafemi Awolowo", "Ahmadu Bello", "Abubakar Tafawa Balewa"],
+        "correct": 2
+      },
+      {
+        "text": "The 'Nigerian Civil War' was also known as the?",
+        "options": ["Biafran War", "Civil War", "Nigerian Conflict", "War of Separation"],
+        "correct": 0
+      },
+      {
+        "text": "Which country supported Biafra during the Civil War?",
+        "options": ["France", "United Kingdom", "United States", "Russia"],
+        "correct": 0
+      },
+      {
+        "text": "Who wrote the book 'Why We Struck'?",
+        "options": ["Odumegwu Ojukwu", "Philip Effiong", "Chukwuemeka Ojukwu", "Adeyinka"],
+        "correct": 2
+      },
+      {
+        "text": "The 'Nigerian First Republic' ended in which year?",
+        "options": ["1966", "1965", "1967", "1968"],
+        "correct": 0
+      },
+      {
+        "text": "Who served as Nigeria's Head of State during the Second Republic?",
+        "options": ["Shehu Shagari", "Olusegun Obasanjo", "Yakubu Gowon", "Ibrahim Babangida"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Nigerian Third Republic' was established in which year?",
+        "options": ["1992", "1990", "1995", "2000"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Governor of the Central Bank of Nigeria?",
+        "options": ["Roy Pentelow", "Aminu Dantata", "Matafi", "James O. N. Ojukwu"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Nigerian Economic and Financial Crimes Commission' (EFCC) was established in which year?",
+        "options": ["2003", "2000", "2005", "2008"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Executive Chairman of the EFCC?",
+        "options": ["Nuhu Ribadu", "Obanikoro", "Femi Ogunbanwo", "Adeyinka"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Nigerian National Planning Commission' was established under which president?",
+        "options": ["Olusegun Obasanjo", "Goodluck Jonathan", "Muhammadu Buhari", "Umaru Yar'Adua"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Nigerian Vision 2020' policy was launched in which year?",
+        "options": ["2005", "2000", "2010", "2015"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Nigerian to be appointed as a judge of the International Court of Justice?",
+        "options": ["Taslim Elias", "Adetokunbo Ademola", "Darnley Alexander", "G.B.A. Coker"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Nigerian Supreme Court' was established in which year?",
+        "options": ["1963", "1960", "1965", "1970"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first female Chief Justice of Nigeria?",
+        "options": ["Mariam Aloma", "Olayinka", "Ayoola", "Ogunbiyi"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Nigerian National Assembly' was established in which year?",
+        "options": ["1960", "1963", "1965", "1970"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Nigerian Constitution of 1999' came into effect on which date?",
+        "options": ["May 29, 1999", "May 1, 1999", "June 1, 1999", "April 1, 1999"],
+        "correct": 0
+      },
+      {
+        "text": "Who was Nigeria's first democratically elected president?",
+        "options": ["Nnamdi Azikiwe", "Obafemi Awolowo", "Shehu Shagari", "Olusegun Obasanjo"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Nigerian Police Force' was established in which year?",
+        "options": ["1930", "1940", "1950", "1960"],
+        "correct": 0
       }
-      
     ],
     "geography": [
-      {
-      "text": "Which state is known as the 'Federal Capital Territory'?",
-      "options": ["Lagos", "Kano", "Rivers", "Abuja"],
-      "correct": 3
-},
       {
         "text": "What is the capital of Nigeria?",
         "options": ["Abuja", "Lagos", "Kano", "Port Harcourt"],
@@ -143,7 +521,7 @@
       {
         "text": "Which Nigerian state has the largest number of local government areas?",
         "options": ["Kaduna", "Borno", "Lagos", "Kano"],
-        "correct": 3  // Kano has 44 LGAs (largest)
+        "correct": 3
       },
       {
         "text": "The 'Tinapa Business Resort' is located in which state?",
@@ -153,60 +531,473 @@
       {
         "text": "Which river is the second longest in Nigeria?",
         "options": ["River Niger", "Cross River", "Ogun River", "River Benue"],
-        "correct": 3  // Benue is the second longest
+        "correct": 3
       },
       {
         "text": "The 'Okomu National Park' is found in which state?",
         "options": ["Edo", "Ondo", "Delta", "Bayelsa"],
-        "correct": 0  // Okomu is in Edo State
+        "correct": 0
       },
       {
         "text": "Which state is the largest producer of crude oil in Nigeria?",
-        "options": ["Bayelsa", "Rivers", "Delta", " Akwa Ibom"],
-        "correct": 3  // Akwa Ibom is currently the largest
+        "options": ["Bayelsa", "Rivers", "Delta", "Akwa Ibom"],
+        "correct": 3
       },
       {
         "text": "What is the highest point in the 'Jos Plateau'?",
         "options": ["Shere Hills", "Kagoro Hills", "Mambilla Plateau", "Obudu Plateau"],
-        "correct": 0  // Shere Hills near Jos
+        "correct": 0
       },
       {
         "text": "The 'Gurara Falls' is located in which state?",
         "options": ["FCT", "Kwara", "Kogi", "Niger"],
-        "correct": 3  // Gurara Falls is in Niger State
+        "correct": 3
       },
       {
         "text": "Which state is nicknamed 'The Land of Sunshine'?",
         "options": ["Ondo", "Ekiti", "Oyo", "Osun"],
-        "correct": 0  // Ondo is the Sunshine State
+        "correct": 0
       },
       {
-        "text": "What is the largest man‑made lake in Nigeria?",
+        "text": "What is the largest man-made lake in Nigeria?",
         "options": ["Jebba Lake", "Kainji Lake", "Shiroro Lake", "Tiga Lake"],
-        "correct": 1  // Kainji Lake is the largest
+        "correct": 1
       },
       {
         "text": "The 'Sukur World Heritage Site' is in which state?",
         "options": ["Taraba", "Adamawa", "Borno", "Yobe"],
-        "correct": 1  // Sukur is in Adamawa State
+        "correct": 1
       },
       {
         "text": "Which state shares a border with the Republic of Niger to the north?",
         "options": ["Sokoto", "Kebbi", "Zamfara", "Katsina"],
-        "correct": 0  // Sokoto shares border with Niger
+        "correct": 0
       },
       {
         "text": "What is the major crop produced in the 'Middle Belt' region?",
         "options": ["Yam", "Cassava", "Cocoa", "Groundnut"],
-        "correct": 0  // Yam is a major staple in the Middle Belt
+        "correct": 0
       },
       {
         "text": "The 'Idanre Hills' are located in which state?",
         "options": ["Ondo", "Ogun", "Oyo", "Osun"],
-        "correct": 0  // Idanre is in Ondo State
+        "correct": 0
+      },
+      {
+        "text": "Which state is known as the 'Coal City'?",
+        "options": ["Enugu", "Anambra", "Ebonyi", "Abia"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Olumo Rock' is located in which state?",
+        "options": ["Ogun", "Oyo", "Osun", "Ekiti"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known as the 'Centre of Excellence'?",
+        "options": ["Lagos", "Oyo", "Ogun", "Kano"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Mambilla Plateau' is located in which state?",
+        "options": ["Taraba", "Adamawa", "Plateau", "Borno"],
+        "correct": 0
+      },
+      {
+        "text": "Which state has the longest coastline in Nigeria?",
+        "options": ["Akwa Ibom", "Rivers", "Bayelsa", "Lagos"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Benin River' is located in which region?",
+        "options": ["Edo", "Delta", "Ondo", "Lagos"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known as the 'Heart of the North'?",
+        "options": ["Kaduna", "Kano", "Sokoto", "Borno"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Oshogbo Sacred Grove' is a UNESCO site in which state?",
+        "options": ["Osun", "Oyo", "Ogun", "Ekiti"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is the 'Food Basket of the Nation'?",
+        "options": ["Benue", "Plateau", "Taraba", "Niger"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Ikogosi Warm Spring' is in which state?",
+        "options": ["Ekiti", "Ondo", "Osun", "Kogi"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known as the 'Oil City'?",
+        "options": ["Rivers", "Delta", "Bayelsa", "Akwa Ibom"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Obudu Mountain Resort' is in which state?",
+        "options": ["Cross River", "Akwa Ibom", "Rivers", "Delta"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known for the 'Kainji Dam'?",
+        "options": ["Niger", "Kwara", "Kebbi", "Sokoto"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Yobe River' flows through which states?",
+        "options": ["Yobe", "Borno", "Kano", "Jigawa"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known as the 'Home of Hospitality'?",
+        "options": ["Kwara", "Kogi", "Niger", "FCT"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Ebonyi River' is located in which region?",
+        "options": ["South-East", "South-South", "North-East", "North-West"],
+        "correct": 0
+      },
+      {
+        "text": "Which state has the highest number of universities in Nigeria?",
+        "options": ["Lagos", "Oyo", "Kano", "Abuja"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Gombe National Park' is located in which state?",
+        "options": ["Gombe", "Taraba", "Adamawa", "Borno"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known for the 'Kogi Iron and Steel Company'?",
+        "options": ["Kogi", "Niger", "Kwara", "Plateau"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Osun River' is sacred in which state?",
+        "options": ["Osun", "Oyo", "Ogun", "Ekiti"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is the 'Land of Rivers'?",
+        "options": ["Rivers", "Bayelsa", "Delta", "Akwa Ibom"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Kaduna River' flows through which state?",
+        "options": ["Kaduna", "Kano", "Jigawa", "Katsina"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known for the 'Nigerian Television Authority' (NTA) headquarters?",
+        "options": ["Lagos", "Abuja", "Kano", "Ibadan"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Tiga Dam' is located in which state?",
+        "options": ["Kano", "Kaduna", "Jigawa", "Katsina"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known as the 'Pearl of the North'?",
+        "options": ["Kano", "Sokoto", "Kaduna", "Borno"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Ogun River' forms a boundary between which states?",
+        "options": ["Ogun", "Lagos", "Oyo", "Osun"],
+        "correct": 0
+      },
+      {
+        "text": "Which state has the largest deposit of limestone?",
+        "options": ["Benue", "Sokoto", "Kogi", "Ogun"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Abakaliki' is known for which mineral deposit?",
+        "options": ["Lead-Zinc", "Coal", "Limestone", "Gold"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is the largest producer of rice in Nigeria?",
+        "options": ["Kebbi", "Niger", "Kano", "Sokoto"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Oshomoko' is a river in which region?",
+        "options": ["South-West", "South-East", "North-East", "North-West"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known as the 'Cradle of Education'?",
+        "options": ["Oyo", "Lagos", "Kano", "Abuja"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Kainji National Park' is in which state?",
+        "options": ["Niger", "Kwara", "Kebbi", "Sokoto"],
+        "correct": 0
+      },
+      {
+        "text": "Which state has the largest palm oil production?",
+        "options": ["Akwa Ibom", "Rivers", "Bayelsa", "Delta"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Cross River National Park' is in which region?",
+        "options": ["South-South", "South-East", "North-Central", "North-West"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known for the 'Ibagwa Afor' caves?",
+        "options": ["Enugu", "Abia", "Imo", "Anambra"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Oyo Empire' was located in which region?",
+        "options": ["South-West", "South-East", "North-East", "North-West"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is the 'Home of Nollywood'?",
+        "options": ["Lagos", "Abuja", "Kano", "Enugu"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Benue State' is known for which crop?",
+        "options": ["Yam", "Cassava", "Rice", "Maize"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known as the 'Bread Basket of the Nation'?",
+        "options": ["Plateau", "Taraba", "Adamawa", "Niger"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Gombe River' is located in which region?",
+        "options": ["North-East", "North-West", "South-East", "South-South"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known for the 'Tiv' people?",
+        "options": ["Benue", "Taraba", "Adamawa", "Niger"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Yankari National Park' is located in which state?",
+        "options": ["Bauchi", "Plateau", "Taraba", "Adamawa"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known as the 'Land of Peace'?",
+        "options": ["Kwara", "Kogi", "Niger", "Abuja"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Kaduna River' is a tributary of which river?",
+        "options": ["River Niger", "River Benue", "Cross River", "Ogun River"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is the largest producer of cassava?",
+        "options": ["Oyo", "Ogun", "Lagos", "Osun"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Borno' state is known for which lake?",
+        "options": ["Lake Chad", "Lake Kainji", "Lake Tiga", "Lake Shiroro"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known as the 'Fuji State'?",
+        "options": ["Oyo", "Ogun", "Lagos", "Osun"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Itu' is a town in which state?",
+        "options": ["Akwa Ibom", "Rivers", "Bayelsa", "Delta"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known for the 'Calabar' city?",
+        "options": ["Cross River", "Akwa Ibom", "Rivers", "Delta"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Kaduna State' is known for which military facility?",
+        "options": ["Nigerian Defence Academy", "Army Barracks", "Air Force Base", "Naval Base"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known as the 'Haven of Tourism'?",
+        "options": ["Cross River", "Akwa Ibom", "Rivers", "Delta"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Osun-Osogbo Sacred Grove' is a UNESCO site in which state?",
+        "options": ["Osun", "Oyo", "Ogun", "Ekiti"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is the smallest in Nigeria by land area?",
+        "options": ["Lagos", "Anambra", "Bayelsa", "Ekiti"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Kainji Lake' is located in which state?",
+        "options": ["Niger", "Kwara", "Kebbi", "Sokoto"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known for the 'Aso Rock'?",
+        "options": ["FCT", "Lagos", "Kano", "Ibadan"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Ogun River' flows through which state?",
+        "options": ["Ogun", "Oyo", "Osun", "Lagos"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known as the 'Sunshine State'?",
+        "options": ["Ondo", "Ekiti", "Oyo", "Osun"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Niger River' enters Nigeria from which country?",
+        "options": ["Niger", "Benin", "Togo", "Ghana"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known for the 'Mambilla Power Station'?",
+        "options": ["Taraba", "Adamawa", "Plateau", "Borno"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Lake Chad' is shared by Nigeria and which other countries?",
+        "options": ["Niger, Chad, Cameroon", "Benin, Togo, Ghana", "Mali, Burkina, Senegal", "Sudan, Egypt, Libya"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known as the 'Fishing State'?",
+        "options": ["Kebbi", "Sokoto", "Zamfara", "Katsina"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Kaduna State' is known for which industry?",
+        "options": ["Textile", "Steel", "Oil", "Agriculture"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known as the 'Derby State'?",
+        "options": ["Rivers", "Delta", "Bayelsa", "Akwa Ibom"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Cross River' originates from which country?",
+        "options": ["Cameroon", "Nigeria", "Chad", "Niger"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is the 'Cocoa State'?",
+        "options": ["Ondo", "Ogun", "Oyo", "Osun"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Ibadan' city is located in which state?",
+        "options": ["Oyo", "Ogun", "Osun", "Ekiti"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known as the 'Civil Service State'?",
+        "options": ["Kwara", "Kogi", "Niger", "Abuja"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Lagos Lagoon' is a major feature of which state?",
+        "options": ["Lagos", "Ogun", "Oyo", "Osun"],
+        "correct": 0
+      },
+      {
+        "text": "Which state has the largest market in West Africa?",
+        "options": ["Lagos", "Kano", "Ibadan", "Abuja"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Plateau State' is known for which mineral?",
+        "options": ["Tin", "Gold", "Diamond", "Iron"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known as the 'Land of the Rising Sun'?",
+        "options": ["Ekiti", "Ondo", "Oyo", "Osun"],
+        "correct": 0
+      },
+      {
+        "text": "The 'River Benue' originates from which country?",
+        "options": ["Cameroon", "Nigeria", "Chad", "Niger"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known for the 'Calabar Carnival'?",
+        "options": ["Cross River", "Akwa Ibom", "Rivers", "Delta"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Jigawa State' is located in which region?",
+        "options": ["North-West", "North-East", "North-Central", "South-West"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is the largest producer of cotton?",
+        "options": ["Kano", "Kaduna", "Sokoto", "Zamfara"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Uyo' is the capital of which state?",
+        "options": ["Akwa Ibom", "Rivers", "Bayelsa", "Delta"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known as the 'Homeland of the Tiv'?",
+        "options": ["Benue", "Taraba", "Adamawa", "Niger"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Sokoto River' is a tributary of which river?",
+        "options": ["River Niger", "River Benue", "Cross River", "Ogun River"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is the 'Heart of the Middle Belt'?",
+        "options": ["Plateau", "Taraba", "Adamawa", "Niger"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Lokoja' town is located in which state?",
+        "options": ["Kogi", "Niger", "Kwara", "Plateau"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known as the 'Federal Capital Territory'?",
+        "options": ["Abuja", "Lagos", "Kano", "Rivers"],
+        "correct": 0
+      },
+      {
+        "text": "The 'River Niger' flows into which ocean?",
+        "options": ["Atlantic Ocean", "Pacific Ocean", "Indian Ocean", "Arctic Ocean"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is the 'Gateway to the North'?",
+        "options": ["Niger", "Kwara", "Kogi", "Plateau"],
+        "correct": 0
       }
-
-
     ],
     "culture": [
       {
@@ -240,16 +1031,488 @@
         "correct": 2
       },
       {
-        "text": "Which Nigerian ethnic group is famous for the “Durbar” festival?",
+        "text": "Which Nigerian ethnic group is famous for the 'Durbar' festival?",
         "options": ["Yoruba", "Igbo", "Hausa", "Ijaw"],
         "correct": 2
+      },
+      {
+        "text": "What is the traditional greeting among the Hausa people?",
+        "options": ["Sannu", "Kedu", "Bawo ni", "Mavo"],
+        "correct": 0
+      },
+      {
+        "text": "Which dish is made from cassava and is a staple in the South-East?",
+        "options": ["Garri", "Amala", "Fufu", "Eba"],
+        "correct": 3
+      },
+      {
+        "text": "What is the name of the traditional Yoruba two-piece gown worn by men?",
+        "options": ["Agbada", "Danshiki", "Kente", "Buba"],
+        "correct": 0
+      },
+      {
+        "text": "The 'New Yam Festival' is celebrated primarily by which ethnic group?",
+        "options": ["Ijaw", "Yoruba", "Hausa", "Igbo"],
+        "correct": 3
+      },
+      {
+        "text": "Which ethnic group is known for the 'Okirika' fishing festival?",
+        "options": ["Ijaw", "Itsekiri", "Urhobo", "Efik"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional title of the Sultan of Sokoto?",
+        "options": ["Emir", "Sultan", "Oba", "Tor Tiv"],
+        "correct": 1
+      },
+      {
+        "text": "Which traditional Nigerian dish is made from beans and plantain?",
+        "options": ["Ewa Agoyin", "Akara", "Moi Moi", "Olele"],
+        "correct": 2
+      },
+      {
+        "text": "The 'Ofala Festival' is celebrated in which state?",
+        "options": ["Imo", "Anambra", "Enugu", "Ebonyi"],
+        "correct": 1
+      },
+      {
+        "text": "What is the name of the traditional Igbo 'masquerade' that represents ancestral spirits?",
+        "options": ["Mmọ", "Ekpe", "Gelede", "Egungun"],
+        "correct": 0
+      },
+      {
+        "text": "Which ethnic group speaks the Tiv language?",
+        "options": ["Tiv", "Idoma", "Igbira", "Jukun"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the calabash instrument used by the Hausa?",
+        "options": ["Kakaki", "Talking drum", "Shekere", "Goje"],
+        "correct": 2
+      },
+      {
+        "text": "The 'Kakaki' trumpet is traditionally associated with which region?",
+        "options": ["Northern Nigeria", "Western Nigeria", "Eastern Nigeria", "Niger Delta"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional wedding attire for an Igbo bride?",
+        "options": ["George wrapper and blouse", "Agbada", "Kente", "Isiagu"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian state is famous for the 'Oyolomo' masquerade festival?",
+        "options": ["Akwa Ibom", "Cross River", "Rivers", "Delta"],
+        "correct": 1
+      },
+      {
+        "text": "What is the name of the Efik/Ibibio traditional soup made with waterleaf and periwinkle?",
+        "options": ["Afang", "Edikang Ikong", "Ogbono", "Efere"],
+        "correct": 1
+      },
+      {
+        "text": "Which ethnic group uses the 'Naira' as a currency but has a traditional currency called 'Oko'?",
+        "options": ["Efik", "Yoruba", "Hausa", "Igbo"],
+        "correct": 3
+      },
+      {
+        "text": "Which Nigerian ethnic group is known for the 'Gelede' masquerade?",
+        "options": ["Hausa", "Igbo", "Yoruba", "Edo"],
+        "correct": 2
+      },
+      {
+        "text": "What is the name of the traditional Yoruba hairstyle often worn by brides?",
+        "options": ["Irun Kiko", "Corno", "Didi", "Asoebi"],
+        "correct": 0
+      },
+      {
+        "text": "Which ethnic group has the 'Iri Ji' festival to celebrate the harvest of yams?",
+        "options": ["Igbo", "Yoruba", "Ijaw", "Tiv"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional Yoruba name for a male child's naming ceremony?",
+        "options": ["Isomoloruko", "Akuko", "Ikomo", "Oro"],
+        "correct": 0
+      },
+      {
+        "text": "Which ethnic group is known for the 'Eyo' festival?",
+        "options": ["Yoruba", "Igbo", "Hausa", "Ijaw"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Ilu' is a traditional drum used by which ethnic group?",
+        "options": ["Yoruba", "Igbo", "Hausa", "Ijaw"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional costume of the Fulani people?",
+        "options": ["Kaasa", "Agbada", "Buba", "Soro"],
+        "correct": 0
+      },
+      {
+        "text": "Which state celebrates the 'Durbar' festival?",
+        "options": ["Kano", "Lagos", "Enugu", "Calabar"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Tiv' people are known for which dance?",
+        "options": ["Hingy", "Agbadza", "Adowa", "Kpanlogo"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the traditional Igbo musical instrument made from bamboo?",
+        "options": ["Udu", "Ogene", "Ikoro", "Ekwe"],
+        "correct": 3
+      },
+      {
+        "text": "Which ethnic group is known for the 'Bata' dance?",
+        "options": ["Yoruba", "Igbo", "Hausa", "Ijaw"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Oyo Empire' was known for which traditional art form?",
+        "options": ["Wood carving", "Bronze casting", "Textile weaving", "Pottery"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is famous for the 'Akwete' cloth?",
+        "options": ["Abia", "Anambra", "Imo", "Enugu"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Egungun' masquerade is associated with which ethnic group?",
+        "options": ["Yoruba", "Igbo", "Hausa", "Ijaw"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional greeting among the Igbo?",
+        "options": ["Kedu", "Sannu", "Bawo ni", "Mavo"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Nkwobi' is a traditional dish from which ethnic group?",
+        "options": ["Igbo", "Yoruba", "Hausa", "Ijaw"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known for the 'Adire' fabric?",
+        "options": ["Ogun", "Oyo", "Osun", "Lagos"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Olumo Rock' is located in which state?",
+        "options": ["Ogun", "Oyo", "Osun", "Lagos"],
+        "correct": 0
+      },
+      {
+        "text": "Which ethnic group is known for the 'Koroso' dance?",
+        "options": ["Hausa", "Yoruba", "Igbo", "Ijaw"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Oru' festival is celebrated by which group?",
+        "options": ["Igbo", "Yoruba", "Hausa", "Ijaw"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional title of the ruler of the Ijaw people?",
+        "options": ["Olu", "Igwe", "Oba", "Emir"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known for the 'Carnival Calabar'?",
+        "options": ["Cross River", "Akwa Ibom", "Rivers", "Delta"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Efik' people are known for which traditional dance?",
+        "options": ["Ekombi", "Agbadza", "Adowa", "Kpanlogo"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional dish of the Tiv people?",
+        "options": ["Buh", "Eba", "Fufu", "Amala"],
+        "correct": 0
+      },
+      {
+        "text": "Which ethnic group celebrates the 'Ojude Oba' festival?",
+        "options": ["Yoruba", "Igbo", "Hausa", "Ijaw"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Oron' people are found in which state?",
+        "options": ["Akwa Ibom", "Rivers", "Cross River", "Delta"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional marriage ceremony among the Hausa called?",
+        "options": ["Fatiha", "Igba Nkwu", "Asoebi", "Durbar"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Olojo' festival is celebrated in which state?",
+        "options": ["Oyo", "Osun", "Ogun", "Lagos"],
+        "correct": 0
+      },
+      {
+        "text": "Which ethnic group is known for the 'Iroko' tree as sacred?",
+        "options": ["Yoruba", "Igbo", "Hausa", "Ijaw"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Ogbo' festival is celebrated by which group?",
+        "options": ["Ijaw", "Yoruba", "Igbo", "Hausa"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional headgear of the Yoruba?",
+        "options": ["Abeti Aja", "Fila", "Kufi", "Danfash"],
+        "correct": 1
+      },
+      {
+        "text": "Which state is known for the 'Imo' people?",
+        "options": ["Imo", "Abia", "Anambra", "Enugu"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Saki' is a traditional festival of which group?",
+        "options": ["Hausa", "Yoruba", "Igbo", "Ijaw"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional dress of the Hausa?",
+        "options": ["Danfash", "Agbada", "Buba", "Kente"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Ekoi' people are found in which state?",
+        "options": ["Cross River", "Akwa Ibom", "Rivers", "Delta"],
+        "correct": 0
+      },
+      {
+        "text": "Which festival is celebrated in Ile-Ife?",
+        "options": ["Olojo", "Eyo", "Durbar", "Argungu"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Idumota' market is located in which state?",
+        "options": ["Lagos", "Oyo", "Ogun", "Osun"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional dish of the Ijaw?",
+        "options": ["Fisherman Soup", "Egusi", "Amala", "Moi Moi"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Oba' festival is celebrated by which group?",
+        "options": ["Yoruba", "Igbo", "Hausa", "Ijaw"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known for the 'Ogbunike Cave'?",
+        "options": ["Anambra", "Enugu", "Imo", "Abia"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Ubini' is a traditional dance of which group?",
+        "options": ["Hausa", "Yoruba", "Igbo", "Ijaw"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional title of the ruler of Benin Kingdom?",
+        "options": ["Oba", "Igwe", "Emir", "Olu"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known for the 'Obudu Cattle Ranch'?",
+        "options": ["Cross River", "Akwa Ibom", "Rivers", "Delta"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Gwari' people are found in which state?",
+        "options": ["Niger", "Kwara", "Kogi", "Abuja"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional dress of the Yoruba?",
+        "options": ["Agbada", "Danfash", "Kente", "Buba"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Udu' is a traditional instrument of which group?",
+        "options": ["Yoruba", "Igbo", "Hausa", "Ijaw"],
+        "correct": 0
+      },
+      {
+        "text": "Which festival is celebrated in Owo?",
+        "options": ["Igogo", "Olojo", "Eyo", "Durbar"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Urhobo' people are found in which state?",
+        "options": ["Delta", "Rivers", "Bayelsa", "Akwa Ibom"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional food of the Ebira?",
+        "options": ["Amala", "Eba", "Fufu", "Okpa"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Ikom' is a town in which state?",
+        "options": ["Cross River", "Akwa Ibom", "Rivers", "Delta"],
+        "correct": 0
+      },
+      {
+        "text": "Which ethnic group celebrates the 'Abuja' festival?",
+        "options": ["Hausa", "Yoruba", "Igbo", "Ijaw"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Otukpo' is a town in which state?",
+        "options": ["Benue", "Taraba", "Adamawa", "Niger"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional headgear of the Hausa?",
+        "options": ["Danfash", "Fila", "Abeti Aja", "Kufi"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known for the 'Oshogbo' town?",
+        "options": ["Osun", "Oyo", "Ogun", "Lagos"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Sango' festival is celebrated by which group?",
+        "options": ["Yoruba", "Igbo", "Hausa", "Ijaw"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional dress of the Ijaw?",
+        "options": ["Buba", "Agbada", "Danfash", "Kente"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Katsina' people are found in which state?",
+        "options": ["Katsina", "Kano", "Kaduna", "Sokoto"],
+        "correct": 0
+      },
+      {
+        "text": "Which festival is celebrated in Akure?",
+        "options": ["Olojo", "Igogo", "Eyo", "Durbar"],
+        "correct": 1
+      },
+      {
+        "text": "The 'Mambilla' people are found in which state?",
+        "options": ["Taraba", "Adamawa", "Plateau", "Borno"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional food of the Tiv?",
+        "options": ["Buh", "Eba", "Fufu", "Amala"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Ogoja' is a town in which state?",
+        "options": ["Cross River", "Akwa Ibom", "Rivers", "Delta"],
+        "correct": 0
+      },
+      {
+        "text": "Which ethnic group celebrates the 'Ekun' festival?",
+        "options": ["Yoruba", "Igbo", "Hausa", "Ijaw"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Otukpo' people are found in which state?",
+        "options": ["Benue", "Taraba", "Adamawa", "Niger"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional headgear of the Yoruba?",
+        "options": ["Fila", "Danfash", "Kufi", "Abeti Aja"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known for the 'Ilorin' town?",
+        "options": ["Kwara", "Kogi", "Niger", "Abuja"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Oba of Benin' is a traditional ruler of which group?",
+        "options": ["Yoruba", "Igbo", "Hausa", "Edo"],
+        "correct": 3
+      },
+      {
+        "text": "What is the traditional dance of the Urhobo?",
+        "options": ["Ema", "Agbadza", "Adowa", "Kpanlogo"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Okpe' people are found in which state?",
+        "options": ["Delta", "Rivers", "Bayelsa", "Akwa Ibom"],
+        "correct": 0
+      },
+      {
+        "text": "Which festival is celebrated in Ijebu?",
+        "options": ["Ojude Oba", "Eyo", "Durbar", "Argungu"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Annang' people are found in which state?",
+        "options": ["Akwa Ibom", "Rivers", "Cross River", "Delta"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional food of the Fulani?",
+        "options": ["Tuwo", "Eba", "Fufu", "Amala"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Niger' people are found in which state?",
+        "options": ["Niger", "Kwara", "Kogi", "Abuja"],
+        "correct": 0
+      },
+      {
+        "text": "Which ethnic group celebrates the 'Eyini' festival?",
+        "options": ["Yoruba", "Igbo", "Hausa", "Ijaw"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Kano' people are found in which state?",
+        "options": ["Kano", "Kaduna", "Katsina", "Jigawa"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional dance of the Efik?",
+        "options": ["Ekombi", "Agbadza", "Adowa", "Kpanlogo"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Ogoja' people are found in which state?",
+        "options": ["Cross River", "Akwa Ibom", "Rivers", "Delta"],
+        "correct": 0
+      },
+      {
+        "text": "Which state is known for the 'Port Harcourt' city?",
+        "options": ["Rivers", "Bayelsa", "Delta", "Akwa Ibom"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Idoma' people are found in which state?",
+        "options": ["Benue", "Taraba", "Adamawa", "Niger"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional title of the ruler of the Ijaw?",
+        "options": ["Olu", "Igwe", "Oba", "Emir"],
+        "correct": 0
       }
-      
-
     ],
     "pop": [
-      // Add these 20 new questions to your Nigeria pop culture pool
-{
+      {
         "text": "Which Nigerian artist released the 2023 album 'Timeless'?",
         "options": ["Wizkid", "Burna Boy", "Davido", "Rema"],
         "correct": 2
@@ -373,10 +1636,414 @@
         "text": "Which Davido song features the line 'E choke'?",
         "options": ["If", "Fall", "Assurance", "Fem"],
         "correct": 3
+      },
+      {
+        "text": "Who sang 'Buga' with Kizz Daniel?",
+        "options": ["Tekno", "Rema", "Asake", "Davido"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist is known for the song 'Elese'?",
+        "options": ["Rema", "Asake", "Fireboy DML", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Who is the founder of YBNL Nation record label?",
+        "options": ["Olamide", "Phyno", "Don Jazzy", "Davido"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist sang 'Jaiye' with Burna Boy?",
+        "options": ["Wizkid", "Davido", "Olamide", "Sarkodie"],
+        "correct": 2
+      },
+      {
+        "text": "What is the name of Wizkid's debut album?",
+        "options": ["Superstar", "Ayo", "F.A.M.E.", "Made in Lagos"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang the hit 'Skeletun'?",
+        "options": ["Tekno", "Patoranking", "Kizz Daniel", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist is known as 'Baba Nla'?",
+        "options": ["Burna Boy", "Davido", "Wizkid", "Don Jazzy"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Mad Over You'?",
+        "options": ["Runtown", "Tekno", "Kizz Daniel", "Davido"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist released the album 'African Giant'?",
+        "options": ["Burna Boy", "Wizkid", "Davido", "Fela Kuti"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'If' by Davido?",
+        "options": ["Davido", "Wizkid", "Burna Boy", "Kizz Daniel"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist is known for the song 'On The Low'?",
+        "options": ["Burna Boy", "Wizkid", "Davido", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Shakara'?",
+        "options": ["Olamide", "Phyno", "Burna Boy", "Wizkid"],
+        "correct": 2
+      },
+      {
+        "text": "Which Nigerian artist is the CEO of Mavin Records?",
+        "options": ["Don Jazzy", "Dr. SID", "D'Prince", "Korede Bello"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Fever' by Wizkid?",
+        "options": ["Wizkid", "Burna Boy", "Davido", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist released the album 'A Better Tomorrow'?",
+        "options": ["Burna Boy", "Wizkid", "Davido", "Olamide"],
+        "correct": 2
+      },
+      {
+        "text": "Who sang the hit 'Omo Ologo'?",
+        "options": ["Seyi Vibez", "Asake", "Zinoleesky", "CKay"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist is known for the song 'Love Me'?",
+        "options": ["Rema", "Asake", "Fireboy DML", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Gbese' by Davido?",
+        "options": ["Davido", "Wizkid", "Burna Boy", "Olamide"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist released the album 'Made in Lagos'?",
+        "options": ["Wizkid", "Burna Boy", "Davido", "Olamide"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Naira Marley'?",
+        "options": ["Naira Marley", "Burna Boy", "Wizkid", "Davido"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist is known for 'Zanku' dance?",
+        "options": ["Zlatan", "Naira Marley", "Rema", "Fireboy"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Soweto' with Victony?",
+        "options": ["Rema", "Tempoe", "Omah Lay", "CKay"],
+        "correct": 1
+      },
+      {
+        "text": "Which artist released the album 'Rave & Roses'?",
+        "options": ["Rema", "Asake", "Fireboy DML", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'KPK' by DJ Neptune?",
+        "options": ["Rema", "Asake", "Fireboy DML", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist is known as 'Bella Shmurda'?",
+        "options": ["Bella Shmurda", "Zlatan", "Naira Marley", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Cash App' by Bella Shmurda?",
+        "options": ["Bella Shmurda", "Zlatan", "Naira Marley", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist released the album 'F.A.M.E.'?",
+        "options": ["Wizkid", "Burna Boy", "Davido", "Olamide"],
+        "correct": 1
+      },
+      {
+        "text": "Who sang 'Science Teacher' by DJ Kaywise?",
+        "options": ["Naira Marley", "Zlatan", "Rema", "Asake"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist is known for 'Options'?",
+        "options": ["Fireboy DML", "Asake", "Rema", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Dundee' by Zinoleesky?",
+        "options": ["Zinoleesky", "Seyi Vibez", "Asake", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist released the album 'KPOS'?",
+        "options": ["Zinoleesky", "Seyi Vibez", "Asake", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Wetin Dey'?",
+        "options": ["Omah Lay", "Fireboy DML", "Asake", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist is known for 'Abracadabra'?",
+        "options": ["Rema", "Asake", "Fireboy DML", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Omo Ologo' by Seyi Vibez?",
+        "options": ["Seyi Vibez", "Zinoleesky", "Asake", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist released the album 'Bad Boy Timz'?",
+        "options": ["Bad Boy Timz", "Zlatan", "Naira Marley", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Sere' by DJ Tarico?",
+        "options": ["Rema", "Asake", "Fireboy DML", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist is known for 'Trenches'?",
+        "options": ["Seyi Vibez", "Zinoleesky", "Asake", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Funke' by Ckay?",
+        "options": ["CKay", "Rema", "Asake", "Fireboy DML"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist released the album 'True Love'?",
+        "options": ["Rema", "Asake", "Fireboy DML", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Ijo' by Ceeza Milli?",
+        "options": ["Ceeza Milli", "Rema", "Asake", "Fireboy DML"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist is known for 'Love Nwantiti'?",
+        "options": ["CKay", "Rema", "Asake", "Fireboy DML"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Aje' by Asake?",
+        "options": ["Asake", "Rema", "Fireboy DML", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist released the album 'Mood'?",
+        "options": ["Rema", "Asake", "Fireboy DML", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Omo Ologo' by Zinoleesky?",
+        "options": ["Zinoleesky", "Seyi Vibez", "Asake", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist is known for 'Keresimesi'?",
+        "options": ["Seyi Vibez", "Zinoleesky", "Asake", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Bando' by Zinoleesky?",
+        "options": ["Zinoleesky", "Seyi Vibez", "Asake", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist released the album 'Omo Ologo'?",
+        "options": ["Seyi Vibez", "Zinoleesky", "Asake", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Kilometer' by Jaywon?",
+        "options": ["Jaywon", "Rema", "Asake", "Fireboy DML"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist is known for 'Jaiye'?",
+        "options": ["Olamide", "Burna Boy", "Wizkid", "Davido"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Omo Ologo' by Seyi Vibez?",
+        "options": ["Seyi Vibez", "Zinoleesky", "Asake", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist released the album 'A Better Tomorrow'?",
+        "options": ["Burna Boy", "Wizkid", "Davido", "Olamide"],
+        "correct": 2
+      },
+      {
+        "text": "Who sang 'Gbese' by Davido?",
+        "options": ["Davido", "Wizkid", "Burna Boy", "Olamide"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist is known for 'Zanku' dance?",
+        "options": ["Zlatan", "Naira Marley", "Rema", "Fireboy"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Soweto' with Victony?",
+        "options": ["Rema", "Tempoe", "Omah Lay", "CKay"],
+        "correct": 1
+      },
+      {
+        "text": "Which artist released the album 'Rave & Roses'?",
+        "options": ["Rema", "Asake", "Fireboy DML", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'KPK' by DJ Neptune?",
+        "options": ["Rema", "Asake", "Fireboy DML", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist is known as 'Bella Shmurda'?",
+        "options": ["Bella Shmurda", "Zlatan", "Naira Marley", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Cash App' by Bella Shmurda?",
+        "options": ["Bella Shmurda", "Zlatan", "Naira Marley", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist released the album 'F.A.M.E.'?",
+        "options": ["Wizkid", "Burna Boy", "Davido", "Olamide"],
+        "correct": 1
+      },
+      {
+        "text": "Who sang 'Science Teacher' by DJ Kaywise?",
+        "options": ["Naira Marley", "Zlatan", "Rema", "Asake"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist is known for 'Options'?",
+        "options": ["Fireboy DML", "Asake", "Rema", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Dundee' by Zinoleesky?",
+        "options": ["Zinoleesky", "Seyi Vibez", "Asake", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist released the album 'KPOS'?",
+        "options": ["Zinoleesky", "Seyi Vibez", "Asake", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Wetin Dey'?",
+        "options": ["Omah Lay", "Fireboy DML", "Asake", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist is known for 'Abracadabra'?",
+        "options": ["Rema", "Asake", "Fireboy DML", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Omo Ologo' by Seyi Vibez?",
+        "options": ["Seyi Vibez", "Zinoleesky", "Asake", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist released the album 'Bad Boy Timz'?",
+        "options": ["Bad Boy Timz", "Zlatan", "Naira Marley", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Sere' by DJ Tarico?",
+        "options": ["Rema", "Asake", "Fireboy DML", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist is known for 'Trenches'?",
+        "options": ["Seyi Vibez", "Zinoleesky", "Asake", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Funke' by Ckay?",
+        "options": ["CKay", "Rema", "Asake", "Fireboy DML"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist released the album 'True Love'?",
+        "options": ["Rema", "Asake", "Fireboy DML", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Ijo' by Ceeza Milli?",
+        "options": ["Ceeza Milli", "Rema", "Asake", "Fireboy DML"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist is known for 'Love Nwantiti'?",
+        "options": ["CKay", "Rema", "Asake", "Fireboy DML"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Aje' by Asake?",
+        "options": ["Asake", "Rema", "Fireboy DML", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist released the album 'Mood'?",
+        "options": ["Rema", "Asake", "Fireboy DML", "Omah Lay"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Omo Ologo' by Zinoleesky?",
+        "options": ["Zinoleesky", "Seyi Vibez", "Asake", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist is known for 'Keresimesi'?",
+        "options": ["Seyi Vibez", "Zinoleesky", "Asake", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Bando' by Zinoleesky?",
+        "options": ["Zinoleesky", "Seyi Vibez", "Asake", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Which artist released the album 'Omo Ologo'?",
+        "options": ["Seyi Vibez", "Zinoleesky", "Asake", "Rema"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Kilometer' by Jaywon?",
+        "options": ["Jaywon", "Rema", "Asake", "Fireboy DML"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian artist is known for 'Jaiye'?",
+        "options": ["Olamide", "Burna Boy", "Wizkid", "Davido"],
+        "correct": 0
       }
     ],
     "movies": [
-      // Add these 20 new questions to your Nigeria movies pool
       {
         "text": "Which Nollywood actress starred in the 2020 film 'Omo Ghetto: The Saga'?",
         "options": ["Funke Akindele", "Genevieve Nnaji", "Omotola Jalade", "Toyin Abraham"],
@@ -432,7 +2099,6 @@
         "options": ["Jaiye Kuti", "Saka", "Muka", "Lai"],
         "correct": 0
       },
-      
       {
         "text": "Who starred as 'Ireti' in the romantic drama 'Isoken' (2017)?",
         "options": ["Dakore Egbuson-Akande", "Bimbo Akintola", "Nse Ikpe-Etim", "Rita Dominic"],
@@ -484,7 +2150,7 @@
         "correct": 0
       },
       {
-        "text": "What is the highest‑grossing Nollywood film of all time?",
+        "text": "What is the highest-grossing Nollywood film of all time?",
         "options": ["Omo Ghetto: The Saga", "The Wedding Party", "King of Boys", "Lionheart"],
         "correct": 0
       },
@@ -502,9 +2168,459 @@
         "text": "Which Nollywood actress starred in 'King of Boys'?",
         "options": ["Sola Sobowale", "Genevieve Nnaji", "Funke Akindele", "Omotola Jalade"],
         "correct": 0
+      },
+      {
+        "text": "Who directed the movie 'King of Boys'?",
+        "options": ["Kemi Adetiba", "Mo Abudu", "Funke Akindele", "Tope Oshin"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood film was the first to gross over ₦1 billion?",
+        "options": ["Omo Ghetto: The Saga", "The Wedding Party", "King of Boys", "Lionheart"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Nollywood actress known as 'Omoge Campus'?",
+        "options": ["Rita Dominic", "Genevieve Nnaji", "Omotola Jalade", "Funke Akindele"],
+        "correct": 1
+      },
+      {
+        "text": "Which Nollywood movie features the character 'Bishop'?",
+        "options": ["The Wedding Party", "Chief Daddy", "Omo Ghetto", "King of Boys"],
+        "correct": 1
+      },
+      {
+        "text": "Who starred in the movie 'The CEO'?",
+        "options": ["Genevieve Nnaji", "Omotola Jalade", "Funke Akindele", "Rita Dominic"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood film is about a young woman fighting for justice?",
+        "options": ["King of Boys", "Lionheart", "Omo Ghetto", "The Figurine"],
+        "correct": 0
+      },
+      {
+        "text": "Who directed the movie 'The Milkmaid'?",
+        "options": ["Desmond Ovbiagele", "Kemi Adetiba", "Mo Abudu", "Funke Akindele"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood movie features the character 'Mama Lagos'?",
+        "options": ["Omo Ghetto", "The Wedding Party", "Chief Daddy", "King of Boys"],
+        "correct": 1
+      },
+      {
+        "text": "What is the name of the Nollywood film about a corrupt judge?",
+        "options": ["King of Boys", "Lionheart", "Omo Ghetto", "The Judge"],
+        "correct": 3
+      },
+      {
+        "text": "Which Nollywood actress is known as 'The Queen of Nollywood'?",
+        "options": ["Omotola Jalade", "Genevieve Nnaji", "Funke Akindele", "Rita Dominic"],
+        "correct": 0
+      },
+      {
+        "text": "Who directed the movie 'The Wedding Party 2'?",
+        "options": ["Niyi Akinmolayan", "Kemi Adetiba", "Mo Abudu", "Obi Emelonye"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood film is about a young woman who becomes a political leader?",
+        "options": ["King of Boys", "Lionheart", "Omo Ghetto", "The CEO"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Nollywood film about a Nigerian family in London?",
+        "options": ["Osuofia in London", "The Wedding Party", "Chief Daddy", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Who starred in the movie 'Osuofia in London'?",
+        "options": ["Nkem Owoh", "John Okafor", "Osita Iheme", "Chinedu Ikedieze"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood film features the character 'Papa Lagos'?",
+        "options": ["Chief Daddy", "The Wedding Party", "Omo Ghetto", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Nollywood film about a female lawyer?",
+        "options": ["Lionheart", "King of Boys", "Omo Ghetto", "The Figurine"],
+        "correct": 0
+      },
+      {
+        "text": "Who directed the movie 'Omo Ghetto: The Saga'?",
+        "options": ["Funke Akindele", "Kemi Adetiba", "Mo Abudu", "Niyi Akinmolayan"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood actress is known as 'The First Lady of Nollywood'?",
+        "options": ["Omotola Jalade", "Genevieve Nnaji", "Funke Akindele", "Rita Dominic"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Nollywood film about a Nigerian businessman?",
+        "options": ["Chief Daddy", "The Wedding Party", "Omo Ghetto", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood movie features the character 'Ade'?",
+        "options": ["The Wedding Party", "Chief Daddy", "Omo Ghetto", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Who starred in the movie 'King of Boys'?",
+        "options": ["Sola Sobowale", "Genevieve Nnaji", "Funke Akindele", "Omotola Jalade"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood film is about a young woman fighting for her family?",
+        "options": ["King of Boys", "Lionheart", "Omo Ghetto", "The Figurine"],
+        "correct": 1
+      },
+      {
+        "text": "What is the name of the Nollywood film about a traditional ruler?",
+        "options": ["King of Boys", "Lionheart", "Omo Ghetto", "The Figurine"],
+        "correct": 0
+      },
+      {
+        "text": "Who directed the movie 'Lionheart'?",
+        "options": ["Genevieve Nnaji", "Kemi Adetiba", "Mo Abudu", "Funke Akindele"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood actress is known as 'The Jewel of Nollywood'?",
+        "options": ["Genevieve Nnaji", "Omotola Jalade", "Funke Akindele", "Rita Dominic"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Nollywood film about a young musician?",
+        "options": ["The Wedding Party", "Chief Daddy", "Omo Ghetto", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood movie features the character 'Aunty Elizabeth'?",
+        "options": ["Chief Daddy", "The Wedding Party", "Omo Ghetto", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Who starred in the movie 'The Figurine'?",
+        "options": ["Kunle Afolayan", "Genevieve Nnaji", "Omotola Jalade", "Funke Akindele"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood film is about a young woman who becomes a CEO?",
+        "options": ["The CEO", "Lionheart", "King of Boys", "Omo Ghetto"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Nollywood film about a Nigerian family in the diaspora?",
+        "options": ["Osuofia in London", "The Wedding Party", "Chief Daddy", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Who directed the movie 'Chief Daddy'?",
+        "options": ["Kemi Adetiba", "Niyi Akinmolayan", "Funke Akindele", "Mo Abudu"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood actress is known as 'The Queen of Nollywood'?",
+        "options": ["Omotola Jalade", "Genevieve Nnaji", "Funke Akindele", "Rita Dominic"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Nollywood film about a Nigerian politician?",
+        "options": ["King of Boys", "Lionheart", "Omo Ghetto", "The Figurine"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood movie features the character 'Aunty Funke'?",
+        "options": ["Omo Ghetto", "The Wedding Party", "Chief Daddy", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Who starred in the movie 'The Wedding Party'?",
+        "options": ["Banky W", "Genevieve Nnaji", "Omotola Jalade", "Funke Akindele"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood film is about a young woman fighting for her rights?",
+        "options": ["Lionheart", "King of Boys", "Omo Ghetto", "The Figurine"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Nollywood film about a Nigerian businessman?",
+        "options": ["Chief Daddy", "The Wedding Party", "Omo Ghetto", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood actress is known as 'The First Lady of Nollywood'?",
+        "options": ["Omotola Jalade", "Genevieve Nnaji", "Funke Akindele", "Rita Dominic"],
+        "correct": 0
+      },
+      {
+        "text": "Who directed the movie 'The CEO'?",
+        "options": ["Kunle Afolayan", "Genevieve Nnaji", "Mo Abudu", "Funke Akindele"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood film features the character 'Ade'?",
+        "options": ["The Wedding Party", "Chief Daddy", "Omo Ghetto", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Nollywood film about a Nigerian family in the diaspora?",
+        "options": ["Osuofia in London", "The Wedding Party", "Chief Daddy", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood actress is known as 'The Queen of Nollywood'?",
+        "options": ["Omotola Jalade", "Genevieve Nnaji", "Funke Akindele", "Rita Dominic"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Nollywood film about a young woman who becomes a CEO?",
+        "options": ["The CEO", "Lionheart", "King of Boys", "Omo Ghetto"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood movie features the character 'Aunty Elizabeth'?",
+        "options": ["Chief Daddy", "The Wedding Party", "Omo Ghetto", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Who starred in the movie 'The Figurine'?",
+        "options": ["Kunle Afolayan", "Genevieve Nnaji", "Omotola Jalade", "Funke Akindele"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood film is about a young woman fighting for her family?",
+        "options": ["King of Boys", "Lionheart", "Omo Ghetto", "The Figurine"],
+        "correct": 1
+      },
+      {
+        "text": "What is the name of the Nollywood film about a traditional ruler?",
+        "options": ["King of Boys", "Lionheart", "Omo Ghetto", "The Figurine"],
+        "correct": 0
+      },
+      {
+        "text": "Who directed the movie 'Lionheart'?",
+        "options": ["Genevieve Nnaji", "Kemi Adetiba", "Mo Abudu", "Funke Akindele"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood actress is known as 'The Jewel of Nollywood'?",
+        "options": ["Genevieve Nnaji", "Omotola Jalade", "Funke Akindele", "Rita Dominic"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Nollywood film about a young musician?",
+        "options": ["The Wedding Party", "Chief Daddy", "Omo Ghetto", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood movie features the character 'Aunty Elizabeth'?",
+        "options": ["Chief Daddy", "The Wedding Party", "Omo Ghetto", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Who starred in the movie 'The Figurine'?",
+        "options": ["Kunle Afolayan", "Genevieve Nnaji", "Omotola Jalade", "Funke Akindele"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood film is about a young woman who becomes a CEO?",
+        "options": ["The CEO", "Lionheart", "King of Boys", "Omo Ghetto"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Nollywood film about a Nigerian family in the diaspora?",
+        "options": ["Osuofia in London", "The Wedding Party", "Chief Daddy", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Who directed the movie 'Chief Daddy'?",
+        "options": ["Kemi Adetiba", "Niyi Akinmolayan", "Funke Akindele", "Mo Abudu"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood actress is known as 'The Queen of Nollywood'?",
+        "options": ["Omotola Jalade", "Genevieve Nnaji", "Funke Akindele", "Rita Dominic"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Nollywood film about a Nigerian politician?",
+        "options": ["King of Boys", "Lionheart", "Omo Ghetto", "The Figurine"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood movie features the character 'Aunty Funke'?",
+        "options": ["Omo Ghetto", "The Wedding Party", "Chief Daddy", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Who starred in the movie 'The Wedding Party'?",
+        "options": ["Banky W", "Genevieve Nnaji", "Omotola Jalade", "Funke Akindele"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood film is about a young woman fighting for her rights?",
+        "options": ["Lionheart", "King of Boys", "Omo Ghetto", "The Figurine"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Nollywood film about a Nigerian businessman?",
+        "options": ["Chief Daddy", "The Wedding Party", "Omo Ghetto", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood actress is known as 'The First Lady of Nollywood'?",
+        "options": ["Omotola Jalade", "Genevieve Nnaji", "Funke Akindele", "Rita Dominic"],
+        "correct": 0
+      },
+      {
+        "text": "Who directed the movie 'The CEO'?",
+        "options": ["Kunle Afolayan", "Genevieve Nnaji", "Mo Abudu", "Funke Akindele"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood film features the character 'Ade'?",
+        "options": ["The Wedding Party", "Chief Daddy", "Omo Ghetto", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Nollywood film about a Nigerian family in the diaspora?",
+        "options": ["Osuofia in London", "The Wedding Party", "Chief Daddy", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood actress is known as 'The Queen of Nollywood'?",
+        "options": ["Omotola Jalade", "Genevieve Nnaji", "Funke Akindele", "Rita Dominic"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Nollywood film about a young woman who becomes a CEO?",
+        "options": ["The CEO", "Lionheart", "King of Boys", "Omo Ghetto"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood movie features the character 'Aunty Elizabeth'?",
+        "options": ["Chief Daddy", "The Wedding Party", "Omo Ghetto", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Who starred in the movie 'The Figurine'?",
+        "options": ["Kunle Afolayan", "Genevieve Nnaji", "Omotola Jalade", "Funke Akindele"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood film is about a young woman fighting for her family?",
+        "options": ["King of Boys", "Lionheart", "Omo Ghetto", "The Figurine"],
+        "correct": 1
+      },
+      {
+        "text": "What is the name of the Nollywood film about a traditional ruler?",
+        "options": ["King of Boys", "Lionheart", "Omo Ghetto", "The Figurine"],
+        "correct": 0
+      },
+      {
+        "text": "Who directed the movie 'Lionheart'?",
+        "options": ["Genevieve Nnaji", "Kemi Adetiba", "Mo Abudu", "Funke Akindele"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood actress is known as 'The Jewel of Nollywood'?",
+        "options": ["Genevieve Nnaji", "Omotola Jalade", "Funke Akindele", "Rita Dominic"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Nollywood film about a young musician?",
+        "options": ["The Wedding Party", "Chief Daddy", "Omo Ghetto", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood movie features the character 'Aunty Elizabeth'?",
+        "options": ["Chief Daddy", "The Wedding Party", "Omo Ghetto", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Who starred in the movie 'The Figurine'?",
+        "options": ["Kunle Afolayan", "Genevieve Nnaji", "Omotola Jalade", "Funke Akindele"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood film is about a young woman who becomes a CEO?",
+        "options": ["The CEO", "Lionheart", "King of Boys", "Omo Ghetto"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Nollywood film about a Nigerian family in the diaspora?",
+        "options": ["Osuofia in London", "The Wedding Party", "Chief Daddy", "King of Boys"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nollywood actress is known as 'The Queen of Nollywood'?",
+        "options": ["Omotola Jalade", "Genevieve Nnaji", "Funke Akindele", "Rita Dominic"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Nollywood film about a Nigerian politician?",
+        "options": ["King of Boys", "Lionheart", "Omo Ghetto", "The Figurine"],
+        "correct": 0
       }
     ],
     "football": [
+      {
+        "text": "Which club has won the Nigerian Professional Football League (NPFL) the most times?",
+        "options": ["Enyimba", "Kano Pillars", "Rangers International", "Shooting Stars"],
+        "correct": 0
+      },
+      {
+        "text": "Who is Nigeria's all-time top scorer?",
+        "options": ["Rashidi Yekini", "Segun Odegbami", "Jay-Jay Okocha", "Ahmed Musa"],
+        "correct": 3
+      },
+      {
+        "text": "Which Nigerian player won the UEFA Champions League with Chelsea in 2021?",
+        "options": ["Kelechi Iheanacho", "Victor Osimhen", "Wilfred Ndidi", "Alex Iwobi"],
+        "correct": 2
+      },
+      {
+        "text": "Who was the captain of the 2013 AFCON winning team?",
+        "options": ["Joseph Yobo", "Vincent Enyeama", "John Obi Mikel", "Ahmed Musa"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian goalkeeper holds the record for most caps?",
+        "options": ["Vincent Enyeama", "Peter Rufai", "Ike Shorunmu", "Carl Ikeme"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player scored a hat-trick at the 2018 World Cup?",
+        "options": ["Ahmed Musa", "Victor Moses", "Odion Ighalo", "Kelechi Iheanacho"],
+        "correct": 0
+      },
+      {
+        "text": "Who is the current all-time top scorer for the Super Eagles?",
+        "options": ["Rashidi Yekini", "Segun Odegbami", "Jay-Jay Okocha", "Ahmed Musa"],
+        "correct": 3
+      },
+      {
+        "text": "Which Nigerian coach led the team to win the 2013 AFCON?",
+        "options": ["Stephen Keshi", "Sunday Oliseh", "Gernot Rohr", "Samson Siasia"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player was named African Footballer of the Year in 1999?",
+        "options": ["Nwankwo Kanu", "Jay-Jay Okocha", "Rashidi Yekini", "Victor Ikpeba"],
+        "correct": 0
+      },
+      {
+        "text": "In which year did Nigeria win its first Olympic gold in football?",
+        "options": ["1996", "2000", "2008", "2016"],
+        "correct": 0
+      },
       {
         "text": "Who scored Nigeria's first-ever goal in a FIFA World Cup match?",
         "options": ["Segun Odegbami", "Rashidi Yekini", "Emmanuel Amunike", "Julius Aghahowa"],
@@ -604,6 +2720,316 @@
         "text": "Which Nigerian coach led the U-17 team to victory at the 2007 FIFA U-17 World Cup?",
         "options": ["Yemi Tella", "John Obuh", "Manu Garba", "Samson Siasia"],
         "correct": 0
+      },
+      {
+        "text": "Which Nigerian player is known as 'The Maestro'?",
+        "options": ["Jay-Jay Okocha", "Nwankwo Kanu", "Rashidi Yekini", "Segun Odegbami"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Nigerian to play in the English Premier League?",
+        "options": ["Nwankwo Kanu", "Celestine Babayaro", "Efan Ekoku", "Peter Ndlovu"],
+        "correct": 2
+      },
+      {
+        "text": "Which Nigerian striker won the English Premier League Golden Boot?",
+        "options": ["Victor Osimhen", "Odion Ighalo", "Emmanuel Emenike", "Nwankwo Kanu"],
+        "correct": 1
+      },
+      {
+        "text": "Which Nigerian player is known as 'The Bull'?",
+        "options": ["Daniel Amokachi", "Rashidi Yekini", "Emmanuel Emenike", "Victor Osimhen"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Nigerian to play for a European club?",
+        "options": ["Nwankwo Kanu", "Rashidi Yekini", "Jide Johnson", "Emmanuel Amunike"],
+        "correct": 2
+      },
+      {
+        "text": "Which Nigerian player has the most assists in Premier League history?",
+        "options": ["Victor Moses", "John Obi Mikel", "Nwankwo Kanu", "Alex Iwobi"],
+        "correct": 2
+      },
+      {
+        "text": "Who scored the winning goal for Nigeria in the 1994 Africa Cup of Nations final?",
+        "options": ["Emmanuel Amunike", "Rashidi Yekini", "Daniel Amokachi", "Jay-Jay Okocha"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player was nicknamed 'The Golden Boy'?",
+        "options": ["Nwankwo Kanu", "Jay-Jay Okocha", "Segun Odegbami", "Rashidi Yekini"],
+        "correct": 2
+      },
+      {
+        "text": "Who was the first Nigerian to win the African Footballer of the Year award?",
+        "options": ["Nwankwo Kanu", "Jay-Jay Okocha", "Rashidi Yekini", "Victor Ikpeba"],
+        "correct": 2
+      },
+      {
+        "text": "Which Nigerian player has won the UEFA Champions League multiple times?",
+        "options": ["Nwankwo Kanu", "John Obi Mikel", "Victor Moses", "Kelechi Iheanacho"],
+        "correct": 1
+      },
+      {
+        "text": "Which Nigerian goalkeeper was named African Goalkeeper of the Year?",
+        "options": ["Vincent Enyeama", "Peter Rufai", "Ike Shorunmu", "Carl Ikeme"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Nigerian to score in the English Premier League?",
+        "options": ["Efan Ekoku", "Nwankwo Kanu", "Celestine Babayaro", "John Obi Mikel"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player is known for the 'Michael Essien' comparison?",
+        "options": ["John Obi Mikel", "Wilfred Ndidi", "Kehinde Fatai", "Mutiu Adepoju"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the coach of the Super Eagles at the 1998 World Cup?",
+        "options": ["Bora Milutinovic", "Clemens Westerhof", "Philippe Troussier", "Sunday Oliseh"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player was known as 'The Gentle Giant'?",
+        "options": ["Nwankwo Kanu", "Rashidi Yekini", "Segun Odegbami", "Jay-Jay Okocha"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player scored the fastest hat-trick in Premier League history?",
+        "options": ["Victor Osimhen", "Odion Ighalo", "Emmanuel Emenike", "Nwankwo Kanu"],
+        "correct": 1
+      },
+      {
+        "text": "Who was the first Nigerian to play in the UEFA Champions League final?",
+        "options": ["Nwankwo Kanu", "John Obi Mikel", "Victor Moses", "Kelechi Iheanacho"],
+        "correct": 1
+      },
+      {
+        "text": "Which Nigerian player was nicknamed 'The Little Prince'?",
+        "options": ["Victor Osimhen", "Nwankwo Kanu", "Jay-Jay Okocha", "Ahmed Musa"],
+        "correct": 2
+      },
+      {
+        "text": "Who was the coach of the Super Eagles at the 2002 World Cup?",
+        "options": ["Adegboye Onigbinde", "Clemens Westerhof", "Philippe Troussier", "Sunday Oliseh"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player has won the most Serie A titles?",
+        "options": ["Victor Osimhen", "Victor Ikpeba", "Nwankwo Kanu", "Emmanuel Emenike"],
+        "correct": 1
+      },
+      {
+        "text": "Which Nigerian player was known as 'The Flying Eagle'?",
+        "options": ["Ahmed Musa", "Victor Moses", "Emmanuel Emenike", "Samuel Chukwueze"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Nigerian to win the English Premier League title?",
+        "options": ["Nwankwo Kanu", "Celestine Babayaro", "John Obi Mikel", "Victor Moses"],
+        "correct": 1
+      },
+      {
+        "text": "Which Nigerian player has the most FA Cup wins?",
+        "options": ["John Obi Mikel", "Nwankwo Kanu", "Victor Moses", "Alex Iwobi"],
+        "correct": 2
+      },
+      {
+        "text": "Who was the coach of the Super Eagles at the 1994 World Cup?",
+        "options": ["Clemens Westerhof", "Adegboye Onigbinde", "Philippe Troussier", "Sunday Oliseh"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player was known as 'The Beast'?",
+        "options": ["Emmanuel Emenike", "Rashidi Yekini", "Daniel Amokachi", "Victor Osimhen"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player scored the most goals in a single World Cup tournament?",
+        "options": ["Rashidi Yekini", "Ahmed Musa", "Emmanuel Emenike", "Daniel Amokachi"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Nigerian to play in the Scottish Premier League?",
+        "options": ["Nwankwo Kanu", "Efan Ekoku", "Celestine Babayaro", "John Obi Mikel"],
+        "correct": 1
+      },
+      {
+        "text": "Which Nigerian player was known as 'The Chief'?",
+        "options": ["Jay-Jay Okocha", "Nwankwo Kanu", "Rashidi Yekini", "Segun Odegbami"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the coach of the Super Eagles at the 2014 World Cup?",
+        "options": ["Stephen Keshi", "Sunday Oliseh", "Gernot Rohr", "Samson Siasia"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player has the most Premier League appearances?",
+        "options": ["Nwankwo Kanu", "John Obi Mikel", "Victor Moses", "Alex Iwobi"],
+        "correct": 1
+      },
+      {
+        "text": "Which Nigerian player was known as 'The Stallion'?",
+        "options": ["Daniel Amokachi", "Rashidi Yekini", "Emmanuel Emenike", "Victor Osimhen"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Nigerian to score in the UEFA Champions League?",
+        "options": ["Nwankwo Kanu", "Rashidi Yekini", "Emmanuel Amunike", "Jay-Jay Okocha"],
+        "correct": 2
+      },
+      {
+        "text": "Which Nigerian player has the most FA Cup appearances?",
+        "options": ["John Obi Mikel", "Nwankwo Kanu", "Victor Moses", "Alex Iwobi"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the coach of the Super Eagles at the 2010 World Cup?",
+        "options": ["Lars Lagerback", "Stephen Keshi", "Sunday Oliseh", "Gernot Rohr"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player was known as 'The Hero'?",
+        "options": ["Rashidi Yekini", "Jay-Jay Okocha", "Nwankwo Kanu", "Segun Odegbami"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player has the most Champions League appearances?",
+        "options": ["John Obi Mikel", "Nwankwo Kanu", "Victor Moses", "Kelechi Iheanacho"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Nigerian to win the FA Cup?",
+        "options": ["Nwankwo Kanu", "Celestine Babayaro", "John Obi Mikel", "Victor Moses"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player was known as 'The Finisher'?",
+        "options": ["Rashidi Yekini", "Segun Odegbami", "Nwankwo Kanu", "Jay-Jay Okocha"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the coach of the Super Eagles at the 2018 World Cup?",
+        "options": ["Gernot Rohr", "Sunday Oliseh", "Stephen Keshi", "Samson Siasia"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player has the most World Cup appearances?",
+        "options": ["Ahmed Musa", "Vincent Enyeama", "Joseph Yobo", "John Obi Mikel"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player was known as 'The Magician'?",
+        "options": ["Jay-Jay Okocha", "Nwankwo Kanu", "Rashidi Yekini", "Segun Odegbami"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Nigerian to win the UEFA Europa League?",
+        "options": ["John Obi Mikel", "Nwankwo Kanu", "Victor Moses", "Kelechi Iheanacho"],
+        "correct": 2
+      },
+      {
+        "text": "Which Nigerian player has the most Premier League goals?",
+        "options": ["Nwankwo Kanu", "Victor Moses", "Odion Ighalo", "Efan Ekoku"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player was known as 'The Destroyer'?",
+        "options": ["Wilfred Ndidi", "John Obi Mikel", "Mutiu Adepoju", "Sunday Oliseh"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the coach of the Super Eagles at the 2000 African Cup of Nations?",
+        "options": ["Joe Erico", "Clemens Westerhof", "Sunday Oliseh", "Stephen Keshi"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player has the most African Cup of Nations appearances?",
+        "options": ["Vincent Enyeama", "Joseph Yobo", "Jay-Jay Okocha", "Ahmed Musa"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player was known as 'The Phantom'?",
+        "options": ["Segun Odegbami", "Rashidi Yekini", "Jay-Jay Okocha", "Nwankwo Kanu"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Nigerian to play in the German Bundesliga?",
+        "options": ["Nwankwo Kanu", "Rashidi Yekini", "Emmanuel Amunike", "Jay-Jay Okocha"],
+        "correct": 2
+      },
+      {
+        "text": "Which Nigerian player has the most Serie A goals?",
+        "options": ["Victor Osimhen", "Victor Ikpeba", "Nwankwo Kanu", "Emmanuel Emenike"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player was known as 'The Enigma'?",
+        "options": ["Jay-Jay Okocha", "Nwankwo Kanu", "Rashidi Yekini", "Segun Odegbami"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the coach of the Super Eagles at the 2013 African Cup of Nations?",
+        "options": ["Stephen Keshi", "Sunday Oliseh", "Gernot Rohr", "Samson Siasia"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player has the most Ligue 1 appearances?",
+        "options": ["Victor Osimhen", "Nwankwo Kanu", "Emmanuel Amunike", "Jay-Jay Okocha"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player was known as 'The General'?",
+        "options": ["Nwankwo Kanu", "Jay-Jay Okocha", "Rashidi Yekini", "Segun Odegbami"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Nigerian to win the UEFA Champions League?",
+        "options": ["Nwankwo Kanu", "John Obi Mikel", "Victor Moses", "Celestine Babayaro"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player has the most La Liga appearances?",
+        "options": ["Nwankwo Kanu", "Victor Osimhen", "Emmanuel Emenike", "Jay-Jay Okocha"],
+        "correct": 3
+      },
+      {
+        "text": "Which Nigerian player was known as 'The Professor'?",
+        "options": ["Nwankwo Kanu", "Jay-Jay Okocha", "Rashidi Yekini", "Segun Odegbami"],
+        "correct": 1
+      },
+      {
+        "text": "Who was the coach of the Super Eagles at the 2022 World Cup?",
+        "options": ["Gernot Rohr", "Sunday Oliseh", "Stephen Keshi", "Samson Siasia"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player has the most Eredivisie appearances?",
+        "options": ["Nwankwo Kanu", "Victor Osimhen", "Emmanuel Amunike", "Jay-Jay Okocha"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player was known as 'The Titan'?",
+        "options": ["Rashidi Yekini", "Nwankwo Kanu", "Jay-Jay Okocha", "Segun Odegbami"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Nigerian to win the Belgian Pro League?",
+        "options": ["Nwankwo Kanu", "Celestine Babayaro", "John Obi Mikel", "Victor Osimhen"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player has the most Russian Premier League appearances?",
+        "options": ["Ahmed Musa", "Victor Moses", "Emmanuel Emenike", "Odion Ighalo"],
+        "correct": 0
+      },
+      {
+        "text": "Which Nigerian player was known as 'The Gladiator'?",
+        "options": ["Nwankwo Kanu", "Rashidi Yekini", "Jay-Jay Okocha", "Segun Odegbami"],
+        "correct": 1
       }
     ]
   },
@@ -633,6 +3059,81 @@
         "text": "Which Ghanaian served as the Secretary‑General of the United Nations?",
         "options": ["Kofi Annan", "Kwame Nkrumah", "John Atta Mills", "Nana Akufo-Addo"],
         "correct": 0
+      },
+      {
+        "text": "Who was the first Ghanaian to win the African Footballer of the Year award?",
+        "options": ["Abedi Pele", "Asamoah Gyan", "Michael Essien", "Tony Yeboah"],
+        "correct": 0
+      },
+      {
+        "text": "In which year did Ghana become a republic?",
+        "options": ["1960", "1957", "1963", "1969"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Ghanaian to be awarded the Nobel Prize?",
+        "options": ["Kofi Annan", "Kwame Nkrumah", "J.B. Danquah", "Nana Akufo-Addo"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the leader of the 1966 coup that overthrew Kwame Nkrumah?",
+        "options": ["Joseph Ankrah", "Emmanuel Kotoka", "Akwasi Afrifa", "Ignatius Acheampong"],
+        "correct": 0
+      },
+      {
+        "text": "The 'National Liberation Council' (NLC) overthrew Kwame Nkrumah in 1966. Who became head of state?",
+        "options": ["Joseph Ankrah", "Emmanuel Kotoka", "Akwasi Afrifa", "Ignatius Acheampong"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the Prime Minister of Ghana during the First Republic?",
+        "options": ["Kwame Nkrumah", "Kofi Busia", "J.B. Danquah", "Edward Akufo-Addo"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Big Six' were founding fathers of Ghana. Who among them later became Prime Minister?",
+        "options": ["Kwame Nkrumah", "J.B. Danquah", "Edward Akufo-Addo", "Kofi Busia"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Ghanaian to serve as the Attorney General?",
+        "options": ["Kobina Sekyi", "Kofi Awoonor", "J.B. Danquah", "Nana Akufo-Addo"],
+        "correct": 2
+      },
+      {
+        "text": "The 'Ghanaian Constitution of 1960' established what system?",
+        "options": ["Republic", "Parliamentary", "Presidential", "Military"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Chief Justice of Ghana?",
+        "options": ["Sir Arku Korsah", "J.B. Danquah", "Kofi Awoonor", "Nana Akufo-Addo"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Ghanaian Civil Service' was established in which year?",
+        "options": ["1957", "1960", "1963", "1965"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian leader introduced the 'Operation Feed Yourself' program?",
+        "options": ["Ignatius Acheampong", "Jerry Rawlings", "Kofi Busia", "John Kufuor"],
+        "correct": 0
+      },
+      {
+        "text": "The 'National Redemption Council' (NRC) was led by which leader?",
+        "options": ["Ignatius Acheampong", "Jerry Rawlings", "Kofi Busia", "Kwame Nkrumah"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Ghanaian to be elected President of the UN General Assembly?",
+        "options": ["Kofi Annan", "Kwame Nkrumah", "John Atta Mills", "Nana Akufo-Addo"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Ghanaian Constitution of 1979' established the?",
+        "options": ["Third Republic", "Fourth Republic", "Second Republic", "First Republic"],
+        "correct": 0
       }
     ],
     "geography": [
@@ -642,7 +3143,7 @@
         "correct": 0
       },
       {
-        "text": "Which lake is the largest man‑made lake in Ghana?",
+        "text": "Which lake is the largest man-made lake in Ghana?",
         "options": ["Lake Volta", "Lake Bosomtwe", "Lake Kainji", "Lake Togo"],
         "correct": 0
       },
@@ -660,110 +3161,114 @@
         "text": "What is the highest point in Ghana?",
         "options": ["Mount Afadjato", "Mount Adaklu", "Mount Gemi", "Mount Dzigbe"],
         "correct": 0
-      }
-    ],
-    "culture": [
-      // Add these 20 new questions to your Nigeria culture pool
+      },
       {
-        "text": "What is the traditional greeting among the Hausa people?",
-        "options": ["Sannu", "Kedu", "Bawo ni", "Mavo"],
+        "text": "What is the capital of the Ashanti Region?",
+        "options": ["Kumasi", "Obuasi", "Ejisu", "Mampong"],
         "correct": 0
       },
       {
-        "text": "Which dish is made from cassava and is a staple in the South‑East?",
-        "options": ["Garri", "Amala", "Fufu", "Eba"],
-        "correct": 3  // Eba is specifically from cassava (garri) in the East
-      },
-      {
-        "text": "What is the name of the traditional Yoruba two‑piece gown worn by men?",
-        "options": ["Agbada", "Danshiki", "Kente", "Buba"],
+        "text": "Which river is the longest in Ghana?",
+        "options": ["Volta", "Tano", "Ankobra", "Pra"],
         "correct": 0
       },
       {
-        "text": "The 'New Yam Festival' is celebrated primarily by which ethnic group?",
-        "options": ["Ijaw", "Yoruba", "Hausa", "Igbo"],
-        "correct": 3
-      },
-      {
-        "text": "Which ethnic group is known for the 'Okirika' fishing festival?",
-        "options": ["Ijaw", "Itsekiri", "Urhobo", "Efik"],
+        "text": "Which coastal city is known for its slave castles?",
+        "options": ["Cape Coast", "Accra", "Takoradi", "Winneba"],
         "correct": 0
       },
       {
-        "text": "What is the traditional title of the Sultan of Sokoto?",
-        "options": ["Emir", "Sultan", "Oba", "Tor Tiv"],
+        "text": "Which national park is famous for its elephants in Ghana?",
+        "options": ["Kakum National Park", "Mole National Park", "Digya National Park", "Bia National Park"],
         "correct": 1
       },
       {
-        "text": "Which traditional Nigerian dish is made from beans and plantain?",
-        "options": ["Ewa Agoyin", "Akara", "Moi Moi", "Olele"],
-        "correct": 2
-      },
-      {
-        "text": "The 'Ofala Festival' is celebrated in which state?",
-        "options": ["Imo", "Anambra", "Enugu", "Ebonyi"],
-        "correct": 1  // Ofala is in Onitsha, Anambra
-      },
-      {
-        "text": "What is the name of the traditional Igbo 'masquerade' that represents ancestral spirits?",
-        "options": ["Mmọ", "Ekpe", "Gelede", "Egungun"],
-        "correct": 0  // Mmọ is the Igbo mask
-      },
-      {
-        "text": "Which ethnic group speaks the Tiv language?",
-        "options": ["Tiv", "Idoma", "Igbira", "Jukun"],
+        "text": "What is the largest city in Ghana by population?",
+        "options": ["Accra", "Kumasi", "Tamale", "Sekondi-Takoradi"],
         "correct": 0
       },
       {
-        "text": "What is the name of the calabash instrument used by the Hausa?",
-        "options": ["Kakaki", "Talking drum", "Shekere", "Goje"],
-        "correct": 2  // Shekere is a calabash rattle (also used by other groups)
-      },
-      {
-        "text": "The 'Kakaki' trumpet is traditionally associated with which region?",
-        "options": ["Northern Nigeria", "Western Nigeria", "Eastern Nigeria", "Niger Delta"],
+        "text": "What is the name of the largest market in Ghana?",
+        "options": ["Kejetia Market", "Makola Market", "Agbogbloshie", "Kaneshie Market"],
         "correct": 0
       },
       {
-        "text": "What is the traditional wedding attire for an Igbo bride?",
-        "options": ["George wrapper and blouse", "Agbada", "Kente", "Isiagu"],
-        "correct": 0  // Typically a wrapper with lace or George
-      },
-      {
-        "text": "Which Nigerian state is famous for the 'Oyolomo' masquerade festival?",
-        "options": ["Akwa Ibom", "Cross River", "Rivers", "Delta"],
-        "correct": 1  // Cross River is known for festivals
-      },
-      {
-        "text": "What is the name of the Efik/Ibibio traditional soup made with waterleaf and periwinkle?",
-        "options": ["Afang", "Edikang Ikong", "Ogbono", "Efere"],
-        "correct": 1  // Edikang Ikong is the popular one
-      },
-      {
-        "text": "Which ethnic group uses the 'Naira' as a currency but has a traditional currency called 'Oko'?",
-        "options": ["Efik", "Yoruba", "Hausa", "Igbo"],
-        "correct": 3  // Oko is a traditional Igbo currency
-      },
-      {
-        "text": "The 'Sharo' ceremony (flogging) is a rite of passage for which group?",
-        "options": ["Ebira", "Tiv", "Idoma", "Fulani"],
-        "correct": 3  // Already mentioned in existing, but we can place it again; however to avoid duplicate we'll change to another.
-      },
-      {
-        "text": "Which Nigerian ethnic group is known for the 'Gelede' masquerade?",
-        "options": ["Hausa", "Igbo", "Yoruba", "Edo"],
-        "correct": 2
-      },
-      {
-        "text": "What is the name of the traditional Yoruba hairstyle often worn by brides?",
-        "options": ["Irun Kiko", "Corno", "Didi", "Asoebi"],
+        "text": "Which region is known for the 'Kente' cloth?",
+        "options": ["Ashanti", "Eastern", "Western", "Volta"],
         "correct": 0
       },
       {
-        "text": "Which ethnic group has the 'Iri Ji' festival to celebrate the harvest of yams?",
-        "options": ["Igbo", "Yoruba", "Ijaw", "Tiv"],
+        "text": "What is the name of the cape located in Accra?",
+        "options": ["Cape Coast", "Cape Three Points", "Osu", "Labadi"],
         "correct": 0
       },
+      {
+        "text": "Which river flows through the capital city of Ghana?",
+        "options": ["Volta", "Odaw", "Tano", "Ankobra"],
+        "correct": 1
+      },
+      {
+        "text": "What is the name of the valley in northern Ghana?",
+        "options": ["Volta Valley", "White Volta Valley", "Black Volta Valley", "Red Volta Valley"],
+        "correct": 0
+      },
+      {
+        "text": "Which national park is known for its primates in Ghana?",
+        "options": ["Kakum National Park", "Mole National Park", "Digya National Park", "Bia National Park"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the hill range in the Eastern Region?",
+        "options": ["Akwapim Hills", "Volta Hills", "Ashanti Hills", "Western Hills"],
+        "correct": 0
+      },
+      {
+        "text": "Which town is famous for the 'Kente' cloth weaving?",
+        "options": ["Kumasi", "Bonwire", "Obuasi", "Ejisu"],
+        "correct": 1
+      },
+      {
+        "text": "What is the name of the lake formed by the Akosombo Dam?",
+        "options": ["Lake Volta", "Lake Bosomtwe", "Lake Kainji", "Lake Togo"],
+        "correct": 0
+      },
+      {
+        "text": "Which region is known for its waterfalls?",
+        "options": ["Eastern Region", "Volta Region", "Ashanti Region", "Western Region"],
+        "correct": 1
+      },
+      {
+        "text": "What is the name of the largest river in Ghana?",
+        "options": ["Volta", "Tano", "Ankobra", "Pra"],
+        "correct": 0
+      },
+      {
+        "text": "Which city is the administrative capital of the Western Region?",
+        "options": ["Sekondi-Takoradi", "Cape Coast", "Kumasi", "Tamale"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the gorge near Akosombo?",
+        "options": ["Akosombo Gorge", "Volta Gorge", "Dodi Island Gorge", "Ada Gorge"],
+        "correct": 0
+      },
+      {
+        "text": "Which region is the largest by land area in Ghana?",
+        "options": ["Northern Region", "Ashanti Region", "Eastern Region", "Western Region"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the coastal area near the capital?",
+        "options": ["Labadi Beach", "Cape Coast Beach", "Takoradi Beach", "Ada Beach"],
+        "correct": 0
+      },
+      {
+        "text": "Which hill is famous for the 'Kakum National Park'?",
+        "options": ["Kakum Hills", "Volta Hills", "Akwapim Hills", "Ashanti Hills"],
+        "correct": 0
+      }
+    ],
+    "culture": [
       {
         "text": "Which festival is famous among the Ashanti people?",
         "options": ["Homowo", "Aboakyer", "Damba", "Odwira"],
@@ -787,6 +3292,81 @@
       {
         "text": "The 'Homowo' festival is celebrated by which ethnic group?",
         "options": ["Ga", "Ashanti", "Ewe", "Fante"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Ghanaian woven smock often worn by men in the northern regions?",
+        "options": ["Fugu", "Kente", "Adinkra", "Ankara"],
+        "correct": 0
+      },
+      {
+        "text": "Which dance is associated with the Ga people, especially during the Homowo festival?",
+        "options": ["Kpanlogo", "Adowa", "Bamaya", "Agbadza"],
+        "correct": 0
+      },
+      {
+        "text": "The famous 'Kente' cloth is originally associated with which Ghanaian kingdom?",
+        "options": ["Ashanti Kingdom", "Fante Confederacy", "Ga State", "Dagbon Kingdom"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian dish is made from boiled and pounded cassava and plantain?",
+        "options": ["Fufu", "Banku", "Kenkey", "Konkonte"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Damba' festival is celebrated by which ethnic group in Ghana?",
+        "options": ["Dagomba", "Ewe", "Fante", "Ga"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional dance of the Ashanti people?",
+        "options": ["Adowa", "Kpanlogo", "Bamaya", "Agbadza"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional dish of the Northern Region?",
+        "options": ["Tuwo Zaafi", "Banku", "Kenkey", "Fufu"],
+        "correct": 0
+      },
+      {
+        "text": "Which festival is celebrated in the Volta Region?",
+        "options": ["Aboakyer", "Homowo", "Damba", "Odwira"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the traditional cloth of the Fante people?",
+        "options": ["Kente", "Adinkra", "Fugu", "Batakari"],
+        "correct": 1
+      },
+      {
+        "text": "Which traditional dance is performed during the Homowo festival?",
+        "options": ["Kpanlogo", "Adowa", "Bamaya", "Agbadza"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional name for the Ashanti people's king?",
+        "options": ["Asantehene", "Osei Tutu", "Kwame Nkrumah", "Jerry Rawlings"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian ethnic group is known for the 'Adinkra' symbols?",
+        "options": ["Ashanti", "Ewe", "Ga", "Fante"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional dish of the Fante people?",
+        "options": ["Banku", "Kenkey", "Fufu", "Tuwo Zaafi"],
+        "correct": 0
+      },
+      {
+        "text": "Which festival is celebrated by the Ga people?",
+        "options": ["Homowo", "Aboakyer", "Damba", "Odwira"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the traditional dance of the Dagomba people?",
+        "options": ["Bamaya", "Kpanlogo", "Adowa", "Agbadza"],
         "correct": 0
       }
     ],
@@ -815,6 +3395,81 @@
         "text": "Who won the Vodafone Ghana Music Award for Artiste of the Year in 2023?",
         "options": ["Black Sherif", "King Promise", "KiDi", "Stonebwoy"],
         "correct": 0
+      },
+      {
+        "text": "What is the name of Ghana's most popular hip-hop duo?",
+        "options": ["R2Bees", "Bradez", "Fokn Bois", "Asaase Sound"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian musician is known as the 'Dancehall King'?",
+        "options": ["Shatta Wale", "Stonebwoy", "Samini", "Kaakie"],
+        "correct": 1
+      },
+      {
+        "text": "Who sang the hit 'Kidi'?",
+        "options": ["KiDi", "King Promise", "Kuami Eugene", "Medikal"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian actress is also a successful musician?",
+        "options": ["Yvonne Nelson", "Jackie Appiah", "Nadia Buari", "Martha Ankomah"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the annual music festival held in Accra?",
+        "options": ["Afro Nation", "Ghana Music Awards", "Chale Wote", "Abooda Fest"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Yebre' by Yaa Pono?",
+        "options": ["Yaa Pono", "Sarkodie", "Stonebwoy", "Shatta Wale"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian musician is known as 'The King of Hiplife'?",
+        "options": ["Sarkodie", "Obrafour", "Reggie Rockstone", "M.anifest"],
+        "correct": 2
+      },
+      {
+        "text": "Who is the founder of the record label 'BBnZ'?",
+        "options": ["Bice Osei Kuffour", "Sarkodie", "Stonebwoy", "Shatta Wale"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Ghanaian rapper who sang 'Walaahi'?",
+        "options": ["Sarkodie", "Medikal", "Strongman", "Kwesi Arthur"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian musician is known for the song 'Mon Bebe'?",
+        "options": ["KiDi", "King Promise", "Kuami Eugene", "Stonebwoy"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Time' by Sarkodie?",
+        "options": ["Sarkodie", "Stonebwoy", "Shatta Wale", "M.anifest"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian artist is known for 'Odo'?",
+        "options": ["KiDi", "King Promise", "Kuami Eugene", "Stonebwoy"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Take Away' by Stonebwoy?",
+        "options": ["Stonebwoy", "Sarkodie", "Shatta Wale", "Samini"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian musician is the CEO of 'Ghana Music Awards'?",
+        "options": ["Sarkodie", "Stonebwoy", "Shatta Wale", "Nana Ama McBrown"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the popular Ghanaian music group 'VIVA'?",
+        "options": ["VIVA", "R2Bees", "Bradez", "Fokn Bois"],
+        "correct": 0
       }
     ],
     "movies": [
@@ -842,6 +3497,81 @@
         "text": "Which Ghanaian actor starred in 'A Sting in a Tale'?",
         "options": ["John Dumelo", "Majid Michel", "Van Vicker", "Adjetey Anang"],
         "correct": 2
+      },
+      {
+        "text": "Who is the most awarded Ghanaian actress?",
+        "options": ["Jackie Appiah", "Yvonne Nelson", "Nadia Buari", "Martha Ankomah"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian movie features the character 'Kwame'?",
+        "options": ["The Price", "Single and Married", "Love and Marriage", "Perfect Picture"],
+        "correct": 0
+      },
+      {
+        "text": "Who directed the movie 'Azali'?",
+        "options": ["Kwabena Gyansah", "Leila Djansi", "Shirley Frimpong-Manso", "Frank Rajah"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian actor starred in 'The Perfect Picture'?",
+        "options": ["Majid Michel", "Van Vicker", "John Dumelo", "Adjetey Anang"],
+        "correct": 1
+      },
+      {
+        "text": "What is the name of the Ghanaian film about a young girl who joins a football academy?",
+        "options": ["Keteke", "Azali", "The Burial of Kojo", "Children of the Mountain"],
+        "correct": 2
+      },
+      {
+        "text": "Which Ghanaian actress is known as 'The Jewel'?",
+        "options": ["Jackie Appiah", "Yvonne Nelson", "Nadia Buari", "Martha Ankomah"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the film directed by Leila Djansi?",
+        "options": ["Sinking Sands", "Azali", "The Burial of Kojo", "Keteke"],
+        "correct": 0
+      },
+      {
+        "text": "Who starred in 'Chasing Hope'?",
+        "options": ["Yvonne Nelson", "Jackie Appiah", "Nadia Buari", "Martha Ankomah"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian movie is known for its soundtrack?",
+        "options": ["Azali", "The Burial of Kojo", "Keteke", "Sinking Sands"],
+        "correct": 1
+      },
+      {
+        "text": "Who directed 'The Perfect Picture'?",
+        "options": ["Shirley Frimpong-Manso", "Leila Djansi", "Frank Rajah", "Blitz Bazawule"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian actress starred in 'The Box'?",
+        "options": ["Yvonne Nelson", "Jackie Appiah", "Nadia Buari", "Martha Ankomah"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Ghanaian film about a young girl who discovers her true identity?",
+        "options": ["Azali", "The Burial of Kojo", "Keteke", "Sinking Sands"],
+        "correct": 0
+      },
+      {
+        "text": "Who starred in 'Love and Marriage'?",
+        "options": ["Majid Michel", "Van Vicker", "John Dumelo", "Yvonne Nelson"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian actress is known for 'The Queen'?",
+        "options": ["Jackie Appiah", "Yvonne Nelson", "Nadia Buari", "Martha Ankomah"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the film about a young man who struggles with fame?",
+        "options": ["Single and Married", "Love and Marriage", "The Price", "Perfect Picture"],
+        "correct": 0
       }
     ],
     "football": [
@@ -851,7 +3581,7 @@
         "correct": 0
       },
       {
-        "text": "Who is Ghana's all‑time top scorer?",
+        "text": "Who is Ghana's all-time top scorer?",
         "options": ["Asamoah Gyan", "Abedi Pele", "Tony Yeboah", "André Ayew"],
         "correct": 0
       },
@@ -868,6 +3598,81 @@
       {
         "text": "In which year did Ghana reach the quarterfinals of the FIFA World Cup?",
         "options": ["2010", "2006", "2014", "2018"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian player was known as the 'Baby Jet'?",
+        "options": ["Asamoah Gyan", "Abedi Pele", "Michael Essien", "Sulley Muntari"],
+        "correct": 0
+      },
+      {
+        "text": "Which club did Michael Essien play for in the Premier League?",
+        "options": ["Chelsea", "Manchester United", "Arsenal", "Liverpool"],
+        "correct": 0
+      },
+      {
+        "text": "Who is the current captain of the Black Stars?",
+        "options": ["André Ayew", "Thomas Partey", "Jordan Ayew", "Daniel Amartey"],
+        "correct": 0
+      },
+      {
+        "text": "In which year did Ghana win the Africa Cup of Nations last?",
+        "options": ["1982", "1963", "1965", "1978"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian player scored a hat-trick in the 2014 World Cup?",
+        "options": ["Asamoah Gyan", "André Ayew", "Jordan Ayew", "Thomas Partey"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian player is known as the 'Tornado'?",
+        "options": ["Asamoah Gyan", "Abedi Pele", "Tony Yeboah", "Michael Essien"],
+        "correct": 2
+      },
+      {
+        "text": "Who was the coach of the Black Stars in 2010?",
+        "options": ["Milovan Rajevac", "Avram Grant", "James Kwesi Appiah", "C.K. Akonnor"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian player scored against USA in the 2010 World Cup?",
+        "options": ["Asamoah Gyan", "André Ayew", "Jordan Ayew", "Thomas Partey"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian club has won the most CAF Champions League titles?",
+        "options": ["Asante Kotoko", "Hearts of Oak", "Aduana Stars", "Medeama"],
+        "correct": 1
+      },
+      {
+        "text": "Who was the first Ghanaian to win the UEFA Champions League?",
+        "options": ["Michael Essien", "Abedi Pele", "Tony Yeboah", "Asamoah Gyan"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian player is known as the 'Ghanaian Messi'?",
+        "options": ["André Ayew", "Jordan Ayew", "Thomas Partey", "Samuel Inkoom"],
+        "correct": 3
+      },
+      {
+        "text": "Who is the all-time top scorer for the Black Stars?",
+        "options": ["Asamoah Gyan", "Abedi Pele", "Tony Yeboah", "André Ayew"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian goalkeeper was known as the 'The Cat'?",
+        "options": ["Richard Kingson", "Adam Kwarasey", "Fatau Dauda", "Joseph Addo"],
+        "correct": 0
+      },
+      {
+        "text": "In which year did Ghana win the Africa Cup of Nations first?",
+        "options": ["1963", "1965", "1978", "1982"],
+        "correct": 0
+      },
+      {
+        "text": "Which Ghanaian player scored the most goals in a single World Cup tournament?",
+        "options": ["Asamoah Gyan", "André Ayew", "Jordan Ayew", "Thomas Partey"],
         "correct": 0
       }
     ]
@@ -898,6 +3703,81 @@
         "text": "Which Kenyan leader served as the 3rd President?",
         "options": ["Mwai Kibaki", "Daniel arap Moi", "Uhuru Kenyatta", "William Ruto"],
         "correct": 0
+      },
+      {
+        "text": "What was the name of the first president of Kenya after independence?",
+        "options": ["Jomo Kenyatta", "Daniel arap Moi", "Mwai Kibaki", "Uhuru Kenyatta"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan athlete won the 800m gold at the 2016 Olympics?",
+        "options": ["David Rudisha", "Ezekiel Kemboi", "Asbel Kiprop", "Conseslus Kipruto"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first female Vice President of Kenya?",
+        "options": ["Wangari Maathai", "Martha Karua", "Kalonzo Musyoka", "Charity Ngilu"],
+        "correct": 1
+      },
+      {
+        "text": "In which year did the new constitution of Kenya come into effect?",
+        "options": ["2010", "2005", "2013", "2017"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan writer is known for his novel 'Petals of Blood'?",
+        "options": ["Ngũgĩ wa Thiong'o", "Meja Mwangi", "Grace Ogot", "Binyavanga Wainaina"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Kenyan to serve as the Vice President?",
+        "options": ["Jomo Kenyatta", "Daniel arap Moi", "Mwai Kibaki", "Uhuru Kenyatta"],
+        "correct": 1
+      },
+      {
+        "text": "The 'Kenya African National Union' (KANU) was founded in which year?",
+        "options": ["1960", "1963", "1965", "1970"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Kenyan to win a Nobel Prize?",
+        "options": ["Wangari Maathai", "Ngũgĩ wa Thiong'o", "Jomo Kenyatta", "Daniel arap Moi"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Kenyan Constitution of 2010' established which system?",
+        "options": ["Presidential System", "Parliamentary System", "Republic", "Monarchy"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Kenyan to serve as the Chief Justice?",
+        "options": ["Sir James Farrell", "Jomo Kenyatta", "Daniel arap Moi", "Mwai Kibaki"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Kenyan National Assembly' was established in which year?",
+        "options": ["1963", "1960", "1965", "1970"],
+        "correct": 0
+      },
+      {
+        "text": "Who led the 'Kenya African National Union' (KANU) in 1960?",
+        "options": ["Jomo Kenyatta", "Daniel arap Moi", "Mwai Kibaki", "Uhuru Kenyatta"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Kenyan Independence Day' is celebrated on which date?",
+        "options": ["December 12", "June 1", "October 10", "January 1"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Kenyan to be elected as the Chairperson of the African Union?",
+        "options": ["Uhuru Kenyatta", "Jomo Kenyatta", "Daniel arap Moi", "Mwai Kibaki"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Kenyan Constitution of 1963' established the?",
+        "options": ["Dominion", "Republic", "Presidential System", "Parliamentary System"],
+        "correct": 0
       }
     ],
     "geography": [
@@ -924,6 +3804,81 @@
       {
         "text": "What is the coastal city known for its historical fort Jesus?",
         "options": ["Mombasa", "Malindi", "Lamu", "Kilifi"],
+        "correct": 0
+      },
+      {
+        "text": "Which river is the longest in Kenya?",
+        "options": ["Tana River", "Athi River", "Galana River", "Ewaso Ng'iro"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the desert in northern Kenya?",
+        "options": ["Chalbi Desert", "Kalahari Desert", "Namib Desert", "Sahara Desert"],
+        "correct": 0
+      },
+      {
+        "text": "Which mountain is the second highest in Kenya?",
+        "options": ["Mount Elgon", "Mount Kilimanjaro", "Mount Longonot", "Mount Suswa"],
+        "correct": 0
+      },
+      {
+        "text": "What is the largest city in Kenya after Nairobi?",
+        "options": ["Mombasa", "Kisumu", "Nakuru", "Eldoret"],
+        "correct": 0
+      },
+      {
+        "text": "Which lake is known for its flamingos?",
+        "options": ["Lake Nakuru", "Lake Naivasha", "Lake Elementaita", "Lake Bogoria"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the valley in the Great Rift Valley?",
+        "options": ["Rift Valley", "Central Valley", "Great Valley", "Kenya Valley"],
+        "correct": 0
+      },
+      {
+        "text": "Which national park is the oldest in Kenya?",
+        "options": ["Nairobi National Park", "Tsavo National Park", "Maasai Mara National Reserve", "Amboseli National Park"],
+        "correct": 1
+      },
+      {
+        "text": "What is the name of the mountain range in eastern Kenya?",
+        "options": ["Taita Hills", "Aberdare Range", "Mount Kenya", "Mount Elgon"],
+        "correct": 0
+      },
+      {
+        "text": "Which river flows through the capital city of Kenya?",
+        "options": ["Nairobi River", "Tana River", "Athi River", "Galana River"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the lake in the Rift Valley?",
+        "options": ["Lake Naivasha", "Lake Nakuru", "Lake Bogoria", "Lake Elementaita"],
+        "correct": 0
+      },
+      {
+        "text": "Which national park is known for its elephants?",
+        "options": ["Amboseli National Park", "Tsavo National Park", "Maasai Mara National Reserve", "Samburu National Reserve"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the island in Lake Victoria?",
+        "options": ["Rusinga Island", "Mfangano Island", "Rusinga", "Mfangano"],
+        "correct": 0
+      },
+      {
+        "text": "Which river forms the boundary between Kenya and Tanzania?",
+        "options": ["Mara River", "Tana River", "Athi River", "Galana River"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the national park in central Kenya?",
+        "options": ["Mount Kenya National Park", "Aberdare National Park", "Nairobi National Park", "Tsavo National Park"],
+        "correct": 0
+      },
+      {
+        "text": "Which lake is the deepest in Kenya?",
+        "options": ["Lake Turkana", "Lake Victoria", "Lake Naivasha", "Lake Nakuru"],
         "correct": 0
       }
     ],
@@ -952,6 +3907,81 @@
         "text": "What is the name of the Maasai traditional jumping dance?",
         "options": ["Adumu", "Isikuti", "Chakacha", "Mwomboko"],
         "correct": 0
+      },
+      {
+        "text": "What is the traditional attire of the Kikuyu people?",
+        "options": ["Muthuru", "Kikoi", "Kanga", "Leso"],
+        "correct": 0
+      },
+      {
+        "text": "Which festival is celebrated by the Swahili people in Lamu?",
+        "options": ["Lamu Cultural Festival", "Mombasa Carnival", "Kenya Music Festival", "Lake Turkana Festival"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the traditional Kalenjin dance?",
+        "options": ["Isikuti", "Adumu", "Chakacha", "Mdundiko"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan community is known for its soapstone carvings?",
+        "options": ["Kisii", "Kikuyu", "Luo", "Maasai"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional food of the Maasai?",
+        "options": ["Meat and milk", "Ugali", "Nyama Choma", "Githeri"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the traditional Luo dance?",
+        "options": ["Isikuti", "Adumu", "Chakacha", "Mdundiko"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan ethnic group is known for the 'Mombasa Carnival'?",
+        "options": ["Swahili", "Kikuyu", "Luo", "Maasai"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional attire of the Maasai?",
+        "options": ["Shuka", "Kanga", "Leso", "Kikoi"],
+        "correct": 0
+      },
+      {
+        "text": "Which festival is celebrated in the coastal region?",
+        "options": ["Lamu Cultural Festival", "Mombasa Carnival", "Kenya Music Festival", "Lake Turkana Festival"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the traditional Kalenjin instrument?",
+        "options": ["Nyatiti", "Orutu", "Kigamba", "Litungu"],
+        "correct": 2
+      },
+      {
+        "text": "Which Kenyan ethnic group is known for the 'Chakacha' dance?",
+        "options": ["Swahili", "Kikuyu", "Luo", "Maasai"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional food of the Kikuyu?",
+        "options": ["Githeri", "Ugali", "Nyama Choma", "Sukuma Wiki"],
+        "correct": 0
+      },
+      {
+        "text": "Which festival is celebrated by the Maasai?",
+        "options": ["Eunoto", "Lamu Cultural Festival", "Mombasa Carnival", "Kenya Music Festival"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the traditional Luo dance?",
+        "options": ["Isikuti", "Adumu", "Chakacha", "Mdundiko"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan ethnic group is known for the 'Nyatiti' instrument?",
+        "options": ["Luo", "Kikuyu", "Maasai", "Kalenjin"],
+        "correct": 0
       }
     ],
     "pop": [
@@ -979,6 +4009,81 @@
         "text": "Who won the Best African Act at the 2021 MTV Europe Music Awards?",
         "options": ["Bien", "Sauti Sol", "Nyashinski", "Khaligraph Jones"],
         "correct": 3
+      },
+      {
+        "text": "Which Kenyan musician is known as 'The King of Gengeton'?",
+        "options": ["Bahati", "Otile Brown", "Arrow Bwoy", "Willy Paul"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang the hit 'Don't Call Me Back'?",
+        "options": ["Sauti Sol", "Nyashinski", "Otile Brown", "Gilad"],
+        "correct": 1
+      },
+      {
+        "text": "Which Kenyan rapper was featured in the song 'Nairobae'?",
+        "options": ["Khaligraph Jones", "Octopizzo", "King Kaka", "Blen Blinks"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the annual music festival in Nairobi?",
+        "options": ["Koroga Festival", "Afro Nation", "Lake of Stars", "Sauti za Busara"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan singer is known for 'Lifestyle'?",
+        "options": ["Nyashinski", "Otile Brown", "Bahati", "Gilad"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Risky' by Nyashinski?",
+        "options": ["Nyashinski", "Otile Brown", "Bahati", "Gilad"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan musician is known for 'Baby'?",
+        "options": ["Otile Brown", "Nyashinski", "Bahati", "Sauti Sol"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Puuh' by Otile Brown?",
+        "options": ["Otile Brown", "Nyashinski", "Bahati", "Sauti Sol"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan artist is known as 'The Maestro'?",
+        "options": ["Khaligraph Jones", "Octopizzo", "King Kaka", "Blen Blinks"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Sipotei' by Sauti Sol?",
+        "options": ["Sauti Sol", "Nyashinski", "Otile Brown", "Bahati"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan musician is known for 'Malaika'?",
+        "options": ["Bahati", "Otile Brown", "Nyashinski", "Sauti Sol"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Anasa' by Bahati?",
+        "options": ["Bahati", "Otile Brown", "Nyashinski", "Sauti Sol"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan rapper is known as 'The Kenyan Hustle'?",
+        "options": ["King Kaka", "Khaligraph Jones", "Octopizzo", "Blen Blinks"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Wanjiru' by Nyashinski?",
+        "options": ["Nyashinski", "Otile Brown", "Bahati", "Sauti Sol"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan artist is known for 'Sitolia'?",
+        "options": ["Otile Brown", "Nyashinski", "Bahati", "Sauti Sol"],
+        "correct": 0
       }
     ],
     "movies": [
@@ -1006,6 +4111,81 @@
         "text": "Who directed the award-winning film 'Rafiki'?",
         "options": ["Wanuri Kahiu", "Mbithi Masya", "Judy Kibinge", "Likarion Wainaina"],
         "correct": 0
+      },
+      {
+        "text": "Which Kenyan actor starred in 'The First Grader'?",
+        "options": ["Oliver Litondo", "John Sibi-Okumu", "Godfrey Ojiambo", "Peter King"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Kenyan film about a young girl who dreams of becoming a pilot?",
+        "options": ["Kati Kati", "Supa Modo", "Nairobi Half Life", "The Broken Melody"],
+        "correct": 1
+      },
+      {
+        "text": "Which Kenyan actress is known for her role in 'Rafiki'?",
+        "options": ["Samantha Mugatsia", "Sheila Munyiva", "Mkamzee Mwatela", "Lupita Nyong'o"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Kenyan film that won the Best Director award at the Africa Movie Academy Awards?",
+        "options": ["Kati Kati", "Supa Modo", "Nairobi Half Life", "Rafiki"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan film is about a young man who returns to his village and discovers a secret?",
+        "options": ["The Last Village", "Kati Kati", "Supa Modo", "Nairobi Half Life"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan actress is known as 'The Queen of Kenyan Cinema'?",
+        "options": ["Lupita Nyong'o", "Samantha Mugatsia", "Sheila Munyiva", "Mkamzee Mwatela"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the film directed by Judy Kibinge?",
+        "options": ["Something Necessary", "Rafiki", "Kati Kati", "Supa Modo"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan actor starred in 'Nairobi Half Life'?",
+        "options": ["Joseph Wairimu", "Mike Mbuvi", "Oluoch Otieno", "John Sibi-Okumu"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the Kenyan film about a young girl who becomes a photographer?",
+        "options": ["Supa Modo", "Rafiki", "Kati Kati", "Nairobi Half Life"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan actress starred in 'The Broken Melody'?",
+        "options": ["Lupita Nyong'o", "Samantha Mugatsia", "Sheila Munyiva", "Mkamzee Mwatela"],
+        "correct": 0
+      },
+      {
+        "text": "Who directed 'Supa Modo'?",
+        "options": ["Likarion Wainaina", "Wanuri Kahiu", "Mbithi Masya", "Judy Kibinge"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan film is about a young man who struggles with his identity?",
+        "options": ["Lusala", "Kati Kati", "Supa Modo", "Nairobi Half Life"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the film about the life of a Kenyan politician?",
+        "options": ["The Last Village", "Kati Kati", "Supa Modo", "Nairobi Half Life"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan actress is known for her role in 'Lusala'?",
+        "options": ["Lupita Nyong'o", "Samantha Mugatsia", "Sheila Munyiva", "Mkamzee Mwatela"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the film that won the Audience Award at the Berlin Film Festival?",
+        "options": ["Rafiki", "Kati Kati", "Supa Modo", "Nairobi Half Life"],
+        "correct": 0
       }
     ],
     "football": [
@@ -1015,12 +4195,12 @@
         "correct": 0
       },
       {
-        "text": "Who is Kenya's all‑time top scorer?",
+        "text": "Who is Kenya's all-time top scorer?",
         "options": ["Dennis Oliech", "Michael Olunga", "Allan Wanga", "Musa Otieno"],
         "correct": 0
       },
       {
-        "text": "Which Kenyan player scored a hat‑trick at the 2019 AFCON?",
+        "text": "Which Kenyan player scored a hat-trick at the 2019 AFCON?",
         "options": ["Michael Olunga", "Victor Wanyama", "Eric Ouma", "John Ndirangu"],
         "correct": 0
       },
@@ -1032,6 +4212,81 @@
       {
         "text": "Which Kenyan midfielder captained the national team and played for Tottenham Hotspur?",
         "options": ["Victor Wanyama", "McDonald Mariga", "Dennis Oliech", "Michael Olunga"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan player was the first to score in the English Premier League?",
+        "options": ["Victor Wanyama", "McDonald Mariga", "Ayub Timbe", "Francis Kahata"],
+        "correct": 0
+      },
+      {
+        "text": "What is the nickname of the Kenyan national football team?",
+        "options": ["Harambee Stars", "Simba", "Rising Stars", "National Team"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan club is known as the 'Ingwe'?",
+        "options": ["AFC Leopards", "Gor Mahia", "Tusker", "Ulinzi Stars"],
+        "correct": 0
+      },
+      {
+        "text": "In which year did Kenya qualify for the Africa Cup of Nations?",
+        "options": ["2004", "2006", "2008", "2010"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan player was the top scorer in the 2019 Africa Cup of Nations qualifiers?",
+        "options": ["Michael Olunga", "Dennis Oliech", "Allan Wanga", "John Ndirangu"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan player is known as the 'Kenyan Messi'?",
+        "options": ["Michael Olunga", "Victor Wanyama", "Dennis Oliech", "Allan Wanga"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the coach of the Harambee Stars in 2019?",
+        "options": ["Sebastian Migne", "Francis Kimanzi", "Jacob Mulee", "Hassan Oktay"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan player scored against Togo in the 2019 AFCON?",
+        "options": ["Michael Olunga", "Victor Wanyama", "Dennis Oliech", "Allan Wanga"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan club has won the most KPL titles?",
+        "options": ["Gor Mahia", "AFC Leopards", "Tusker", "Ulinzi Stars"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Kenyan to play in the English Premier League?",
+        "options": ["Victor Wanyama", "McDonald Mariga", "Ayub Timbe", "Francis Kahata"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan player is known as the 'Kenyan Star'?",
+        "options": ["Michael Olunga", "Victor Wanyama", "Dennis Oliech", "Allan Wanga"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan goalkeeper holds the record for most appearances?",
+        "options": ["Arnold Origi", "Mahmoud Abbas", "Patrick Matasi", "Ian Otieno"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan club is known as the 'Kogalo'?",
+        "options": ["Gor Mahia", "AFC Leopards", "Tusker", "Ulinzi Stars"],
+        "correct": 0
+      },
+      {
+        "text": "Who is the all-time top scorer for the Harambee Stars?",
+        "options": ["Dennis Oliech", "Michael Olunga", "Allan Wanga", "Musa Otieno"],
+        "correct": 0
+      },
+      {
+        "text": "Which Kenyan player was the first to score in the UEFA Champions League?",
+        "options": ["Victor Wanyama", "McDonald Mariga", "Ayub Timbe", "Francis Kahata"],
         "correct": 0
       }
     ]
@@ -1054,13 +4309,88 @@
         "correct": 0
       },
       {
-        "text": "What was the name of the anti‑apartheid movement that used economic pressure?",
+        "text": "What was the name of the anti-apartheid movement that used economic pressure?",
         "options": ["Disinvestment Campaign", "Defiance Campaign", "Freedom Charter", "Sharpeville Campaign"],
         "correct": 0
       },
       {
         "text": "Which famous South African activist was awarded the Nobel Peace Prize along with Nelson Mandela?",
         "options": ["F.W. de Klerk", "Desmond Tutu", "Oliver Tambo", "Walter Sisulu"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first woman to be elected as the President of the ANC Women's League?",
+        "options": ["Winnie Mandela", "Albertina Sisulu", "Lillian Ngoyi", "Ruth First"],
+        "correct": 1
+      },
+      {
+        "text": "In which year did the 'Soweto Uprising' take place?",
+        "options": ["1976", "1980", "1985", "1990"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the founder of the Pan Africanist Congress (PAC)?",
+        "options": ["Robert Sobukwe", "Steve Biko", "Nelson Mandela", "Oliver Tambo"],
+        "correct": 0
+      },
+      {
+        "text": "What was the name of the policy that segregated the population into racial groups?",
+        "options": ["Apartheid", "Segregation", "Discrimination", "Bantustan"],
+        "correct": 0
+      },
+      {
+        "text": "Which famous South African musician was a vocal anti-apartheid activist?",
+        "options": ["Miriam Makeba", "Brenda Fassie", "Hugh Masekela", "Lucky Dube"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first president of the Republic of South Africa?",
+        "options": ["Nelson Mandela", "Thabo Mbeki", "Jacob Zuma", "Cyril Ramaphosa"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Freedom Charter' was adopted in which year?",
+        "options": ["1955", "1960", "1965", "1970"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the leader of the African National Congress (ANC) in 1960?",
+        "options": ["Nelson Mandela", "Oliver Tambo", "Walter Sisulu", "Albert Luthuli"],
+        "correct": 0
+      },
+      {
+        "text": "The 'Sharpeville Massacre' occurred in which year?",
+        "options": ["1960", "1963", "1965", "1970"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first South African to be awarded the Nobel Peace Prize?",
+        "options": ["Albert Luthuli", "Nelson Mandela", "Desmond Tutu", "F.W. de Klerk"],
+        "correct": 0
+      },
+      {
+        "text": "The 'South African Constitution of 1996' established the?",
+        "options": ["Republic", "Parliamentary System", "Presidential System", "Monarchy"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first Chief Justice of South Africa?",
+        "options": ["Sir James Rose-Innes", "Nelson Mandela", "Desmond Tutu", "F.W. de Klerk"],
+        "correct": 0
+      },
+      {
+        "text": "The 'South African National Assembly' was established in which year?",
+        "options": ["1994", "1996", "1998", "2000"],
+        "correct": 0
+      },
+      {
+        "text": "Who led the 'Defiance Campaign' in 1952?",
+        "options": ["Nelson Mandela", "Oliver Tambo", "Walter Sisulu", "Albert Luthuli"],
+        "correct": 0
+      },
+      {
+        "text": "The 'South African Truth and Reconciliation Commission' was established in which year?",
+        "options": ["1995", "1996", "1997", "1998"],
         "correct": 0
       }
     ],
@@ -1089,6 +4419,81 @@
         "text": "Which province is known as the 'Rainbow Province'?",
         "options": ["Gauteng", "KwaZulu-Natal", "Western Cape", "Mpumalanga"],
         "correct": 1
+      },
+      {
+        "text": "What is the highest point in South Africa?",
+        "options": ["Mafadi", "Table Mountain", "Chapman's Peak", "Lion's Head"],
+        "correct": 0
+      },
+      {
+        "text": "Which desert is located in South Africa?",
+        "options": ["Kalahari", "Namib", "Sahara", "Atacama"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the famous botanical garden in Cape Town?",
+        "options": ["Kirstenbosch", "Walter Sisulu", "Pretoria", "Johannesburg"],
+        "correct": 0
+      },
+      {
+        "text": "Which city is known as the 'City of Gold'?",
+        "options": ["Johannesburg", "Pretoria", "Cape Town", "Durban"],
+        "correct": 0
+      },
+      {
+        "text": "What is the largest lake in South Africa?",
+        "options": ["Lake Chrissie", "Lake Sibhayi", "Lake St Lucia", "Lake Fundudzi"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the mountain range in the Eastern Cape?",
+        "options": ["Drakensberg", "Magaliesberg", "Langeberg", "Swartberg"],
+        "correct": 0
+      },
+      {
+        "text": "Which river forms the border between South Africa and Namibia?",
+        "options": ["Orange River", "Vaal River", "Limpopo River", "Tugela River"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the bay in Cape Town?",
+        "options": ["Table Bay", "False Bay", "Algoa Bay", "Saldanha Bay"],
+        "correct": 0
+      },
+      {
+        "text": "Which province is the largest by land area?",
+        "options": ["Northern Cape", "Eastern Cape", "Western Cape", "KwaZulu-Natal"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the island where Nelson Mandela was imprisoned?",
+        "options": ["Robben Island", "Robben Island", "Alcatraz", "Gough Island"],
+        "correct": 0
+      },
+      {
+        "text": "Which river flows through the capital city of South Africa?",
+        "options": ["Vaal River", "Orange River", "Limpopo River", "Tugela River"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the national park in the Eastern Cape?",
+        "options": ["Addo Elephant National Park", "Kruger National Park", "Table Mountain National Park", "Hluhluwe-Imfolozi"],
+        "correct": 0
+      },
+      {
+        "text": "Which province is known for its vineyards?",
+        "options": ["Western Cape", "Eastern Cape", "Northern Cape", "KwaZulu-Natal"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the mountain range in the Cape Town area?",
+        "options": ["Table Mountain", "Drakensberg", "Magaliesberg", "Langeberg"],
+        "correct": 0
+      },
+      {
+        "text": "Which river forms the boundary between South Africa and Botswana?",
+        "options": ["Limpopo River", "Orange River", "Vaal River", "Tugela River"],
+        "correct": 0
       }
     ],
     "culture": [
@@ -1115,6 +4520,81 @@
       {
         "text": "Which language is the most widely spoken in South Africa?",
         "options": ["Zulu", "Xhosa", "Afrikaans", "English"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional headwear of married Zulu women?",
+        "options": ["Isicholo", "Inkehli", "Iqhiya", "Umqhele"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African ethnic group is known for their colorful blankets?",
+        "options": ["Basotho", "Zulu", "Xhosa", "Venda"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the traditional South African meat sausage?",
+        "options": ["Boerewors", "Biltong", "Droëwors", "Rusks"],
+        "correct": 0
+      },
+      {
+        "text": "Which dance originated in the gold mines of South Africa?",
+        "options": ["Gumboot", "Pantsula", "Indlamu", "Mbaqanga"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the annual music festival held in Grahamstown?",
+        "options": ["National Arts Festival", "Oppikoppi", "Splashy Fen", "Klein Karoo"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional dress of the Xhosa people?",
+        "options": ["Shweshwe", "Isicholo", "Kente", "Agbada"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African dish is made from meat and spices?",
+        "options": ["Biltong", "Pap", "Bunny Chow", "Bobotie"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the traditional Zulu dance?",
+        "options": ["Indlamu", "Pantsula", "Gumboot", "Mbaqanga"],
+        "correct": 0
+      },
+      {
+        "text": "Which festival celebrates the heritage of the Afrikaans people?",
+        "options": ["Klein Karoo Nasionale Kunstefees", "Oppikoppi", "Splashy Fen", "Coon Carnival"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional food of the Zulu people?",
+        "options": ["Pap", "Biltong", "Bunny Chow", "Bobotie"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African ethnic group is known for the 'Pantsula' dance?",
+        "options": ["Zulu", "Xhosa", "Basotho", "Venda"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the traditional Zulu headwear?",
+        "options": ["Isicholo", "Inkehli", "Iqhiya", "Umqhele"],
+        "correct": 0
+      },
+      {
+        "text": "Which festival is celebrated in the Cape Town area?",
+        "options": ["Coon Carnival", "Klein Karoo Nasionale Kunstefees", "Oppikoppi", "Splashy Fen"],
+        "correct": 0
+      },
+      {
+        "text": "What is the traditional food of the Xhosa people?",
+        "options": ["Pap", "Biltong", "Bunny Chow", "Bobotie"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African ethnic group is known for the 'Gumboot' dance?",
+        "options": ["Zulu", "Xhosa", "Basotho", "Venda"],
         "correct": 0
       }
     ],
@@ -1143,6 +4623,81 @@
         "text": "Who sang 'Osama' featuring Kwesta?",
         "options": ["Kamo Mphela", "Zakes Bantwini", "Nomcebo Zikode", "Makhadzi"],
         "correct": 0
+      },
+      {
+        "text": "Which South African musician is known as 'The Queen of Afro Pop'?",
+        "options": ["Yvonne Chaka Chaka", "Brenda Fassie", "Miriam Makeba", "Thandiswa Mazwai"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang the hit 'Vula Vala'?",
+        "options": ["DJ Maphorisa", "Kabza De Small", "Master KG", "Prince Kaybee"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African rapper is known for the song 'All Eyes On Me'?",
+        "options": ["AKA", "Cassper Nyovest", "Nasty C", "Kwesta"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the popular South African house music genre?",
+        "options": ["Amapiano", "Gqom", "Kwaito", "House"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African singer is known as 'Mama Africa'?",
+        "options": ["Miriam Makeba", "Brenda Fassie", "Yvonne Chaka Chaka", "Thandiswa Mazwai"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Kwa Ngwe' by DJ Maphorisa?",
+        "options": ["DJ Maphorisa", "Kabza De Small", "Master KG", "Prince Kaybee"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African musician is known for 'Amapiano'?",
+        "options": ["Kabza De Small", "DJ Maphorisa", "Master KG", "Prince Kaybee"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Ezimnyama' by DJ Maphorisa?",
+        "options": ["DJ Maphorisa", "Kabza De Small", "Master KG", "Prince Kaybee"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African rapper is known as 'The Hustler'?",
+        "options": ["Cassper Nyovest", "AKA", "Nasty C", "Kwesta"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Ngicela' by Zakes Bantwini?",
+        "options": ["Zakes Bantwini", "DJ Maphorisa", "Kabza De Small", "Master KG"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African musician is known for 'Kwaito'?",
+        "options": ["Brenda Fassie", "Miriam Makeba", "Yvonne Chaka Chaka", "Thandiswa Mazwai"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Summer' by Cassper Nyovest?",
+        "options": ["Cassper Nyovest", "AKA", "Nasty C", "Kwesta"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African rapper is known for 'King of the Underground'?",
+        "options": ["Nasty C", "Cassper Nyovest", "AKA", "Kwesta"],
+        "correct": 0
+      },
+      {
+        "text": "Who sang 'Baby Girl' by AKA?",
+        "options": ["AKA", "Cassper Nyovest", "Nasty C", "Kwesta"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African musician is known for 'The Best'?",
+        "options": ["Brenda Fassie", "Miriam Makeba", "Yvonne Chaka Chaka", "Thandiswa Mazwai"],
+        "correct": 0
       }
     ],
     "movies": [
@@ -1170,6 +4725,81 @@
         "text": "Which South African actress played the lead in 'The Woman King'?",
         "options": ["Thuso Mbedu", "Nomzamo Mbatha", "Terry Pheto", "Charlize Theron"],
         "correct": 0
+      },
+      {
+        "text": "Which South African film is about a young boy who finds a stolen car?",
+        "options": ["Tsotsi", "District 9", "Yesterday", "The Gods Must Be Crazy"],
+        "correct": 0
+      },
+      {
+        "text": "Who directed the movie 'The Gods Must Be Crazy'?",
+        "options": ["Jamie Uys", "Neill Blomkamp", "Gavin Hood", "Darrell Roodt"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African actor is known for his role in 'Black Panther'?",
+        "options": ["John Kani", "Atandwa Kani", "Connie Chiume", "Thuso Mbedu"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the South African film about a young girl who dreams of becoming a boxer?",
+        "options": ["Moffie", "The Wound", "Ayanda", "Kite"],
+        "correct": 2
+      },
+      {
+        "text": "Which South African actress won an Academy Award for her role in 'Monster'?",
+        "options": ["Charlize Theron", "Thuso Mbedu", "Nomzamo Mbatha", "Terry Pheto"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African film is about a young girl who becomes a photographer?",
+        "options": ["Ayanda", "Tsotsi", "District 9", "Yesterday"],
+        "correct": 0
+      },
+      {
+        "text": "Who directed 'Tsotsi'?",
+        "options": ["Gavin Hood", "Neill Blomkamp", "Darrell Roodt", "Oliver Schmitz"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African actress starred in 'The Wound'?",
+        "options": ["Thuso Mbedu", "Nomzamo Mbatha", "Terry Pheto", "Charlize Theron"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the film about a young man who discovers his true identity?",
+        "options": ["Tsotsi", "District 9", "Yesterday", "The Gods Must Be Crazy"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African actor starred in 'The Gods Must Be Crazy'?",
+        "options": ["Marius Weyers", "John Kani", "Terry Pheto", "Connie Chiume"],
+        "correct": 0
+      },
+      {
+        "text": "Who directed 'Yesterday'?",
+        "options": ["Darrell Roodt", "Gavin Hood", "Neill Blomkamp", "Oliver Schmitz"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African film is about a young boy who becomes a soccer star?",
+        "options": ["The Wound", "Moffie", "Ayanda", "Kite"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the film about a young man who becomes a gangster?",
+        "options": ["Tsotsi", "District 9", "Yesterday", "The Gods Must Be Crazy"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African actress is known for her role in 'The Wound'?",
+        "options": ["Thuso Mbedu", "Nomzamo Mbatha", "Terry Pheto", "Charlize Theron"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the film about a young woman who fights for her rights?",
+        "options": ["Ayanda", "Tsotsi", "District 9", "Yesterday"],
+        "correct": 0
       }
     ],
     "football": [
@@ -1179,7 +4809,7 @@
         "correct": 0
       },
       {
-        "text": "Who is South Africa's all‑time top scorer?",
+        "text": "Who is South Africa's all-time top scorer?",
         "options": ["Benni McCarthy", "Shaun Bartlett", "Katlego Mphela", "Siphiwe Tshabalala"],
         "correct": 0
       },
@@ -1197,109 +4827,336 @@
         "text": "Who scored the famous goal for South Africa in the 2010 World Cup?",
         "options": ["Siphiwe Tshabalala", "Kagiso Dikgacoi", "Steven Pienaar", "Teko Modise"],
         "correct": 0
+      },
+      {
+        "text": "Which South African player was known as 'The Kaiser'?",
+        "options": ["Kaizer Motaung", "Jomo Sono", "Lucas Radebe", "Doctor Khumalo"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African club is known as 'The Buccaneers'?",
+        "options": ["Orlando Pirates", "Kaizer Chiefs", "Mamelodi Sundowns", "SuperSport United"],
+        "correct": 0
+      },
+      {
+        "text": "Who is the all-time leading goalscorer for the South African national team?",
+        "options": ["Benni McCarthy", "Shaun Bartlett", "Katlego Mphela", "Siphiwe Tshabalala"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African player won the African Footballer of the Year award in 2005?",
+        "options": ["Samuel Eto'o", "Michael Essien", "Didier Drogba", "Benni McCarthy"],
+        "correct": 1
+      },
+      {
+        "text": "In which year did South Africa win the Africa Cup of Nations?",
+        "options": ["1996", "1998", "2000", "2002"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African player is known as 'The Sheriff'?",
+        "options": ["Lucas Radebe", "Quinton Fortune", "Benni McCarthy", "Steven Pienaar"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the coach of the Bafana Bafana in 2010?",
+        "options": ["Carlos Alberto Parreira", "Joel Santana", "Gordon Igesund", "Pitso Mosimane"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African player scored against Mexico in the 2010 World Cup?",
+        "options": ["Siphiwe Tshabalala", "Kagiso Dikgacoi", "Steven Pienaar", "Teko Modise"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African club has won the most CAF Champions League titles?",
+        "options": ["Mamelodi Sundowns", "Orlando Pirates", "Kaizer Chiefs", "SuperSport United"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first South African to win the UEFA Champions League?",
+        "options": ["Quinton Fortune", "Benni McCarthy", "Aaron Mokoena", "Mbulelo Mabizela"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African player is known as 'The General'?",
+        "options": ["Lucas Radebe", "Quinton Fortune", "Benni McCarthy", "Steven Pienaar"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African goalkeeper holds the record for most appearances?",
+        "options": ["Itumeleng Khune", "Andre Arendse", "Hans Vonk", "Calvin Marlin"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African club is known as 'Amakhosi'?",
+        "options": ["Kaizer Chiefs", "Orlando Pirates", "Mamelodi Sundowns", "SuperSport United"],
+        "correct": 0
+      },
+      {
+        "text": "Who is the all-time top scorer for the Bafana Bafana?",
+        "options": ["Benni McCarthy", "Shaun Bartlett", "Katlego Mphela", "Siphiwe Tshabalala"],
+        "correct": 0
+      },
+      {
+        "text": "Which South African player was the first to score in the English Premier League?",
+        "options": ["Quinton Fortune", "Benni McCarthy", "Aaron Mokoena", "Mbulelo Mabizela"],
+        "correct": 0
       }
     ]
   },
-  "africa": [
-    {
-      "text": "Which country is known as the 'Giant of Africa'?",
-      "options": ["Nigeria", "Ghana", "South Africa", "Kenya"],
-      "correct": 0
-    },
-    {
-      "text": "What is the highest mountain in Africa?",
-      "options": ["Mount Kilimanjaro", "Mount Kenya", "Mount Elgon", "Rwenzori"],
-      "correct": 0
-    },
-    {
-      "text": "Which river is the longest in Africa?",
-      "options": ["Nile", "Congo", "Niger", "Zambezi"],
-      "correct": 0
-    },
-    {
-      "text": "Which African country was formerly known as Abyssinia?",
-      "options": ["Ethiopia", "Eritrea", "Somalia", "Djibouti"],
-      "correct": 0
-    },
-    {
-      "text": "Who was the first African to win the FIFA Ballon d'Or?",
-      "options": ["George Weah", "Samuel Eto'o", "Didier Drogba", "Yaya Touré"],
-      "correct": 0
-    },
-    {
-      "text": "What is the capital of Egypt?",
-      "options": ["Cairo", "Alexandria", "Luxor", "Aswan"],
-      "correct": 0
-    },
-    {
-      "text": "Which desert covers much of North Africa?",
-      "options": ["Sahara", "Kalahari", "Namib", "Libyan"],
-      "correct": 0
-    },
-    {
-      "text": "The African Union (AU) headquarters is in which city?",
-      "options": ["Addis Ababa", "Nairobi", "Johannesburg", "Cairo"],
-      "correct": 0
-    },
-    {
-      "text": "Which African country is the largest producer of cocoa?",
-      "options": ["Ivory Coast", "Ghana", "Nigeria", "Cameroon"],
-      "correct": 0
-    },
-    {
-      "text": "What is the largest lake in Africa?",
-      "options": ["Lake Victoria", "Lake Tanganyika", "Lake Malawi", "Lake Turkana"],
-      "correct": 0
-    },
-    {
-      "text": "Which African island nation is located in the Indian Ocean?",
-      "options": ["Madagascar", "Seychelles", "Mauritius", "Comoros"],
-      "correct": 0
-    },
-    {
-      "text": "Which African country is famous for its ancient rock‑hewn churches in Lalibela?",
-      "options": ["Ethiopia", "Eritrea", "Sudan", "Somalia"],
-      "correct": 0
-    },
-    {
-      "text": "Who is the most decorated African footballer of all time?",
-      "options": ["Samuel Eto'o", "Yaya Touré", "George Weah", "Didier Drogba"],
-      "correct": 0
-    },
-    {
-      "text": "Which African country has the largest population?",
-      "options": ["Nigeria", "Ethiopia", "Egypt", "DR Congo"],
-      "correct": 0
-    },
-    {
-      "text": "What is the currency of Morocco?",
-      "options": ["Moroccan Dirham", "Dinar", "Franc", "Euro"],
-      "correct": 0
-    },
-    {
-      "text": "Which waterfall is the largest in Africa (by volume)?",
-      "options": ["Victoria Falls", "Murchison Falls", "Tugela Falls", "Augrabies Falls"],
-      "correct": 0
-    },
-    {
-      "text": "Which African country is known as the 'Land of a Thousand Hills'?",
-      "options": ["Rwanda", "Burundi", "Uganda", "Lesotho"],
-      "correct": 0
-    },
-    {
-      "text": "Who was the first female president of an African country (Liberia)?",
-      "options": ["Ellen Johnson Sirleaf", "Sahle-Work Zewde", "Joyce Banda", "Catherine Samba-Panza"],
-      "correct": 0
-    },
-    {
-      "text": "Which African country is the largest producer of gold?",
-      "options": ["South Africa", "Ghana", "Mali", "Tanzania"],
-      "correct": 0
-    },
-    {
-      "text": "Which African city is known as the 'Pearl of Africa'?",
-      "options": ["Kampala", "Nairobi", "Kigali", "Dar es Salaam"],
-      "correct": 0
-    }
-  ]
+  "africa": {
+    "general": [
+      {
+        "text": "Which country is known as the 'Giant of Africa'?",
+        "options": ["Nigeria", "Ghana", "South Africa", "Kenya"],
+        "correct": 0
+      },
+      {
+        "text": "What is the highest mountain in Africa?",
+        "options": ["Mount Kilimanjaro", "Mount Kenya", "Mount Elgon", "Rwenzori"],
+        "correct": 0
+      },
+      {
+        "text": "Which river is the longest in Africa?",
+        "options": ["Nile", "Congo", "Niger", "Zambezi"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country was formerly known as Abyssinia?",
+        "options": ["Ethiopia", "Eritrea", "Somalia", "Djibouti"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first African to win the FIFA Ballon d'Or?",
+        "options": ["George Weah", "Samuel Eto'o", "Didier Drogba", "Yaya Touré"],
+        "correct": 0
+      },
+      {
+        "text": "What is the capital of Egypt?",
+        "options": ["Cairo", "Alexandria", "Luxor", "Aswan"],
+        "correct": 0
+      },
+      {
+        "text": "Which desert covers much of North Africa?",
+        "options": ["Sahara", "Kalahari", "Namib", "Libyan"],
+        "correct": 0
+      },
+      {
+        "text": "The African Union (AU) headquarters is in which city?",
+        "options": ["Addis Ababa", "Nairobi", "Johannesburg", "Cairo"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country is the largest producer of cocoa?",
+        "options": ["Ivory Coast", "Ghana", "Nigeria", "Cameroon"],
+        "correct": 0
+      },
+      {
+        "text": "What is the largest lake in Africa?",
+        "options": ["Lake Victoria", "Lake Tanganyika", "Lake Malawi", "Lake Turkana"],
+        "correct": 0
+      },
+      {
+        "text": "Which African island nation is located in the Indian Ocean?",
+        "options": ["Madagascar", "Seychelles", "Mauritius", "Comoros"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country is famous for its ancient rock-hewn churches in Lalibela?",
+        "options": ["Ethiopia", "Eritrea", "Sudan", "Somalia"],
+        "correct": 0
+      },
+      {
+        "text": "Who is the most decorated African footballer of all time?",
+        "options": ["Samuel Eto'o", "Yaya Touré", "George Weah", "Didier Drogba"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country has the largest population?",
+        "options": ["Nigeria", "Ethiopia", "Egypt", "DR Congo"],
+        "correct": 0
+      },
+      {
+        "text": "What is the currency of Morocco?",
+        "options": ["Moroccan Dirham", "Dinar", "Franc", "Euro"],
+        "correct": 0
+      },
+      {
+        "text": "Which waterfall is the largest in Africa (by volume)?",
+        "options": ["Victoria Falls", "Murchison Falls", "Tugela Falls", "Augrabies Falls"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country is known as the 'Land of a Thousand Hills'?",
+        "options": ["Rwanda", "Burundi", "Uganda", "Lesotho"],
+        "correct": 0
+      },
+      {
+        "text": "Who was the first female president of an African country (Liberia)?",
+        "options": ["Ellen Johnson Sirleaf", "Sahle-Work Zewde", "Joyce Banda", "Catherine Samba-Panza"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country is the largest producer of gold?",
+        "options": ["South Africa", "Ghana", "Mali", "Tanzania"],
+        "correct": 0
+      },
+      {
+        "text": "Which African city is known as the 'Pearl of Africa'?",
+        "options": ["Kampala", "Nairobi", "Kigali", "Dar es Salaam"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country is the smallest by land area?",
+        "options": ["Seychelles", "Gambia", "Eswatini", "Djibouti"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country has the highest GDP per capita?",
+        "options": ["Seychelles", "Mauritius", "Gabon", "Botswana"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country is the largest producer of diamonds?",
+        "options": ["Botswana", "South Africa", "Angola", "Namibia"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the African footballer who won the Ballon d'Or in 1995?",
+        "options": ["George Weah", "Samuel Eto'o", "Didier Drogba", "Yaya Touré"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country has the highest number of languages?",
+        "options": ["Nigeria", "South Africa", "Cameroon", "DR Congo"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country is known as the 'Heart of Darkness'?",
+        "options": ["DR Congo", "Congo", "Nigeria", "South Africa"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the largest desert in Africa?",
+        "options": ["Sahara", "Kalahari", "Namib", "Libyan"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country was the first to gain independence?",
+        "options": ["Ghana", "Nigeria", "Ethiopia", "Liberia"],
+        "correct": 0
+      },
+      {
+        "text": "Who is the current President of South Africa?",
+        "options": ["Cyril Ramaphosa", "Jacob Zuma", "Thabo Mbeki", "Nelson Mandela"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country is the largest producer of cocoa?",
+        "options": ["Ivory Coast", "Ghana", "Nigeria", "Cameroon"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the African river that flows through Egypt?",
+        "options": ["Nile", "Congo", "Niger", "Zambezi"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country is known as the 'Land of the Pharaohs'?",
+        "options": ["Egypt", "Sudan", "Ethiopia", "Morocco"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country has the most World Cup appearances?",
+        "options": ["Nigeria", "South Africa", "Cameroon", "Ghana"],
+        "correct": 0
+      },
+      {
+        "text": "Who is the current President of Nigeria?",
+        "options": ["Bola Tinubu", "Goodluck Jonathan", "Muhammadu Buhari", "Yemi Osinbajo"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country is known as the 'Grain Coast'?",
+        "options": ["Liberia", "Ivory Coast", "Ghana", "Nigeria"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the African lake that is the largest by surface area?",
+        "options": ["Lake Victoria", "Lake Tanganyika", "Lake Malawi", "Lake Turkana"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country was the first to host the World Cup?",
+        "options": ["South Africa", "Nigeria", "Egypt", "Morocco"],
+        "correct": 0
+      },
+      {
+        "text": "Who is the current President of Kenya?",
+        "options": ["William Ruto", "Uhuru Kenyatta", "Raila Odinga", "Mwai Kibaki"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country is known as the 'Pearl of Africa'?",
+        "options": ["Uganda", "Kenya", "Tanzania", "Rwanda"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the African river that flows through West Africa?",
+        "options": ["Niger", "Nile", "Congo", "Zambezi"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country is the largest producer of coffee?",
+        "options": ["Ethiopia", "Kenya", "Uganda", "Tanzania"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the African desert in the south?",
+        "options": ["Kalahari", "Sahara", "Namib", "Libyan"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country is known as the 'Land of the Rising Sun'?",
+        "options": ["Rwanda", "Uganda", "Kenya", "Tanzania"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the African island nation in the Indian Ocean?",
+        "options": ["Madagascar", "Seychelles", "Mauritius", "Comoros"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country is the largest producer of tin?",
+        "options": ["DR Congo", "Nigeria", "South Africa", "Zimbabwe"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the African city that is the capital of Egypt?",
+        "options": ["Cairo", "Alexandria", "Luxor", "Aswan"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country is the most populous?",
+        "options": ["Nigeria", "Ethiopia", "Egypt", "DR Congo"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the African lake that is the deepest?",
+        "options": ["Lake Tanganyika", "Lake Victoria", "Lake Malawi", "Lake Turkana"],
+        "correct": 0
+      },
+      {
+        "text": "Which African country is known as the 'Coast of Gold'?",
+        "options": ["Ghana", "Nigeria", "Ivory Coast", "Senegal"],
+        "correct": 0
+      },
+      {
+        "text": "What is the name of the African river that flows through Central Africa?",
+        "options": ["Congo", "Nile", "Niger", "Zambezi"],
+        "correct": 0
+      }
+    ]
+  }
 }

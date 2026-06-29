@@ -3,168 +3,444 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>How It Works – Know Your Country Quiz</title>
+  <title>How It Works – AfricanQuiz</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background: linear-gradient(145deg, #0a2e1f 0%, #0b3b2a 100%);
       color: #ffffff;
       min-height: 100vh;
       padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
     .page-container {
-      max-width: 800px;
+      max-width: 820px;
+      width: 100%;
       margin: 0 auto;
       background: rgba(10, 46, 31, 0.95);
       backdrop-filter: blur(8px);
       border-radius: 48px;
       overflow: hidden;
-      border: 1px solid rgba(255, 215, 0, 0.4);
-      box-shadow: 0 25px 45px -12px black;
-      padding: 32px 28px;
+      border: 1px solid rgba(255, 215, 0, 0.35);
+      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.8);
+      padding: 40px 32px;
+    }
+
+    /* ===== HEADER ===== */
+    .header-icon {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 8px;
     }
     h1 {
       text-align: center;
-      font-size: 2rem;
+      font-size: 2.2rem;
+      font-weight: 800;
       background: linear-gradient(135deg, #facc15, #c5a059);
       -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       background-clip: text;
-      color: transparent;
-      margin-bottom: 24px;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
     }
+    .subhead {
+      text-align: center;
+      color: #94a3b8;
+      margin-bottom: 32px;
+      font-size: 1rem;
+    }
+
+    /* ===== SECTION HEADERS ===== */
     h2 {
       color: #facc15;
-      font-size: 1.5rem;
-      margin: 24px 0 16px 0;
+      font-size: 1.4rem;
+      margin: 28px 0 14px 0;
       border-left: 4px solid #facc15;
       padding-left: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
+    h2 i {
+      font-size: 1.2rem;
+      width: 28px;
+      text-align: center;
+    }
+
     h3 {
       color: #facc15;
-      margin: 20px 0 10px 0;
-      font-size: 1.2rem;
+      margin: 18px 0 8px 0;
+      font-size: 1.1rem;
     }
-    p, li {
+
+    p {
+      line-height: 1.7;
+      color: #e2e8f0;
+      margin-bottom: 10px;
+    }
+
+    /* ===== LISTS ===== */
+    ul,
+    ol {
+      padding-left: 20px;
+      margin: 10px 0 16px 0;
+    }
+    li {
+      margin: 6px 0;
       line-height: 1.6;
       color: #e2e8f0;
     }
-    ul, ol {
-      padding-left: 24px;
-      margin: 12px 0;
-    }
-    li {
-      margin: 8px 0;
-    }
-    .highlight {
-      background: #facc15;
-      color: #0f172a;
-      padding: 2px 8px;
-      border-radius: 20px;
-      font-weight: bold;
-      display: inline-block;
-      margin: 4px 0;
-    }
+
     .emoji-bullet {
       list-style: none;
       padding-left: 0;
     }
     .emoji-bullet li {
-      margin-bottom: 16px;
       display: flex;
       align-items: flex-start;
-      gap: 12px;
+      gap: 14px;
+      margin-bottom: 12px;
     }
     .emoji-bullet li i {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       color: #facc15;
-      min-width: 32px;
+      min-width: 30px;
       text-align: center;
       margin-top: 2px;
     }
+    .emoji-bullet li strong {
+      color: #ffffff;
+    }
+
+    /* ===== HIGHLIGHT TAGS ===== */
+    .highlight {
+      background: #facc15;
+      color: #0f172a;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      display: inline-block;
+      font-size: 0.85rem;
+    }
+    .highlight-gold {
+      color: #facc15;
+      font-weight: 700;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(250, 204, 21, 0.15);
+      color: #facc15;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-right: 4px;
+    }
+
+    /* ===== DIVIDER ===== */
+    hr {
+      margin: 28px 0 20px;
+      border: none;
+      border-top: 1px solid rgba(71, 85, 105, 0.4);
+    }
+
+    /* ===== FAQ ===== */
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 16px 0 8px;
+    }
+    .faq-item {
+      background: rgba(30, 41, 59, 0.5);
+      border-radius: 16px;
+      padding: 14px 20px;
+      border: 1px solid rgba(71, 85, 105, 0.25);
+    }
+    .faq-item .q {
+      font-weight: 700;
+      color: #facc15;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .faq-item .q i {
+      font-size: 0.9rem;
+    }
+    .faq-item .a {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      margin-top: 4px;
+      padding-left: 30px;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-line {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin: 8px 0 4px;
+    }
+    .contact-line a {
+      color: #facc15;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-line a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== BACK BUTTON ===== */
     .button-back {
       background: linear-gradient(95deg, #facc15, #c5a059);
       border: none;
-      padding: 12px 24px;
+      padding: 14px 24px;
       border-radius: 60px;
-      font-weight: bold;
+      font-weight: 700;
       font-size: 1rem;
       color: #0f172a;
       cursor: pointer;
       margin-top: 32px;
       width: 100%;
-      transition: 0.2s;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
     .button-back:hover {
-      transform: translateY(-2px);
-      background: #c5a059;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(250, 204, 21, 0.3);
     }
-    hr {
-      margin: 20px 0;
-      border-color: #334155;
+    .button-back:active {
+      transform: scale(0.98);
     }
-    @media (max-width: 550px) {
-      .page-container { padding: 24px 20px; }
-      h1 { font-size: 1.6rem; }
-      h2 { font-size: 1.3rem; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .page-container {
+        padding: 24px 18px;
+        border-radius: 32px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+        padding-left: 12px;
+      }
+      .subhead {
+        font-size: 0.9rem;
+      }
+      .emoji-bullet li {
+        gap: 10px;
+        font-size: 0.95rem;
+      }
+      .emoji-bullet li i {
+        font-size: 1.1rem;
+        min-width: 24px;
+      }
+      .faq-item {
+        padding: 12px 16px;
+      }
+      .faq-item .a {
+        padding-left: 24px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .page-container {
+        padding: 18px 14px;
+      }
+      h1 {
+        font-size: 1.4rem;
+      }
+      .button-back {
+        font-size: 0.9rem;
+        padding: 12px 16px;
+      }
     }
   </style>
 </head>
 <body>
+
 <div class="page-container">
-  <h1><i class="fas fa-question-circle"></i> How It Works</h1>
-  <p style="text-align: center; margin-bottom: 24px;">Master the quiz, earn coins, win tournaments – here’s everything you need to know.</p>
 
-  <h2>🎯 The Basics</h2>
+  <!-- ===== HEADER ===== -->
+  <div class="header-icon">🌍</div>
+  <h1>How It Works</h1>
+  <p class="subhead">Master the quiz, earn coins, win tournaments – here's everything you need to know.</p>
+
+  <!-- ===== THE BASICS ===== -->
+  <h2><i class="fas fa-flag-checkered"></i> The Basics</h2>
   <ul class="emoji-bullet">
-    <li><i class="fas fa-flag-checkered"></i> <strong>Goal</strong> – Answer 10 questions correctly. You start with <span class="highlight">3 lives</span> (hearts). Each wrong answer costs one life.</li>
-    <li><i class="fas fa-hourglass-half"></i> <strong>Timer</strong> – First question: 14 seconds. Time decreases by 1 second per question, down to 7 seconds. Run out of time = wrong answer (lose a life).</li>
-    <li><i class="fas fa-coins"></i> <strong>Coins</strong> – Earn coins by playing free quizzes (1 coin per 2 points) or watching rewarded video ads. Coins are used for lifelines and tournament entry.</li>
+    <li>
+      <i class="fas fa-bullseye"></i>
+      <div><strong>Goal</strong> – Answer <span class="highlight">10 questions</span> correctly. You start with <span class="highlight">3 lives</span> (hearts). Each wrong answer costs one life.</div>
+    </li>
+    <li>
+      <i class="fas fa-hourglass-half"></i>
+      <div><strong>Timer</strong> – First question: <span class="highlight">14 seconds</span>. Time decreases by 1 second per question, down to 7 seconds. Run out of time = wrong answer (lose a life).</div>
+    </li>
+    <li>
+      <i class="fas fa-coins"></i>
+      <div><strong>Coins</strong> – Earn coins by playing free quizzes (<span class="highlight">1 coin per 2 points</span>) or watching rewarded video ads (<span class="highlight">25 coins</span> per ad). Coins are used for lifelines and tournament entry.</div>
+    </li>
   </ul>
 
-  <h2>🃏 50:50 Lifeline</h2>
-  <p>Stuck on a question? Use the <strong>“50:50 Lifeline”</strong> to remove two wrong answers. It costs <span class="highlight">10 coins</span> per use. You can watch a rewarded ad to earn extra coins if you run low.</p>
-
-  <h2>🏆 Daily Tournament</h2>
+  <!-- ===== DIFFICULTY MODES ===== -->
+  <h2><i class="fas fa-layer-group"></i> Difficulty Modes</h2>
   <ul class="emoji-bullet">
-    <li><i class="fas fa-trophy"></i> <strong>Entry fee</strong> – 50 coins per tournament entry.</li>
-    <li><i class="fas fa-chart-line"></i> <strong>How it works</strong> – Play a quiz in tournament mode. Your final score is submitted to the leaderboard.</li>
-    <li><i class="fas fa-gift"></i> <strong>Prizes</strong> – Top 3 players split the prize pool: <strong>80% / 15% / 5%</strong>. Prizes are sponsored by telecoms and beverage brands (airtime, data, vouchers).</li>
-    <li><i class="fas fa-calendar-day"></i> <strong>Daily reset</strong> – Leaderboard resets every day at midnight (UTC+1). Play often to climb the ranks!</li>
+    <li>
+      <i class="fas fa-graduation-cap"></i>
+      <div><strong>Student Mode</strong> – 20 seconds per question (min 14s). Best for beginners. <span class="badge">1x coins</span></div>
+    </li>
+    <li>
+      <i class="fas fa-book-open"></i>
+      <div><strong>Scholar Mode</strong> – 14 seconds per question (min 10s). The balanced challenge. <span class="badge">2x coins</span></div>
+    </li>
+    <li>
+      <i class="fas fa-trophy"></i>
+      <div><strong>Champion Mode</strong> – 10 seconds per question (min 5s). Only for the brave! <span class="badge">3x coins</span></div>
+    </li>
   </ul>
 
-  <h2>💰 Earning & Spending Coins</h2>
+  <!-- ===== LIFELINE ===== -->
+  <h2><i class="fas fa-lightbulb"></i> 50:50 Lifeline</h2>
+  <p>Stuck on a question? Use the <strong>“50:50 Lifeline”</strong> to remove two wrong answers. It costs <span class="highlight">10 coins</span> per use. Earn extra coins by playing quizzes or watching rewarded ads.</p>
+
+  <!-- ===== TOURNAMENT ===== -->
+  <h2><i class="fas fa-trophy"></i> Daily Tournament</h2>
   <ul class="emoji-bullet">
-    <li><i class="fas fa-play-circle"></i> <strong>Play free quiz</strong> – Earn 1 coin for every 2 points scored (e.g., 100 points = 50 coins).</li>
-    <li><i class="fas fa-video"></i> <strong>Watch rewarded ad</strong> – Click “Earn Coins” button, watch a short ad, get <span class="highlight">25 coins</span>.</li>
-    <li><i class="fas fa-lightbulb"></i> <strong>Spend coins on lifeline</strong> – 10 coins per 50:50.</li>
-    <li><i class="fas fa-trophy"></i> <strong>Tournament entry</strong> – 50 coins per try.</li>
+    <li>
+      <i class="fas fa-coins"></i>
+      <div><strong>Entry fee</strong> – <span class="highlight">50 coins</span> per tournament entry.</div>
+    </li>
+    <li>
+      <i class="fas fa-chart-line"></i>
+      <div><strong>How it works</strong> – Play a quiz in tournament mode. Your final score is submitted to the leaderboard.</div>
+    </li>
+    <li>
+      <i class="fas fa-gift"></i>
+      <div><strong>Prizes</strong> – Top 3 players split the prize pool: <span class="highlight">80% / 15% / 5%</span>. Prizes are sponsored by telecoms and beverage brands (airtime, data, vouchers).</div>
+    </li>
+    <li>
+      <i class="fas fa-calendar-day"></i>
+      <div><strong>Daily reset</strong> – Leaderboard resets every day at midnight (UTC+1). Play often to climb the ranks!</div>
+    </li>
   </ul>
 
-  <h2>🎨 Categories & Countries</h2>
-  <p>Choose from <strong>Nigeria, Ghana, Kenya, South Africa</strong> and <strong>7 categories</strong>: History, Geography, Culture, Pop Culture, Movies, Football, and All Africa. Each category contains a large pool of questions (20+ per category) – you’ll never see the same set twice!</p>
+  <!-- ===== COINS ===== -->
+  <h2><i class="fas fa-coins"></i> Earning & Spending Coins</h2>
+  <ul class="emoji-bullet">
+    <li>
+      <i class="fas fa-play-circle"></i>
+      <div><strong>Play free quiz</strong> – Earn <span class="highlight">1 coin for every 2 points</span> scored (e.g., 100 points = 50 coins).</div>
+    </li>
+    <li>
+      <i class="fas fa-video"></i>
+      <div><strong>Watch rewarded ad</strong> – Click “Earn Coins” button, watch a short ad, get <span class="highlight">25 coins</span>.</div>
+    </li>
+    <li>
+      <i class="fas fa-shopping-cart"></i>
+      <div><strong>Buy coins</strong> – Purchase coin packs directly from the shop (₦100 = 50 coins, ₦250 = 150 coins, ₦500 = 350 coins, ₦1,000 = 800 coins).</div>
+    </li>
+    <li>
+      <i class="fas fa-lightbulb"></i>
+      <div><strong>Spend on lifeline</strong> – <span class="highlight">10 coins</span> per 50:50 use.</div>
+    </li>
+    <li>
+      <i class="fas fa-trophy"></i>
+      <div><strong>Tournament entry</strong> – <span class="highlight">50 coins</span> per try.</div>
+    </li>
+  </ul>
 
-  <h2>📊 Stats & Persistence</h2>
-  <p>Your total points, best score, and coin balance are saved automatically on your device. Come back anytime – your progress won’t be lost.</p>
+  <!-- ===== CATEGORIES ===== -->
+  <h2><i class="fas fa-tags"></i> Categories & Countries</h2>
+  <p>Choose from <span class="highlight">Nigeria</span>, <span class="highlight">Ghana</span>, <span class="highlight">Kenya</span>, <span class="highlight">South Africa</span> and <span class="highlight">7 categories</span>: History, Geography, Culture, Pop Culture, Movies, Football, and All Africa. Each category contains a large pool of questions (20+ per category) – you'll never see the same set twice!</p>
 
-  <h2>⚖️ Fair Play & Terms</h2>
-  <p>Questions and answer options are shuffled each game to prevent memorisation. Any form of cheating (multiple accounts, automated play) leads to immediate disqualification. By playing, you agree to our <a href="#" style="color:#facc15;" id="termsLink">Terms & Conditions</a>.</p>
+  <!-- ===== STATS ===== -->
+  <h2><i class="fas fa-chart-simple"></i> Stats & Persistence</h2>
+  <p>Your total points, best score, games played, and coin balance are saved automatically on your device. Come back anytime – your progress won't be lost.</p>
 
+  <!-- ===== DAILY STREAK ===== -->
+  <h2><i class="fas fa-fire"></i> Daily Streak</h2>
+  <p>Play every day to build your streak! <span class="highlight">3-day streak</span> = +20 bonus coins. <span class="highlight">7-day streak</span> = +50 bonus coins. Don't break the chain!</p>
+
+  <!-- ===== FAQ ===== -->
   <hr>
-  <p style="font-size: 0.8rem; text-align: center;">Questions or prize claims? Contact <strong>prizes@knowyourcountry.com</strong></p>
+  <h2><i class="fas fa-question-circle"></i> Quick FAQ</h2>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <div class="q"><i class="fas fa-chevron-right"></i> How do I win the tournament?</div>
+      <div class="a">Score the highest among all participants. Your score is the total points from your 10-question run.</div>
+    </div>
+    <div class="faq-item">
+      <div class="q"><i class="fas fa-chevron-right"></i> What happens if I run out of coins?</div>
+      <div class="a">You can earn more by playing free quizzes (1 coin per 2 points) or watching rewarded ads (25 coins per ad).</div>
+    </div>
+    <div class="faq-item">
+      <div class="q"><i class="fas fa-chevron-right"></i> Can I play offline?</div>
+      <div class="a">The game requires an internet connection to load questions and display ads. Your progress is saved locally.</div>
+    </div>
+    <div class="faq-item">
+      <div class="q"><i class="fas fa-chevron-right"></i> How do I claim tournament prizes?</div>
+      <div class="a">Winners are contacted via the email/phone used during registration. Prizes are credited within 48 hours of the tournament ending.</div>
+    </div>
+  </div>
 
-  <button class="button-back" onclick="window.location.href='index.html'">← Back to Game</button>
+  <!-- ===== TERMS ===== -->
+  <hr>
+  <h2><i class="fas fa-gavel"></i> Fair Play & Terms</h2>
+  <p>Questions and answer options are shuffled each game to prevent memorization. Any form of cheating (multiple accounts, automated play) leads to immediate disqualification. By playing, you agree to our <a href="#" style="color:#facc15; font-weight:600;" id="termsLink">Terms & Conditions</a>.</p>
+
+  <!-- ===== CONTACT ===== -->
+  <div class="contact-line">
+    Questions or prize claims? Contact <a href="mailto:prizes@africanquiz.com">prizes@africanquiz.com</a>
+  </div>
+
+  <!-- ===== BACK BUTTON ===== -->
+  <button class="button-back" id="backBtn">
+    <i class="fas fa-arrow-left"></i> Back to Game
+  </button>
+
 </div>
 
 <script>
-  // If you want to open the terms modal (if terms modal exists on the main page, you can redirect)
-  // For simplicity, just alert or link to main page's terms section.
-  document.getElementById('termsLink').addEventListener('click', (e) => {
+  // =============================================
+  // BACK BUTTON – uses history if available
+  // =============================================
+  document.getElementById('backBtn').addEventListener('click', function() {
+    // Try to go back in history; fallback to index.html
+    if (document.referrer && document.referrer.includes(window.location.hostname)) {
+      window.history.back();
+    } else {
+      window.location.href = 'index.html';
+    }
+  });
+
+  // =============================================
+  // TERMS LINK – opens main page with terms modal
+  // =============================================
+  document.getElementById('termsLink').addEventListener('click', function(e) {
     e.preventDefault();
-    alert('You can read the full Terms & Conditions when you start the game. Please return to the main game page and click “Terms & Conditions”.');
+    // Navigate to main page with a query param to auto-open the terms modal
+    window.location.href = 'index.html?showTerms=true';
   });
 </script>
+
 </body>
 </html>
