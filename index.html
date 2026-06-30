@@ -2,12 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover" />
+
   <title>AfriQuiz – Know Your Country</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <meta name="description" content="Test your knowledge of Africa's countries, history, culture, and more. Play daily tournaments and win prizes." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
   <style>
-    /* ==================== RESET & BASE ==================== */
+    /* ============================================================
+       RESET & BASE
+       ============================================================ */
     * {
       margin: 0;
       padding: 0;
@@ -16,19 +28,18 @@
     }
 
     body {
-      font-family: "Inter", sans-serif;
+      font-family: 'Inter', sans-serif;
       background: linear-gradient(145deg, #0a2e1f 0%, #0b3b2a 100%);
       color: #ffffff;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 16px;
+      padding: 20px;
     }
 
-    /* ==================== GAME CONTAINER ==================== */
     .game-container {
-      max-width: 520px;
+      max-width: 550px;
       width: 100%;
       background: rgba(10, 46, 31, 0.95);
       backdrop-filter: blur(8px);
@@ -39,7 +50,78 @@
       position: relative;
     }
 
-    /* ==================== SCREENS ==================== */
+    /* ============================================================
+       MUSIC CONTROLS
+       ============================================================ */
+    .music-controls {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      gap: 8px;
+      z-index: 150;
+    }
+
+    .play-music-btn {
+      background: #facc15;
+      border: none;
+      border-radius: 40px;
+      padding: 6px 12px;
+      font-size: 0.7rem;
+      font-weight: bold;
+      color: #0f172a;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      animation: pulse 2s infinite;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .play-music-btn:hover {
+      background: #e5b800;
+      transform: scale(1.05);
+    }
+
+    .music-toggle {
+      background: rgba(0, 0, 0, 0.6);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #facc15;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+      transition: all 0.3s;
+    }
+
+    .music-toggle:hover {
+      background: rgba(0, 0, 0, 0.8);
+      transform: scale(1.05);
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 #facc15;
+      }
+      70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(250, 204, 21, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(250, 204, 21, 0);
+      }
+    }
+
+    /* ============================================================
+       SCREENS
+       ============================================================ */
     .screen {
       padding: 28px 24px 36px;
       transition: 0.2s;
@@ -48,7 +130,9 @@
       display: none !important;
     }
 
-    /* ==================== HEADER / TOP BAR ==================== */
+    /* ============================================================
+       TOP BAR
+       ============================================================ */
     .top-bar {
       display: flex;
       justify-content: space-between;
@@ -59,6 +143,7 @@
       margin-bottom: 20px;
       color: #f1f5f9;
     }
+
     .top-bar .coins {
       background: #facc15;
       color: #0f172a;
@@ -70,9 +155,7 @@
       align-items: center;
       gap: 6px;
     }
-    .top-bar .coins i {
-      font-size: 0.8rem;
-    }
+
     .top-bar .streak-badge {
       background: rgba(250, 204, 21, 0.15);
       color: #facc15;
@@ -84,11 +167,26 @@
       align-items: center;
       gap: 4px;
     }
-    .top-bar .streak-badge i {
+
+    .btn-small {
+      background: rgba(250, 204, 21, 0.15);
+      border: none;
+      border-radius: 40px;
+      padding: 6px 14px;
       font-size: 0.7rem;
+      font-weight: 600;
+      color: #facc15;
+      cursor: pointer;
+      transition: 0.2s;
     }
 
-    /* ==================== BADGES & TITLES ==================== */
+    .btn-small:hover {
+      background: rgba(250, 204, 21, 0.25);
+    }
+
+    /* ============================================================
+       HOME SCREEN
+       ============================================================ */
     .flag-icon {
       font-size: 3.5rem;
       text-align: center;
@@ -96,10 +194,16 @@
       margin: 0 auto 8px;
       animation: spinGlobe 12s ease-in-out infinite;
     }
+
     @keyframes spinGlobe {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(-360deg); }
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(-360deg);
+      }
     }
+
     .flag-icon:hover {
       animation-play-state: paused;
     }
@@ -113,7 +217,9 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       letter-spacing: -0.5px;
+      font-family: 'Space Grotesk', sans-serif;
     }
+
     .sub {
       text-align: center;
       color: #94a3b8;
@@ -121,12 +227,15 @@
       font-size: 0.8rem;
     }
 
-    /* ==================== STATS ROW ==================== */
+    /* ============================================================
+       STATS ROW
+       ============================================================ */
     .stats-row {
       display: flex;
       gap: 12px;
       margin-bottom: 24px;
     }
+
     .stat-card {
       background: rgba(30, 41, 59, 0.7);
       flex: 1;
@@ -135,34 +244,45 @@
       text-align: center;
       border: 1px solid rgba(71, 85, 105, 0.5);
     }
+
     .stat-card i {
       font-size: 1.2rem;
       color: #facc15;
     }
+
     .stat-value {
       font-size: 1.3rem;
       font-weight: 800;
       color: #ffffff;
     }
+
     .stat-label {
       font-size: 0.65rem;
       color: #94a3b8;
     }
 
-    /* ==================== DROPDOWNS ==================== */
+    /* ============================================================
+       DROPDOWNS
+       ============================================================ */
     .dropdown-group {
       display: flex;
       flex-direction: column;
       gap: 12px;
       margin-bottom: 20px;
     }
+
+    .dropdown-row {
+      display: flex;
+      gap: 12px;
+    }
+
     .custom-dropdown {
       background: rgba(30, 41, 59, 0.8);
       border: 1px solid rgba(71, 85, 105, 0.5);
       border-radius: 60px;
       padding: 14px 20px;
       width: 100%;
-      font-family: "Inter", sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: 0.95rem;
       font-weight: 600;
       color: #f1f5f9;
@@ -172,19 +292,19 @@
       background-repeat: no-repeat;
       background-position: right 20px center;
     }
+
     .custom-dropdown option {
       background: #1e293b;
       color: #f1f5f9;
     }
-    .dropdown-row {
-      display: flex;
-      gap: 12px;
-    }
+
     .dropdown-row .custom-dropdown {
       flex: 1;
     }
 
-    /* ==================== BUTTONS ==================== */
+    /* ============================================================
+       BUTTONS
+       ============================================================ */
     .btn-primary {
       background: linear-gradient(95deg, #facc15, #c5a059);
       border: none;
@@ -202,10 +322,12 @@
       justify-content: center;
       gap: 8px;
     }
+
     .btn-primary:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 25px rgba(250, 204, 21, 0.3);
     }
+
     .btn-primary:active {
       transform: scale(0.98);
     }
@@ -227,27 +349,15 @@
       justify-content: center;
       gap: 8px;
     }
+
     .btn-secondary:hover {
       background: rgba(71, 85, 105, 0.8);
       transform: translateY(-2px);
     }
 
-    .btn-small {
-      background: rgba(250, 204, 21, 0.15);
-      border: none;
-      border-radius: 40px;
-      padding: 6px 14px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: #facc15;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    .btn-small:hover {
-      background: rgba(250, 204, 21, 0.25);
-    }
-
-    /* ==================== COIN SHOP ==================== */
+    /* ============================================================
+       COIN SHOP
+       ============================================================ */
     .coin-shop {
       background: rgba(30, 41, 59, 0.6);
       border-radius: 20px;
@@ -255,18 +365,21 @@
       margin: 12px 0 16px;
       border: 1px solid rgba(71, 85, 105, 0.3);
     }
+
     .coin-shop h3 {
       font-size: 0.9rem;
       color: #facc15;
       margin-bottom: 10px;
       text-align: center;
     }
+
     .coin-packs {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
       justify-content: center;
     }
+
     .coin-pack-btn {
       background: rgba(15, 23, 42, 0.8);
       border: 1px solid rgba(71, 85, 105, 0.4);
@@ -278,15 +391,19 @@
       cursor: pointer;
       transition: 0.2s;
     }
+
     .coin-pack-btn:hover {
       border-color: #facc15;
       background: rgba(250, 204, 21, 0.1);
     }
+
     .coin-pack-btn .price {
       color: #facc15;
     }
 
-    /* ==================== QUIZ SCREEN ==================== */
+    /* ============================================================
+       QUIZ SCREEN
+       ============================================================ */
     .quiz-header {
       display: flex;
       justify-content: space-between;
@@ -298,6 +415,7 @@
       font-size: 0.9rem;
       color: #facc15;
     }
+
     .quiz-header span {
       color: #f1f5f9;
     }
@@ -311,6 +429,7 @@
       align-items: center;
       gap: 12px;
     }
+
     .timer-bar-bg {
       background: rgba(51, 65, 85, 0.6);
       height: 6px;
@@ -318,12 +437,14 @@
       flex-grow: 1;
       overflow: hidden;
     }
+
     .timer-bar-fill {
       background: #facc15;
       width: 100%;
       height: 100%;
       transition: width 0.1s linear;
     }
+
     .timer-text {
       font-weight: 700;
       font-family: monospace;
@@ -352,6 +473,7 @@
       gap: 10px;
       margin-bottom: 12px;
     }
+
     .option-btn {
       background: rgba(30, 41, 59, 0.8);
       border: 1px solid rgba(71, 85, 105, 0.4);
@@ -364,20 +486,24 @@
       font-weight: 500;
       transition: all 0.15s;
     }
+
     .option-btn:hover:not(:disabled) {
       border-color: #facc15;
       background: rgba(250, 204, 21, 0.05);
     }
+
     .option-btn.correct {
       background: #10b981;
       border-color: #10b981;
       color: white;
     }
+
     .option-btn.wrong {
       background: #ef4444;
       border-color: #ef4444;
       color: white;
     }
+
     .option-btn:disabled {
       opacity: 0.6;
       cursor: not-allowed;
@@ -406,10 +532,12 @@
       transition: 0.2s;
       margin-bottom: 8px;
     }
+
     .btn-lifeline:hover:not(:disabled) {
       background: rgba(250, 204, 21, 0.1);
       border-color: #facc15;
     }
+
     .btn-lifeline:disabled {
       opacity: 0.4;
       cursor: not-allowed;
@@ -427,32 +555,41 @@
       cursor: pointer;
       transition: 0.2s;
     }
+
     .btn-next:disabled {
       opacity: 0.4;
       cursor: not-allowed;
     }
+
     .btn-next:hover:not(:disabled) {
       transform: translateY(-2px);
     }
 
-    /* ==================== RESULT SCREEN ==================== */
+    /* ============================================================
+       RESULT SCREEN
+       ============================================================ */
     .result-card {
       text-align: center;
       padding: 20px 0;
     }
+
     .result-card i {
       font-size: 3rem;
       color: #facc15;
     }
+
     .result-card h2 {
       font-size: 2rem;
       margin: 12px 0;
+      font-family: 'Space Grotesk', sans-serif;
     }
+
     .final-score {
       font-size: 3.5rem;
       font-weight: 800;
       color: #facc15;
     }
+
     .result-message {
       color: #94a3b8;
       margin: 12px 0 24px;
@@ -466,6 +603,7 @@
       flex-wrap: wrap;
       justify-content: center;
     }
+
     .share-btn {
       padding: 10px 20px;
       border-radius: 40px;
@@ -478,27 +616,34 @@
       align-items: center;
       gap: 6px;
     }
+
     .share-btn:hover {
       transform: translateY(-2px);
     }
+
     .share-btn.whatsapp {
       background: #25D366;
       color: white;
     }
+
     .share-btn.twitter {
       background: #1DA1F2;
       color: white;
     }
+
     .share-btn.facebook {
       background: #1877F2;
       color: white;
     }
+
     .share-btn.challenge {
       background: #facc15;
       color: #0f172a;
     }
 
-    /* ==================== ONBOARDING ==================== */
+    /* ============================================================
+       ONBOARDING
+       ============================================================ */
     .onboarding-overlay {
       position: fixed;
       top: 0;
@@ -512,9 +657,11 @@
       justify-content: center;
       z-index: 9999;
     }
+
     .onboarding-overlay.hidden {
       display: none;
     }
+
     .onboarding-modal {
       background: #1e293b;
       border-radius: 32px;
@@ -524,26 +671,32 @@
       border: 1px solid rgba(250, 204, 21, 0.3);
       text-align: center;
     }
+
     .onboarding-modal h2 {
       color: #facc15;
       margin-bottom: 16px;
       font-size: 1.8rem;
+      font-family: 'Space Grotesk', sans-serif;
     }
+
     .onboarding-modal .step-icon {
       font-size: 3rem;
       margin-bottom: 12px;
     }
+
     .onboarding-modal p {
       color: #cbd5e1;
       margin-bottom: 20px;
       line-height: 1.6;
     }
+
     .onboarding-modal .dots {
       display: flex;
       justify-content: center;
       gap: 8px;
       margin-bottom: 20px;
     }
+
     .onboarding-modal .dot {
       width: 10px;
       height: 10px;
@@ -551,16 +704,16 @@
       background: rgba(71, 85, 105, 0.5);
       transition: 0.2s;
     }
+
     .onboarding-modal .dot.active {
       background: #facc15;
       width: 24px;
       border-radius: 5px;
     }
-    .onboarding-modal .btn-primary {
-      margin-bottom: 0;
-    }
 
-    /* ==================== MODAL ==================== */
+    /* ============================================================
+       MODAL
+       ============================================================ */
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -573,9 +726,11 @@
       justify-content: center;
       z-index: 5000;
     }
+
     .modal-overlay.active {
       display: flex;
     }
+
     .modal-content {
       background: #1e293b;
       border-radius: 32px;
@@ -585,23 +740,29 @@
       border: 1px solid rgba(250, 204, 21, 0.3);
       text-align: center;
     }
+
     .modal-content h3 {
       color: #facc15;
       font-size: 1.4rem;
       margin-bottom: 12px;
+      font-family: 'Space Grotesk', sans-serif;
     }
+
     .modal-content p {
       color: #cbd5e1;
       margin-bottom: 16px;
       line-height: 1.5;
     }
+
     .modal-content .btn-group {
       display: flex;
       flex-direction: column;
       gap: 8px;
     }
 
-    /* ==================== TERMS ==================== */
+    /* ============================================================
+       TERMS LINK
+       ============================================================ */
     .terms-link {
       text-align: center;
       font-size: 0.7rem;
@@ -610,1710 +771,1438 @@
       margin-top: 16px;
       text-decoration: underline;
     }
+
     .terms-link:hover {
       color: #facc15;
     }
 
-    /* ==================== RESPONSIVE ==================== */
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
     @media (max-width: 500px) {
       .screen {
         padding: 20px 16px 28px;
       }
+
       h1 {
         font-size: 1.4rem;
       }
+
       .question-text {
         font-size: 1rem;
         padding: 16px;
         min-height: 60px;
       }
+
       .option-btn {
         font-size: 0.85rem;
         padding: 12px 16px;
       }
+
       .final-score {
         font-size: 2.8rem;
       }
+
       .stats-row {
         gap: 8px;
       }
+
       .stat-card {
         padding: 10px;
       }
+
       .dropdown-row {
         flex-direction: column;
         gap: 8px;
       }
+
       .coin-packs {
         gap: 6px;
       }
+
       .coin-pack-btn {
         font-size: 0.65rem;
         padding: 4px 12px;
       }
+
       .share-row {
         gap: 6px;
       }
+
       .share-btn {
         font-size: 0.75rem;
         padding: 8px 14px;
       }
+
+      .music-controls {
+        top: 12px;
+        right: 12px;
+      }
+
+      .music-toggle {
+        width: 34px;
+        height: 34px;
+        font-size: 1rem;
+      }
+
+      .play-music-btn {
+        font-size: 0.6rem;
+        padding: 4px 10px;
+        animation: none;
+      }
     }
 
-    /* ==================== UTILITY ==================== */
-    .text-gold {
+    /* ============================================================
+       TOAST
+       ============================================================ */
+    .toast-msg {
+      position: fixed;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1e293b;
       color: #facc15;
+      padding: 12px 24px;
+      border-radius: 60px;
+      border: 1px solid #facc15;
+      font-weight: 600;
+      z-index: 9999;
+      max-width: 90%;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      animation: fadeInUp 0.3s ease;
     }
-    .text-muted {
-      color: #94a3b8;
-    }
-    .mt-8 {
-      margin-top: 8px;
-    }
-    .mt-12 {
-      margin-top: 12px;
-    }
-    .mb-8 {
-      margin-bottom: 8px;
-    }
-    .gap-4 {
-      gap: 4px;
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px) translateX(-50%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) translateX(-50%);
+      }
     }
   </style>
 </head>
 <body>
 
-<div class="game-container">
+  <!-- ============================================================
+  GAME CONTAINER
+  ============================================================ -->
+  <div class="game-container">
 
-  <!-- ================================ -->
-  <!-- HOME SCREEN                      -->
-  <!-- ================================ -->
-  <div id="homeScreen" class="screen">
-
-    <!-- Top Bar -->
-    <div class="top-bar">
-      <div class="streak-badge">
-        <i class="fas fa-fire"></i> <span id="streakDisplay">0</span>d
-      </div>
-      <div class="coins">
-        <i class="fas fa-coins"></i> <span id="coinBalance">100</span>
-      </div>
-      <button class="btn-small" id="earnCoinsBtn">
-        <i class="fas fa-video"></i> Earn
+    <!-- ======== MUSIC CONTROLS ======== -->
+    <div class="music-controls">
+      <button class="play-music-btn" id="explicitPlayBtn">
+        <i class="fas fa-play"></i> Play Music
+      </button>
+      <button class="music-toggle" id="musicToggleBtn" title="Mute/Unmute background music">
+        <i class="fas fa-music"></i>
       </button>
     </div>
 
-    <!-- Flag & Title -->
-    <span class="flag-icon">🌍</span>
-    <h1>AFRIQUIZ</h1>
-    <div class="sub">Know Your Country • Challenge Yourself</div>
+    <!-- ======== HOME SCREEN ======== -->
+    <div id="homeScreen" class="screen">
 
-    <!-- Stats -->
-    <div class="stats-row">
-      <div class="stat-card">
-        <i class="fas fa-trophy"></i>
-        <div class="stat-value" id="totalPointsHome">0</div>
-        <div class="stat-label">Total Points</div>
+      <div class="top-bar">
+        <div class="streak-badge">
+          <i class="fas fa-fire"></i> <span id="streakDisplay">0</span>d
+        </div>
+        <div class="coins">
+          <i class="fas fa-coins"></i> <span id="coinBalance">100</span>
+        </div>
+        <button class="btn-small" id="earnCoinsBtn">
+          <i class="fas fa-video"></i> Earn
+        </button>
       </div>
-      <div class="stat-card">
-        <i class="fas fa-brain"></i>
-        <div class="stat-value" id="bestScoreHome">0</div>
-        <div class="stat-label">Best Game</div>
-      </div>
-      <div class="stat-card">
-        <i class="fas fa-star"></i>
-        <div class="stat-value" id="gamesPlayedHome">0</div>
-        <div class="stat-label">Games</div>
-      </div>
-    </div>
 
-    <!-- Dropdowns -->
-    <div class="dropdown-group">
-      <div class="dropdown-row">
-        <select id="countrySelect" class="custom-dropdown">
-          <option value="Nigeria">🇳🇬 Nigeria</option>
-          <option value="Ghana">🇬🇭 Ghana</option>
-          <option value="Kenya">🇰🇪 Kenya</option>
-          <option value="SouthAfrica">🇿🇦 South Africa</option>
+      <span class="flag-icon">🌍</span>
+      <h1>AFRI QUIZ</h1>
+      <div class="sub">Know Your Country • Challenge Yourself</div>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <i class="fas fa-trophy"></i>
+          <div class="stat-value" id="totalPointsHome">0</div>
+          <div class="stat-label">Total Points</div>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-brain"></i>
+          <div class="stat-value" id="bestScoreHome">0</div>
+          <div class="stat-label">Best Game</div>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-star"></i>
+          <div class="stat-value" id="gamesPlayedHome">0</div>
+          <div class="stat-label">Games</div>
+        </div>
+      </div>
+
+      <div class="dropdown-group">
+        <div class="dropdown-row">
+          <select id="countrySelect" class="custom-dropdown">
+            <option value="Nigeria">🇳🇬 Nigeria</option>
+            <option value="Ghana">🇬🇭 Ghana</option>
+            <option value="Kenya">🇰🇪 Kenya</option>
+            <option value="SouthAfrica">🇿🇦 South Africa</option>
+          </select>
+          <select id="categorySelect" class="custom-dropdown">
+            <option value="history">📜 History</option>
+            <option value="geography">🌍 Geography</option>
+            <option value="culture">🎭 Culture</option>
+            <option value="pop">🎵 Pop Culture</option>
+            <option value="movies">🎬 Movies</option>
+            <option value="football">⚽ Football</option>
+            <option value="africa">🌍 All Africa</option>
+          </select>
+        </div>
+        <select id="difficultySelect" class="custom-dropdown">
+          <option value="easy">📘 Student Mode</option>
+          <option value="medium" selected>📗 Scholar Mode</option>
+          <option value="hard">📕 Champion Mode</option>
         </select>
-        <select id="categorySelect" class="custom-dropdown">
-          <option value="history">📜 History</option>
-          <option value="geography">🌍 Geography</option>
-          <option value="culture">🎭 Culture</option>
-          <option value="pop">🎵 Pop Culture</option>
-          <option value="movies">🎬 Movies</option>
-          <option value="football">⚽ Football</option>
-          <option value="africa">🌍 All Africa</option>
-        </select>
-      </div>
-      <select id="difficultySelect" class="custom-dropdown">
-        <option value="easy">📘 Student Mode</option>
-        <option value="medium" selected>📗 Scholar Mode</option>
-        <option value="hard">📕 Champion Mode</option>
-      </select>
-    </div>
-
-    <!-- Coin Shop -->
-    <div class="coin-shop">
-      <h3>🪙 Buy Coins</h3>
-      <div class="coin-packs">
-        <button class="coin-pack-btn" onclick="buyCoins(50, 100)">50 <span class="price">₦100</span></button>
-        <button class="coin-pack-btn" onclick="buyCoins(150, 250)">150 <span class="price">₦250</span></button>
-        <button class="coin-pack-btn" onclick="buyCoins(350, 500)">350 <span class="price">₦500</span></button>
-        <button class="coin-pack-btn" onclick="buyCoins(800, 1000)">800 <span class="price">₦1,000</span></button>
-      </div>
-    </div>
-
-    <!-- Play Buttons -->
-    <button class="btn-primary" id="startQuizBtn">
-      <i class="fas fa-play"></i> Free Quiz
-    </button>
-    <button class="btn-secondary" id="tournamentBtn">
-      <i class="fas fa-trophy"></i> Daily Tournament (50 Coins)
-    </button>
-
-    <!-- How It Works & Terms -->
-    <button class="btn-small" onclick="openHowItWorks()" style="display:block;margin:0 auto;">
-      <i class="fas fa-question-circle"></i> How It Works
-    </button>
-    <div class="terms-link" id="termsLink">📜 Terms & Conditions</div>
-  </div>
-
-  <!-- ================================ -->
-  <!-- QUIZ SCREEN                      -->
-  <!-- ================================ -->
-  <div id="quizScreen" class="screen hidden">
-
-    <div class="quiz-header">
-      <div>⭐ <span id="scoreDisplay">0</span></div>
-      <div>❤️ <span id="livesDisplay">3</span></div>
-      <div>Q<span id="currentQ">1</span>/<span id="totalQ">10</span></div>
-    </div>
-
-    <div class="timer-area">
-      <i class="fas fa-hourglass-half" style="color:#facc15;"></i>
-      <div class="timer-bar-bg">
-        <div class="timer-bar-fill" id="timerFill"></div>
-      </div>
-      <span class="timer-text" id="timerText">14s</span>
-    </div>
-
-    <div class="question-text" id="questionText">Loading...</div>
-
-    <div class="options-grid" id="optionsContainer"></div>
-
-    <button class="btn-lifeline" id="hintBtn">
-      <i class="fas fa-lightbulb"></i> 50:50 Lifeline (10 coins)
-    </button>
-
-    <div class="feedback" id="feedbackMsg"></div>
-
-    <button class="btn-next" id="nextBtn" disabled>Next Question →</button>
-  </div>
-
-  <!-- ================================ -->
-  <!-- RESULT SCREEN                    -->
-  <!-- ================================ -->
-  <div id="resultScreen" class="screen hidden">
-
-    <div class="result-card">
-      <i class="fas fa-flag-checkered"></i>
-      <h2>Game Over!</h2>
-      <div class="final-score" id="finalScoreSpan">0</div>
-      <div class="result-message" id="resultMessage">Great job!</div>
-
-      <div class="share-row">
-        <button class="share-btn whatsapp" onclick="shareResult('whatsapp')">
-          <i class="fab fa-whatsapp"></i> WhatsApp
-        </button>
-        <button class="share-btn twitter" onclick="shareResult('twitter')">
-          <i class="fab fa-twitter"></i> Twitter
-        </button>
-        <button class="share-btn facebook" onclick="shareResult('facebook')">
-          <i class="fab fa-facebook"></i> Facebook
-        </button>
-        <button class="share-btn challenge" onclick="challengeFriend()">
-          <i class="fas fa-trophy"></i> Challenge
-        </button>
       </div>
 
-      <button class="btn-primary" id="playAgainBtn">
-        <i class="fas fa-home"></i> Back to Home
+      <div class="coin-shop">
+        <h3>🪙 Buy Coins</h3>
+        <div class="coin-packs">
+          <button class="coin-pack-btn" onclick="buyCoins(50, 100)">50 <span class="price">₦100</span></button>
+          <button class="coin-pack-btn" onclick="buyCoins(150, 250)">150 <span class="price">₦250</span></button>
+          <button class="coin-pack-btn" onclick="buyCoins(350, 500)">350 <span class="price">₦500</span></button>
+          <button class="coin-pack-btn" onclick="buyCoins(800, 1000)">800 <span class="price">₦1,000</span></button>
+        </div>
+      </div>
+
+      <button class="btn-primary" id="startQuizBtn">
+        <i class="fas fa-play"></i> Free Quiz
       </button>
-    </div>
-  </div>
+      <button class="btn-secondary" id="tournamentBtn">
+        <i class="fas fa-trophy"></i> Daily Tournament (50 Coins)
+      </button>
 
-  <!-- ================================ -->
-  <!-- TERMS MODAL                      -->
-  <!-- ================================ -->
-  <div class="modal-overlay" id="termsModal">
-    <div class="modal-content">
-      <h3>📜 Terms & Conditions</h3>
-      <p style="text-align:left;font-size:0.8rem;color:#94a3b8;line-height:1.6;">
-        <strong>1. Eligibility:</strong> Open to users 18+ in Nigeria, Ghana, Kenya, South Africa.<br><br>
-        <strong>2. Prizes:</strong> Daily tournament winners get sponsored prizes.<br><br>
-        <strong>3. Coins:</strong> Earned by playing quizzes or watching ads. No cash value.<br><br>
-        <strong>4. Fair Play:</strong> Any form of cheating will result in a permanent ban.<br><br>
-        <strong>5. Contact:</strong> prizes@africanquiz.com
-      </p>
-      <button class="btn-primary" onclick="closeTerms()" style="margin-top:8px;">Close</button>
+      <button class="btn-small" onclick="openHowItWorks()" style="display:block;margin:0 auto;">
+        <i class="fas fa-question-circle"></i> How It Works
+      </button>
+      <div class="terms-link" id="termsLink">📜 Terms & Conditions</div>
     </div>
-  </div>
 
-  <!-- ================================ -->
-  <!-- TOURNAMENT MODAL                 -->
-  <!-- ================================ -->
-  <div class="modal-overlay" id="tournamentModal">
-    <div class="modal-content">
-      <i class="fas fa-trophy" style="font-size:3rem;color:#facc15;"></i>
-      <h3>Daily Tournament</h3>
-      <p>Entry: <strong>50 coins</strong></p>
-      <p style="font-size:0.85rem;color:#94a3b8;">Top 3 win the prize pool (80% / 15% / 5%)</p>
-      <div class="btn-group" style="margin-top:16px;">
-        <button class="btn-primary" id="confirmTournamentBtn" style="margin-bottom:0;">
-          Enter Tournament
-        </button>
-        <button class="btn-secondary" onclick="closeTournamentModal()" style="margin-bottom:0;">
-          Cancel
-        </button>
+    <!-- ======== QUIZ SCREEN ======== -->
+    <div id="quizScreen" class="screen hidden">
+
+      <div class="quiz-header">
+        <div>⭐ <span id="scoreDisplay">0</span></div>
+        <div>❤️ <span id="livesDisplay">3</span></div>
+        <div>Q<span id="currentQ">1</span>/<span id="totalQ">10</span></div>
       </div>
-    </div>
-  </div>
 
-  <!-- ================================ -->
-  <!-- ONBOARDING OVERLAY               -->
-  <!-- ================================ -->
-  <div class="onboarding-overlay" id="onboardingOverlay">
-    <div class="onboarding-modal">
-
-      <!-- Step 1 -->
-      <div id="onboardingStep1">
-        <div class="step-icon">🌍</div>
-        <h2>Welcome to AfricanQuiz!</h2>
-        <p>Test your knowledge of Africa's countries, history, culture, and more.</p>
-        <div class="dots">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
+      <div class="timer-area">
+        <i class="fas fa-hourglass-half" style="color:#facc15;"></i>
+        <div class="timer-bar-bg">
+          <div class="timer-bar-fill" id="timerFill"></div>
         </div>
-        <button class="btn-primary" onclick="nextOnboardingStep()">
-          Next →
-        </button>
+        <span class="timer-text" id="timerText">14s</span>
       </div>
 
-      <!-- Step 2 -->
-      <div id="onboardingStep2" style="display:none;">
-        <div class="step-icon">🪙</div>
-        <h2>Earn & Win</h2>
-        <p>Answer correctly to earn points and coins. Use coins for lifelines or enter tournaments to win real prizes!</p>
-        <div class="dots">
-          <span class="dot"></span>
-          <span class="dot active"></span>
-          <span class="dot"></span>
-        </div>
-        <button class="btn-primary" onclick="nextOnboardingStep()">
-          Next →
-        </button>
-      </div>
+      <div class="question-text" id="questionText">Loading...</div>
 
-      <!-- Step 3 -->
-      <div id="onboardingStep3" style="display:none;">
-        <div class="step-icon">🔥</div>
-        <h2>Daily Streaks</h2>
-        <p>Play every day to build your streak and earn bonus coins. Don't break the chain!</p>
-        <div class="dots">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot active"></span>
-        </div>
-        <button class="btn-primary" onclick="startOnboarding()">
-          Let's Go! 🚀
-        </button>
-      </div>
+      <div class="options-grid" id="optionsContainer"></div>
 
+      <button class="btn-lifeline" id="hintBtn">
+        <i class="fas fa-lightbulb"></i> 50:50 Lifeline (10 coins)
+      </button>
+
+      <div class="feedback" id="feedbackMsg"></div>
+
+      <button class="btn-next" id="nextBtn" disabled>Next Question →</button>
     </div>
+
+    <!-- ======== RESULT SCREEN ======== -->
+    <div id="resultScreen" class="screen hidden">
+
+      <div class="result-card">
+        <i class="fas fa-flag-checkered"></i>
+        <h2>Game Over!</h2>
+        <div class="final-score" id="finalScoreSpan">0</div>
+        <div class="result-message" id="resultMessage">Great job!</div>
+
+        <div class="share-row">
+          <button class="share-btn whatsapp" onclick="shareResult('whatsapp')">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </button>
+          <button class="share-btn twitter" onclick="shareResult('twitter')">
+            <i class="fab fa-twitter"></i> Twitter
+          </button>
+          <button class="share-btn facebook" onclick="shareResult('facebook')">
+            <i class="fab fa-facebook"></i> Facebook
+          </button>
+          <button class="share-btn challenge" onclick="challengeFriend()">
+            <i class="fas fa-trophy"></i> Challenge
+          </button>
+        </div>
+
+        <button class="btn-primary" id="playAgainBtn">
+          <i class="fas fa-home"></i> Back to Home
+        </button>
+      </div>
+    </div>
+
+    <!-- ======== TERMS MODAL ======== -->
+    <div class="modal-overlay" id="termsModal">
+      <div class="modal-content">
+        <h3>📜 Terms & Conditions</h3>
+        <p style="text-align:left;font-size:0.8rem;color:#94a3b8;line-height:1.6;">
+          <strong>1. Eligibility:</strong> Open to users 18+ in Nigeria, Ghana, Kenya, South Africa.<br><br>
+          <strong>2. Prizes:</strong> Daily tournament winners get sponsored prizes.<br><br>
+          <strong>3. Coins:</strong> Earned by playing quizzes or watching ads. No cash value.<br><br>
+          <strong>4. Fair Play:</strong> Any form of cheating will result in a permanent ban.<br><br>
+          <strong>5. Contact:</strong> prizes@afriquiz.com
+        </p>
+        <button class="btn-primary" onclick="closeTerms()" style="margin-top:8px;">Close</button>
+      </div>
+    </div>
+
+    <!-- ======== TOURNAMENT MODAL ======== -->
+    <div class="modal-overlay" id="tournamentModal">
+      <div class="modal-content">
+        <i class="fas fa-trophy" style="font-size:3rem;color:#facc15;"></i>
+        <h3>Daily Tournament</h3>
+        <p>Entry: <strong>50 coins</strong></p>
+        <p style="font-size:0.85rem;color:#94a3b8;">Top 3 win the prize pool (80% / 15% / 5%)</p>
+        <div class="btn-group" style="margin-top:16px;">
+          <button class="btn-primary" id="confirmTournamentBtn" style="margin-bottom:0;">
+            Enter Tournament
+          </button>
+          <button class="btn-secondary" onclick="closeTournamentModal()" style="margin-bottom:0;">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======== ONBOARDING OVERLAY ======== -->
+    <div class="onboarding-overlay" id="onboardingOverlay">
+      <div class="onboarding-modal">
+
+        <div id="onboardingStep1">
+          <div class="step-icon">🌍</div>
+          <h2>Welcome to AfriQuiz!</h2>
+          <p>Test your knowledge of Africa's countries, history, culture, and more.</p>
+          <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <button class="btn-primary" onclick="nextOnboardingStep()">Next →</button>
+        </div>
+
+        <div id="onboardingStep2" style="display:none;">
+          <div class="step-icon">🪙</div>
+          <h2>Earn & Win</h2>
+          <p>Answer correctly to earn points and coins. Use coins for lifelines or enter tournaments to win real prizes!</p>
+          <div class="dots">
+            <span class="dot"></span>
+            <span class="dot active"></span>
+            <span class="dot"></span>
+          </div>
+          <button class="btn-primary" onclick="nextOnboardingStep()">Next →</button>
+        </div>
+
+        <div id="onboardingStep3" style="display:none;">
+          <div class="step-icon">🔥</div>
+          <h2>Daily Streaks</h2>
+          <p>Play every day to build your streak and earn bonus coins. Don't break the chain!</p>
+          <div class="dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot active"></span>
+          </div>
+          <button class="btn-primary" onclick="startOnboarding()">Let's Go! 🚀</button>
+        </div>
+
+      </div>
+    </div>
+
   </div>
-</div>
 
-<!-- ================================================================== -->
-<!-- SCRIPT                                                              -->
-<!-- ================================================================== -->
-<script>
-  // =====================================================
-  // DIFFICULTY CONFIG
-  // =====================================================
-  const DIFFICULTY = {
-    easy: {
-      label: 'Student',
-      timeBase: 20,
-      timeMin: 14,
-      coinMultiplier: 1,
-      pointsMultiplier: 1,
-      questionFilter: 'easy'
-    },
-    medium: {
-      label: 'Scholar',
-      timeBase: 14,
-      timeMin: 10,
-      coinMultiplier: 2,
-      pointsMultiplier: 1.5,
-      questionFilter: 'medium'
-    },
-    hard: {
-      label: 'Champion',
-      timeBase: 10,
-      timeMin: 5,
-      coinMultiplier: 3,
-      pointsMultiplier: 2,
-      questionFilter: 'hard'
-    }
-  };
+  <!-- ============================================================
+  SCRIPT
+  ============================================================ -->
+  <script>
+    // =============================================================
+    // SOUND SYSTEM
+    // =============================================================
+    const AudioSystem = {
+      bgMusic: null,
+      correctSound: null,
+      wrongSound: null,
+      timerSound: null,
+      gameOverSound: null,
+      musicPlaying: false,
 
-  // =====================================================
-  // QUESTION BANK (500+ tagged by difficulty)
-  // =====================================================
-  const QUESTION_BANK = {
-    // ========== NIGERIA ==========
-    Nigeria: {
-      history: [
-        // EASY
-        {
-          text: "Who was the first President of Nigeria?",
-          options: ["Nnamdi Azikiwe", "Olusegun Obasanjo", "Shehu Shagari", "Goodluck Jonathan"],
-          correct: 0,
-          difficulty: 'easy'
-        },
-        {
-          text: "In what year did Nigeria gain independence?",
-          options: ["1960", "1963", "1957", "1970"],
-          correct: 0,
-          difficulty: 'easy'
-        },
-        {
-          text: "Who was the Prime Minister of Nigeria at independence?",
-          options: ["Abubakar Tafawa Balewa", "Nnamdi Azikiwe", "Obafemi Awolowo", "Ahmadu Bello"],
-          correct: 0,
-          difficulty: 'easy'
-        },
-        {
-          text: "Which constitution introduced the presidential system in Nigeria?",
-          options: ["1979", "1963", "1999", "1960"],
-          correct: 0,
-          difficulty: 'easy'
-        },
-        // MEDIUM
-        {
-          text: "The Amalgamation of Northern and Southern Nigeria took place in which year?",
-          options: ["1914", "1900", "1922", "1898"],
-          correct: 0,
-          difficulty: 'medium'
-        },
-        {
-          text: "Who was the military head of state during the Nigerian Civil War?",
-          options: ["Yakubu Gowon", "Murtala Mohammed", "Olusegun Obasanjo", "Ibrahim Babangida"],
-          correct: 0,
-          difficulty: 'medium'
-        },
-        {
-          text: "Who introduced the Structural Adjustment Programme (SAP) in 1986?",
-          options: ["Ibrahim Babangida", "Murtala Mohammed", "Sani Abacha", "Olusegun Obasanjo"],
-          correct: 0,
-          difficulty: 'medium'
-        },
-        {
-          text: "First Nigerian to become Secretary‑General of the Commonwealth?",
-          options: ["Emeka Anyaoku", "Nnamdi Azikiwe", "Olusegun Obasanjo", "Kofi Annan"],
-          correct: 0,
-          difficulty: 'medium'
-        },
-        // HARD
-        {
-          text: "The 'Aburi Accord' was signed with which secessionist leader?",
-          options: ["Odumegwu Ojukwu", "Philip Effiong", "Ken Saro-Wiwa", "Michael Okpara"],
-          correct: 0,
-          difficulty: 'hard'
-        },
-        {
-          text: "What year did the 'June 12' election annulled happen?",
-          options: ["1993", "1991", "1995", "1999"],
-          correct: 0,
-          difficulty: 'hard'
-        },
-        {
-          text: "First female governor in Nigeria?",
-          options: ["Virginia Etiaba", "Ngozi Okonjo-Iweala", "Amina J. Mohammed", "Stella Omu"],
-          correct: 0,
-          difficulty: 'hard'
-        },
-        {
-          text: "The 'Nigerian Youth Movement' was formed in which decade?",
-          options: ["1930s", "1940s", "1920s", "1950s"],
-          correct: 0,
-          difficulty: 'hard'
+      init() {
+        // Create audio elements
+        this.bgMusic = new Audio('audio/bg-music.mp3');
+        this.correctSound = new Audio('audio/correct.mp3');
+        this.wrongSound = new Audio('audio/wrong.mp3');
+        this.timerSound = new Audio('audio/timer-tick.mp3');
+        this.gameOverSound = new Audio('audio/game-over.mp3');
+
+        // Loop background music
+        this.bgMusic.loop = true;
+        this.bgMusic.volume = 0.5;
+
+        // Preload all sounds
+        const sounds = [
+          this.bgMusic,
+          this.correctSound,
+          this.wrongSound,
+          this.timerSound,
+          this.gameOverSound
+        ];
+        sounds.forEach(s => {
+          s.load();
+          s.onerror = () => console.warn('Audio file not found:', s.src);
+        });
+
+        // Update UI state
+        this.updateUI(false);
+      },
+
+      playMusic() {
+        if (!this.bgMusic) return;
+        this.bgMusic.play().then(() => {
+          this.musicPlaying = true;
+          this.updateUI(true);
+        }).catch(e => {
+          console.log('Music play blocked:', e);
+          // Auto-play was blocked - show the play button
+          this.updateUI(false);
+        });
+      },
+
+      pauseMusic() {
+        if (!this.bgMusic) return;
+        this.bgMusic.pause();
+        this.musicPlaying = false;
+        this.updateUI(false);
+      },
+
+      toggleMusic() {
+        if (this.musicPlaying) {
+          this.pauseMusic();
+        } else {
+          this.playMusic();
         }
-      ],
-      geography: [
-        { text: "What is the capital of Nigeria?", options: ["Abuja", "Lagos", "Kano", "Port Harcourt"], correct: 0,
-          difficulty: 'easy' },
-        { text: "Longest river in Nigeria?", options: ["River Niger", "River Benue", "Cross River", "Ogun River"],
-          correct: 0, difficulty: 'easy' },
-        { text: "Yankari Game Reserve is in which state?", options: ["Bauchi", "Plateau", "Taraba", "Adamawa"], correct: 0,
-          difficulty: 'easy' },
-        { text: "Gateway State is?", options: ["Ogun", "Lagos", "Oyo", "Kwara"], correct: 0, difficulty: 'easy' },
-        { text: "Largest state by land area?", options: ["Niger", "Borno", "Taraba", "Kaduna"], correct: 1,
-          difficulty: 'medium' },
-        { text: "Olumo Rock is in?", options: ["Ogun", "Oyo", "Osun", "Ekiti"], correct: 0, difficulty: 'medium' },
-        { text: "Coal City is?", options: ["Enugu", "Anambra", "Ebonyi", "Abia"], correct: 0, difficulty: 'medium' },
-        { text: "Which state is known as the 'Food Basket of the Nation'?", options: ["Benue", "Plateau", "Taraba",
-            "Niger"], correct: 0, difficulty: 'medium' },
-        { text: "The 'Ikogosi Warm Spring' is found in which state?", options: ["Ekiti", "Ondo", "Osun", "Kogi"],
-          correct: 0, difficulty: 'hard' },
-        { text: "Mambilla Plateau is in?", options: ["Taraba", "Adamawa", "Plateau", "Borno"], correct: 0,
-          difficulty: 'hard' }
-      ],
-      culture: [
-        { text: "Yoruba king title?", options: ["Oba", "Emir", "Igwe", "Obong"], correct: 0, difficulty: 'easy' },
-        { text: "Soup made from melon seeds?", options: ["Egusi", "Ogbono", "Afang", "Edikang Ikong"], correct: 0,
-          difficulty: 'easy' },
-        { text: "Largest ethnic group in Nigeria?", options: ["Hausa", "Yoruba", "Igbo", "Ijaw"], correct: 0,
-          difficulty: 'easy' },
-        { text: "Traditional Igbo attire?", options: ["Isiagu", "Agbada", "Buba", "Danshiki"], correct: 0,
-          difficulty: 'easy' },
-        { text: "Durbar festival region?", options: ["Northern Nigeria", "Western", "Eastern", "South-South"], correct: 0,
-          difficulty: 'medium' },
-        { text: "Eyo Festival city?", options: ["Lagos", "Ibadan", "Benin", "Abeokuta"], correct: 0, difficulty: 'medium' },
-        { text: "Traditional Yoruba talking drum?", options: ["Gangan", "Udu", "Kakaki", "Sakara"], correct: 0,
-          difficulty: 'medium' },
-        { text: "The 'Sharo' flogging ceremony is a rite of passage among which group?", options: ["Fulani", "Tiv",
-            "Idoma", "Ebira"
-          ], correct: 0, difficulty: 'hard' },
-        { text: "The 'Carnival Calabar' is in which state?", options: ["Cross River", "Akwa Ibom", "Rivers", "Bayelsa"],
-          correct: 0, difficulty: 'hard' },
-        { text: "Which traditional textile is associated with the Yoruba?", options: ["Adire", "Akwete", "Kente",
-            "Aso Oke"
-          ], correct: 0, difficulty: 'hard' }
-      ],
-      pop: [
-        { text: "Who sang 'Fall'?", options: ["Davido", "Wizkid", "Burna Boy", "Kizz Daniel"], correct: 0,
-          difficulty: 'easy' },
-        { text: "Burna Boy nickname?", options: ["Odogwu", "Starboy", "African Giant", "E choke"], correct: 2,
-          difficulty: 'easy' },
-        { text: "Nigerian Grammy winner 2021?", options: ["Burna Boy", "Wizkid", "Davido", "Tiwa Savage"], correct: 0,
-          difficulty: 'easy' },
-        { text: "Slang for relocating abroad?", options: ["Japa", "Chop life", "Form E", "Zanku"], correct: 0,
-          difficulty: 'easy' },
-        { text: "Davido song 'E choke'?", options: ["If", "Fall", "Assurance", "Fem"], correct: 3, difficulty: 'medium' },
-        { text: "Creator of 'Omo Ghetto'?", options: ["Funke Akindele", "Mo Abudu", "Kemi Adetiba", "Tope Oshin"],
-          correct: 0, difficulty: 'medium' },
-        { text: "'Shaku Shaku' dance associated with?", options: ["Street dance", "Wedding", "Corporate", "Church"],
-          correct: 0, difficulty: 'medium' },
-        { text: "Which Nigerian artist is known as 'Asa'?", options: ["Asa", "Tiwa Savage", "Yemi Alade", "Niniola"],
-          correct: 0, difficulty: 'hard' },
-        { text: "Who won the 2023 Headies 'Artist of the Year'?", options: ["Burna Boy", "Davido", "Wizkid", "Rema"],
-          correct: 3, difficulty: 'hard' },
-        { text: "Which musician popularized the 'Zanku' dance?", options: ["Zlatan", "Naira Marley", "Rema", "Fireboy"],
-          correct: 0, difficulty: 'hard' }
-      ],
-      movies: [
-        { text: "Actress in 'Lionheart'?", options: ["Genevieve Nnaji", "Omotola", "Funke Akindele", "Rita Dominic"],
-          correct: 0, difficulty: 'easy' },
-        { text: "Highest‑grossing Nollywood film?", options: ["Omo Ghetto: The Saga", "The Wedding Party",
-            "King of Boys", "Lionheart"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Nollywood comic actor?", options: ["Aki and Pawpaw", "RMD", "Desmond Elliot", "Jim Iyke"], correct: 0,
-          difficulty: 'easy' },
-        { text: "Which Nollywood actress starred in 'King of Boys'?", options: ["Sola Sobowale", "Genevieve Nnaji",
-            "Funke Akindele", "Omotola Jalade"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Who directed 'The Wedding Party'?", options: ["Kemi Adetiba", "Mo Abudu", "Funke Akindele",
-            "Tope Oshin"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Which actor played 'Akin' in 'The Wedding Party'?", options: ["Banky W", "Ramsey Nouah",
-            "Richard Mofe-Damijo", "Yul Edochie"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "What is the name of the first Nigerian film submitted for the Oscars?", options: ["Lionheart",
-            "The Wedding Party", "October 1", "Tango With Me"
-          ], correct: 0, difficulty: 'hard' },
-        { text: "Who directed 'The Figurine'?", options: ["Kunle Afolayan", "Tunde Kelani", "Mildred Okwo",
-            "Mahmood Ali-Balogun"
-          ], correct: 0, difficulty: 'hard' },
-        { text: "Which Nollywood actor is known for 'Phone Swap'?", options: ["Wale Ojo", "Ramsey Nouah", "Jim Iyke",
-            "Majid Michel"
-          ], correct: 0, difficulty: 'hard' }
-      ],
-      football: [
-        { text: "Which club has won the NPFL the most times?", options: ["Enyimba", "Kano Pillars",
-            "Rangers International", "Shooting Stars"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Who is Nigeria's all‑time top scorer?", options: ["Rashidi Yekini", "Segun Odegbami",
-            "Jay-Jay Okocha", "Ahmed Musa"
-          ], correct: 3, difficulty: 'easy' },
-        { text: "Which Nigerian player won the UEFA Champions League with Chelsea in 2021?", options: [
-            "Kelechi Iheanacho", "Victor Osimhen", "Wilfred Ndidi", "Alex Iwobi"
-          ], correct: 2, difficulty: 'easy' },
-        { text: "Who was the captain of the 2013 AFCON winning team?", options: ["Joseph Yobo", "Vincent Enyeama",
-            "John Obi Mikel", "Ahmed Musa"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Which Nigerian goalkeeper holds the record for most caps?", options: ["Vincent Enyeama", "Peter Rufai",
-            "Ike Shorunmu", "Carl Ikeme"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Which Nigerian player scored a hat‑trick at the 2018 World Cup?", options: ["Ahmed Musa", "Victor Moses",
-            "Odion Ighalo", "Kelechi Iheanacho"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Who is the current all‑time top scorer for the Super Eagles?", options: ["Rashidi Yekini",
-            "Segun Odegbami", "Jay-Jay Okocha", "Ahmed Musa"
-          ], correct: 3, difficulty: 'hard' },
-        { text: "Which Nigerian coach led the team to win the 2013 AFCON?", options: ["Stephen Keshi", "Sunday Oliseh",
-            "Gernot Rohr", "Samson Siasia"
-          ], correct: 0, difficulty: 'hard' },
-        { text: "In which year did Nigeria win its first Olympic gold in football?", options: ["1996", "2000", "2008",
-            "2016"
-          ], correct: 0, difficulty: 'hard' }
-      ]
-    },
-    // ========== GHANA ==========
-    Ghana: {
-      history: [
-        { text: "What was Ghana's former colonial name?", options: ["Gold Coast", "Slave Coast", "Ivory Coast",
-            "Pepper Coast"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Who was Ghana's first president?", options: ["Kwame Nkrumah", "Jerry Rawlings", "John Kufuor",
-            "Nana Akufo-Addo"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "In which year did Ghana gain independence?", options: ["1957", "1960", "1955", "1963"], correct: 0,
-          difficulty: 'easy' },
-        { text: "Which Ghanaian served as the Secretary‑General of the United Nations?", options: ["Kofi Annan",
-            "Kwame Nkrumah", "John Atta Mills", "Nana Akufo-Addo"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Who was the first Ghanaian to win the African Footballer of the Year award?", options: ["Abedi Pele",
-            "Asamoah Gyan", "Michael Essien", "Tony Yeboah"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "In which year did Ghana become a republic?", options: ["1960", "1957", "1963", "1969"], correct: 0,
-          difficulty: 'medium' },
-        { text: "Who was the first Ghanaian to be awarded the Nobel Prize?", options: ["Kofi Annan", "Kwame Nkrumah",
-            "J.B. Danquah", "Nana Akufo-Addo"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Who was the leader of the 1966 coup that overthrew Kwame Nkrumah?", options: ["Joseph Ankrah",
-            "Emmanuel Kotoka", "Akwasi Afrifa", "Ignatius Acheampong"
-          ], correct: 0, difficulty: 'hard' },
-        { text: "The 'National Liberation Council' (NLC) overthrew Kwame Nkrumah in 1966. Who became head of state?",
-          options: ["Joseph Ankrah", "Emmanuel Kotoka", "Akwasi Afrifa", "Ignatius Acheampong"], correct: 0,
-          difficulty: 'hard' }
-      ],
-      geography: [
-        { text: "What is the capital of Ghana?", options: ["Accra", "Kumasi", "Takoradi", "Cape Coast"], correct: 0,
-          difficulty: 'easy' },
-        { text: "Which lake is the largest man‑made lake in Ghana?", options: ["Lake Volta", "Lake Bosomtwe",
-            "Lake Kainji", "Lake Togo"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Which region of Ghana is known for its cocoa production?", options: ["Ashanti", "Western", "Eastern",
-            "Volta"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "What is the highest point in Ghana?", options: ["Mount Afadjato", "Mount Adaklu", "Mount Gemi",
-            "Mount Dzigbe"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "What is the capital of the Ashanti Region?", options: ["Kumasi", "Obuasi", "Ejisu", "Mampong"],
-          correct: 0, difficulty: 'medium' },
-        { text: "Which national park is famous for its elephants in Ghana?", options: ["Kakum National Park",
-            "Mole National Park", "Digya National Park", "Bia National Park"
-          ], correct: 1, difficulty: 'medium' },
-        { text: "What is the largest city in Ghana by population?", options: ["Accra", "Kumasi", "Tamale",
-            "Sekondi-Takoradi"
-          ], correct: 0, difficulty: 'hard' },
-        { text: "Which river forms part of Ghana's eastern border?", options: ["Volta", "Tano", "Ankobra", "Pra"],
-          correct: 0, difficulty: 'hard' }
-      ],
-      culture: [
-        { text: "Which festival is famous among the Ashanti people?", options: ["Homowo", "Aboakyer", "Damba",
-            "Odwira"
-          ], correct: 3, difficulty: 'easy' },
-        { text: "What is the national dish of Ghana?", options: ["Fufu", "Jollof Rice", "Banku", "Kenkey"], correct: 2,
-          difficulty: 'easy' },
-        { text: "Which traditional Ghanaian cloth is woven in strips?", options: ["Kente", "Adinkra", "Fugu",
-            "Batakari"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "The 'Homowo' festival is celebrated by which ethnic group?", options: ["Ga", "Ashanti", "Ewe",
-            "Fante"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Which dance is associated with the Ga people?", options: ["Kpanlogo", "Adowa", "Bamaya", "Agbadza"],
-          correct: 0, difficulty: 'medium' },
-        { text: "The famous 'Kente' cloth is originally associated with which Ghanaian kingdom?", options: [
-            "Ashanti Kingdom", "Fante Confederacy", "Ga State", "Dagbon Kingdom"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "The 'Damba' festival is celebrated by which ethnic group in Ghana?", options: ["Dagomba", "Ewe",
-            "Fante", "Ga"
-          ], correct: 0, difficulty: 'hard' },
-        { text: "What is the name of the Ghanaian woven smock often worn by men in the northern regions?", options: [
-            "Fugu", "Kente", "Adinkra", "Ankara"
-          ], correct: 0, difficulty: 'hard' }
-      ],
-      pop: [
-        { text: "Who is known as the 'King of Azonto'?", options: ["Fuse ODG", "Sarkodie", "Stonebwoy", "Shatta Wale"],
-          correct: 0, difficulty: 'easy' },
-        { text: "Which Ghanaian musician won BET Best International Act in 2019?", options: ["Sarkodie", "Stonebwoy",
-            "Shatta Wale", "R2Bees"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Who sang the hit 'Oofeetsɔ'?", options: ["Sarkodie", "Stonebwoy", "KiDi", "King Promise"], correct: 2,
-          difficulty: 'easy' },
-        { text: "Which Ghanaian rapper is known as 'The African Simba'?", options: ["Sarkodie", "M.anifest", "Obrafour",
-            "E.L."
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Who won the Vodafone Ghana Music Award for Artiste of the Year in 2023?", options: ["Black Sherif",
-            "King Promise", "KiDi", "Stonebwoy"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "What is the name of Ghana's most popular hip-hop duo?", options: ["R2Bees", "Bradez", "Fokn Bois",
-            "Asaase Sound"
-          ], correct: 0, difficulty: 'hard' },
-        { text: "Which Ghanaian musician is known as the 'Dancehall King'?", options: ["Shatta Wale", "Stonebwoy",
-            "Samini", "Kaakie"
-          ], correct: 1, difficulty: 'hard' }
-      ],
-      movies: [
-        { text: "Which Ghanaian actor starred in 'The Price'?", options: ["Majid Michel", "Van Vicker", "John Dumelo",
-            "Yvonne Nelson"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Who directed 'The Burial of Kojo'?", options: ["Blitz Bazawule", "Leila Djansi",
-            "Shirley Frimpong-Manso", "Frank Rajah"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Which Ghanaian actress is known for the movie 'Princess Tyra'?", options: ["Yvonne Okoro",
-            "Jackie Appiah", "Nadia Buari", "Martha Ankomah"
-          ], correct: 1, difficulty: 'medium' },
-        { text: "What is the name of the first Ghanaian movie submitted for the Oscars?", options: [
-            "The Burial of Kojo", "Azali", "Keteke", "Children of the Mountain"
-          ], correct: 1, difficulty: 'medium' },
-        { text: "Which Ghanaian actor starred in 'A Sting in a Tale'?", options: ["John Dumelo", "Majid Michel",
-            "Van Vicker", "Adjetey Anang"
-          ], correct: 2, difficulty: 'hard' },
-        { text: "Who directed the movie 'Azali'?", options: ["Kwabena Gyansah", "Leila Djansi",
-            "Shirley Frimpong-Manso", "Frank Rajah"
-          ], correct: 0, difficulty: 'hard' }
-      ],
-      football: [
-        { text: "Which club has won the Ghana Premier League the most times?", options: ["Asante Kotoko",
-            "Hearts of Oak", "Aduana Stars", "Medeama"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Who is Ghana's all‑time top scorer?", options: ["Asamoah Gyan", "Abedi Pele", "Tony Yeboah",
-            "André Ayew"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Which Ghanaian player won the African Player of the Year award in 1992?", options: ["Abedi Pele",
-            "Anthony Yeboah", "Asamoah Gyan", "Michael Essien"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "In which year did Ghana reach the quarterfinals of the FIFA World Cup?", options: ["2010", "2006",
-            "2014", "2018"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Which Ghanaian player was known as the 'Baby Jet'?", options: ["Asamoah Gyan", "Abedi Pele",
-            "Michael Essien", "Sulley Muntari"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Which club did Michael Essien play for in the Premier League?", options: ["Chelsea",
-            "Manchester United", "Arsenal", "Liverpool"
-          ], correct: 0, difficulty: 'hard' },
-        { text: "In which year did Ghana win the Africa Cup of Nations last?", options: ["1982", "1963", "1965",
-            "1978"
-          ], correct: 0, difficulty: 'hard' }
-      ]
-    },
-    // ========== KENYA ==========
-    Kenya: {
-      history: [
-        { text: "Who was Kenya's first president?", options: ["Jomo Kenyatta", "Daniel arap Moi", "Mwai Kibaki",
-            "Uhuru Kenyatta"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "In what year did Kenya gain independence?", options: ["1963", "1960", "1965", "1962"], correct: 0,
-          difficulty: 'easy' },
-        { text: "Which Kenyan won the Nobel Peace Prize in 2004?", options: ["Wangari Maathai", "Raila Odinga",
-            "Uhuru Kenyatta", "Ngũgĩ wa Thiong'o"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Who led the Mau Mau uprising against British rule?", options: ["Dedan Kimathi", "Jomo Kenyatta",
-            "Mekatilili wa Menza", "Koitalel arap Samoei"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Which Kenyan leader served as the 3rd President?", options: ["Mwai Kibaki", "Daniel arap Moi",
-            "Uhuru Kenyatta", "William Ruto"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Who was the first female Vice President of Kenya?", options: ["Wangari Maathai", "Martha Karua",
-            "Kalonzo Musyoka", "Charity Ngilu"
-          ], correct: 1, difficulty: 'hard' },
-        { text: "In which year did the new constitution of Kenya come into effect?", options: ["2010", "2005", "2013",
-            "2017"
-          ], correct: 0, difficulty: 'hard' }
-      ],
-      geography: [
-        { text: "What is the capital of Kenya?", options: ["Nairobi", "Mombasa", "Kisumu", "Nakuru"], correct: 0,
-          difficulty: 'easy' },
-        { text: "What is the highest mountain in Kenya?", options: ["Mount Kenya", "Mount Kilimanjaro", "Mount Elgon",
-            "Mount Longonot"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Which lake is the largest in Kenya?", options: ["Lake Turkana", "Lake Victoria", "Lake Naivasha",
-            "Lake Nakuru"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Which national park is famous for the wildebeest migration?", options: ["Maasai Mara", "Amboseli",
-            "Tsavo", "Samburu"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "What is the coastal city known for its historical Fort Jesus?", options: ["Mombasa", "Malindi",
-            "Lamu", "Kilifi"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Which mountain is the second highest in Kenya?", options: ["Mount Elgon", "Mount Kilimanjaro",
-            "Mount Longonot", "Mount Suswa"
-          ], correct: 0, difficulty: 'hard' },
-        { text: "Which lake is known for its flamingos?", options: ["Lake Nakuru", "Lake Naivasha", "Lake Elementaita",
-            "Lake Bogoria"
-          ], correct: 0, difficulty: 'hard' }
-      ],
-      culture: [
-        { text: "Which Kenyan tribe is famous for its jumping dance?", options: ["Maasai", "Kikuyu", "Luo", "Kalenjin"],
-          correct: 0, difficulty: 'easy' },
-        { text: "What is the national dish of Kenya?", options: ["Ugali", "Nyama Choma", "Sukuma Wiki", "Githeri"],
-          correct: 0, difficulty: 'easy' },
-        { text: "What is the traditional Luo string instrument?", options: ["Nyatiti", "Orutu", "Kigamba", "Litungu"],
-          correct: 0, difficulty: 'medium' },
-        { text: "What is the name of the Maasai traditional jumping dance?", options: ["Adumu", "Isikuti", "Chakacha",
-            "Mwomboko"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Which Kenyan community is known for its soapstone carvings?", options: ["Kisii", "Kikuyu", "Luo",
-            "Maasai"
-          ], correct: 0, difficulty: 'hard' },
-        { text: "What is the traditional food of the Maasai?", options: ["Meat and milk", "Ugali", "Nyama Choma",
-            "Githeri"
-          ], correct: 0, difficulty: 'hard' }
-      ],
-      pop: [
-        { text: "Who sang 'Kiss Me'?", options: ["Nyashinski", "Sauti Sol", "Bahati", "Otile Brown"], correct: 0,
-          difficulty: 'easy' },
-        { text: "Which Kenyan musician is known for 'Diani'?", options: ["Otile Brown", "Nyashinski", "Sauti Sol",
-            "Gilad"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Who is the most famous Kenyan rapper?", options: ["Khaligraph Jones", "Octopizzo", "King Kaka",
-            "Blen Blinks"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Which Kenyan band released the hit 'Suzanna'?", options: ["Sauti Sol", "Elani", "H_art the Band",
-            "Bien"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Who won the Best African Act at the 2021 MTV Europe Music Awards?", options: ["Bien", "Sauti Sol",
-            "Nyashinski", "Khaligraph Jones"
-          ], correct: 3, difficulty: 'hard' },
-        { text: "Which Kenyan musician is known as 'The King of Gengeton'?", options: ["Bahati", "Otile Brown",
-            "Arrow Bwoy", "Willy Paul"
-          ], correct: 0, difficulty: 'hard' }
-      ],
-      movies: [
-        { text: "Which Kenyan film was nominated for an Oscar?", options: ["Supa Modo", "Kati Kati",
-            "Nairobi Half Life", "The First Grader"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Who directed 'Kati Kati'?", options: ["Mbithi Masya", "Wanuri Kahiu", "Judy Kibinge", "Tosh Gitonga"],
-          correct: 0, difficulty: 'easy' },
-        { text: "Which Kenyan actor starred in 'Lusala'?", options: ["Brian Ogola", "Alfred Munyua", "Ian Mugoya",
-            "Timothy Runji"
-          ], correct: 1, difficulty: 'medium' },
-        { text: "Who directed the award-winning film 'Rafiki'?", options: ["Wanuri Kahiu", "Mbithi Masya",
-            "Judy Kibinge", "Likarion Wainaina"
-          ], correct: 0, difficulty: 'hard' },
-        { text: "Which Kenyan actress is known for her role in 'Rafiki'?", options: ["Samantha Mugatsia",
-            "Sheila Munyiva", "Mkamzee Mwatela", "Lupita Nyong'o"
-          ], correct: 0, difficulty: 'hard' }
-      ],
-      football: [
-        { text: "Which club has won the Kenyan Premier League the most?", options: ["Gor Mahia", "AFC Leopards",
-            "Tusker", "Ulinzi Stars"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Who is Kenya's all‑time top scorer?", options: ["Dennis Oliech", "Michael Olunga", "Allan Wanga",
-            "Musa Otieno"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Which Kenyan player scored a hat‑trick at the 2019 AFCON?", options: ["Michael Olunga",
-            "Victor Wanyama", "Eric Ouma", "John Ndirangu"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Which Kenyan midfielder captained the national team and played for Tottenham Hotspur?", options: [
-            "Victor Wanyama", "McDonald Mariga", "Dennis Oliech", "Michael Olunga"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "What is the nickname of the Kenyan national football team?", options: ["Harambee Stars", "Simba",
-            "Rising Stars", "National Team"
-          ], correct: 0, difficulty: 'hard' },
-        { text: "In which year did Kenya qualify for the Africa Cup of Nations?", options: ["2004", "2006", "2008",
-            "2010"
-          ], correct: 0, difficulty: 'hard' }
-      ]
-    },
-    // ========== SOUTH AFRICA ==========
-    SouthAfrica: {
-      history: [
-        { text: "Who was the first black president of South Africa?", options: ["Nelson Mandela", "Thabo Mbeki",
-            "Jacob Zuma", "Cyril Ramaphosa"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "In what year did apartheid officially end?", options: ["1994", "1990", "1992", "1996"], correct: 0,
-          difficulty: 'easy' },
-        { text: "Who was the last State President under apartheid?", options: ["F.W. de Klerk", "P.W. Botha",
-            "John Vorster", "B.J. Vorster"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Which famous South African activist was awarded the Nobel Peace Prize along with Nelson Mandela?",
-          options: ["F.W. de Klerk", "Desmond Tutu", "Oliver Tambo", "Walter Sisulu"], correct: 0,
-          difficulty: 'medium' },
-        { text: "In which year did the 'Soweto Uprising' take place?", options: ["1976", "1980", "1985", "1990"],
-          correct: 0, difficulty: 'medium' },
-        { text: "Who was the founder of the Pan Africanist Congress (PAC)?", options: ["Robert Sobukwe", "Steve Biko",
-            "Nelson Mandela", "Oliver Tambo"
-          ], correct: 0, difficulty: 'hard' },
-        { text: "Which famous South African musician was a vocal anti‑apartheid activist?", options: ["Miriam Makeba",
-            "Brenda Fassie", "Hugh Masekela", "Lucky Dube"
-          ], correct: 0, difficulty: 'hard' }
-      ],
-      geography: [
-        { text: "What is the capital of South Africa?", options: ["Pretoria", "Cape Town", "Bloemfontein",
-            "Johannesburg"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Which mountain range is famous in Cape Town?", options: ["Table Mountain", "Drakensberg",
-            "Magaliesberg", "Langeberg"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Which two oceans meet at Cape Agulhas?", options: ["Atlantic and Indian", "Pacific and Indian",
-            "Arctic and Atlantic", "Indian and Southern"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "What is the longest river in South Africa?", options: ["Orange River", "Vaal River", "Limpopo River",
-            "Tugela River"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "What is the highest point in South Africa?", options: ["Mafadi", "Table Mountain", "Chapman's Peak",
-            "Lion's Head"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Which desert is located in South Africa?", options: ["Kalahari", "Namib", "Sahara", "Atacama"],
-          correct: 0, difficulty: 'hard' },
-        { text: "Which city is known as the 'City of Gold'?", options: ["Johannesburg", "Pretoria", "Cape Town",
-            "Durban"
-          ], correct: 0, difficulty: 'hard' }
-      ],
-      culture: [
-        { text: "What is the traditional dress of the Zulu people?", options: ["Isicholo", "Shweshwe", "Kente",
-            "Agbada"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Which South African dish is made from cornmeal?", options: ["Pap", "Bunny Chow", "Biltong",
-            "Bobotie"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "What is the traditional dance of the Xhosa people?", options: ["Indlamu", "Pantsula", "Gumboot",
-            "Mbaqanga"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Which language is the most widely spoken in South Africa?", options: ["Zulu", "Xhosa", "Afrikaans",
-            "English"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Which South African ethnic group is known for their colorful blankets?", options: ["Basotho", "Zulu",
-            "Xhosa", "Venda"
-          ], correct: 0, difficulty: 'hard' },
-        { text: "What is the name of the annual music festival held in Grahamstown?", options: [
-            "National Arts Festival", "Oppikoppi", "Splashy Fen", "Klein Karoo"
-          ], correct: 0, difficulty: 'hard' }
-      ],
-      pop: [
-        { text: "Who sang 'Jerusalema'?", options: ["Master KG ft. Nomcebo", "DJ Maphorisa", "Kabza De Small",
-            "Prince Kaybee"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Which South African rapper is known as 'Mr. Cashtime'?", options: ["Cassper Nyovest", "AKA",
-            "Nasty C", "Kwesta"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Who is the most awarded South African musician of all time?", options: ["Miriam Makeba",
-            "Brenda Fassie", "Lucky Dube", "Hugh Masekela"
-          ], correct: 1, difficulty: 'easy' },
-        { text: "Which South African DJ won a Grammy for the remix of 'Jerusalema'?", options: ["Master KG",
-            "DJ Maphorisa", "Black Coffee", "Prince Kaybee"
-          ], correct: 2, difficulty: 'medium' },
-        { text: "Which South African musician is known as 'The Queen of Afro Pop'?", options: ["Yvonne Chaka Chaka",
-            "Brenda Fassie", "Miriam Makeba", "Thandiswa Mazwai"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "What is the name of the popular South African house music genre?", options: ["Amapiano", "Gqom",
-            "Kwaito", "House"
-          ], correct: 0, difficulty: 'hard' },
-        { text: "Which South African singer is known as 'Mama Africa'?", options: ["Miriam Makeba", "Brenda Fassie",
-            "Yvonne Chaka Chaka", "Thandiswa Mazwai"
-          ], correct: 0, difficulty: 'hard' }
-      ],
-      movies: [
-        { text: "Which South African film won the Oscar for Best Foreign Language Film?", options: ["Tsotsi",
-            "District 9", "The Gods Must Be Crazy", "Yesterday"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Who directed 'District 9'?", options: ["Neill Blomkamp", "Gavin Hood", "Darrell Roodt",
-            "Oliver Schmitz"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Which South African actor starred in 'Blood Diamond'?", options: ["Djimon Hounsou", "Terry Pheto",
-            "Connie Chiume", "John Kani"
-          ], correct: 3, difficulty: 'medium' },
-        { text: "What is the name of the first South African film to win the Oscar for Best Foreign Language Film?",
-          options: ["Tsotsi", "Yesterday", "The Gods Must Be Crazy", "Skin"], correct: 0, difficulty: 'medium' },
-        { text: "Which South African actress played the lead in 'The Woman King'?", options: ["Thuso Mbedu",
-            "Nomzamo Mbatha", "Terry Pheto", "Charlize Theron"
-          ], correct: 0, difficulty: 'hard' },
-        { text: "Which South African actor is known for his role in 'Black Panther'?", options: ["John Kani",
-            "Atandwa Kani", "Connie Chiume", "Thuso Mbedu"
-          ], correct: 0, difficulty: 'hard' }
-      ],
-      football: [
-        { text: "Which club has won the PSL the most times?", options: ["Mamelodi Sundowns", "Kaizer Chiefs",
-            "Orlando Pirates", "SuperSport United"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Who is South Africa's all‑time top scorer?", options: ["Benni McCarthy", "Shaun Bartlett",
-            "Katlego Mphela", "Siphiwe Tshabalala"
-          ], correct: 0, difficulty: 'easy' },
-        { text: "Which South African player won the Premier League with Manchester United?", options: [
-            "Quinton Fortune", "Benni McCarthy", "Aaron Mokoena", "Mbulelo Mabizela"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "In which year did South Africa host the FIFA World Cup?", options: ["2010", "2006", "2014", "2018"],
-          correct: 0, difficulty: 'medium' },
-        { text: "Who scored the famous goal for South Africa in the 2010 World Cup?", options: ["Siphiwe Tshabalala",
-            "Kagiso Dikgacoi", "Steven Pienaar", "Teko Modise"
-          ], correct: 0, difficulty: 'medium' },
-        { text: "Which South African player was known as 'The Kaiser'?", options: ["Kaizer Motaung", "Jomo Sono",
-            "Lucas Radebe", "Doctor Khumalo"
-          ], correct: 0, difficulty: 'hard' },
-        { text: "In which year did South Africa win the Africa Cup of Nations?", options: ["1996", "1998", "2000",
-            "2002"
-          ], correct: 0, difficulty: 'hard' }
-      ]
-    },
-    // ========== ALL AFRICA ==========
-    africa: [
-      { text: "Which country is known as the 'Giant of Africa'?", options: ["Nigeria", "Ghana", "South Africa",
-          "Kenya"
-        ], correct: 0, difficulty: 'easy' },
-      { text: "What is the highest mountain in Africa?", options: ["Mount Kilimanjaro", "Mount Kenya", "Mount Elgon",
-          "Rwenzori"
-        ], correct: 0, difficulty: 'easy' },
-      { text: "Which river is the longest in Africa?", options: ["Nile", "Congo", "Niger", "Zambezi"], correct: 0,
-        difficulty: 'easy' },
-      { text: "Which African country was formerly known as Abyssinia?", options: ["Ethiopia", "Eritrea", "Somalia",
-          "Djibouti"
-        ], correct: 0, difficulty: 'easy' },
-      { text: "Who was the first African to win the FIFA Ballon d'Or?", options: ["George Weah", "Samuel Eto'o",
-          "Didier Drogba", "Yaya Touré"
-        ], correct: 0, difficulty: 'easy' },
-      { text: "What is the capital of Egypt?", options: ["Cairo", "Alexandria", "Luxor", "Aswan"], correct: 0,
-        difficulty: 'easy' },
-      { text: "Which desert covers much of North Africa?", options: ["Sahara", "Kalahari", "Namib", "Libyan"],
-        correct: 0, difficulty: 'easy' },
-      { text: "The African Union (AU) headquarters is in which city?", options: ["Addis Ababa", "Nairobi",
-          "Johannesburg", "Cairo"
-        ], correct: 0, difficulty: 'easy' },
-      { text: "Which African country is the largest producer of cocoa?", options: ["Ivory Coast", "Ghana", "Nigeria",
-          "Cameroon"
-        ], correct: 0, difficulty: 'medium' },
-      { text: "What is the largest lake in Africa?", options: ["Lake Victoria", "Lake Tanganyika", "Lake Malawi",
-          "Lake Turkana"
-        ], correct: 0, difficulty: 'medium' },
-      { text: "Which African island nation is located in the Indian Ocean?", options: ["Madagascar", "Seychelles",
-          "Mauritius", "Comoros"
-        ], correct: 0, difficulty: 'medium' },
-      { text: "Which African country is famous for its ancient rock‑hewn churches in Lalibela?", options: ["Ethiopia",
-          "Eritrea", "Sudan", "Somalia"
-        ], correct: 0, difficulty: 'medium' },
-      { text: "Who is the most decorated African footballer of all time?", options: ["Samuel Eto'o", "Yaya Touré",
-          "George Weah", "Didier Drogba"
-        ], correct: 0, difficulty: 'medium' },
-      { text: "Which African country has the largest population?", options: ["Nigeria", "Ethiopia", "Egypt",
-          "DR Congo"
-        ], correct: 0, difficulty: 'medium' },
-      { text: "What is the currency of Morocco?", options: ["Moroccan Dirham", "Dinar", "Franc", "Euro"], correct: 0,
-        difficulty: 'medium' },
-      { text: "Which waterfall is the largest in Africa (by volume)?", options: ["Victoria Falls", "Murchison Falls",
-          "Tugela Falls", "Augrabies Falls"
-        ], correct: 0, difficulty: 'hard' },
-      { text: "Which African country is known as the 'Land of a Thousand Hills'?", options: ["Rwanda", "Burundi",
-          "Uganda", "Lesotho"
-        ], correct: 0, difficulty: 'hard' },
-      { text: "Who was the first female president of an African country (Liberia)?", options: [
-          "Ellen Johnson Sirleaf", "Sahle-Work Zewde", "Joyce Banda", "Catherine Samba-Panza"
-        ], correct: 0, difficulty: 'hard' },
-      { text: "Which African country is the largest producer of gold?", options: ["South Africa", "Ghana", "Mali",
-          "Tanzania"
-        ], correct: 0, difficulty: 'hard' },
-      { text: "Which African city is known as the 'Pearl of Africa'?", options: ["Kampala", "Nairobi", "Kigali",
-          "Dar es Salaam"
-        ], correct: 0, difficulty: 'hard' },
-      { text: "Which African country is the smallest by land area?", options: ["Seychelles", "Gambia", "Eswatini",
-          "Djibouti"
-        ], correct: 0, difficulty: 'hard' },
-      { text: "Which African country has the highest GDP per capita?", options: ["Seychelles", "Mauritius", "Gabon",
-          "Botswana"
-        ], correct: 0, difficulty: 'hard' }
-    ]
-  };
+      },
 
-  // =====================================================
-  // GAME STATE
-  // =====================================================
-  let state = {
-    selectedCountry: 'Nigeria',
-    selectedCategory: 'history',
-    selectedDifficulty: 'medium',
-    coinBalance: 100,
-    totalPoints: 0,
-    bestScore: 0,
-    gamesPlayed: 0,
-    streak: 0,
-    lastPlayed: null,
+      playCorrect() {
+        if (this.correctSound) {
+          this.correctSound.currentTime = 0;
+          this.correctSound.play().catch(() => {});
+        }
+      },
 
-    // Quiz state
-    questions: [],
-    currentIndex: 0,
-    score: 0,
-    lives: 3,
-    answerLocked: false,
-    timeLeft: 14,
-    timerInterval: null,
-    correctIdx: 0,
-    isTournament: false,
-    tournamentPaid: false,
+      playWrong() {
+        if (this.wrongSound) {
+          this.wrongSound.currentTime = 0;
+          this.wrongSound.play().catch(() => {});
+        }
+      },
 
-    // Onboarding
-    onboardingCompleted: false,
-    termsAccepted: false,
-  };
+      playTimer() {
+        if (this.timerSound) {
+          this.timerSound.currentTime = 0;
+          this.timerSound.play().catch(() => {});
+        }
+      },
 
-  // =====================================================
-  // DOM REFS
-  // =====================================================
-  const $ = id => document.getElementById(id);
-  const homeScreen = $('homeScreen');
-  const quizScreen = $('quizScreen');
-  const resultScreen = $('resultScreen');
-  const onboardingOverlay = $('onboardingOverlay');
+      playGameOver() {
+        if (this.gameOverSound) {
+          this.gameOverSound.currentTime = 0;
+          this.gameOverSound.play().catch(() => {});
+        }
+      },
 
-  // =====================================================
-  // UTILITY FUNCTIONS
-  // =====================================================
-  function shuffle(arr) {
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr;
-  }
-
-  function getDifficultyConfig() {
-    return DIFFICULTY[state.selectedDifficulty] || DIFFICULTY.medium;
-  }
-
-  function getTimeForQuestion(index) {
-    const config = getDifficultyConfig();
-    let t = config.timeBase - index;
-    return Math.max(t, config.timeMin);
-  }
-
-  // =====================================================
-  // STORAGE
-  // =====================================================
-  function saveState() {
-    try {
-      localStorage.setItem('africanQuiz_state', JSON.stringify({
-        coinBalance: state.coinBalance,
-        totalPoints: state.totalPoints,
-        bestScore: state.bestScore,
-        gamesPlayed: state.gamesPlayed,
-        streak: state.streak,
-        lastPlayed: state.lastPlayed,
-        onboardingCompleted: state.onboardingCompleted,
-        termsAccepted: state.termsAccepted,
-      }));
-    } catch (e) { /* ignore */ }
-  }
-
-  function loadState() {
-    try {
-      const raw = localStorage.getItem('africanQuiz_state');
-      if (raw) {
-        const data = JSON.parse(raw);
-        Object.assign(state, data);
-        // Ensure onboarding flag
-        if (data.onboardingCompleted !== undefined) state.onboardingCompleted = data.onboardingCompleted;
-        if (data.termsAccepted !== undefined) state.termsAccepted = data.termsAccepted;
+      updateUI(isPlaying) {
+        const toggleBtn = document.getElementById('musicToggleBtn');
+        const explicitBtn = document.getElementById('explicitPlayBtn');
+        if (toggleBtn) {
+          toggleBtn.innerHTML = isPlaying ? '<i class="fas fa-volume-up"></i>' :
+            '<i class="fas fa-music"></i>';
+        }
+        if (explicitBtn) {
+          explicitBtn.style.display = isPlaying ? 'none' : 'flex';
+        }
       }
-    } catch (e) { /* ignore */ }
-  }
-
-  // =====================================================
-  // UI UPDATES
-  // =====================================================
-  function updateHomeUI() {
-    $('coinBalance').textContent = state.coinBalance;
-    $('totalPointsHome').textContent = state.totalPoints;
-    $('bestScoreHome').textContent = state.bestScore;
-    $('gamesPlayedHome').textContent = state.gamesPlayed;
-    $('streakDisplay').textContent = state.streak || 0;
-  }
-
-  function updateQuizUI() {
-    $('scoreDisplay').textContent = state.score;
-    $('livesDisplay').textContent = state.lives;
-    $('currentQ').textContent = state.currentIndex + 1;
-    $('totalQ').textContent = state.questions.length;
-  }
-
-  function updateTimerUI() {
-    const total = getTimeForQuestion(state.currentIndex);
-    const percent = total > 0 ? (state.timeLeft / total) * 100 : 0;
-    $('timerFill').style.width = `${Math.min(percent, 100)}%`;
-    $('timerText').textContent = `${state.timeLeft}s`;
-    const color = state.timeLeft <= 3 ? '#ef4444' : '#facc15';
-    $('timerFill').style.backgroundColor = color;
-  }
-
-  // =====================================================
-  // COINS & REWARDS
-  // =====================================================
-  function addCoins(amount) {
-    state.coinBalance += amount;
-    updateHomeUI();
-    saveState();
-  }
-
-  function deductCoins(amount) {
-    if (state.coinBalance >= amount) {
-      state.coinBalance -= amount;
-      updateHomeUI();
-      saveState();
-      return true;
-    }
-    return false;
-  }
-
-  // =====================================================
-  // DAILY STREAK
-  // =====================================================
-  function checkDailyStreak() {
-    const today = new Date().toDateString();
-    if (state.lastPlayed === today) return;
-
-    if (state.lastPlayed) {
-      const yesterday = new Date();
-      yesterday.setDate(yesterday.getDate() - 1);
-      if (state.lastPlayed === yesterday.toDateString()) {
-        state.streak = (state.streak || 0) + 1;
-      } else {
-        state.streak = 0;
-      }
-    } else {
-      state.streak = 1;
-    }
-
-    state.lastPlayed = today;
-    saveState();
-
-    // Bonus for streaks
-    if (state.streak >= 7) {
-      addCoins(50);
-      showToast('🔥 7-day streak! +50 bonus coins! 🎉');
-    } else if (state.streak >= 3) {
-      addCoins(20);
-      showToast('🔥 3-day streak! +20 bonus coins!');
-    }
-    updateHomeUI();
-  }
-
-  // =====================================================
-  // TOAST NOTIFICATION
-  // =====================================================
-  function showToast(msg) {
-    const existing = document.querySelector('.toast-msg');
-    if (existing) existing.remove();
-    const div = document.createElement('div');
-    div.className = 'toast-msg';
-    div.style.cssText = `
-      position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%);
-      background: #1e293b; color: #facc15; padding: 12px 24px;
-      border-radius: 60px; border: 1px solid #facc15;
-      font-weight: 600; z-index: 9999; max-width: 90%;
-      text-align: center; box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-      animation: fadeInUp 0.3s ease;
-    `;
-    div.textContent = msg;
-    document.body.appendChild(div);
-    setTimeout(() => {
-      div.style.opacity = '0';
-      div.style.transition = 'opacity 0.3s';
-      setTimeout(() => div.remove(), 400);
-    }, 3500);
-  }
-
-  // =====================================================
-  // QUESTION BANK ACCESS
-  // =====================================================
-  function getQuestionPool() {
-    if (state.selectedCategory === 'africa') {
-      return QUESTION_BANK.africa || [];
-    }
-    const countryData = QUESTION_BANK[state.selectedCountry];
-    if (!countryData) return [];
-    return countryData[state.selectedCategory] || [];
-  }
-
-  function getFilteredQuestions() {
-    const pool = getQuestionPool();
-    const difficulty = state.selectedDifficulty;
-    const config = DIFFICULTY[difficulty];
-    if (!config) return shuffle([...pool]).slice(0, 10);
-
-    // Filter by difficulty
-    let filtered = pool.filter(q => {
-      // If question has no difficulty tag, treat as medium
-      const qDiff = q.difficulty || 'medium';
-      // For 'hard' mode, include hard + medium
-      if (difficulty === 'hard') return qDiff === 'hard' || qDiff === 'medium';
-      return qDiff === difficulty || (difficulty === 'easy' && qDiff === 'easy');
-    });
-
-    // If not enough questions, fallback to all
-    if (filtered.length < 5) filtered = [...pool];
-
-    // Shuffle and take 10
-    const shuffled = shuffle([...filtered]);
-    return shuffled.slice(0, 10);
-  }
-
-  // =====================================================
-  // QUIZ LOGIC
-  // =====================================================
-  function initQuiz() {
-    state.questions = getFilteredQuestions();
-    state.currentIndex = 0;
-    state.score = 0;
-    state.lives = 3;
-    state.answerLocked = false;
-    state.isTournament = false;
-    state.tournamentPaid = false;
-    state.timeLeft = getTimeForQuestion(0);
-
-    if (state.questions.length < 5) {
-      showToast('Not enough questions. Using all available.');
-    }
-
-    renderQuestion();
-    updateQuizUI();
-  }
-
-  function renderQuestion() {
-    if (state.currentIndex >= state.questions.length || state.lives <= 0) {
-      endGame();
-      return;
-    }
-
-    state.answerLocked = false;
-    state.timeLeft = getTimeForQuestion(state.currentIndex);
-
-    const q = state.questions[state.currentIndex];
-    $('questionText').textContent = q.text;
-
-    // Build options with shuffled order
-    const indices = [0, 1, 2, 3];
-    shuffle(indices);
-    state.correctIdx = indices.indexOf(q.correct);
-
-    const container = $('optionsContainer');
-    container.innerHTML = '';
-    indices.forEach((idx, displayIdx) => {
-      const btn = document.createElement('button');
-      btn.className = 'option-btn';
-      btn.textContent = `${String.fromCharCode(65 + displayIdx)}. ${q.options[idx]}`;
-      btn.dataset.idx = displayIdx;
-      btn.addEventListener('click', () => handleAnswer(displayIdx));
-      container.appendChild(btn);
-    });
-
-    // Reset UI
-    $('nextBtn').disabled = true;
-    $('feedbackMsg').textContent = '';
-    $('hintBtn').disabled = false;
-
-    updateQuizUI();
-    updateTimerUI();
-    startTimer();
-  }
-
-  function startTimer() {
-    stopTimer();
-    state.timeLeft = getTimeForQuestion(state.currentIndex);
-    updateTimerUI();
-
-    state.timerInterval = setInterval(() => {
-      if (state.answerLocked) return;
-      state.timeLeft--;
-      updateTimerUI();
-      if (state.timeLeft <= 0) {
-        stopTimer();
-        handleTimeout();
-      }
-    }, 1000);
-  }
-
-  function stopTimer() {
-    if (state.timerInterval) {
-      clearInterval(state.timerInterval);
-      state.timerInterval = null;
-    }
-  }
-
-  function handleTimeout() {
-    if (state.answerLocked) return;
-    state.answerLocked = true;
-
-    state.lives--;
-    updateQuizUI();
-
-    const allOptions = document.querySelectorAll('.option-btn');
-    allOptions.forEach((btn, idx) => {
-      btn.disabled = true;
-      if (idx === state.correctIdx) btn.classList.add('correct');
-    });
-
-    $('feedbackMsg').textContent = `⏰ Time's up! Lives left: ${state.lives}`;
-
-    if (state.lives <= 0) {
-      endGame();
-      return;
-    }
-
-    $('nextBtn').disabled = false;
-  }
-
-  function handleAnswer(selectedIdx) {
-    if (state.answerLocked) return;
-    stopTimer();
-    state.answerLocked = true;
-
-    const isCorrect = selectedIdx === state.correctIdx;
-    const allOptions = document.querySelectorAll('.option-btn');
-
-    allOptions.forEach((btn, idx) => {
-      btn.disabled = true;
-      if (idx === state.correctIdx) btn.classList.add('correct');
-      if (idx === selectedIdx && !isCorrect) btn.classList.add('wrong');
-    });
-
-    if (isCorrect) {
-      const config = getDifficultyConfig();
-      const points = Math.round(10 * (config.pointsMultiplier || 1));
-      state.score += points;
-      state.totalPoints += points;
-      const coins = Math.round(2 * (config.coinMultiplier || 1));
-      addCoins(coins);
-      $('feedbackMsg').textContent = `✅ Correct! +${points} points, +${coins} coins`;
-    } else {
-      state.lives--;
-      const q = state.questions[state.currentIndex];
-      $('feedbackMsg').textContent = `❌ Wrong. Answer: ${q.options[q.correct]}`;
-    }
-
-    updateQuizUI();
-    saveState();
-
-    if (state.lives <= 0) {
-      endGame();
-      return;
-    }
-
-    $('nextBtn').disabled = false;
-  }
-
-  function nextQuestion() {
-    if ($('nextBtn').disabled) return;
-    stopTimer();
-    state.currentIndex++;
-    if (state.currentIndex >= state.questions.length || state.lives <= 0) {
-      endGame();
-    } else {
-      renderQuestion();
-    }
-  }
-
-  function endGame() {
-    stopTimer();
-
-    // If tournament, save score
-    if (state.isTournament && state.tournamentPaid) {
-      let scores = JSON.parse(localStorage.getItem('tournamentScores') || '[]');
-      scores.push({ score: state.score, date: new Date().toISOString(), country: state.selectedCountry });
-      localStorage.setItem('tournamentScores', JSON.stringify(scores));
-    }
-
-    state.gamesPlayed++;
-    if (state.score > state.bestScore) {
-      state.bestScore = state.score;
-    }
-    saveState();
-
-    // Show result
-    homeScreen.classList.add('hidden');
-    quizScreen.classList.add('hidden');
-    resultScreen.classList.remove('hidden');
-
-    $('finalScoreSpan').textContent = state.score;
-    const earned = Math.floor(state.score / 2);
-    let msg = `You scored ${state.score} points. Earned ${earned} coins!`;
-    if (state.score >= 70) msg += ' 🏆 Excellent!';
-    else if (state.score >= 50) msg += ' 💪 Good job!';
-    else msg += ' Keep practicing!';
-    $('resultMessage').textContent = msg;
-  }
-
-  function goHome() {
-    stopTimer();
-    homeScreen.classList.remove('hidden');
-    quizScreen.classList.add('hidden');
-    resultScreen.classList.add('hidden');
-    updateHomeUI();
-  }
-
-  // =====================================================
-  // LIFELINE: 50/50
-  // =====================================================
-  function useLifeline() {
-    if (state.answerLocked) {
-      $('feedbackMsg').textContent = 'Already answered!';
-      return;
-    }
-    if (!deductCoins(10)) {
-      showToast('Not enough coins! Earn more by playing.');
-      return;
-    }
-
-    const buttons = document.querySelectorAll('.option-btn');
-    if (buttons.length !== 4) return;
-
-    // Get wrong indices
-    const wrongIndices = [];
-    for (let i = 0; i < 4; i++) {
-      if (i !== state.correctIdx) wrongIndices.push(i);
-    }
-    shuffle(wrongIndices);
-    const toRemove = wrongIndices.slice(0, 2);
-
-    buttons.forEach((btn, idx) => {
-      if (toRemove.includes(idx)) {
-        btn.disabled = true;
-        btn.style.opacity = '0.3';
-        btn.style.textDecoration = 'line-through';
-      }
-    });
-
-    $('hintBtn').disabled = true;
-    $('feedbackMsg').textContent = '50:50 used! -10 coins';
-  }
-
-  // =====================================================
-  // SHARING
-  // =====================================================
-  function shareResult(platform) {
-    const text = `🎯 I scored ${state.score} on AfricanQuiz! Can you beat me? 🏆\n\nPlay now at: https://africanquiz.com`;
-    const url = 'https://africanquiz.com';
-
-    const shareUrls = {
-      whatsapp: `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`,
-      twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`,
-      facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`,
     };
 
-    if (shareUrls[platform]) {
-      window.open(shareUrls[platform], '_blank');
+    // =============================================================
+    // DIFFICULTY CONFIG
+    // =============================================================
+    const DIFFICULTY = {
+      easy: {
+        label: 'Student',
+        timeBase: 20,
+        timeMin: 14,
+        coinMultiplier: 1,
+        pointsMultiplier: 1,
+        questionFilter: 'easy'
+      },
+      medium: {
+        label: 'Scholar',
+        timeBase: 14,
+        timeMin: 10,
+        coinMultiplier: 2,
+        pointsMultiplier: 1.5,
+        questionFilter: 'medium'
+      },
+      hard: {
+        label: 'Champion',
+        timeBase: 10,
+        timeMin: 5,
+        coinMultiplier: 3,
+        pointsMultiplier: 2,
+        questionFilter: 'hard'
+      }
+    };
+
+    // =============================================================
+    // QUESTION BANK (Abbreviated for space - use full version)
+    // =============================================================
+    const QUESTION_BANK = {
+      Nigeria: {
+        history: [
+          { text: "Who was the first President of Nigeria?", options: ["Nnamdi Azikiwe", "Olusegun Obasanjo",
+              "Shehu Shagari", "Goodluck Jonathan"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "In what year did Nigeria gain independence?", options: ["1960", "1963", "1957", "1970"],
+            correct: 0, difficulty: 'easy' },
+          { text: "Which constitution introduced the presidential system?", options: ["1963", "1979", "1960",
+              "1999"
+            ], correct: 1, difficulty: 'medium' },
+          { text: "Who was the military head of state during the Civil War?", options: ["Yakubu Gowon",
+              "Murtala Mohammed", "Olusegun Obasanjo", "Ibrahim Babangida"
+            ], correct: 0, difficulty: 'medium' },
+          { text: "The Amalgamation of Nigeria took place in which year?", options: ["1914", "1900", "1922",
+              "1898"
+            ], correct: 0, difficulty: 'hard' },
+          { text: "Who introduced the Structural Adjustment Programme (SAP)?", options: ["Ibrahim Babangida",
+              "Murtala Mohammed", "Sani Abacha", "Olusegun Obasanjo"
+            ], correct: 0, difficulty: 'hard' },
+        ],
+        geography: [
+          { text: "What is the capital of Nigeria?", options: ["Abuja", "Lagos", "Kano", "Port Harcourt"],
+            correct: 0, difficulty: 'easy' },
+          { text: "Longest river in Nigeria?", options: ["River Niger", "River Benue", "Cross River",
+              "Ogun River"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "Largest state by land area?", options: ["Niger", "Borno", "Taraba", "Kaduna"], correct: 1,
+            difficulty: 'medium' },
+          { text: "Which state is the 'Food Basket of the Nation'?", options: ["Benue", "Plateau", "Taraba",
+              "Niger"
+            ], correct: 0, difficulty: 'medium' },
+          { text: "Olumo Rock is in which state?", options: ["Ogun", "Oyo", "Osun", "Ekiti"], correct: 0,
+            difficulty: 'hard' },
+        ],
+        culture: [
+          { text: "Yoruba king title?", options: ["Oba", "Emir", "Igwe", "Obong"], correct: 0,
+          difficulty: 'easy' },
+          { text: "Soup made from melon seeds?", options: ["Egusi", "Ogbono", "Afang", "Edikang Ikong"],
+            correct: 0, difficulty: 'easy' },
+          { text: "Largest ethnic group?", options: ["Hausa", "Yoruba", "Igbo", "Ijaw"], correct: 0,
+            difficulty: 'medium' },
+          { text: "Eyo Festival city?", options: ["Lagos", "Ibadan", "Benin", "Abeokuta"], correct: 0,
+            difficulty: 'medium' },
+          { text: "Traditional Yoruba talking drum?", options: ["Gangan", "Udu", "Kakaki", "Sakara"],
+            correct: 0, difficulty: 'hard' },
+        ],
+        pop: [
+          { text: "Who sang 'Fall'?", options: ["Davido", "Wizkid", "Burna Boy", "Kizz Daniel"], correct: 0,
+            difficulty: 'easy' },
+          { text: "Burna Boy nickname?", options: ["Odogwu", "Starboy", "African Giant", "E choke"],
+            correct: 2, difficulty: 'easy' },
+          { text: "Nigerian Grammy winner 2021?", options: ["Burna Boy", "Wizkid", "Davido", "Tiwa Savage"],
+            correct: 0, difficulty: 'medium' },
+          { text: "Davido song 'E choke'?", options: ["If", "Fall", "Assurance", "Fem"], correct: 3,
+            difficulty: 'medium' },
+          { text: "Who won the 2023 Headies 'Artist of the Year'?", options: ["Burna Boy", "Davido",
+              "Wizkid", "Rema"
+            ], correct: 3, difficulty: 'hard' },
+        ],
+        movies: [
+          { text: "Actress in 'Lionheart'?", options: ["Genevieve Nnaji", "Omotola", "Funke Akindele",
+              "Rita Dominic"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "Highest-grossing Nollywood film?", options: ["Omo Ghetto: The Saga", "The Wedding Party",
+              "King of Boys", "Lionheart"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "Who directed 'The Wedding Party'?", options: ["Kemi Adetiba", "Mo Abudu", "Funke Akindele",
+              "Tope Oshin"
+            ], correct: 0, difficulty: 'medium' },
+          { text: "What is the first Nigerian film submitted for the Oscars?", options: ["Lionheart",
+              "The Wedding Party", "October 1", "Tango With Me"
+            ], correct: 0, difficulty: 'hard' },
+        ],
+        football: [
+          { text: "Which club has won the NPFL the most times?", options: ["Enyimba", "Kano Pillars",
+              "Rangers International", "Shooting Stars"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "Who is Nigeria's all-time top scorer?", options: ["Rashidi Yekini", "Segun Odegbami",
+              "Jay-Jay Okocha", "Ahmed Musa"
+            ], correct: 3, difficulty: 'easy' },
+          { text: "Which Nigerian player won the UCL with Chelsea in 2021?", options: ["Kelechi Iheanacho",
+              "Victor Osimhen", "Wilfred Ndidi", "Alex Iwobi"
+            ], correct: 2, difficulty: 'medium' },
+          { text: "Which Nigerian player scored a hat-trick at the 2018 World Cup?", options: ["Ahmed Musa",
+              "Victor Moses", "Odion Ighalo", "Kelechi Iheanacho"
+            ], correct: 0, difficulty: 'hard' },
+        ]
+      },
+      Ghana: {
+        history: [
+          { text: "What was Ghana's former colonial name?", options: ["Gold Coast", "Slave Coast", "Ivory Coast",
+              "Pepper Coast"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "Who was Ghana's first president?", options: ["Kwame Nkrumah", "Jerry Rawlings", "John Kufuor",
+              "Nana Akufo-Addo"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "In which year did Ghana gain independence?", options: ["1957", "1960", "1955", "1963"],
+            correct: 0, difficulty: 'medium' },
+          { text: "Which Ghanaian served as UN Secretary-General?", options: ["Kofi Annan", "Kwame Nkrumah",
+              "John Atta Mills", "Nana Akufo-Addo"
+            ], correct: 0, difficulty: 'hard' },
+        ],
+        geography: [
+          { text: "What is the capital of Ghana?", options: ["Accra", "Kumasi", "Takoradi", "Cape Coast"],
+            correct: 0, difficulty: 'easy' },
+          { text: "Which lake is the largest man-made lake in Ghana?", options: ["Lake Volta", "Lake Bosomtwe",
+              "Lake Kainji", "Lake Togo"
+            ], correct: 0, difficulty: 'medium' },
+          { text: "What is the highest point in Ghana?", options: ["Mount Afadjato", "Mount Adaklu", "Mount Gemi",
+              "Mount Dzigbe"
+            ], correct: 0, difficulty: 'hard' },
+        ],
+        culture: [
+          { text: "Which festival is famous among the Ashanti people?", options: ["Homowo", "Aboakyer",
+              "Damba", "Odwira"
+            ], correct: 3, difficulty: 'easy' },
+          { text: "What is the national dish of Ghana?", options: ["Fufu", "Jollof Rice", "Banku", "Kenkey"],
+            correct: 2, difficulty: 'easy' },
+          { text: "Which traditional Ghanaian cloth is woven in strips?", options: ["Kente", "Adinkra",
+              "Fugu", "Batakari"
+            ], correct: 0, difficulty: 'medium' },
+        ],
+        pop: [
+          { text: "Who is known as the 'King of Azonto'?", options: ["Fuse ODG", "Sarkodie", "Stonebwoy",
+              "Shatta Wale"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "Which Ghanaian musician won BET Best International Act in 2019?", options: ["Sarkodie",
+              "Stonebwoy", "Shatta Wale", "R2Bees"
+            ], correct: 0, difficulty: 'medium' },
+        ],
+        movies: [
+          { text: "Which Ghanaian actor starred in 'The Price'?", options: ["Majid Michel", "Van Vicker",
+              "John Dumelo", "Yvonne Nelson"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "Who directed 'The Burial of Kojo'?", options: ["Blitz Bazawule", "Leila Djansi",
+              "Shirley Frimpong-Manso", "Frank Rajah"
+            ], correct: 0, difficulty: 'medium' },
+        ],
+        football: [
+          { text: "Which club has won the Ghana Premier League the most times?", options: ["Asante Kotoko",
+              "Hearts of Oak", "Aduana Stars", "Medeama"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "Who is Ghana's all-time top scorer?", options: ["Asamoah Gyan", "Abedi Pele", "Tony Yeboah",
+              "André Ayew"
+            ], correct: 0, difficulty: 'medium' },
+        ]
+      },
+      Kenya: {
+        history: [
+          { text: "Who was Kenya's first president?", options: ["Jomo Kenyatta", "Daniel arap Moi", "Mwai Kibaki",
+              "Uhuru Kenyatta"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "In what year did Kenya gain independence?", options: ["1963", "1960", "1965", "1962"],
+            correct: 0, difficulty: 'medium' },
+          { text: "Which Kenyan won the Nobel Peace Prize in 2004?", options: ["Wangari Maathai", "Raila Odinga",
+              "Uhuru Kenyatta", "Ngũgĩ wa Thiong'o"
+            ], correct: 0, difficulty: 'hard' },
+        ],
+        geography: [
+          { text: "What is the capital of Kenya?", options: ["Nairobi", "Mombasa", "Kisumu", "Nakuru"],
+            correct: 0, difficulty: 'easy' },
+          { text: "What is the highest mountain in Kenya?", options: ["Mount Kenya", "Mount Kilimanjaro",
+              "Mount Elgon", "Mount Longonot"
+            ], correct: 0, difficulty: 'medium' },
+          { text: "Which lake is the largest in Kenya?", options: ["Lake Turkana", "Lake Victoria",
+              "Lake Naivasha", "Lake Nakuru"
+            ], correct: 0, difficulty: 'hard' },
+        ],
+        culture: [
+          { text: "Which Kenyan tribe is famous for its jumping dance?", options: ["Maasai", "Kikuyu", "Luo",
+              "Kalenjin"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "What is the national dish of Kenya?", options: ["Ugali", "Nyama Choma", "Sukuma Wiki",
+              "Githeri"
+            ], correct: 0, difficulty: 'medium' },
+        ],
+        pop: [
+          { text: "Who sang 'Kiss Me'?", options: ["Sauti Sol", "Nyashinski", "Bahati", "Otile Brown"],
+            correct: 1, difficulty: 'easy' },
+          { text: "Who is the most famous Kenyan rapper?", options: ["Khaligraph Jones", "Octopizzo",
+              "King Kaka", "Blen Blinks"
+            ], correct: 0, difficulty: 'medium' },
+        ],
+        movies: [
+          { text: "Which Kenyan film was nominated for an Oscar?", options: ["Supa Modo", "Kati Kati",
+              "Nairobi Half Life", "The First Grader"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "Who directed the award-winning film 'Rafiki'?", options: ["Wanuri Kahiu", "Mbithi Masya",
+              "Judy Kibinge", "Likarion Wainaina"
+            ], correct: 0, difficulty: 'medium' },
+        ],
+        football: [
+          { text: "Which club has won the Kenyan Premier League the most?", options: ["Gor Mahia",
+              "AFC Leopards", "Tusker", "Ulinzi Stars"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "Who is Kenya's all-time top scorer?", options: ["Dennis Oliech", "Michael Olunga",
+              "Allan Wanga", "Musa Otieno"
+            ], correct: 0, difficulty: 'medium' },
+        ]
+      },
+      SouthAfrica: {
+        history: [
+          { text: "Who was the first black president of South Africa?", options: ["Nelson Mandela", "Thabo Mbeki",
+              "Jacob Zuma", "Cyril Ramaphosa"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "In what year did apartheid officially end?", options: ["1994", "1990", "1992", "1996"],
+            correct: 0, difficulty: 'medium' },
+          { text: "Who was the last State President under apartheid?", options: ["F.W. de Klerk", "P.W. Botha",
+              "John Vorster", "B.J. Vorster"
+            ], correct: 0, difficulty: 'hard' },
+        ],
+        geography: [
+          { text: "What is the capital of South Africa?", options: ["Pretoria", "Cape Town", "Bloemfontein",
+              "Johannesburg"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "Which mountain range is famous in Cape Town?", options: ["Table Mountain", "Drakensberg",
+              "Magaliesberg", "Langeberg"
+            ], correct: 0, difficulty: 'medium' },
+          { text: "Which two oceans meet at Cape Agulhas?", options: ["Atlantic and Indian", "Pacific and Indian",
+              "Arctic and Atlantic", "Indian and Southern"
+            ], correct: 0, difficulty: 'hard' },
+        ],
+        culture: [
+          { text: "What is the traditional dress of the Zulu people?", options: ["Isicholo", "Shweshwe",
+              "Kente", "Agbada"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "Which South African dish is made from cornmeal?", options: ["Pap", "Bunny Chow", "Biltong",
+              "Bobotie"
+            ], correct: 0, difficulty: 'medium' },
+        ],
+        pop: [
+          { text: "Who sang 'Jerusalema'?", options: ["Master KG ft. Nomcebo", "DJ Maphorisa", "Kabza De Small",
+              "Prince Kaybee"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "Which South African rapper is known as 'Mr. Cashtime'?", options: ["Cassper Nyovest",
+              "AKA", "Nasty C", "Kwesta"
+            ], correct: 0, difficulty: 'medium' },
+        ],
+        movies: [
+          { text: "Which South African film won the Oscar for Best Foreign Language Film?", options: ["Tsotsi",
+              "District 9", "The Gods Must Be Crazy", "Yesterday"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "Who directed 'District 9'?", options: ["Neill Blomkamp", "Gavin Hood", "Darrell Roodt",
+              "Oliver Schmitz"
+            ], correct: 0, difficulty: 'medium' },
+        ],
+        football: [
+          { text: "Which club has won the PSL the most times?", options: ["Mamelodi Sundowns", "Kaizer Chiefs",
+              "Orlando Pirates", "SuperSport United"
+            ], correct: 0, difficulty: 'easy' },
+          { text: "Who is South Africa's all-time top scorer?", options: ["Benni McCarthy", "Shaun Bartlett",
+              "Katlego Mphela", "Siphiwe Tshabalala"
+            ], correct: 0, difficulty: 'medium' },
+        ]
+      },
+      africa: [
+        { text: "Which country is known as the 'Giant of Africa'?", options: ["Nigeria", "Ghana", "South Africa",
+            "Kenya"
+          ], correct: 0, difficulty: 'easy' },
+        { text: "What is the highest mountain in Africa?", options: ["Mount Kilimanjaro", "Mount Kenya",
+            "Mount Elgon", "Rwenzori"
+          ], correct: 0, difficulty: 'easy' },
+        { text: "Which river is the longest in Africa?", options: ["Nile", "Congo", "Niger", "Zambezi"],
+          correct: 0, difficulty: 'easy' },
+        { text: "Which desert covers much of North Africa?", options: ["Sahara", "Kalahari", "Namib", "Libyan"],
+          correct: 0, difficulty: 'medium' },
+        { text: "The African Union headquarters is in which city?", options: ["Addis Ababa", "Nairobi",
+            "Johannesburg", "Cairo"
+          ], correct: 0, difficulty: 'medium' },
+        { text: "Who was the first African to win the FIFA Ballon d'Or?", options: ["George Weah", "Samuel Eto'o",
+            "Didier Drogba", "Yaya Touré"
+          ], correct: 0, difficulty: 'hard' },
+      ]
+    };
+
+    // =============================================================
+    // GAME STATE
+    // =============================================================
+    let state = {
+      selectedCountry: 'Nigeria',
+      selectedCategory: 'history',
+      selectedDifficulty: 'medium',
+      coinBalance: 100,
+      totalPoints: 0,
+      bestScore: 0,
+      gamesPlayed: 0,
+      streak: 0,
+      lastPlayed: null,
+
+      questions: [],
+      currentIndex: 0,
+      score: 0,
+      lives: 3,
+      answerLocked: false,
+      timeLeft: 14,
+      timerInterval: null,
+      correctIdx: 0,
+      isTournament: false,
+      tournamentPaid: false,
+
+      onboardingCompleted: false,
+    };
+
+    // =============================================================
+    // DOM REFS
+    // =============================================================
+    const $ = id => document.getElementById(id);
+    const homeScreen = $('homeScreen');
+    const quizScreen = $('quizScreen');
+    const resultScreen = $('resultScreen');
+    const onboardingOverlay = $('onboardingOverlay');
+
+    // =============================================================
+    // UTILITY FUNCTIONS
+    // =============================================================
+    function shuffle(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
     }
-  }
 
-  function challengeFriend() {
-    const text = `🔥 I challenge you to beat my score of ${state.score} on AfricanQuiz! Can you do it? 🏆\n\nPlay at: https://africanquiz.com`;
-    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
-  }
-
-  // =====================================================
-  // HOW IT WORKS
-  // =====================================================
-  function openHowItWorks() {
-    const msg =
-      `📖 HOW IT WORKS\n\n` +
-      `1️⃣ Choose your country and category\n` +
-      `2️⃣ Select difficulty: Student 📘 / Scholar 📗 / Champion 📕\n` +
-      `3️⃣ Answer 10 questions correctly to earn points & coins\n` +
-      `4️⃣ Use coins for lifelines or enter tournaments\n` +
-      `5️⃣ Build your daily streak for bonus coins!\n\n` +
-      `🏆 Top tournament winners win real prizes!`;
-    alert(msg);
-  }
-
-  // =====================================================
-  // BUY COINS (Paystack integration ready)
-  // =====================================================
-  function buyCoins(amount, price) {
-    if (confirm(`Buy ${amount} coins for ₦${price}?`)) {
-      // === INTEGRATE PAYSTACK HERE ===
-      // Example:
-      // PaystackPop.setup({
-      //   key: 'YOUR_PUBLIC_KEY',
-      //   email: 'user@email.com',
-      //   amount: price * 100,
-      //   callback: function(response) {
-      //     addCoins(amount);
-      //     showToast(`✅ ${amount} coins added!`);
-      //   }
-      // });
-      showToast(`💰 ${amount} coins added! (Payment integration coming soon)`);
-      addCoins(amount);
+    function getDifficultyConfig() {
+      return DIFFICULTY[state.selectedDifficulty] || DIFFICULTY.medium;
     }
-  }
 
-  // =====================================================
-  // EARN COINS (Rewarded Ad)
-  // =====================================================
-  function earnCoins() {
-    // === INTEGRATE ADMOB REWARDED ADS HERE ===
-    // Simulate ad view
-    if (confirm('🎥 Watch a 30-second ad to earn 15 coins?')) {
+    function getTimeForQuestion(index) {
+      const config = getDifficultyConfig();
+      let t = config.timeBase - index;
+      return Math.max(t, config.timeMin);
+    }
+
+    // =============================================================
+    // STORAGE
+    // =============================================================
+    function saveState() {
+      try {
+        localStorage.setItem('afriQuiz_state', JSON.stringify({
+          coinBalance: state.coinBalance,
+          totalPoints: state.totalPoints,
+          bestScore: state.bestScore,
+          gamesPlayed: state.gamesPlayed,
+          streak: state.streak,
+          lastPlayed: state.lastPlayed,
+          onboardingCompleted: state.onboardingCompleted,
+        }));
+      } catch (e) { /* ignore */ }
+    }
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem('afriQuiz_state');
+        if (raw) {
+          const data = JSON.parse(raw);
+          Object.assign(state, data);
+        }
+      } catch (e) { /* ignore */ }
+    }
+
+    // =============================================================
+    // UI UPDATES
+    // =============================================================
+    function updateHomeUI() {
+      $('coinBalance').textContent = state.coinBalance;
+      $('totalPointsHome').textContent = state.totalPoints;
+      $('bestScoreHome').textContent = state.bestScore;
+      $('gamesPlayedHome').textContent = state.gamesPlayed;
+      $('streakDisplay').textContent = state.streak || 0;
+    }
+
+    function updateQuizUI() {
+      $('scoreDisplay').textContent = state.score;
+      $('livesDisplay').textContent = state.lives;
+      $('currentQ').textContent = state.currentIndex + 1;
+      $('totalQ').textContent = state.questions.length;
+    }
+
+    function updateTimerUI() {
+      const total = getTimeForQuestion(state.currentIndex);
+      const percent = total > 0 ? (state.timeLeft / total) * 100 : 0;
+      $('timerFill').style.width = `${Math.min(percent, 100)}%`;
+      $('timerText').textContent = `${state.timeLeft}s`;
+      const color = state.timeLeft <= 3 ? '#ef4444' : '#facc15';
+      $('timerFill').style.backgroundColor = color;
+    }
+
+    // =============================================================
+    // COINS & REWARDS
+    // =============================================================
+    function addCoins(amount) {
+      state.coinBalance += amount;
+      updateHomeUI();
+      saveState();
+    }
+
+    function deductCoins(amount) {
+      if (state.coinBalance >= amount) {
+        state.coinBalance -= amount;
+        updateHomeUI();
+        saveState();
+        return true;
+      }
+      return false;
+    }
+
+    // =============================================================
+    // DAILY STREAK
+    // =============================================================
+    function checkDailyStreak() {
+      const today = new Date().toDateString();
+      if (state.lastPlayed === today) return;
+
+      if (state.lastPlayed) {
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+        if (state.lastPlayed === yesterday.toDateString()) {
+          state.streak = (state.streak || 0) + 1;
+        } else {
+          state.streak = 0;
+        }
+      } else {
+        state.streak = 1;
+      }
+
+      state.lastPlayed = today;
+      saveState();
+
+      if (state.streak >= 7) {
+        addCoins(50);
+        showToast('🔥 7-day streak! +50 bonus coins! 🎉');
+      } else if (state.streak >= 3) {
+        addCoins(20);
+        showToast('🔥 3-day streak! +20 bonus coins!');
+      }
+      updateHomeUI();
+    }
+
+    // =============================================================
+    // TOAST
+    // =============================================================
+    function showToast(msg) {
+      const existing = document.querySelector('.toast-msg');
+      if (existing) existing.remove();
+      const div = document.createElement('div');
+      div.className = 'toast-msg';
+      div.textContent = msg;
+      document.body.appendChild(div);
       setTimeout(() => {
-        addCoins(15);
-        showToast('🎉 +15 coins earned!');
+        div.style.opacity = '0';
+        div.style.transition = 'opacity 0.3s';
+        setTimeout(() => div.remove(), 400);
+      }, 3500);
+    }
+
+    // =============================================================
+    // QUESTION BANK ACCESS
+    // =============================================================
+    function getQuestionPool() {
+      if (state.selectedCategory === 'africa') {
+        return QUESTION_BANK.africa || [];
+      }
+      const countryData = QUESTION_BANK[state.selectedCountry];
+      if (!countryData) return [];
+      return countryData[state.selectedCategory] || [];
+    }
+
+    function getFilteredQuestions() {
+      const pool = getQuestionPool();
+      const difficulty = state.selectedDifficulty;
+      const config = DIFFICULTY[difficulty];
+      if (!config) return shuffle([...pool]).slice(0, 10);
+
+      let filtered = pool.filter(q => {
+        const qDiff = q.difficulty || 'medium';
+        if (difficulty === 'hard') return qDiff === 'hard' || qDiff === 'medium';
+        return qDiff === difficulty;
+      });
+
+      if (filtered.length < 5) filtered = [...pool];
+      const shuffled = shuffle([...filtered]);
+      return shuffled.slice(0, 10);
+    }
+
+    // =============================================================
+    // QUIZ LOGIC
+    // =============================================================
+    function initQuiz() {
+      state.questions = getFilteredQuestions();
+      state.currentIndex = 0;
+      state.score = 0;
+      state.lives = 3;
+      state.answerLocked = false;
+      state.isTournament = false;
+      state.tournamentPaid = false;
+      state.timeLeft = getTimeForQuestion(0);
+
+      if (state.questions.length < 5) {
+        showToast('Not enough questions. Using all available.');
+      }
+
+      renderQuestion();
+      updateQuizUI();
+    }
+
+    function renderQuestion() {
+      if (state.currentIndex >= state.questions.length || state.lives <= 0) {
+        endGame();
+        return;
+      }
+
+      state.answerLocked = false;
+      state.timeLeft = getTimeForQuestion(state.currentIndex);
+
+      const q = state.questions[state.currentIndex];
+      $('questionText').textContent = q.text;
+
+      const indices = [0, 1, 2, 3];
+      shuffle(indices);
+      state.correctIdx = indices.indexOf(q.correct);
+
+      const container = $('optionsContainer');
+      container.innerHTML = '';
+      indices.forEach((idx, displayIdx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.textContent = `${String.fromCharCode(65 + displayIdx)}. ${q.options[idx]}`;
+        btn.dataset.idx = displayIdx;
+        btn.addEventListener('click', () => handleAnswer(displayIdx));
+        container.appendChild(btn);
+      });
+
+      $('nextBtn').disabled = true;
+      $('feedbackMsg').textContent = '';
+      $('hintBtn').disabled = false;
+
+      updateQuizUI();
+      updateTimerUI();
+      startTimer();
+    }
+
+    function startTimer() {
+      stopTimer();
+      state.timeLeft = getTimeForQuestion(state.currentIndex);
+      updateTimerUI();
+
+      // Play timer tick sound every second
+      state.timerInterval = setInterval(() => {
+        if (state.answerLocked) return;
+        state.timeLeft--;
+        updateTimerUI();
+
+        // Play tick sound when time is low (last 3 seconds)
+        if (state.timeLeft <= 3 && state.timeLeft > 0) {
+          AudioSystem.playTimer();
+        }
+
+        if (state.timeLeft <= 0) {
+          stopTimer();
+          handleTimeout();
+        }
       }, 1000);
     }
-  }
 
-  // =====================================================
-  // TOURNAMENT
-  // =====================================================
-  function openTournamentModal() {
-    if (!deductCoins(50)) {
-      showToast('❌ Not enough coins! Need 50 for tournament entry.');
-      return;
-    }
-    // Entry fee already deducted, proceed
-    state.isTournament = true;
-    state.tournamentPaid = true;
-    $('tournamentModal').classList.remove('active');
-    startGame();
-  }
-
-  function closeTournamentModal() {
-    $('tournamentModal').classList.remove('active');
-  }
-
-  // =====================================================
-  // START GAME
-  // =====================================================
-  function startGame() {
-    state.selectedCountry = $('countrySelect').value;
-    state.selectedCategory = $('categorySelect').value;
-    state.selectedDifficulty = $('difficultySelect').value;
-
-    // Check if enough questions
-    const pool = getQuestionPool();
-    if (pool.length < 5) {
-      showToast('⚠️ Not enough questions for this category. Try another.');
-      return;
+    function stopTimer() {
+      if (state.timerInterval) {
+        clearInterval(state.timerInterval);
+        state.timerInterval = null;
+      }
     }
 
-    initQuiz();
-    homeScreen.classList.add('hidden');
-    quizScreen.classList.remove('hidden');
-    resultScreen.classList.add('hidden');
+    function handleTimeout() {
+      if (state.answerLocked) return;
+      state.answerLocked = true;
 
-    // Mark daily streak
-    const today = new Date().toDateString();
-    if (state.lastPlayed !== today) {
-      checkDailyStreak();
+      state.lives--;
+      updateQuizUI();
+      AudioSystem.playWrong();
+
+      const allOptions = document.querySelectorAll('.option-btn');
+      allOptions.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === state.correctIdx) btn.classList.add('correct');
+      });
+
+      $('feedbackMsg').textContent = `⏰ Time's up! Lives left: ${state.lives}`;
+
+      if (state.lives <= 0) {
+        endGame();
+        return;
+      }
+
+      $('nextBtn').disabled = false;
     }
-  }
 
-  // =====================================================
-  // TERMS & CONDITIONS
-  // =====================================================
-  function openTerms() {
-    $('termsModal').classList.add('active');
-  }
+    function handleAnswer(selectedIdx) {
+      if (state.answerLocked) return;
+      stopTimer();
+      state.answerLocked = true;
 
-  function closeTerms() {
-    $('termsModal').classList.remove('active');
-  }
+      const isCorrect = selectedIdx === state.correctIdx;
+      const allOptions = document.querySelectorAll('.option-btn');
 
-  // =====================================================
-  // ONBOARDING
-  // =====================================================
-  let onboardingStep = 1;
+      allOptions.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === state.correctIdx) btn.classList.add('correct');
+        if (idx === selectedIdx && !isCorrect) btn.classList.add('wrong');
+      });
 
-  function nextOnboardingStep() {
-    onboardingStep++;
-    for (let i = 1; i <= 3; i++) {
-      const el = document.getElementById(`onboardingStep${i}`);
-      if (el) el.style.display = i === onboardingStep ? 'block' : 'none';
+      if (isCorrect) {
+        const config = getDifficultyConfig();
+        const points = Math.round(10 * (config.pointsMultiplier || 1));
+        state.score += points;
+        state.totalPoints += points;
+        const coins = Math.round(2 * (config.coinMultiplier || 1));
+        addCoins(coins);
+        $('feedbackMsg').textContent = `✅ Correct! +${points} points, +${coins} coins`;
+        AudioSystem.playCorrect();
+      } else {
+        state.lives--;
+        const q = state.questions[state.currentIndex];
+        $('feedbackMsg').textContent = `❌ Wrong. Answer: ${q.options[q.correct]}`;
+        AudioSystem.playWrong();
+      }
+
+      updateQuizUI();
+      saveState();
+
+      if (state.lives <= 0) {
+        endGame();
+        return;
+      }
+
+      $('nextBtn').disabled = false;
     }
-  }
 
-  function startOnboarding() {
-    state.onboardingCompleted = true;
-    saveState();
-    onboardingOverlay.classList.add('hidden');
-  }
+    function nextQuestion() {
+      if ($('nextBtn').disabled) return;
+      stopTimer();
+      state.currentIndex++;
+      if (state.currentIndex >= state.questions.length || state.lives <= 0) {
+        endGame();
+      } else {
+        renderQuestion();
+      }
+    }
 
-  function checkOnboarding() {
-    if (!state.onboardingCompleted) {
-      onboardingOverlay.classList.remove('hidden');
-    } else {
+    function endGame() {
+      stopTimer();
+      AudioSystem.playGameOver();
+
+      if (state.isTournament && state.tournamentPaid) {
+        let scores = JSON.parse(localStorage.getItem('tournamentScores') || '[]');
+        scores.push({ score: state.score, date: new Date().toISOString(), country: state.selectedCountry });
+        localStorage.setItem('tournamentScores', JSON.stringify(scores));
+      }
+
+      state.gamesPlayed++;
+      if (state.score > state.bestScore) {
+        state.bestScore = state.score;
+      }
+      saveState();
+
+      homeScreen.classList.add('hidden');
+      quizScreen.classList.add('hidden');
+      resultScreen.classList.remove('hidden');
+
+      $('finalScoreSpan').textContent = state.score;
+      const earned = Math.floor(state.score / 2);
+      let msg = `You scored ${state.score} points. Earned ${earned} coins!`;
+      if (state.score >= 70) msg += ' 🏆 Excellent!';
+      else if (state.score >= 50) msg += ' 💪 Good job!';
+      else msg += ' Keep practicing!';
+      $('resultMessage').textContent = msg;
+    }
+
+    function goHome() {
+      stopTimer();
+      homeScreen.classList.remove('hidden');
+      quizScreen.classList.add('hidden');
+      resultScreen.classList.add('hidden');
+      updateHomeUI();
+    }
+
+    // =============================================================
+    // LIFELINE: 50/50
+    // =============================================================
+    function useLifeline() {
+      if (state.answerLocked) {
+        $('feedbackMsg').textContent = 'Already answered!';
+        return;
+      }
+      if (!deductCoins(10)) {
+        showToast('Not enough coins! Earn more by playing.');
+        return;
+      }
+
+      const buttons = document.querySelectorAll('.option-btn');
+      if (buttons.length !== 4) return;
+
+      const wrongIndices = [];
+      for (let i = 0; i < 4; i++) {
+        if (i !== state.correctIdx) wrongIndices.push(i);
+      }
+      shuffle(wrongIndices);
+      const toRemove = wrongIndices.slice(0, 2);
+
+      buttons.forEach((btn, idx) => {
+        if (toRemove.includes(idx)) {
+          btn.disabled = true;
+          btn.style.opacity = '0.3';
+          btn.style.textDecoration = 'line-through';
+        }
+      });
+
+      $('hintBtn').disabled = true;
+      $('feedbackMsg').textContent = '50:50 used! -10 coins';
+    }
+
+    // =============================================================
+    // SHARING
+    // =============================================================
+    function shareResult(platform) {
+      const text =
+        `🎯 I scored ${state.score} on AfriQuiz! Can you beat me? 🏆\n\nPlay now at: https://afriquiz.com`;
+      const url = 'https://afriquiz.com';
+
+      const shareUrls = {
+        whatsapp: `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`,
+        twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`,
+        facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`,
+      };
+
+      if (shareUrls[platform]) {
+        window.open(shareUrls[platform], '_blank');
+      }
+    }
+
+    function challengeFriend() {
+      const text =
+        `🔥 I challenge you to beat my score of ${state.score} on AfriQuiz! Can you do it? 🏆\n\nPlay at: https://afriquiz.com`;
+      window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    // =============================================================
+    // HOW IT WORKS
+    // =============================================================
+    function openHowItWorks() {
+      const msg =
+        `📖 HOW IT WORKS\n\n` +
+        `1️⃣ Choose your country and category\n` +
+        `2️⃣ Select difficulty: Student 📘 / Scholar 📗 / Champion 📕\n` +
+        `3️⃣ Answer 10 questions correctly to earn points & coins\n` +
+        `4️⃣ Use coins for lifelines or enter tournaments\n` +
+        `5️⃣ Build your daily streak for bonus coins!\n\n` +
+        `🏆 Top tournament winners win real prizes!`;
+      alert(msg);
+    }
+
+    // =============================================================
+    // BUY COINS
+    // =============================================================
+    function buyCoins(amount, price) {
+      if (confirm(`Buy ${amount} coins for ₦${price}?`)) {
+        // Payment integration placeholder
+        showToast(`💰 ${amount} coins added! (Payment integration coming soon)`);
+        addCoins(amount);
+      }
+    }
+
+    // =============================================================
+    // EARN COINS (Rewarded Ad)
+    // =============================================================
+    function earnCoins() {
+      if (confirm('🎥 Watch a 30-second ad to earn 15 coins?')) {
+        setTimeout(() => {
+          addCoins(15);
+          showToast('🎉 +15 coins earned!');
+        }, 1000);
+      }
+    }
+
+    // =============================================================
+    // TOURNAMENT
+    // =============================================================
+    function openTournamentModal() {
+      if (!deductCoins(50)) {
+        showToast('❌ Not enough coins! Need 50 for tournament entry.');
+        return;
+      }
+      state.isTournament = true;
+      state.tournamentPaid = true;
+      $('tournamentModal').classList.remove('active');
+      startGame();
+    }
+
+    function closeTournamentModal() {
+      $('tournamentModal').classList.remove('active');
+    }
+
+    // =============================================================
+    // START GAME
+    // =============================================================
+    function startGame() {
+      state.selectedCountry = $('countrySelect').value;
+      state.selectedCategory = $('categorySelect').value;
+      state.selectedDifficulty = $('difficultySelect').value;
+
+      const pool = getQuestionPool();
+      if (pool.length < 5) {
+        showToast('⚠️ Not enough questions. Try another category.');
+        return;
+      }
+
+      initQuiz();
+      homeScreen.classList.add('hidden');
+      quizScreen.classList.remove('hidden');
+      resultScreen.classList.add('hidden');
+
+      const today = new Date().toDateString();
+      if (state.lastPlayed !== today) {
+        checkDailyStreak();
+      }
+    }
+
+    // =============================================================
+    // TERMS & CONDITIONS
+    // =============================================================
+    function openTerms() {
+      $('termsModal').classList.add('active');
+    }
+
+    function closeTerms() {
+      $('termsModal').classList.remove('active');
+    }
+
+    // =============================================================
+    // ONBOARDING
+    // =============================================================
+    let onboardingStep = 1;
+
+    function nextOnboardingStep() {
+      onboardingStep++;
+      for (let i = 1; i <= 3; i++) {
+        const el = document.getElementById(`onboardingStep${i}`);
+        if (el) el.style.display = i === onboardingStep ? 'block' : 'none';
+      }
+    }
+
+    function startOnboarding() {
+      state.onboardingCompleted = true;
+      saveState();
       onboardingOverlay.classList.add('hidden');
     }
-  }
 
-  // =====================================================
-  // EVENT BINDINGS
-  // =====================================================
-  document.addEventListener('DOMContentLoaded', () => {
-    loadState();
-    checkOnboarding();
-    checkDailyStreak();
-    updateHomeUI();
+    function checkOnboarding() {
+      if (!state.onboardingCompleted) {
+        onboardingOverlay.classList.remove('hidden');
+      } else {
+        onboardingOverlay.classList.add('hidden');
+      }
+    }
 
-    // Home screen buttons
-    $('startQuizBtn').addEventListener('click', startGame);
-    $('tournamentBtn').addEventListener('click', () => {
-      $('tournamentModal').classList.add('active');
-    });
-    $('confirmTournamentBtn').addEventListener('click', openTournamentModal);
-    $('playAgainBtn').addEventListener('click', goHome);
-    $('nextBtn').addEventListener('click', nextQuestion);
-    $('hintBtn').addEventListener('click', useLifeline);
-    $('earnCoinsBtn').addEventListener('click', earnCoins);
-    $('termsLink').addEventListener('click', openTerms);
+    // =============================================================
+    // EVENT BINDINGS
+    // =============================================================
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize sound system
+      AudioSystem.init();
 
-    // Modal close
-    document.querySelectorAll('.modal-overlay').forEach(modal => {
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) modal.classList.remove('active');
+      // Load saved state
+      loadState();
+      checkOnboarding();
+      checkDailyStreak();
+      updateHomeUI();
+
+      // Music controls
+      document.getElementById('musicToggleBtn').addEventListener('click', () => {
+        AudioSystem.toggleMusic();
       });
+
+      document.getElementById('explicitPlayBtn').addEventListener('click', () => {
+        AudioSystem.playMusic();
+      });
+
+      // Home screen buttons
+      $('startQuizBtn').addEventListener('click', startGame);
+      $('tournamentBtn').addEventListener('click', () => {
+        $('tournamentModal').classList.add('active');
+      });
+      $('confirmTournamentBtn').addEventListener('click', openTournamentModal);
+      $('playAgainBtn').addEventListener('click', goHome);
+      $('nextBtn').addEventListener('click', nextQuestion);
+      $('hintBtn').addEventListener('click', useLifeline);
+      $('earnCoinsBtn').addEventListener('click', earnCoins);
+      $('termsLink').addEventListener('click', openTerms);
+
+      // Modal close
+      document.querySelectorAll('.modal-overlay').forEach(modal => {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) modal.classList.remove('active');
+        });
+      });
+
+      // Keyboard shortcuts
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !$('nextBtn').disabled) {
+          nextQuestion();
+        }
+        if (['1', '2', '3', '4'].includes(e.key)) {
+          const idx = parseInt(e.key) - 1;
+          const btns = document.querySelectorAll('.option-btn:not(:disabled)');
+          if (btns[idx]) btns[idx].click();
+        }
+      });
+
+      console.log('🎯 AfriQuiz loaded successfully with sound!');
+      console.log('🔊 Sound files needed: audio/bg-music.mp3, audio/correct.mp3, audio/wrong.mp3, audio/timer-tick.mp3, audio/game-over.mp3');
     });
 
-    // Close terms button
-    document.querySelector('#termsModal .btn-primary')?.addEventListener('click', closeTerms);
-
-    // Keyboard shortcuts
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' && !$('nextBtn').disabled) {
-        nextQuestion();
-      }
-      if (e.key === '1' || e.key === '2' || e.key === '3' || e.key === '4') {
-        const idx = parseInt(e.key) - 1;
-        const btns = document.querySelectorAll('.option-btn:not(:disabled)');
-        if (btns[idx]) btns[idx].click();
-      }
-    });
-
-    // CSS animations
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(20px) translateX(-50%); }
-        to { opacity: 1; transform: translateY(0) translateX(-50%); }
-      }
-      .toast-msg {
-        animation: fadeInUp 0.3s ease;
-      }
-    `;
-    document.head.appendChild(style);
-  });
-
-  // Expose functions globally for inline onclick
-  window.shareResult = shareResult;
-  window.challengeFriend = challengeFriend;
-  window.buyCoins = buyCoins;
-  window.earnCoins = earnCoins;
-  window.openHowItWorks = openHowItWorks;
-  window.nextOnboardingStep = nextOnboardingStep;
-  window.startOnboarding = startOnboarding;
-  window.openTerms = openTerms;
-  window.closeTerms = closeTerms;
-  window.closeTournamentModal = closeTournamentModal;
-</script>
+    // Expose functions globally
+    window.shareResult = shareResult;
+    window.challengeFriend = challengeFriend;
+    window.buyCoins = buyCoins;
+    window.earnCoins = earnCoins;
+    window.openHowItWorks = openHowItWorks;
+    window.nextOnboardingStep = nextOnboardingStep;
+    window.startOnboarding = startOnboarding;
+    window.openTerms = openTerms;
+    window.closeTerms = closeTerms;
+    window.closeTournamentModal = closeTournamentModal;
+  </script>
 
 </body>
 </html>
